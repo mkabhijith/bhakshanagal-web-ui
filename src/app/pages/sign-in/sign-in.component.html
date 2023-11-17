@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+
+<div class="login-container">
+    <div class="heading">{{title}}</div>
+  <div class="margin-controller">
+    <div class="logo">
+        <img src="https://health.clevelandclinic.org/wp-content/uploads/sites/3/2021/01/fastFoods1-1199461884-770x533-1.jpg" alt="logo">
+    </div>
+    <form action="post" class="login-form" [formGroup]="loginForm" (ngSubmit)="loginUser()" >
+        <input type="email" placeholder="email" formControlName = "user" required="user name required">
+        <input type="password" placeholder="password" formControlName="password" required="password required">
+         <a href="#">Forget Password?</a>
+        <button class="login-button">Log-in</button>
+    </form>
+  </div>
+</div>
