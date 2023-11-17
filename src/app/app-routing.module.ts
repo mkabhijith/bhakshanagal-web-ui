@@ -8,6 +8,13 @@ const routes: Routes = [
       import('./pages/core/core.module').then(
         (m) => m.CoreModule
       )
+  },
+  {
+    path: 'signin',
+    loadChildren: () =>
+      import('./pages/sign-in/sign-in.module').then(
+        (m) => m.SignInModule
+      )
   }
 ];
 
