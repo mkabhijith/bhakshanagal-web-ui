@@ -9,8 +9,8 @@ import {FormGroup,FormControl,Validators} from '@angular/forms'
 export class SignInComponent {
   title = "Log In Page"
   loginForm = new FormGroup({
-    user:new FormControl("",Validators.required),
-    password:new FormControl("",Validators.required)
+    user:new FormControl("",[Validators.required,Validators.minLength(4)]),
+    password:new FormControl("",[Validators.required,Validators.minLength(4)])
   })
   loginUser(){
     console.warn(this.loginForm.value)

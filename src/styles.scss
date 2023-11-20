@@ -4,3 +4,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* styles.css or styles.scss */
+
+@import url('https://fonts.googleapis.com/css?family=YourFont');
+
+body {
+  font-family: 'YourFont', sans-serif;
+  /* You can also adjust other font properties here, such as font-size, font-weight, etc. */
+}
+img{
+  width: 100%;
+  height: 100%;
+}
