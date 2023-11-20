@@ -1,0 +1,49 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #f0f2f5;
+
+    .offer-banner {
+        height: 500px;
+        width: 100%;
+
+        .img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .product-list {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: auto auto auto;
+        display: grid;
+        gap: 25px;
+
+        img {
+            width: 360px;
+            height: 276px;
+        }
+
+        p-card {
+
+            width: 360px;
+
+
+        }
+
+    }
+}
+
+
+
+.product-card {
+    border: 1px solid gray;
+    border-radius: 25%;
+    width: 150px;
+    height: 200px;
+
+}

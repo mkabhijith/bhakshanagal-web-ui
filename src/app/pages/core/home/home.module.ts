@@ -5,6 +5,8 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     HomeRoutingModule,
     TranslateModule,
-    
+    CardModule,
+    ButtonModule
   ]
 })
 export class HomeModule { }

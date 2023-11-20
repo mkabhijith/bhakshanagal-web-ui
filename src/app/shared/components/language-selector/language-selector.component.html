@@ -1,0 +1,26 @@
+<div
+  class="language-selector-container"
+  (clickElsewhere)="onHideDropdown()"
+>
+  <!-- <div class="title">{{ "LOGIN.LANGUAGE" | translate }}:</div> -->
+  <div class="language-details" (click)="onDropdown()">
+    <div class="icon rk-caret-down"></div>
+    <div class="flag">
+      <img [src]="currentLanguage.flag" alt="language" />
+    </div>
+    <div class="language-selected">
+      {{ currentLanguage.translation | translate }}
+    </div>
+  </div>
+
+  <div class="languages-dropdown" [ngClass]="{ active: show }">
+    <div
+      class="available-language"
+      *ngFor="let language of languageArray"
+      (click)="onLanguageChange(language.id)"
+    >
+      <div class="flag"><img [src]="language.flag" /></div>
+      <div class="name">{{ language.translation | translate }}</div>
+    </div>
+  </div>
+</div>

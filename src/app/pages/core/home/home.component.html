@@ -1,5 +1,24 @@
-<p>home works!</p>
+<div class="main-container">
+    <div class="offer-banner">
+        <img class="img" [src]=getPic() alt="">
 
-<div>{{'ACTIONS.HEADING' | translate}}</div>
+    </div>
+    <div class="product-list">
 
 
+        <p-card header="{{item.productName}}" subheader="Card Subheader" *ngFor="let item of list">
+            <ng-template pTemplate="header">
+                <img alt="Card" src="{{item.imageUrl}}" />
+            </ng-template>
+            <!-- <p>
+                {{item.productName}}
+            </p> -->
+            <p>{{item.price | currency:currency}}</p>
+            <ng-template pTemplate="footer">
+                <p-button label="Buy Now"></p-button>
+                <p-button label="Cart" icon="pi pi-shopping-cart" styleClass="p-button-secondary"
+                    [style]="{ 'margin-left': '.5em' }"></p-button>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

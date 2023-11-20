@@ -1,5 +1,15 @@
 {
-    "ACTIONS": {
-        "HEADING": "פעולות"
+    "LOGIN": {
+        "LANGUAGE": "שפה"
+    },
+    "LANGUAGE": {
+        "ENGLISH": "אנגלית",
+        "HEBREW": "עברית",
+        "ARABIC": "ARABIC",
+        "_": "שפה"
+    },
+    "NAVBAR": {
+        "HOME": "בית",
+        "ABOUT": "על אודות"
     }
 }
