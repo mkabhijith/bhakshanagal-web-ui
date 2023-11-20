@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {SupportedLanguage,SupportedLanguageCode,ILanguage} from '../types/language.type'
+import { SupportedLanguage, SupportedLanguageCode, ILanguage } from '../types/language.type'
 import { StorageService } from './storage/storage.service';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
@@ -9,44 +9,47 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LanguageService {
 
-  constructor(private storageService:StorageService, private translate: TranslateService ) {
+  constructor(private storageService: StorageService, private translate: TranslateService) {
     this.init
-   }
+  }
   private languages: ILanguage[] = [
     {
       id: SupportedLanguage.ENGLISH,
       name: 'English',
-      flag: 'assets/images/mob-slider/flag-en-new.svg',
+      flag: 'assets/images/flag/flag-en-new.svg',
       ERHL: 'right',
       ELHR: 'left',
       translation: 'LANGUAGE.ENGLISH',
       direction: 'ltr',
+      currency:'INR',
       code: SupportedLanguageCode.ENGLISH,
     },
     {
       id: SupportedLanguage.HEBREW,
       name: 'Hebrew',
-      flag: 'assets/images/mob-slider/flag-he-new.svg',
+      flag: 'assets/images/flag/flag-he-new.svg',
       ERHL: 'left',
       ELHR: 'right',
       translation: 'LANGUAGE.HEBREW',
       direction: 'rtl',
+      currency:'EUR',
       code: SupportedLanguageCode.HEBREW,
     },
     {
       id: SupportedLanguage.ARABIC,
       name: 'Arabic',
-      flag: 'assets/images/mob-slider/flag-he-new.svg',
+      flag: 'assets/images/flag/flag-ar-new.svg',
       ERHL: 'left',
       ELHR: 'right',
       translation: 'LANGUAGE.ARABIC',
       direction: 'rtl',
+      currency:'AED',
       code: SupportedLanguageCode.ARABIC,
     },
 
   ];
 
-  private currentLanguage = this.languages[1];
+  private currentLanguage = this.languages[0];
   private _langChange = new BehaviorSubject(this.currentLanguage);
   switchLanguage$ = this._langChange.asObservable();
 
@@ -69,7 +72,10 @@ export class LanguageService {
     this.translate.addLangs([
       SupportedLanguageCode.HEBREW,
       SupportedLanguageCode.ENGLISH,
+      SupportedLanguageCode.ARABIC,
     ]);
+    console.log('service', this.currentLanguage);
+
     this.translate.setDefaultLang(this.currentLanguage.code);
     this._langChange.next(this.currentLanguage);
   }
