@@ -8,17 +8,27 @@ const routes: Routes = [
     component: CoreComponent,
     children: [
       {
-        path:'home',
-        loadChildren: () => import('../core/home/home.module').then((m)=> m.HomeModule)
+        path: 'home',
+        loadChildren: () => import('../core/home/home.module').then((m) => m.HomeModule)
       },
       {
-          path: '',
-          loadChildren: () => import('../core/home/home.module').then((m) => m.HomeModule
-          )
-        }
+        path: 'about',
+        loadChildren: () => import('../core/about/about.module').then((m) =>
+          m.AboutModule)
+      },
+      {
+        path: 'cart',
+        loadChildren: () => import('../core/cart/cart.module').then((m) =>
+          m.CartModule)
+      },
+      {
+        path: '',
+        loadChildren: () => import('../core/home/home.module').then((m) => m.HomeModule
+        )
+      }
     ]
   },
-  
+
 ];
 
 @NgModule({

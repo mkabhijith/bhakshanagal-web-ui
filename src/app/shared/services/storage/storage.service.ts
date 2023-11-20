@@ -4,6 +4,8 @@ import { SupportedLanguage } from '../../types/language.type';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class StorageService {
 
   constructor() { }

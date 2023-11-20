@@ -15,6 +15,7 @@ export interface ILanguage {
     flag: string;
     ERHL: string;
     ELHR: string;
+    currency:string
     translation: string;
     direction: 'ltr' | 'rtl';
     code: SupportedLanguageCode;
