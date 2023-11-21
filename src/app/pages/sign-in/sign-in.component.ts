@@ -7,7 +7,7 @@ import {FormGroup,FormControl,Validators} from '@angular/forms'
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent {
-  title = "Log In Page"
+  
   loginForm = new FormGroup({
     user:new FormControl("",[Validators.required,Validators.minLength(4)]),
     password:new FormControl("",[Validators.required,Validators.minLength(4)])
