@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     loadChildren: () =>
       import('./pages/core/core.module').then(
         (m) => m.CoreModule
       )
   },
   {
-    path: 'signin',
+    path: '',
     loadChildren: () =>
       import('./pages/sign-in/sign-in.module').then(
         (m) => m.SignInModule
@@ -18,10 +18,10 @@ const routes: Routes = [
   },
   {
     path: 'signup',
-    loadChildren: ()=>
-    import('./pages/sign-up/sign-up.module').then(
-      (m)=>m.SignUpModule
-    )
+    loadChildren: () =>
+      import('./pages/sign-up/sign-up.module').then(
+        (m) => m.SignUpModule
+      )
   }
 ];
 

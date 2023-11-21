@@ -23,7 +23,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 50px;
+                gap: 40px;
 
                 .login{
                     display: flex;
@@ -64,7 +64,9 @@
             }
             .checkbox-container{
                 display: flex;
-                justify-content: space-between;
+                width: 100%;
+                justify-content:space-between ;
+                
             }
         }
 }

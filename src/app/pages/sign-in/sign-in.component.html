@@ -3,15 +3,15 @@
 
    </div>
    <div class="right-login">
-    <div class="sub-right">
-        <h1>SIGN-IN</h1>
+    <form class="sub-right" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <h1>LOG-IN</h1>
    <div class="login">
     <label for="email">Email Adress</label>
-    <input type="email" id="email" placeholder="email@gmail.com">
+    <input type="email" id="email" placeholder="email@gmail.com" formControlName="user">
    </div>
    <div class="login">
     <label for="password">Passowrd</label>
-    <input type="password" id="password" placeholder="*********">
+    <input type="password" id="password" placeholder="*********" formControlName="password">
    </div>
    <div class="checkbox-container">
       <div>
@@ -22,9 +22,9 @@
          Forget Passowrd?
       </div>
    </div>
-   <button>sign-in</button>
-   <span>Dont Have An Account?Signup</span>
-    </div>
+   <button>Log-in</button>
+   <span>Dont Have An Account? <span routerLink="/signup">Register</span> </span>
+</form>
     
    </div>  
 </div>

@@ -23,7 +23,6 @@
 
 html {
   height: 100%;
-  // overflow: hidden;
   overflow-x: hidden;
 }
 
@@ -33,29 +32,5 @@ body {
   margin: 0px;
 }
 
-
-// body ::-webkit-scrollbar {
-//   width: 7px;
-//   height: 7px;
-// }
-
-/* Track */
-// body ::-webkit-scrollbar-track {
-//   background: #f1f1f1;
-//   border-radius: 3.5px;
-//   // margin: 20px 0;
-// }
-
-/* Handle */
-// body ::-webkit-scrollbar-thumb {
-//   // background: #888;
-//   background-color: rgba(0, 0, 0, 0.5025);
-//   border-radius: 3.5px;
-// }
-
-/* Handle on hover */
-// body ::-webkit-scrollbar-thumb:hover {
-//   background: rgb(143, 143, 143);
-// }
 
 ::-webkit-scrollbar { display: none; }
