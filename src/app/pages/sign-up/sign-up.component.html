@@ -1,34 +1,66 @@
 <div class="login-container">
-    <div class="left-login">
-      
-    </div>
-    <div class="right-login">
-     <form class="sub-right" [formGroup]="registerForm"] (ngSubmit)="registerUser()">
-         <h1>Register</h1>
-    <div class="login">
-     <label for="email">Email Adress</label>
-     <input type="email" id="email" placeholder="email@gmail.com" formControlName="users">
-    </div>
-    <div class="login">
-     <label for="password">Passowrd</label>
-     <input type="password" id="password" placeholder="*********" formControlName="passwords">
-    </div>
-    <div class="login">
-      <label for="Confirm-password">Confirm Passowrd</label>
-      <input type="password" id="Confirm-password" placeholder="*********" formControlName="confirmPassword">
-     </div>
-    <div class="checkbox-container">
-       <div>
-          <input type="checkbox" id="checkbox">
-          <label for="checkbox">I agree to the <span>Terms of Service and <span>Privacy Policy</span></span></label>
-       </div>
-      
-    </div>
-    <button>sign-in</button>
-    
-    <div>Already have and account?<span routerLink="">Login</span></div>
-     </form>
-     
+   <div class="left-login">
 
-    </div>  
- </div> 
+   </div>
+   <div class="right-login">
+      <form class="sub-right" [formGroup]="registerForm"  (ngSubmit)="registerUser()">
+         <h1>Register</h1>
+         <div class="login">
+            <label for="email">Email Adress</label>
+            <input type="email" id="email" placeholder="email@gmail.com" formControlName="users">
+         </div>
+         <div class="login">
+            <label for="password">Passowrd</label>
+            <input type="password" id="password" placeholder="*********" formControlName="passwords">
+         </div>
+         <div class="login">
+            <label for="Confirm-password">Confirm Passowrd</label>
+            <input type="password" id="Confirm-password" placeholder="*********" formControlName="confirmPassword">
+         </div>
+         <div class="checkbox-container">
+            <div>
+               <input type="checkbox" id="checkbox">
+               <label for="checkbox">I agree to the <span>Terms of Service and <span>Privacy
+                        Policy</span></span></label>
+            </div>
+
+         </div>
+         <button>sign-in</button>
+
+         <div>Already have and account?<span routerLink="">Login</span></div>
+      </form>
+
+      <div class="left-login">
+
+      </div>
+      <div class="right-login">
+         <form class="sub-right" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+            <h1>Register</h1>
+            <div class="login">
+               <label for="email">Email Adress</label>
+               <input type="email" id="email" placeholder="email@gmail.com" formControlName="users">
+            </div>
+            <div class="login">
+               <label for="password">Passowrd</label>
+               <input type="password" id="password" placeholder="*********" formControlName="passwords">
+            </div>
+            <div class="login">
+               <label for="Confirm-password">Confirm Passowrd</label>
+               <input type="password" id="Confirm-password" placeholder="*********" formControlName="confirmPassword">
+            </div>
+            <div class="checkbox-container">
+               <div>
+                  <input type="checkbox" id="checkbox">
+                  <label for="checkbox">I agree to the <span>Terms of Service and <span>Privacy
+                           Policy</span></span></label>
+               </div>
+
+            </div>
+            <button>sign-in</button>
+            path: 'signup',
+            <div>Already have and account?<span routerLink="">Login</span></div>
+         </form>
+
+
+      </div>
+   </div>
