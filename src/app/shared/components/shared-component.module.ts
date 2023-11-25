@@ -10,13 +10,17 @@ import { CardComponent } from './card/card.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { BadgeModule } from 'primeng/badge';
+import { PrimaryButtonComponent } from './buttons/primary-button/primary-button.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
     LanguageSelectorComponent,
-    CardComponent
+    CardComponent,
+    PrimaryButtonComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,8 @@ import { BadgeModule } from 'primeng/badge';
   ],
   exports: [
     NavbarComponent,
-    LanguageSelectorComponent
+    LanguageSelectorComponent,
+    PrimaryButtonComponent
   ],
 })
 export class SharedComponentModule { }

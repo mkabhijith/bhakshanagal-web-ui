@@ -1,26 +1,27 @@
-<div
-  class="language-selector-container"
-  (clickElsewhere)="onHideDropdown()"
->
-  <!-- <div class="title">{{ "LOGIN.LANGUAGE" | translate }}:</div> -->
-  <div class="language-details" (click)="onDropdown()">
+<div class="language-selector-container" (clickElsewhere)="onHideDropdown()">
+  <div class="language-details">
     <div class="icon rk-caret-down"></div>
-    <div class="flag">
-      <img [src]="currentLanguage.flag" alt="language" />
+    <div class="flag" (click)="onCountryDropdown()">
+      <img [src]="currentCountry.flag" alt="language" />
     </div>
-    <div class="language-selected">
+    <div class="language-selected" (click)="onDropdown()">
       {{ currentLanguage.translation | translate }}
     </div>
   </div>
 
-  <div class="languages-dropdown" [ngClass]="{ active: show }">
-    <div
-      class="available-language"
-      *ngFor="let language of languageArray"
-      (click)="onLanguageChange(language.id)"
-    >
-      <div class="flag"><img [src]="language.flag" /></div>
-      <div class="name">{{ language.translation | translate }}</div>
+  <div class="languages-dropdown" [ngClass]="{ active: showLanguage }">
+    <div class="available-language" *ngFor="let language of currentCountry.languages" (click)="onLanguageChange(language.id)">
+      <div class="name">{{ language.name | translate }}</div>
+    </div>
+  </div>
+
+  <div class="countrys-dropdown" [ngClass]="{ active: showCountry }">
+
+    <div class="available-country" *ngFor="let country of countryArray" (click)="onCountryChange(country.id)">
+    
+      <div class="flag"><img [src]="country.flag" /></div>
+      <div class="name">{{ country.name | translate }}</div>
+
     </div>
   </div>
 </div>

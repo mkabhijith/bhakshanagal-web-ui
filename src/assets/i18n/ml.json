@@ -1,11 +1,12 @@
 {
     "LOGIN": {
-        "LANGUAGE": "Language"
+        "LANGUAGE": "ഭാഷ"
     },
     "LANGUAGE": {
         "ENGLISH": "EN",
-        "HEBREW": "Hebrew",
+        "HINDI": "Hebrew",
         "ARABIC": "Arabic",
+        "MALAYALAM": "ML",
         "_": "Language"
     },
     "NAVBAR": {

@@ -14,12 +14,11 @@ type IKesherNavBar = {
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
-
 export class NavbarComponent {
-  constructor(private languageService: LanguageService) { }
-  languages!: ILanguage[];
+  constructor(private languageService: LanguageService) {}
+ 
   currentLanguage!: ILanguage;
 
   languageSubscription!: Subscription;
@@ -36,25 +35,33 @@ export class NavbarComponent {
       title: 'NAVBAR.ABOUT',
       route: 'about',
     },
-  ]
+    // {
+    //   id: 3,
+    //   title :'NAVBAR.CANCEL_ORDERS',
+    //   route :''
+    // }
+  ];
 
   form = new FormGroup({
     searchTerm: new FormControl(''),
   });
 
-  searchTerm :any ;
-  values: any = 0
+  searchTerm: any;
+  values: any = 0;
 
   ngOnInit(): void {
-    this.searchTermControl.valueChanges.pipe(debounceTime(300)).subscribe((res)=>{
-      console.log('debounce time ',res);
-      
-    })
+    this.searchTermControl.valueChanges
+      .pipe(debounceTime(300))
+      .subscribe((res) => {
+        console.log('debounce time ', res);
+      });
+    this.languageSubscription = this.languageService.switchLanguage$.subscribe({
+      next: (res) => {
+        this.currentLanguage = res;
+      },
+    });
   }
   get searchTermControl() {
     return this.form.controls['searchTerm'];
   }
- 
-
-
 }
