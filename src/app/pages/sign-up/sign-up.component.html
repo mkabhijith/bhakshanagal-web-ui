@@ -1,21 +1,33 @@
-<div class="login-container">
-   <div class="left-login">
-
+<div class="sign-up-container">
+   <div class="left-sign-up">
    </div>
-   <div class="right-login">
-      <form class="sub-right" [formGroup]="registerForm"  (ngSubmit)="registerUser()">
+   <div class="right-sign-up">
+      <div class="error" *ngIf="passwordMismatch">password mis match  </div>
+      <form class="sub-right" [formGroup]="registerForm" (ngSubmit)="registerUser()">
          <h1>Register</h1>
-         <div class="login">
+         <div class="sign-up">
+            <label for="name">User name</label>
+            <input type="text"  class="input-field" placeholder="UserName" formControlName="name">
+         </div>
+         <div class="sign-up">
             <label for="email">Email Adress</label>
-            <input type="email" id="email" placeholder="email@gmail.com" formControlName="users">
+            <input type="email" id="email" class="input-field" placeholder="email@gmail.com" formControlName="user">
          </div>
-         <div class="login">
+         <div class="sign-up">
             <label for="password">Passowrd</label>
-            <input type="password" id="password" placeholder="*********" formControlName="passwords">
+            <div class="password-container">
+               <input [type]="showPassword ? 'text': 'password'" id="password" class="password" placeholder="*********" formControlName="password">
+               <i [class]="showPassword ? 'pi pi-eye' : 'pi pi-eye-slash '" (click)="onTogglePasswordVisibility()"></i>
+            </div>
          </div>
-         <div class="login">
+         <div class="sign-up">
             <label for="Confirm-password">Confirm Passowrd</label>
-            <input type="password" id="Confirm-password" placeholder="*********" formControlName="confirmPassword">
+            <div class="password-container">
+               <input [type]="showConfirmPassword ? 'text' :'password'" class="password" id="Confirm-password"
+                  placeholder="*********" formControlName="confirmPassword">
+               <i [class]="showConfirmPassword ? 'pi pi-eye' : 'pi pi-eye-slash '"
+                  (click)="onToggleConfirmPasswordVisibility()"></i>
+            </div>
          </div>
          <div class="checkbox-container">
             <div>
@@ -25,9 +37,8 @@
             </div>
 
          </div>
-         <button>sign-in</button>
-         path: 'signup',
-         <div>Already have and account?<span routerLink="">Login</span></div>
+         <app-primary-button type="submit">sign-up</app-primary-button>
+         <div>Already have and account?<span routerLink="/signin">Login</span></div>
       </form>
 
 
