@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     loadChildren: () =>
       import('./pages/core/core.module').then(
         (m) => m.CoreModule
       )
   },
   {
-    path: '',
+    path: 'signin',
     loadChildren: () =>
       import('./pages/sign-in/sign-in.module').then(
         (m) => m.SignInModule
@@ -22,7 +22,12 @@ const routes: Routes = [
       import('./pages/sign-up/sign-up.module').then(
         (m) => m.SignUpModule
       )
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
