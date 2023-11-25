@@ -8,7 +8,7 @@ import { SharedComponentModule } from 'src/app/shared/components/shared-componen
 
 @NgModule({
   declarations: [
-    CoreComponent,  
+    CoreComponent,
   ],
   imports: [
     CommonModule,
