@@ -13,7 +13,7 @@ export class SignUpComponent {
     confirmPassword:new FormControl('')
   })
   registerUser(){
-    console.warn(this.registerForm.value)
+    // console.warn(this.registerForm.value)
     
   }
 

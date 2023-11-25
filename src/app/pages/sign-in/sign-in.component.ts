@@ -13,7 +13,7 @@ export class SignInComponent {
     password:new FormControl("",[Validators.required,Validators.minLength(4)])
   })
   loginUser(){
-    console.warn(this.loginForm.value)
+    // console.warn(this.loginForm.value)
     
   }
 }
