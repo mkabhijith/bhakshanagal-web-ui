@@ -1,6 +1,16 @@
 .login-container{
     min-height: 100vh;
     display: flex;
+    @media(max-width:680px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+    }
+    @media(max-width:370px){
+        padding: 20px;
+        gap: 20px;
+    }
 
         .left-login{
            width: 50%;
@@ -8,6 +18,9 @@
            background-image: url("https://i.pinimg.com/564x/35/d7/ba/35d7bac4defc646a9914b6fe01cd2c16.jpg");
            background-repeat: no-repeat;
            background-size: cover;
+           @media(max-width:680px){
+            display: none;
+        }
         }
 
         .right-login{
@@ -17,6 +30,10 @@
             align-items: center;
             text-align: center;
             width: 50%;
+
+            @media(max-width:680px){
+                width: 100%;
+            }
             
 
             .sub-right{
@@ -25,11 +42,21 @@
                 align-items: flex-start;
                 gap: 40px;
 
+                @media(max-width:680px){
+                    width: 100%;
+                }
+                @media(max-width:370px){
+                    width: 100%;
+                }
+
                 .login{
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 10px;
+                    @media(max-width:680px){
+                        width: 100%;
+                    }
 
                     input{
                         width: 500px;
@@ -40,6 +67,19 @@
                         outline: none;
                         cursor: pointer;
                         border-radius: 5px;
+
+                        @media(max-width:1100px){
+                            width: 400px;
+                        }
+                        @media(max-width:900px){
+                            width: 250px;
+                        }
+                        @media(max-width:680px){
+                            width: 100%;
+                        }
+                        @media(max-width:370px){
+                            width: 250px;
+                        }
                     }
                 }
                 button{
@@ -60,11 +100,45 @@
                     background-color: rgb(210, 13, 13);
 
                     }
+                    @media(max-width:1100px){
+                        width: 400px;
+                    }
+                    @media(max-width:900px){
+                        width: 250px;
+                    }
+                    @media(max-width:680px){
+                        width: 100%;
+                    }
+                    @media(max-width:370px){
+                        width: 250px;
+                        // text-align: start;
+                    }
+                }
+                .policy{
+                    display: flex;
+                    gap: 10px;
+                    @media(max-width:900px){
+                        width: 250px;
+                    }
+                    @media(max-width:680px){
+                        width: 100%;
+                        gap: 1px;
+                        
+                    }
+                    @media(max-width:370px){
+                        width: 200px;
+                        // text-align: start;
+                    }
                 }
             }
             .checkbox-container{
                 display: flex;
                 justify-content: space-between;
+                @media(max-width:370px){
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                }
             }
         }
 }   
