@@ -1,37 +1,86 @@
-<div class="login-container">
-   <div class="left-login">
-
-   </div>
-   <div class="right-login">
-      <form class="sub-right" [formGroup]="registerForm"  (ngSubmit)="registerUser()">
-         <h1>Register</h1>
-         <div class="login">
-            <label for="email">Email Adress</label>
-            <input type="email" id="email" placeholder="email@gmail.com" formControlName="users">
-         </div>
-         <div class="login">
-            <label for="password">Passowrd</label>
-            <input type="password" id="password" placeholder="*********" formControlName="passwords">
-         </div>
-         <div class="login">
-            <label for="Confirm-password">Confirm Passowrd</label>
-            <input type="password" id="Confirm-password" placeholder="*********" formControlName="confirmPassword">
-         </div>
-         <div class="checkbox-container">
-            <div class="policy">
-               <input type="checkbox" id="checkbox">
-               <label for="checkbox">I agree to the <span>Terms of Service and <span>Privacy
-                        Policy</span></span></label>
-            </div>
-
-         </div>
-         <div class="login">
-            <button>sign-in</button>
-
-            <div>Already have and account?<span routerLink="">Login</span></div>
-         </div>
+<div class="sign-up-container">
+  <div class="left-sign-up"></div>
+  <div class="right-sign-up">
+    <form
+      class="sub-right"
+      [formGroup]="registerForm"
+      (ngSubmit)="registerUser()"
+    >
+      <h1>Register</h1>
+      <div class="input-container">
+        <div class="label">
+          <label for="name">User name</label>
+        </div>
+        <input
+          type="text"
+          class="input-field"
+          placeholder="UserName"
+          formControlName="name"
+        />
+      </div>
+      <div class="input-container">
+        <div class="label">
+          <label for="email">Email Adress</label>
+        </div>
+        <input
+          type="email"
+          id="email"
+          class="input-field"
+          placeholder="email@gmail.com"
+          formControlName="user"
+        />
+      </div>
+      <div class="input-container">
+        <div class="label">
+          <label for="password">Passowrd</label>
+        </div>
+        <div class="password-container">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            class="password"
+            placeholder="*********"
+            formControlName="password"
+          />
+          <i
+            [class]="showPassword ? 'pi pi-eye' : 'pi pi-eye-slash '"
+            (click)="onTogglePasswordVisibility()"
+          ></i>
+        </div>
+      </div>
+      <div class="input-container">
+        <div class="label">
+          <label for="Confirm-password">Confirm Passowrd</label>
+        </div>
+        <div class="password-container">
+          <input
+            [type]="showConfirmPassword ? 'text' : 'password'"
+            class="password"
+            id="Confirm-password"
+            placeholder="*********"
+            formControlName="confirmPassword"
+          />
+          <i
+            [class]="showConfirmPassword ? 'pi pi-eye' : 'pi pi-eye-slash '"
+            (click)="onToggleConfirmPasswordVisibility()"
+          ></i>
+        </div>
+        <div class="error" *ngIf="passwordMismatch">Please make sure your passwords match</div>
    
-      </form>
-
-    
-   </div>
+      </div>
+      <div class="checkbox-container">
+        <div class="policy">
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox"
+            >I agree to the
+            <span>Terms of Service and <span>Privacy Policy</span></span></label
+          >
+        </div>
+      </div>
+      <app-primary-button type="submit">sign-up</app-primary-button>
+      <div>
+        Already have and account?<span routerLink="/signin">Login</span>
+      </div>
+    </form>
+  </div>
+</div>

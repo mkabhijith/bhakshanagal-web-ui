@@ -6,16 +6,17 @@
     <div class="product-list">
 
 
-        <p-card header="{{item.productName}}" subheader="Card Subheader" *ngFor="let item of list">
+        <p-card header="{{item.productName}}" subheader="{{item.quantity}}" *ngFor="let item of list">
             <ng-template pTemplate="header">
                 <img alt="Card" src="{{item.imageUrl}}" />
             </ng-template>
             <!-- <p>
                 {{item.productName}}
             </p> -->
-            <p>{{item.price | currency:currency}}</p>
+            <p>{{item.price /currencyValue | currency:currency}}</p>
             <ng-template pTemplate="footer">
-                <p-button label="Buy Now"></p-button>
+                <p-button label="Buy Now" 
+                (onClick)="navigateProducy(item.id)"></p-button>
                 <p-button label="Cart" icon="pi pi-shopping-cart" styleClass="p-button-secondary"
                     [style]="{ 'margin-left': '.5em' }"></p-button>
             </ng-template>

@@ -1,0 +1,42 @@
+<!-- <div class="account-container">
+    <div class="account">
+        <div class="user-icon">
+
+            <i class="pi pi-user"></i>
+        </div>
+        <span class="text">solo</span>
+    </div>
+    <div class="profile-dropdown">
+        <div class="list">
+            <span class="item">Profile</span>
+            <span class="item">your Order</span>
+            <span class="item">Log out</span>
+        </div>
+    </div>
+</div> -->
+
+<div class="account-container" (clickElsewhere)="onHideDropdown()">
+    <div class="account-details" (click)="onDropdown()">
+        <div class="user-icon">
+            <i class="pi pi-user"></i>
+        </div>
+        <div class="user">
+            account
+        </div>
+    </div>
+
+    <div class="account-dropdown" [ngClass]="{ active: show }">
+        <div class="available-list">
+            <i class="pi pi-user"></i>
+            <div class="name">Account</div>
+        </div>
+        <div class="available-list">
+            <i class="pi pi-cart-plus"></i>
+            <div class="name" routerLink="orders">Orders</div>
+        </div>
+        <div class="available-list" (click)="logOut()">
+            <i class="pi pi-sign-out"></i>
+            <div class="name">Log Out</div>
+        </div>
+    </div>
+</div>

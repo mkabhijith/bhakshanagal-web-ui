@@ -1,0 +1,19 @@
+.primary-button {
+  width: calc(100% - 35%);
+  height: 50px;
+  padding: 20px;
+  border: none;
+  background-color: rgb(210, 52, 52);
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:focus {
+    background-color: rgb(210, 13, 13);
+  }
+}

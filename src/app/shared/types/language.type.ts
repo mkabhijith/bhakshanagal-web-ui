@@ -1,21 +1,21 @@
 export enum SupportedLanguage {
-    ENGLISH, // 0
-    HEBREW, // 1
-    ARABIC
+    ENGLISH, // 0 
+    ARABIC, //1
+    HINDI, //2
+    MALAYALAM //3
 }
 export enum SupportedLanguageCode {
     ENGLISH = 'en',
-    HEBREW = 'he',
-    ARABIC = 'ar'
+    ARABIC = 'ar',
+    HINDI = 'hi',
+    MALAYALAM ='ml'
 }
 
 export interface ILanguage {
     id: SupportedLanguage;
     name: string;
-    flag: string;
     ERHL: string;
     ELHR: string;
-    currency:string
     translation: string;
     direction: 'ltr' | 'rtl';
     code: SupportedLanguageCode;
