@@ -1,12 +1,12 @@
 @import "../../../styles/style.scss";
 
 .login-container {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-
+  overflow: hidden;
   .left-login {
     width: 50%;
-    height: 100vh;
+    height: 100%;
     background-image: url("https://i.pinimg.com/564x/a2/92/b3/a292b3f149e3f3a3e002313e43922dcf.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,7 +24,7 @@
     text-align: center;
     width: 50%;
 
-    @media screen and (max-width:680px) {
+    @media screen and (max-width: 680px) {
       width: 100%;
     }
 
@@ -36,23 +36,27 @@
       text-align: center;
       gap: 40px;
       width: 100%;
-
+      h1 {
+        margin: 0;
+      }
       .input-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        width: 100%;
+        width: calc(100% - 35%);
 
-       
+        @media screen and (max-width: 520px) {
+          width: calc(100% - 20%);
+        }
         .label {
-          width: calc(100% - 35%);
+          width: 100%;
           display: flex;
           align-items: flex-start;
         }
 
         .password-container {
-          width: calc(100% - 35%);
+          width: 100%;
           height: 50px;
           border: 1px solid rosybrown;
           background-color: rgb(243, 221, 221);
@@ -70,7 +74,6 @@
             border: none;
             cursor: pointer;
           }
-        
         }
       }
 
@@ -79,13 +82,16 @@
         width: calc(100% - 35%);
         justify-content: space-between;
 
-        @media (max-width: 370px) {
+        @media screen and (max-width: 370px) {
           flex-direction: column;
           align-items: flex-start;
           gap: 20px;
         }
+        @media screen and (max-width: 520px) {
+          width: calc(100% - 20%);
+        }
       }
-      app-primary-button{
+      app-primary-button {
         width: 100%;
         display: contents;
       }
