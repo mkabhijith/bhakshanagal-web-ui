@@ -16,4 +16,7 @@
   &:focus {
     background-color: rgb(210, 13, 13);
   }
+  @media screen and (max-width: 520px) {
+    width: calc(100% - 20%);
+  }
 }
