@@ -1,0 +1,75 @@
+@import "src/styles/color";
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 66px;
+    // background-color: #131921;
+    background-color: #ffffff;
+    color: #000000;
+    align-items: center;
+    padding: 0 2.8rem;
+    width: 100%;
+
+    .navbar-left {
+        display: flex;
+        align-items: center;
+        // gap: 35px;
+
+        .bhakshanam-logo {
+            width: 78px;
+            height: 57px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        
+    }
+
+    .navbar-right {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        .search-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 25px;
+            height: 41px;
+            width: 521px;
+            padding: 18px;
+            // background-color: #f0f2f5;
+            border: 1px solid gray;
+
+
+            .text {
+                outline: none;
+                border: #f0f2f5;
+                width: 100%;
+                // background-color: #f0f2f5;
+            }
+            .pi{
+                color: #131921;
+            }
+        }
+
+        .navbar-tabs {
+            display: flex;
+            gap: 30px;
+
+            .nav-tab {
+
+                &.active {
+                    color: $orange-primary;
+                }
+            }
+        }
+    }
+}
+
+.navbar-container.ar{
+    direction: rtl;
+}

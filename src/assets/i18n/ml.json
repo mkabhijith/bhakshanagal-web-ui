@@ -1,0 +1,17 @@
+{
+    "LOGIN": {
+        "LANGUAGE": "ഭാഷ"
+    },
+    "LANGUAGE": {
+        "ENGLISH": "EN",
+        "HINDI": "Hebrew",
+        "ARABIC": "Arabic",
+        "MALAYALAM": "ML",
+        "_": "Language"
+    },
+    "NAVBAR": {
+        "HOME": "Home",
+        "ABOUT": "About",
+        "CANCEL_ORDERS": "Order"
+    }
+}

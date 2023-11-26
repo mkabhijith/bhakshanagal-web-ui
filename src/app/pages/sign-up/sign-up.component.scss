@@ -1,0 +1,94 @@
+@import "../../../styles/style.scss";
+
+.sign-up-container {
+  min-height: 100vh;
+  display: flex;
+
+  .left-sign-up {
+    width: 50%;
+    height: 100vh;
+    background-image: url("https://i.pinimg.com/564x/35/d7/ba/35d7bac4defc646a9914b6fe01cd2c16.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: 680px) {
+      display: none;
+    }
+  }
+
+  .right-sign-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+
+    @media screen and (max-width: 680px) {
+      width: 100%;
+    }
+    h1 {
+      margin: 0;
+    }
+    .sub-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      gap: 35px;
+
+      .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        .label {
+          width: calc(100% - 35%);
+          display: flex;
+          align-items: flex-start;
+        }
+        .password-container {
+          width: calc(100% - 35%);
+          height: 50px;
+          border: 1px solid rosybrown;
+          background-color: rgb(243, 221, 221);
+          cursor: pointer;
+          padding: 0 20px;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .password {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(243, 221, 221);
+            outline: none;
+            border: none;
+            cursor: pointer;
+          }
+        }
+        .error {
+          display: flex;
+          width: calc(100% - 35%);
+          color: red;
+        }
+      }
+      .checkbox-container {
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 35%);
+        @media (max-width: 370px) {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+        }
+      }
+      app-primary-button {
+        width: 100%;
+        display: contents;
+      }
+    }
+  }
+}

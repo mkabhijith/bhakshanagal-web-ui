@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+// *{
+//     padding: 0;
+//     margin: 0;
+//     box-sizing: border-box;
+// }
+/* styles.css or styles.scss */
+
+@import url('https://fonts.googleapis.com/css?family=YourFont');
+
+// body {
+//   font-family: 'YourFont', sans-serif;
+//   /* You can also adjust other font properties here, such as font-size, font-weight, etc. */
+// }
+// img{
+//   width: 100%;
+//   height: 100%;
+// }
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Assistant", sans-serif;
+  color: #474747;
+  margin: 0px;
+}
+
+
+::-webkit-scrollbar { display: none; }

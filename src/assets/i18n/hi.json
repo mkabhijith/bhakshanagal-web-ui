@@ -1,0 +1,15 @@
+{
+    "LOGIN": {
+        "LANGUAGE": "שפה"
+    },
+    "LANGUAGE": {
+        "ENGLISH": "אנגלית",
+        "HINDI": "עברית",
+        "ARABIC": "ARABIC",
+        "_": "שפה"
+    },
+    "NAVBAR": {
+        "HOME": "בית",
+        "ABOUT": "על אודות"
+    }
+}
