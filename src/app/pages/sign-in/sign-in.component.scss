@@ -3,16 +3,6 @@
 .login-container {
   min-height: 100vh;
   display: flex;
-  @media (max-width: 680px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-  }
-  @media (max-width: 370px) {
-    padding: 20px;
-    gap: 20px;
-  }
 
   .left-login {
     width: 50%;
@@ -34,6 +24,10 @@
     text-align: center;
     width: 50%;
 
+    @media screen and (max-width:680px) {
+      width: 100%;
+    }
+
     .sub-right {
       display: flex;
       flex-direction: column;
@@ -41,23 +35,24 @@
       align-items: center;
       text-align: center;
       gap: 40px;
-      @media (max-width: 680px) {
-        width: 100%;
-      }
+      width: 100%;
 
-
-      .login {
+      .input-container {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 10px;
-        @media (max-width: 680px) {
-          width: 100%;
+        width: 100%;
+
+       
+        .label {
+          width: calc(100% - 35%);
+          display: flex;
+          align-items: flex-start;
         }
 
         .password-container {
-          // width: 500px;
-          width: calc(100% - 2.375rem);
+          width: calc(100% - 35%);
           height: 50px;
           border: 1px solid rosybrown;
           background-color: rgb(243, 221, 221);
@@ -75,24 +70,13 @@
             border: none;
             cursor: pointer;
           }
-          @media (max-width: 1100px) {
-            width: 400px;
-          }
-          @media (max-width: 900px) {
-            width: 250px;
-          }
-          @media (max-width: 680px) {
-            width: 100%;
-          }
-          @media screen and (max-width: 370px) {
-            width: 250px;
-          }
+        
         }
       }
 
       .checkbox-container {
         display: flex;
-        width: 100%;
+        width: calc(100% - 35%);
         justify-content: space-between;
 
         @media (max-width: 370px) {
@@ -100,6 +84,10 @@
           align-items: flex-start;
           gap: 20px;
         }
+      }
+      app-primary-button{
+        width: 100%;
+        display: contents;
       }
     }
   }

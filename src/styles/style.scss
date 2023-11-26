@@ -1,5 +1,5 @@
 .input-field {
-  width: 500px;
+  width: calc(100% - 35%);
   height: 50px;
   padding: 20px;
   border: 1px solid rosybrown;
@@ -7,16 +7,4 @@
   outline: none;
   cursor: pointer;
   border-radius: 5px;
-  @media (max-width: 1100px) {
-    width: 400px;
-  }
-  @media (max-width: 900px) {
-    width: 250px;
-  }
-  @media (max-width: 680px) {
-    width: 100%;
-  }
-  @media (max-width: 370px) {
-    width: 250px;
-  }
 }
