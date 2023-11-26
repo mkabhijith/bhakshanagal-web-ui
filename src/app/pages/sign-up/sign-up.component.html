@@ -1,7 +1,6 @@
 <div class="sign-up-container">
   <div class="left-sign-up"></div>
   <div class="right-sign-up">
-    <div class="error" *ngIf="passwordMismatch">password mis match</div>
     <form
       class="sub-right"
       [formGroup]="registerForm"
@@ -66,6 +65,8 @@
             (click)="onToggleConfirmPasswordVisibility()"
           ></i>
         </div>
+        <div class="error" *ngIf="passwordMismatch">Please make sure your passwords match</div>
+   
       </div>
       <div class="checkbox-container">
         <div class="policy">
