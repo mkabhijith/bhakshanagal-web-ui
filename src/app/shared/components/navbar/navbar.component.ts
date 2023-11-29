@@ -4,7 +4,7 @@ import { ILanguage } from '../../types/language.type';
 import { Subscription, debounceTime } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
 
-type IKesherNavBar = {
+type INavBar = {
   id: number;
   title: string;
   icon?: string;
@@ -23,7 +23,7 @@ export class NavbarComponent {
 
   languageSubscription!: Subscription;
 
-  linksForNavbar: IKesherNavBar[] = [
+  linksForNavbar: INavBar[] = [
     {
       id: 0,
       title: 'NAVBAR.HOME',

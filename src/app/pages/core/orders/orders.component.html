@@ -1,14 +1,36 @@
-
-<p-timeline [value]="events">
-    <ng-template pTemplate="content" let-event>
-        {{ event.status }}
-    </ng-template>
-</p-timeline>
-
-<!-- <div class="container">
-    <span *ngFor="let item of counts;let i = index">
-      <span class="circle-desc" [class.circle-desc-active]="orderStatus == item">{{ item }}</span>
-      <span class="circles" [class.active]="orderStatus == item"></span>
-      <span class="bar" *ngIf="(i != counts.length-1)"></span>
-    </span>
-    </div> -->
+<div class="orders--container">
+  <p-toast></p-toast>
+  <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+  <div class="order-container">
+    <div class="heading"><h1>Your Orders</h1></div>
+  </div>
+  <div class="order-box" *ngFor="let item of products">
+    <div class="order-image-details">
+      <div class="image">
+        <img
+          [src]="item.imageUrl"alt=""
+        />
+      </div>
+      <div class="order-details">
+        <div class="details">
+         {{item.productName}}
+        </div>
+        <div class="quantity">{{item.quantity}}</div>
+      </div>
+    </div>
+    <div class="price">{{item.price | currency:'INR'}}</div>
+    <div class="order-status-container">
+      <div class="order-status">
+        <div class="status-icon"></div>
+        <span>order placed</span>
+      </div>
+      <div class="order-action">
+        <p-button
+          label="Cancel Order"
+          (onClick)="confirm1()"
+          styleClass="p-button-raised p-button-text p-button-warning"
+        ></p-button>
+      </div>
+    </div>
+  </div>
+</div>

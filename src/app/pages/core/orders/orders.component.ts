@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home/home.service';
 import { StorageService } from 'src/app/shared/services/storage/storage.service';
+import { OrdersService } from './orders.service';
+import { ConfirmEventType, ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-orders',
@@ -8,21 +10,36 @@ import { StorageService } from 'src/app/shared/services/storage/storage.service'
   styleUrls: ['./orders.component.scss'],
 })
 export class OrdersComponent {
-  constructor(private homeService: HomeService, private storageService:StorageService) {}
-  products :any[]= [];
-  events!: any[];
-  
-  public counts = ["Recieved","In Progress","Ready for Billing",
-  "Billed","Order Closed"];
-  public orderStatus = "Ready for Billing"
+  constructor(
+    private orderservice: OrdersService,
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService
+  ) 
+  {}
+  products: any[] = [];
+
   ngOnInit() {
-    this.products = this.homeService.getList()
-    // this.storageService.getProducts().then((data) => (this.products = data.slice(0, 5)));
-    this.events = [
-      { status: 'Ordered', date: '15/10/2020 10:30', icon: 'pi pi-shopping-cart', color: '#9C27B0', image: 'game-controller.jpg' },
-      { status: 'Processing', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: '#673AB7' },
-      { status: 'Shipped', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: '#FF9800' },
-      { status: 'Delivered', date: '16/10/2020 10:00', icon: 'pi pi-check', color: '#607D8B' }
-  ];
+    this.products = this.orderservice.returnOrderList();
+  }
+  confirm1() {
+   
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to cancel order?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+          this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted' });
+      },
+      reject: (type: any) => {
+          switch (type) {
+              case ConfirmEventType.REJECT:
+                  this.messageService.add({ severity: 'error', summary: 'Rejected', detail: 'You have rejected' });
+                  break;
+              case ConfirmEventType.CANCEL:
+                  this.messageService.add({ severity: 'warn', summary: 'Cancelled', detail: 'You have cancelled' });
+                  break;
+          }
+      }
+    });
   }
 }
