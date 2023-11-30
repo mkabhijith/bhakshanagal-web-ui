@@ -5,7 +5,7 @@
     justify-content: space-between;
     height: 66px;
     // background-color: #131921;
-    background-color: #ffffff;
+    background-color: #e8b2b2;
     color: #000000;
     align-items: center;
     padding: 0 2.8rem;
@@ -37,22 +37,27 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-radius: 25px;
             height: 41px;
             width: 521px;
             padding: 18px;
+            position: relative;
             // background-color: #f0f2f5;
-            border: 1px solid gray;
+            // border: 1px solid gray;
 
 
             .text {
                 outline: none;
                 border: #f0f2f5;
                 width: 100%;
+                border-radius: 10px;
+                margin-right: 5px;
+                padding: 10px;
                 // background-color: #f0f2f5;
             }
             .pi{
                 color: #131921;
+                position: absolute;
+                right: 40px;
             }
         }
 

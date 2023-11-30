@@ -1,0 +1,88 @@
+
+.cart-container{
+    background-color: lightgray;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+    gap: 10px;
+    padding: 50px 100px;
+    
+    .adress{
+        border: 1px solid rosybrown;
+        border-radius: 5px;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 50px;
+        padding-top: 90px;
+        gap: 10px;
+        position: relative;
+        
+        h3{
+            position: absolute;
+            top: 10px;
+            left: 50px;
+    
+        }
+        .adress-box{
+            box-shadow: 5px 5px 5px 5px rgba(237, 127, 127, 0.1);
+            display: flex;
+            padding: 10px;
+            padding-left: 20px;
+            gap: 20px;
+            
+            .icon{
+                width: 20px;
+                .pi::before{
+                    font-size: 23px;
+                    font-weight: 400;
+                    padding-top: 20px;
+                }
+                #map{
+                    padding-top: 17px;
+                }
+             
+               
+            }
+            .adress-details{
+                max-width: 300px;
+                h2{
+                    font-size: 20px;
+                }
+                .estimated-time{
+                    margin-bottom: 20px;
+                }
+                button{
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    background-color: rgb(229, 188, 188);
+                    border: 1px solid rgb(242, 142, 142);
+                    font-size: 15px;
+                    font-weight: 540;
+                }
+            }
+        }
+    }
+     .cart-card{
+        border-radius: 5px;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid rosybrown;
+        .cart-snack{
+            display: flex;
+            justify-content: space-between;
+            // justify-content: center;
+            align-items: center;
+            .snack-image{
+                width: 80px;
+                height: 80px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px;
+                }
+            }
+
+        }
+    }
+}
