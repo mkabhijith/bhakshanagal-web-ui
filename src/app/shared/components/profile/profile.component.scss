@@ -1,0 +1,60 @@
+@import "/src/styles/color";
+
+.account-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem 0.5rem;
+
+  position: relative;
+
+  .title {
+    padding-right: 1rem;
+    font-weight: 300;
+  }
+
+  .account-details {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+  }
+
+  .user {
+    font-weight: 300;
+  }
+
+  .account-dropdown {
+    display: none;
+    position: absolute;
+    top: 1.9rem;
+    right: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: black;
+    width: max-content;
+
+    .available-list {
+      display: flex;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f0f2f5;
+      }
+
+      .pi {
+        margin: 0 0.5rem 0 0;
+      }
+
+      .name {
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+}

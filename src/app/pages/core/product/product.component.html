@@ -1,0 +1,50 @@
+<div class="main-container">
+  <div class="image">
+    <img [src]="[product.imageUrl]" alt="" />
+  </div>
+  <div class="details">
+    <div class="heading">
+      <h3>{{ product.productName }}</h3>
+    </div>
+    <div class="price">{{ product.price | currency : "INR" }}</div>
+    <div class="quantity">{{ product.quantity }}</div>
+    <div class="description">
+      {{ product.description }}
+    </div>
+    <div class="product-status">
+      <p>status :</p>
+      <p-tag
+        [severity]="product.status ? 'success' : 'danger'"
+        [value]="product.status ? 'InStock' : 'OutOfStock'"
+      ></p-tag>
+    </div>
+    <div class="key-features">
+      <div class="shipping" *ngIf="product.freeDelivary">
+        <i class="pi pi-tag" style="color: slateblue"></i>
+        <div>Eligible for free delivary</div>
+      </div>
+      <div class="shipping" *ngIf="product.Refundable">
+        <i class="pi pi-tag" style="color: slateblue"></i>
+        <div>Eligible for Return and refund</div>
+      </div>
+      <div class="shipping">
+        <i class="pi pi-tag" style="color: slateblue"></i>
+        <div>Cash on delivery available</div>
+      </div>
+      <div class="shipping">
+        <i class="pi pi-tag" style="color: slateblue"></i>
+        <div>international shipping available</div>
+      </div>
+    </div>
+    <div class="footer">
+      <p-button label="Buy Now" severity="warning" styleClass="" [disabled]="!product.status"></p-button>
+      <p-button
+        label="cart"
+        class="p-button-success"
+        severity="secondary"
+        styleClass="p-button-warning"
+        icon="pi pi-shopping-cart"
+      ></p-button>
+    </div>
+  </div>
+</div>

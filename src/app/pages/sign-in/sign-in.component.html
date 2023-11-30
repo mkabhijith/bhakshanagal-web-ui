@@ -1,33 +1,47 @@
 <div class="login-container">
-   <div class="left-login">
-
-   </div>
-   <div class="right-login">
+  <div class="left-login"></div>
+  <div class="right-login">
     <form class="sub-right" [formGroup]="loginForm" (ngSubmit)="loginUser()">
-        <h1>LOG-IN</h1>
-   <div class="login">
-    <label for="email">Email Adress</label>
-    <input type="email" id="email" placeholder="email@gmail.com" formControlName="user">
-   </div>
-   <div class="login">
-    <label for="password">Passowrd</label>
-    <input type="password" id="password" placeholder="*********" formControlName="password">
-   </div>
-   <div class="checkbox-container">
-      <div>
-         <input type="checkbox" id="checkbox">
-         <label for="checkbox">Keep me logged in</label>
+      <h1>LOG-IN</h1>
+      <div class="input-container">
+        <div class="label">
+          <label for="email">Email Adress</label>
+        </div>
+        <input
+          type="email"
+          class="input-field"
+          placeholder="email@gmail.com"
+          formControlName="user"
+        />
       </div>
-      <div>
-         Forget Passowrd?
+      <div class="input-container">
+        <div class="label">
+          <label for="password">Passowrd</label>
+        </div>
+        <div class="password-container">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            class="password"
+            placeholder="*********"
+            formControlName="password"
+          />
+          <i
+            [class]="showPassword ? 'pi pi-eye' : 'pi pi-eye-slash '"
+            (click)="onTogglePasswordVisibility()"
+          ></i>
+        </div>
       </div>
-   </div>
-   <div class="login">
-      <button>Log-in</button>
-   <span>Dont Have An Account? <span routerLink="/signup">Register</span> </span>
-   </div>
-   
-</form>
-    
-   </div>  
+      <div class="checkbox-container">
+        <div>
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox">Keep me logged in</label>
+        </div>
+        <div>Forget Passowrd?</div>
+      </div>
+      <app-primary-button type="submit">Log-in</app-primary-button>
+      <span
+        >Dont Have An Account? <span routerLink="/signup">Register</span>
+      </span>
+    </form>
+  </div>
 </div>

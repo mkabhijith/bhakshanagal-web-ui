@@ -21,10 +21,16 @@
     .icon {
       font-size: 0.75rem;
     }
+
+    .flag {
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
 
   .language-selected {
-    // color: $kesher-blue-twelve;
     font-weight: 300;
   }
 
@@ -37,6 +43,7 @@
     border-radius: 4px;
     background-color: #ffffff;
     color: black;
+    width: max-content;
 
     .available-language {
       display: flex;
@@ -47,8 +54,48 @@
         background-color: #f0f2f5;
       }
 
+      // .flag {
+      //   margin: 0 0.5rem 0 0;
+      // }
+
+      .name {
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .countrys-dropdown {
+    display: none;
+    position: absolute;
+    top: 1.9rem;
+    right: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: black;
+    width: max-content;
+
+    .available-country {
+      display: flex;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f0f2f5;
+      }
+
       .flag {
         margin: 0 0.5rem 0 0;
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
       }
 
       .name {

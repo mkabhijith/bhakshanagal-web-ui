@@ -1,6 +1,6 @@
-<div class="navbar-container">
+<div class="navbar-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
     <div class="navbar-left">
-        <div class="bhakshanam-logo">
+        <div class="bhakshanam-logo" routerLink="home">
             <img src="/assets/images/logo_6-removebg-preview.png" alt="bhakshanam-logo">
         </div>
 
@@ -22,12 +22,6 @@
             <i class="pi pi-shopping-cart" pBadge [value]='values' style="font-size: 2rem" severity="success"></i>
         </div>
         <app-language-selector></app-language-selector>
-        <div class="account">
-            <div class="user-icon">
-
-                <i class="pi pi-user"></i>
-            </div>
-            <span class="text">solo</span>
-        </div>
+        <app-profile></app-profile>
     </div>
 </div>

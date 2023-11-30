@@ -72,27 +72,9 @@
                 }
             }
         }
-
-        .account {
-            display: flex;
-            gap: 5px;
-            align-items: center;
-
-            .user-icon {
-                border: 1px solid gray;
-                border-radius: 50%;
-                padding: 2px;
-            }
-
-            .pi-shopping-cart {
-                font-size: 20px;
-            }
-
-            .pi {
-                font-size: 20px;
-            }
-
-           
-        }
     }
+}
+
+.navbar-container.ar{
+    direction: rtl;
 }

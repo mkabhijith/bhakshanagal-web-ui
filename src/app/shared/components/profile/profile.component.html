@@ -1,0 +1,25 @@
+<div class="account-container" (clickElsewhere)="onHideDropdown()">
+  <div class="account-details" (click)="onDropdown()">
+    <div class="user-icon">
+      <i class="pi pi-user"></i>
+    </div>
+    <div class="user">account</div>
+  </div>
+
+  <div class="account-dropdown" [ngClass]="{ active: show }">
+    <div
+      class="available-list"
+      *ngFor="let item of profileActionArray"
+      [routerLink]="[item.route]"
+      (click)="onHideDropdown()"
+    >
+      <i [class]="item.icon"></i>
+      <div class="name" routerLink="orders">{{ item.name }}</div>
+    </div>
+
+    <div class="available-list" (click)="logOut()">
+      <i class="pi pi-sign-out"></i>
+      <div class="name">Log Out</div>
+    </div>
+  </div>
+</div>

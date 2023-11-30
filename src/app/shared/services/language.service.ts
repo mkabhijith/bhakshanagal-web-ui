@@ -15,36 +15,39 @@ export class LanguageService {
   private languages: ILanguage[] = [
     {
       id: SupportedLanguage.ENGLISH,
-      name: 'English',
-      flag: 'assets/images/flag/flag-en-new.svg',
+      name: 'English (EN)',
       ERHL: 'right',
       ELHR: 'left',
       translation: 'LANGUAGE.ENGLISH',
       direction: 'ltr',
-      currency:'INR',
       code: SupportedLanguageCode.ENGLISH,
     },
     {
-      id: SupportedLanguage.HEBREW,
-      name: 'Hebrew',
-      flag: 'assets/images/flag/flag-he-new.svg',
-      ERHL: 'left',
-      ELHR: 'right',
-      translation: 'LANGUAGE.HEBREW',
-      direction: 'rtl',
-      currency:'EUR',
-      code: SupportedLanguageCode.HEBREW,
-    },
-    {
       id: SupportedLanguage.ARABIC,
-      name: 'Arabic',
-      flag: 'assets/images/flag/flag-ar-new.svg',
+      name: 'Arabic (AR)',
       ERHL: 'left',
       ELHR: 'right',
       translation: 'LANGUAGE.ARABIC',
       direction: 'rtl',
-      currency:'AED',
       code: SupportedLanguageCode.ARABIC,
+    },
+    {
+      id: SupportedLanguage.HINDI,
+      name: 'Hindi (HI)',
+      ERHL: 'right',
+      ELHR: 'left',
+      translation: 'LANGUAGE.HINDI',
+      direction: 'ltr',
+      code: SupportedLanguageCode.HINDI,
+    },
+    {
+      id: SupportedLanguage.MALAYALAM,
+      name: 'Malayalam (ML)',
+      ERHL: 'right',
+      ELHR: 'left',
+      translation: 'LANGUAGE.MALAYALAM',
+      direction: 'ltr',
+      code: SupportedLanguageCode.MALAYALAM,
     },
 
   ];
@@ -54,25 +57,12 @@ export class LanguageService {
   switchLanguage$ = this._langChange.asObservable();
 
   init() {
-    // const lastUsedLanguageId = this.storageService.languageId;
-
-    // switch (lastUsedLanguageId) {
-    //   case SupportedLanguage.ENGLISH:
-    //   case SupportedLanguage.HEBREW:
-    //     this.currentLanguage = this.findLanguage(lastUsedLanguageId)!;
-    //     this.setLanguage(lastUsedLanguageId);
-    //     break;
-
-    //   default:
-    //     this.currentLanguage = this.languages[1];
-    //     this.setLanguage(SupportedLanguage.HEBREW);
-    //     break;
-    // }
 
     this.translate.addLangs([
-      SupportedLanguageCode.HEBREW,
       SupportedLanguageCode.ENGLISH,
       SupportedLanguageCode.ARABIC,
+      SupportedLanguageCode.HINDI,
+      SupportedLanguageCode.MALAYALAM
     ]);
     console.log('service', this.currentLanguage);
 
@@ -89,6 +79,7 @@ export class LanguageService {
     this.setLanguage(lang);
     this._langChange.next(this.currentLanguage);
   }
+
   getAllLanguages() {
     return this.languages;
   }

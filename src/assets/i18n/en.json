@@ -3,13 +3,14 @@
         "LANGUAGE": "Language"
     },
     "LANGUAGE": {
-        "ENGLISH": "English",
+        "ENGLISH": "EN",
         "HEBREW": "Hebrew",
         "ARABIC": "Arabic",
         "_": "Language"
     },
     "NAVBAR": {
         "HOME": "Home",
-        "ABOUT": "About"
+        "ABOUT": "About",
+        "CANCEL_ORDERS": "Order"
     }
 }
