@@ -30,6 +30,7 @@ export class NavbarComponent {
       title: 'NAVBAR.HOME',
       route: 'home',
     },
+   
 
     {
       id: 2,

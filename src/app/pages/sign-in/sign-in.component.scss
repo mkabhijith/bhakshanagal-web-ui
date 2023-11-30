@@ -10,6 +10,7 @@
     @media(max-width:370px){
         padding: 20px;
         gap: 20px;
+        align-items: center;
     }
 
         .left-login{
@@ -114,7 +115,7 @@
                     }
                     @media(max-width:370px){
                         width: 250px;
-                        // text-align: start;
+                        text-align: start;
                     }
                     
                   

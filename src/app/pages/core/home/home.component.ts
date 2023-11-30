@@ -32,7 +32,7 @@ export class HomeComponent {
     setInterval(() => {
       this.currentAdIndex++
 
-      console.log('settimeout works', this.currentAdIndex);
+      // console.log('settimeout works', this.currentAdIndex);
     }, 3000);
 
 
