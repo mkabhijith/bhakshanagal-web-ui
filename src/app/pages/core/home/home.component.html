@@ -14,7 +14,7 @@
                 {{item.productName}}
             </p> -->
             <p>{{item.price /currencyValue | currency:currency}}</p>
-            <p-rating [cancel]="false"></p-rating>
+            <p-rating [cancel]="false" [(ngModel)]="ratingValue"></p-rating>
             <ng-template pTemplate="footer">
                 <p-button label="Buy Now" 
                 (onClick)="navigateProduct(item.id)"></p-button>
