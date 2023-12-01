@@ -1,1 +1,124 @@
-<p>cart works!</p>
+    <div class="cart-container">
+      <div class="adress">
+        <h3>choose your delivery address</h3>
+        <div class="adress-box">
+          <div class="icon">
+            <i class="pi pi-home" style="font-size: 2.5rem"></i>
+          </div>
+          <div class="adress-details">
+            <h2>Home</h2>
+            <p>near hotel karthika park kazhakkoottam trivandrum,695584</p>
+            <div class="estimated-time">10mins</div>
+            <button>DELIVER HERE</button>
+          </div>
+        </div>
+        <div class="adress-box">
+          <div class="icon">
+            <i class="pi pi-home" style="font-size: 2.5rem"></i>
+          </div>
+          <div class="adress-details">
+            <h2>Other</h2>
+            <p>near hotel karthika park kazhakkoottam trivandrum,695584</p>
+            <div class="estimated-time">10mins</div>
+            <button>DELIVER HERE</button>
+          </div>
+        </div>
+        <div class="adress-box">
+          <div class="icon">
+            <i class="pi pi-briefcase" style="font-size: 2.5rem"></i>
+          </div>
+          <div class="adress-details">
+            <h2>Work</h2>
+            <p>near hotel karthika park kazhakkoottam trivandrum,695584</p>
+            <div class="estimated-time">10mins</div>
+            <button>DELIVER HERE</button>
+          </div>
+        </div>
+        <div class="adress-box">
+          <div class="icon">
+            <i class="pi pi-map-marker" id="map"></i>
+          </div>
+          <div class="adress-details">
+            <h2>Add New Address Here</h2>
+            <p style="margin-bottom: 50px">
+              near hotel karthika park kazhakkoottam trivandrum,695584
+            </p>
+            <button>ADD NEW</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="cart-card">
+        <ng-container *ngIf="false" >
+        <div class="watchlist">
+        <div class="cart-snack">
+          <div style="display: flex; align-items: center; gap: 20px">
+            <div class="snack-image">
+              <img
+                src="https://static.toiimg.com/photo/101353978.cms"
+                alt="snack"
+              />
+            </div>
+            <div class="snack-name"><b>chilli cheese</b></div>
+          </div>
+          <div class="quantity-box">
+            <div class="subtract"><i style="font-size: 10px;" class="pi pi-minus"></i>
+            </div>
+            <div class="count">1</div>
+            <div class="add"><b><i style="font-size: 10px;" class="pi pi-plus"></i>
+            </b></div>
+          </div>
+          <div class="total-amoun">$500</div>
+        </div>
+        <div class="cart-snack">
+            <div style="display: flex; align-items: center; gap: 20px">
+              <div class="snack-image">
+                <img
+                  src="https://static.toiimg.com/photo/101353978.cms"
+                  alt="snack"
+                />
+              </div>
+              <div class="snack-name"><b>chilli cheese</b></div>
+            </div>
+            <div class="quantity-box">
+              <div class="subtract"><i style="font-size: 10px;" class="pi pi-minus"></i>
+              </div>
+              <div class="count">1</div>
+              <div class="add"><b><i style="font-size: 10px;" class="pi pi-plus"></i>
+              </b></div>
+            </div>
+            <div class="total-amoun">$500</div>
+          </div>
+      </div> 
+      <div class="bill-details">
+        <input type="text" class="suggestion-box" placeholder="any suggestions or request">
+        <div class="checkbox">
+            <input type="checkbox" >
+            <div class="details">If you are not well, kinldy click the box for no contact delivery</div>
+        </div>
+        <div class="bill-amount">
+           <b>Bill Details</b>
+           <div class="amount">
+            <h5>Item Total</h5>
+            <h5>$1000</h5>
+           </div>
+        </div>
+        <div class="delivery-fee">
+             <h5>Delivery partner fee</h5>
+             <h5><span>Free</span></h5>
+        </div>
+        <div class="Total-amount">
+            <h5>Total</h5>
+            <h5><span>$</span></h5>
+       </div>
+      </div> 
+    </ng-container>
+    <div *ngIf="true" class="empty-cart">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-5521508-4610092.png" alt="empty cart">
+            <b> Your cart is empty</b>
+            <button>Shop now</button>
+    </div>
+    </div>
+            
+    </div>
