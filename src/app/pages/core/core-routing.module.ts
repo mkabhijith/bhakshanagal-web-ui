@@ -35,6 +35,13 @@ const routes: Routes = [
           import('../core/orders/orders.module').then((m) => m.OrdersModule),
       },
       {
+        path: 'orderDetails/:id',
+        loadChildren: () =>
+          import('../core/orders/order-details/order-details.module').then(
+            (m) => m.OrderDetailsModule
+          ),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',

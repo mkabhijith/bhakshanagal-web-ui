@@ -21,6 +21,7 @@
 
   .user {
     font-weight: 300;
+    display: block;
   }
 
   .account-dropdown {
@@ -55,6 +56,16 @@
 
     &.active {
       display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .account-container {
+    .account-details {
+   .user{
+    display: none;
+   }
     }
   }
 }
