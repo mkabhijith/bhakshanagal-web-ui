@@ -13,7 +13,8 @@ import { BadgeModule } from 'primeng/badge';
 import { PrimaryButtonComponent } from './buttons/primary-button/primary-button.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SpinnerComponent } from './spinner/spinner.component';
-
+import { SidebarModule } from 'primeng/sidebar';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { SpinnerComponent } from './spinner/spinner.component';
     InputTextModule,
     RouterModule,
     ReactiveFormsModule,
-    BadgeModule
+    BadgeModule,
+    SidebarModule,
+    ButtonModule
   ],
   exports: [
     NavbarComponent,

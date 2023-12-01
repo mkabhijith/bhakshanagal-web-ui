@@ -1,27 +1,75 @@
 <div class="navbar-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
+  <div class="navbar-left">
+    <div class="bhakshanam-logo" routerLink="home">
+      <img
+        src="/assets/images/logo_6-removebg-preview.png"
+        alt="bhakshanam-logo"
+      />
+    </div>
+  </div>
+  <div class="navbar-right">
+    <div class="search-box" [formGroup]="form">
+      <input
+        type="text"
+        class="text"
+        name="search"
+        formControlName="searchTerm"
+      />
+      <i class="pi pi-search"></i>
+    </div>
+    <div class="navbar-tabs">
+      <div
+        class="nav-tab"
+        *ngFor="let link of linksForNavbar"
+        [routerLink]="[link.route]"
+        routerLinkActive="active"
+      >
+        <span>{{ link.icon }}</span>
+        <span class="title">{{ link.title | translate }}</span>
+      </div>
+    </div>
+    <div class="cart" routerLink="/cart">
+      <i
+        class="pi pi-shopping-cart"
+        pBadge
+        [value]="values"
+        style="font-size: 2rem"
+        severity="success"
+      ></i>
+    </div>
+    <app-language-selector></app-language-selector>
+    <app-profile></app-profile>
+  </div>
+</div>
+<!-- mobile design start here  -->
+<div class="navbar-container-for-mobile">
+  <div class="navbar-top">
     <div class="navbar-left">
-        <div class="bhakshanam-logo" routerLink="home">
-            <img src="/assets/images/logo_6-removebg-preview.png" alt="bhakshanam-logo">
-        </div>
-
-
+      <p-sidebar [(visible)]="sidebarVisible1" position="left">
+        <h3>Left Sidebar</h3>
+      </p-sidebar>
+      <i class="p-toolbar-separator pi pi-bars mr-2" style="vertical-align: middle" (click)="sidebarVisible1=true"></i>
+      <div class="bhakshanam-logo" routerLink="home">
+        <img
+          src="/assets/images/logo_6-removebg-preview.png"
+          alt="bhakshanam-logo"
+        />
+      </div>
     </div>
     <div class="navbar-right">
-        <div class="search-box" [formGroup]="form">
-            <input type="text" class="text" name="search" formControlName="searchTerm">
-            <i class="pi pi-search"></i>
-        </div>
-        <div class="navbar-tabs">
-            <div class="nav-tab" *ngFor="let link of linksForNavbar" [routerLink]="[link.route]"
-                routerLinkActive="active">
-                <span>{{link.icon}}</span>
-                <span class="title">{{ link.title | translate}}</span>
-            </div>
-        </div>
-        <div class="cart" routerLink="/cart">
-            <i class="pi pi-shopping-cart" pBadge [value]='values' style="font-size: 2rem" severity="success"></i>
-        </div>
-        <app-language-selector></app-language-selector>
-        <app-profile></app-profile>
+      <app-language-selector></app-language-selector>
+      <app-profile></app-profile>
     </div>
+  </div>
+  <div class="navbar-bottom">
+    <div class="search-box" [formGroup]="form">
+      <input
+        type="text"
+        class="text"
+        name="search"
+        formControlName="searchTerm"
+      />
+      <i class="pi pi-search"></i>
+    </div>
+  </div>
 </div>
