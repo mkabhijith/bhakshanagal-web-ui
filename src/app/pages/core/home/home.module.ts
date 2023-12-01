@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { RatingModule } from 'primeng/rating';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ButtonModule } from 'primeng/button';
     HomeRoutingModule,
     TranslateModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    RatingModule
   ]
 })
 export class HomeModule { }

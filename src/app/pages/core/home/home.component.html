@@ -14,9 +14,10 @@
                 {{item.productName}}
             </p> -->
             <p>{{item.price /currencyValue | currency:currency}}</p>
+            <p-rating [cancel]="false"></p-rating>
             <ng-template pTemplate="footer">
                 <p-button label="Buy Now" 
-                (onClick)="navigateProducy(item.id)"></p-button>
+                (onClick)="navigateProduct(item.id)"></p-button>
                 <p-button label="Cart" icon="pi pi-shopping-cart" styleClass="p-button-secondary"
                     [style]="{ 'margin-left': '.5em' }"></p-button>
             </ng-template>

@@ -1,75 +1,155 @@
 @import "src/styles/color";
 
 .navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 66px;
+  background-color: rgb(247, 247, 160);
+  color: #000000;
+  align-items: center;
+  padding: 0 2.8rem;
+  width: 100%;
+
+  .navbar-left {
     display: flex;
-    justify-content: space-between;
-    height: 66px;
-    // background-color: #131921;
-    background-color: #ffffff;
-    color: #000000;
     align-items: center;
-    padding: 0 2.8rem;
-    width: 100%;
 
-    .navbar-left {
-        display: flex;
-        align-items: center;
-        // gap: 35px;
+    .bhakshanam-logo {
+      width: 78px;
+      height: 57px;
 
-        .bhakshanam-logo {
-            width: 78px;
-            height: 57px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    .search-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 25px;
+      height: 41px;
+      width: 521px;
+      padding: 18px;
+      background-color: #ffffff;
+      border: 1px solid gray;
 
-        
+      .text {
+        outline: none;
+        border: #f0f2f5;
+        width: 100%;
+      }
+      .pi {
+        color: #131921;
+      }
     }
 
-    .navbar-right {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        .search-box {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 25px;
-            height: 41px;
-            width: 521px;
-            padding: 18px;
-            // background-color: #f0f2f5;
-            border: 1px solid gray;
+    .navbar-tabs {
+      display: flex;
+      gap: 30px;
 
-
-            .text {
-                outline: none;
-                border: #f0f2f5;
-                width: 100%;
-                // background-color: #f0f2f5;
-            }
-            .pi{
-                color: #131921;
-            }
+      .nav-tab {
+        &.active {
+          color: $orange-primary;
         }
-
-        .navbar-tabs {
-            display: flex;
-            gap: 30px;
-
-            .nav-tab {
-
-                &.active {
-                    color: $orange-primary;
-                }
-            }
-        }
+      }
     }
+  }
 }
 
-.navbar-container.ar{
-    direction: rtl;
+.navbar-container-for-mobile {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px;
+  background-color: rgb(247, 247, 160);
+  color: #000000;
+  align-items: center;
+  width: 100%;
+  .navbar-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      .pi-bars {
+        padding: 0 15px;
+      }
+      .bhakshanam-logo {
+        width: 78px;
+        height: 57px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-right: 10px;
+      // width: 215px;
+    }
+  }
+  .navbar-bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 15px;
+    .search-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 25px;
+      height: 41px;
+      width: 80%;
+      padding: 18px;
+      background-color: #ffffff;
+      border: 1px solid gray;
+
+      .text {
+        outline: none;
+        border: #f0f2f5;
+        width: 100%;
+      }
+      .pi {
+        color: #131921;
+      }
+    }
+  }
+}
+
+.navbar-container.ar {
+  direction: rtl;
+}
+
+@media screen and (max-width: 1180px) {
+  .navbar-container {
+    .navbar-right {
+      .search-box {
+        width: 350px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 980px) {
+  .navbar-container {
+    display: none;
+    .navbar-right {
+      display: none;
+    }
+  }
+  .navbar-container-for-mobile {
+    display: flex;
+  }
 }

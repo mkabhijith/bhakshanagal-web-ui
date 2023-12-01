@@ -16,7 +16,7 @@ export class OrdersService {
       quantity: '175g',
     },
     {
-      id: 1,
+      id: 2,
       imageUrl: '/assets/images/food/Kuzhalappam.jpg',
       productName: 'Kuzhalappam',
       price: 75,

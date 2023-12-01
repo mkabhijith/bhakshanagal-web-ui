@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HomeService } from './home.service';
-import { LanguageService } from 'src/app/shared/services/language.service';
 
-import { Subscription } from 'rxjs';
 import { CountryOrginService } from 'src/app/shared/services/country-orgin.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -27,12 +26,10 @@ export class HomeComponent {
   ngOnInit() {
     this.currencyService.switchCountry$.subscribe({
       next: (latestCurrecy) => {
-        console.log('LatestCurrecy', latestCurrecy);
         this.currencyValue = latestCurrecy.exchangeRate;
         this.currency = latestCurrecy.currency;
       }
     })
-
 
     setInterval(() => {
       this.currentAddIndex++
@@ -40,9 +37,6 @@ export class HomeComponent {
 
 
     this.list = this.homeService.getList()
-
-
-
   }
 
   ngOnDestroy() {
@@ -55,7 +49,7 @@ export class HomeComponent {
     }
     return this.adLists[this.currentAddIndex]
   }
-  navigateProducy(item:number){
+  navigateProduct(item:number){
     this.route.navigate(['/product', item])
   }
 }
