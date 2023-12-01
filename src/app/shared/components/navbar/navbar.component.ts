@@ -31,10 +31,11 @@ export class NavbarComponent {
     },
 
     {
-      id: 2,
+      id: 1,
       title: 'NAVBAR.ABOUT',
       route: 'about',
     },
+    
     // {
     //   id: 3,
     //   title :'NAVBAR.CANCEL_ORDERS',
