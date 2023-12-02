@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: CoreComponent,
-    canActivate: [authGurd],
+    // canActivate: [authGurd],
     children: [
       {
         path: 'home',
@@ -33,6 +33,13 @@ const routes: Routes = [
         path: 'orders',
         loadChildren: () =>
           import('../core/orders/orders.module').then((m) => m.OrdersModule),
+      },
+      {
+        path: 'orderDetails/:id',
+        loadChildren: () =>
+          import('../core/orders/order-details/order-details.module').then(
+            (m) => m.OrderDetailsModule
+          ),
       },
       {
         path: '',

@@ -1,57 +1,110 @@
 .main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #f0f2f5;
+
+  .offer-banner {
+    height: 500px;
+    width: 100%;
+
+    .img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .product-list {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto auto auto;
+    display: grid;
     gap: 25px;
-    background-color: #f0f2f5;
 
-    .offer-banner {
-        height: 500px;
-        width: 100%;
-
-        .img {
-            height: 100%;
-            width: 100%;
-        }
+    img {
+      width: 360px;
+      height: 276px;
     }
 
-    .product-list {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        grid-template-columns: auto auto auto;
-        display: grid;
-        gap: 25px;
-
-        img {
-            width: 360px;
-            height: 276px;
-        }
-
-        p-card {
-
-            width: 360px;
-
-
-        }
-        ::ng-deep p-card{
-            .p-card-content{
-                padding: 0;
-            }
-            .p-card-footer{
-                padding: 0;
-            }
-        }
-
+    p-card {
+      width: 360px;
     }
+    ::ng-deep p-card {
+      .p-card-content {
+        padding: 0;
+      }
+      .p-card-footer {
+        padding: 0;
+        padding-top: 5px;
+      }
+    }
+  }
 }
 
-
-
 .product-card {
-    border: 1px solid gray;
-    border-radius: 25%;
-    width: 150px;
-    height: 200px;
+  border: 1px solid gray;
+  border-radius: 25%;
+  width: 150px;
+  height: 200px;
+}
 
+@media screen and (max-width: 1210px) {
+  .main-container {
+    .product-list {
+      img {
+        width: 280px;
+      }
+      p-card {
+        width: 280px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 920px) {
+  .main-container {
+    .offer-banner {
+      height: 350px;
+    }
+    .product-list {
+      grid-template-columns: auto auto;
+      img {
+        width: 300px;
+      }
+      p-card {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .main-container {
+    .product-list {
+      .offer-banner {
+        height: 250px;
+      }
+      grid-template-columns: auto;
+      img {
+        width: 360px;
+      }
+      p-card {
+        width: 360px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+    .main-container {
+        .product-list {
+          grid-template-columns: auto;
+          img {
+            width: 280px;
+          }
+          p-card {
+            width: 280px;
+          }
+        }
+      }
 }

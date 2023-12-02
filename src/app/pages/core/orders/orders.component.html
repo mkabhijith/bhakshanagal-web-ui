@@ -5,7 +5,7 @@
     <div class="heading"><h1>Your Orders</h1></div>
   </div>
   <div class="order-box" *ngFor="let item of products">
-    <div class="order-image-details">
+    <div class="order-image-details" (click)="orderDetails(item.id)">
       <div class="image">
         <img
           [src]="item.imageUrl"alt=""
@@ -24,7 +24,7 @@
         <div class="status-icon"></div>
         <span>order placed</span>
       </div>
-      <div class="order-action">
+      <div class="order-action" >
         <p-button
           label="Cancel Order"
           (onClick)="confirm1()"

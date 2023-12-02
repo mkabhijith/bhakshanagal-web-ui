@@ -23,6 +23,7 @@ export class NavbarComponent {
 
   languageSubscription!: Subscription;
 
+  sidebarVisible1: boolean = false;
   linksForNavbar: INavBar[] = [
     {
       id: 0,
@@ -31,9 +32,9 @@ export class NavbarComponent {
     },
 
     {
-      id: 1,
-      title: 'NAVBAR.ABOUT',
-      route: 'about',
+      id: 2,
+      title: 'Orders',
+      route: 'orders',
     },
     
     // {
