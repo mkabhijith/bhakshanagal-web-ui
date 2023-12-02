@@ -36,6 +36,7 @@ export class NavbarComponent {
       title: 'Orders',
       route: 'orders',
     },
+    
     // {
     //   id: 3,
     //   title :'NAVBAR.CANCEL_ORDERS',

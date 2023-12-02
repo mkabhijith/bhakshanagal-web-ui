@@ -13,7 +13,7 @@ export class HomeComponent {
 
 
   currentAddIndex = 0;
-  adLists: string[] = ['/assets/images/food/Free PSD _ Food menu and restaurant social media cover template.jpg', '/assets/images/food/Free Vector _ Brunch banner template.jpg',
+  adLists: string[] = ['/assets/images/food/Free PSD _ Food menu and restaurant social media cover template.jpg', '/assets/images/food/Free Vector _ Brunch banner template.jpg'
   ];
 ratingValue=2.2;
 
