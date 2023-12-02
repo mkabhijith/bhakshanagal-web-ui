@@ -6,7 +6,7 @@ import { OrdersComponent } from './orders.component';
 
 import { DataViewModule } from 'primeng/dataview';
 import { ButtonModule } from 'primeng/button';
-import { TimelineModule } from 'primeng/timeline';
+// import { TimelineModule } from 'primeng/timeline';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
@@ -19,7 +19,7 @@ import { ToastModule } from 'primeng/toast';
     OrdersRoutingModule,
     DataViewModule,
     ButtonModule,
-    TimelineModule,
+    // TimelineModule,
     ConfirmDialogModule,
     ToastModule
   ],

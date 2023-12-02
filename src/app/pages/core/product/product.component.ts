@@ -7,7 +7,7 @@ import { HomeService } from '../home/home.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit{
   constructor(private route: ActivatedRoute,
     private homeService: HomeService) { }
   list !: any[];
@@ -23,7 +23,8 @@ export class ProductComponent {
       }
     })
    
-
+      window.scrollTo(0, 0);
+   
   }
  
 
