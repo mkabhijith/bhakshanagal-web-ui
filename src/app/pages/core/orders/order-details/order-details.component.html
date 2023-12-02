@@ -1,0 +1,36 @@
+<div class="order--container">
+  <div class="order--header"></div>
+  <div class="order-box">
+    <div class="order--details">
+      <div class="order-image-details">
+        <div class="order-details">
+          <div class="details">Kuzhlapam</div>
+          <div class="quantity">450g</div>
+          <div class="price">{{45 | currency:'INR'}} </div>
+        </div>
+      </div>
+      <div class="image">
+        <img
+          src="../../../../../assets/images/0cc4f2ba94b4da7f4bb0b5a2306f7add.jpg"
+        />
+      </div>
+    </div>
+    <div class="tracking-details">
+      <p-timeline [value]="events">
+        <ng-template pTemplate="content" class="p-timeline-vertical" let-event>
+          {{ event.status }}
+        </ng-template>
+      </p-timeline>
+    </div>
+    <div class="address-container">
+      <div class="heading">Shipping Details</div>
+      <div class="shipping-details">
+        <div class="name">sachu</div>
+        <div class="house-name">Lunar</div>
+        <div class="landmark">near tvm</div>
+        <div class="pin-code">KERALA: 6318888</div>
+        <div class="phone-number">Phone Number:885522331122</div>
+      </div>
+    </div>
+  </div>
+</div>

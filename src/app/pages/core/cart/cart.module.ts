@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CartRoutingModule } from './cart-routing.module';
 import { CartComponent } from './cart.component';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CartComponent } from './cart.component';
   ],
   imports: [
     CommonModule,
-    CartRoutingModule
+    CartRoutingModule,
+    ScrollPanelModule
   ]
 })
 export class CartModule { }
