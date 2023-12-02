@@ -81,10 +81,10 @@
 
 @media screen and (max-width: 660px) {
   .main-container {
+    .offer-banner {
+      height: 250px;
+    }
     .product-list {
-      .offer-banner {
-        height: 250px;
-      }
       grid-template-columns: auto;
       img {
         width: 360px;
