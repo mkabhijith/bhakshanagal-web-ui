@@ -1,10 +1,18 @@
 .cart-container {
     background-color: lightgray;
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr .5fr;
     gap: 10px;
     padding: 50px 100px;
+    @media screen and (max-width: 1100px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media screen and (max-width: 700px) {
+        padding: 20px;
+      }
+   
 }
 
 .adress {
@@ -17,6 +25,11 @@
     padding-top: 90px;
     gap: 10px;
     position: relative;
+    @media screen and (max-width: 1100px) {
+        display: none;
+      }
+  
+  
 }
 
 h3 {
@@ -31,6 +44,7 @@ h3 {
     padding: 10px;
     padding-left: 20px;
     gap: 20px;
+  
 }
 
 .icon {
@@ -57,6 +71,12 @@ h3 {
     .estimated-time {
         margin-bottom: 20px;
     }
+    .line{
+        margin-bottom: 20px;
+        width: 200px;
+        height: 21px;
+        color: rosybrown;
+    }
 
     button {
         padding: 10px 20px;
@@ -74,6 +94,9 @@ h3 {
     background-color: white;
     padding: 20px;
     border: 1px solid rosybrown;
+    @media screen and (max-width: 1100px) {
+        width: 100%;
+      }
     .watchlist{
         padding: 10px;
         border: 1px solid rosybrown;
@@ -84,6 +107,7 @@ h3 {
         flex-direction: column;
         gap: 10px;
         margin-bottom: 15px;
+       
     }
 
 .cart-snack {
@@ -94,6 +118,18 @@ h3 {
     padding: 10px;
     border-radius: 5px;
     max-height: 400px;
+    b{
+        @media screen and (max-width: 515px) {
+            
+            font-size: 15px;
+           }
+    }
+    @media screen and (max-width: 515px) {
+        border: none;
+        padding: unset;
+        // justify-content: unset;
+        // gap: 5px;
+      }
     .quantity-box{
         display: flex;
         gap: 20px;
@@ -103,8 +139,17 @@ h3 {
         align-items: center;
         justify-content: center;
         text-align: center;
+        @media screen and (max-width: 515px) {
+           gap: 10px;
+           padding: 2px 5px;
+           font-size: 5px;
+          }
       .count{
         font-size: 20px;
+        @media screen and (max-width: 515px) {
+            font-size: 15px;
+           }
+       
       }
       .subtract:hover,.add:hover{
         cursor: pointer;
@@ -122,11 +167,17 @@ h3 {
 .snack-image {
     width: 80px;
     height: 80px;
+    @media screen and (max-width: 630px) {
+        display: none;
+      }
 
     img {
         width: 100%;
         height: 100%;
         border-radius: 5px;
+        @media screen and (max-width: 630px) {
+            display: none;
+          }
     }
 }
 .bill-details{
@@ -184,9 +235,12 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     gap: 20px;
+    @media screen and (max-width: 1100px) {
+        
+      }
     img{
         width: 200px;
         height: 200px;
