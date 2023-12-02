@@ -9,7 +9,7 @@ export const authGurd: CanActivateFn = (route, state) => {
     return true;
   } else {
     alert('access denied auth')
-    router.navigate(['/signin'])
+    // router.navigate(['/signin'])
     return false
   }
 

@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: CoreComponent,
-    canActivate: [authGurd],
+    // canActivate: [authGurd],
     children: [
       {
         path: 'home',
