@@ -1,18 +1,15 @@
 .main-container {
   background-color: #f0f2f5;
   display: flex;
-  // align-items: center;
-  // padding: 12px 41px;
-  // height: 100vh;
-
+  padding: 20px;
   gap: 25px;
   width: 100%;
   justify-content: center;
   .image {
     height: 500px;
-
     img {
-      height: 500px;
+      height: 100%;
+      width: 100%;
     }
   }
   .details {
@@ -27,21 +24,35 @@
       align-items: center;
       gap: 5px;
     }
-    .price{
-        font-weight: 700;
+    .price {
+      font-weight: 700;
     }
-    .quantity{
-        color: rgb(164,150,139);
+    .quantity {
+      color: rgb(164, 150, 139);
     }
     .key-features {
       display: flex;
       flex-direction: column;
       gap: 5px;
     }
-    .footer{
-        display: flex;
-        gap: 30px;
-        margin-top: 40px;
+    .footer {
+      display: flex;
+      gap: 30px;
+      margin-top: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main-container {
+    flex-direction: column;
+    .image{
+      height: 350px;
+      width: 350px;
+    
+    }
+    .details{
+      width: auto;
     }
   }
 }

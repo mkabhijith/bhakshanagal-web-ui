@@ -1,4 +1,7 @@
 <div class="order--container">
+  <p-toast></p-toast>
+  <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
+ 
   <div class="order--header"></div>
   <div class="order-box">
     <div class="order--details">
@@ -14,6 +17,15 @@
           src="../../../../../assets/images/0cc4f2ba94b4da7f4bb0b5a2306f7add.jpg"
         />
       </div>
+    </div>
+    <div class="action-and-review-details">
+      <div class="text">Need Help? </div>
+      <div>|</div>
+      <p-button
+      label="Cancel Order"
+      (onClick)="onCancelOrder()"
+      styleClass="p-button-raised p-button-text p-button-warning"
+    ></p-button>
     </div>
     <div class="tracking-details">
       <p-timeline [value]="events">
