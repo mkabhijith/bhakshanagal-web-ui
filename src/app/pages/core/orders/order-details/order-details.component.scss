@@ -188,3 +188,30 @@
     }
   }
 }
+
+@media screen and (max-width: 420px) {
+  .order--container{
+    .order-box{
+      .order--details{
+        width: 20rem;
+        .order-image-details{
+          .order-details{
+            width: 144px;
+          }
+        }
+      }
+      .action-and-review-details{
+        display: flex;
+        width: 20rem;
+
+      }
+      .tracking-details {
+        width: 20rem;
+      }
+      .address-container {
+        width: 20rem;
+      }
+    }
+  }
+   
+}

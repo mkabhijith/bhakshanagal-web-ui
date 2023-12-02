@@ -171,3 +171,17 @@
     }
   }
 }
+@media screen and (max-width: 420px) {
+  .orders--container {
+    .order-container {
+      width: 20rem;
+    }
+    .order-box {
+      display: none;
+    }
+    .order-box-mobile {
+      display: flex;
+      width: 20rem;
+    }
+  }
+}
