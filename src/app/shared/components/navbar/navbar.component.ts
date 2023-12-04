@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { LanguageService } from '../../services/language.service';
-import { ILanguage } from '../../types/language.type';
-import { Subscription, debounceTime } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
+
+import { LanguageService } from '../../services/language.service';
+
+import { ILanguage } from '../../types/language.type';
+
+import { Subscription, debounceTime } from 'rxjs';
 
 type INavBar = {
   id: number;
@@ -18,12 +21,12 @@ type INavBar = {
 })
 export class NavbarComponent {
   constructor(private languageService: LanguageService) {}
- 
-  currentLanguage!: ILanguage;
 
+  currentLanguage!: ILanguage;
+  sliderVisible = 0;
   languageSubscription!: Subscription;
 
-  sidebarVisible1: boolean = false;
+  // sidebarVisible1: boolean = false;
   linksForNavbar: INavBar[] = [
     {
       id: 0,
@@ -36,7 +39,7 @@ export class NavbarComponent {
       title: 'Orders',
       route: 'orders',
     },
-    
+
     // {
     //   id: 3,
     //   title :'NAVBAR.CANCEL_ORDERS',
@@ -65,5 +68,8 @@ export class NavbarComponent {
   }
   get searchTermControl() {
     return this.form.controls['searchTerm'];
+  }
+  sidebarVisible(){
+    this.sliderVisible +=1
   }
 }

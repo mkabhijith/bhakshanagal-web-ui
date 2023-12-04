@@ -1,30 +1,9 @@
 <div class="main-container">
-  <div class="offer-banner">
+  <div class="offer-banner" (click)="navigateToOffers()">
     <img class="img" [src]="getPic()" alt="" />
   </div>
-  <div class="product-list">
-    <p-card
-      header="{{ item.productName }}"
-      subheader="{{ item.quantity }}"
-      *ngFor="let item of list"
-    >
-      <ng-template pTemplate="header">
-        <img alt="Card" src="{{ item.imageUrl }}" />
-      </ng-template>
-      <p>{{ item.price / currencyValue | currency : currency }}</p>
-      <p-rating [cancel]="false" [(ngModel)]="ratingValue"></p-rating>
-      <ng-template pTemplate="footer">
-        <p-button
-          label="Buy Now"
-          (onClick)="navigateProduct(item.id)"
-        ></p-button>
-        <p-button
-          label="Cart"
-          icon="pi pi-shopping-cart"
-          styleClass="p-button-secondary"
-          [style]="{ 'margin-left': '.5em' }"
-        ></p-button>
-      </ng-template>
-    </p-card>
-  </div>
+  <app-product-list
+    [dropdownItems]="list"
+    (selectBuy)="navigateProduct($event)"
+  ></app-product-list>
 </div>

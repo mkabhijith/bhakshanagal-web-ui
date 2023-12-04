@@ -5,15 +5,8 @@ import { CoreRoutingModule } from './core-routing.module';
 import { CoreComponent } from './core.component';
 import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
 
-
 @NgModule({
-  declarations: [
-    CoreComponent,
-  ],
-  imports: [
-    CommonModule,
-    CoreRoutingModule,
-    SharedComponentModule,
-  ]
+  declarations: [CoreComponent],
+  imports: [CommonModule, CoreRoutingModule, SharedComponentModule],
 })
-export class CoreModule { }
+export class CoreModule {}

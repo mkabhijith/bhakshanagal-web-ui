@@ -42,6 +42,12 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'offers',
+        loadChildren: () =>
+          import('../core/offers/offers.module').then(
+            (m) => m.OffersModule),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',

@@ -2,14 +2,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HomeService } from './home.service';
 
 import { CountryOrginService } from 'src/app/shared/services/country-orgin.service';
-import { Router,  } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   currentAddIndex = 0;
   adLists: string[] = [
     '/assets/images/food/Free PSD _ Food menu and restaurant social media cover template.jpg',
@@ -40,8 +40,7 @@ export class HomeComponent implements OnInit {
 
     this.list = this.homeService.getList();
   }
-
-  ngOnDestroy() {}
+  ngOnDestroy(): void {}
 
   getPic() {
     if (this.currentAddIndex === this.adLists.length) {
@@ -49,8 +48,12 @@ export class HomeComponent implements OnInit {
     }
     return this.adLists[this.currentAddIndex];
   }
-  navigateProduct(item: number) {
-    this.route.navigate(['/product', item], )
-
- }
+  navigateProduct(event: number) {
+    this.route.navigate(['/product', event]);
+  }
+  navigateToOffers(){
+    console.log('offer clicked');
+    
+    this.route.navigate(['/offers'])
+  }
 }
