@@ -1,0 +1,48 @@
+p-sidebar {
+  img {
+    height: 50px;
+  }
+  ::ng-deep {
+    .p-sidebar-header {
+      padding: 5px 3px 0 5px;
+      background-color: rgb(247, 247, 160);
+    }
+    .p-sidebar-content {
+      padding: 10px 0;
+      .option-container {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        gap: 5px;
+        .text {
+          padding: 5px;
+          font-weight: 700;
+          font-size: medium;
+        }
+      }
+      .p-divider {
+        margin: 0;
+      }
+    }
+    .p-sidebar-footer {
+      padding: 10px 0;
+      .option-container {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        gap: 5px;
+        .text {
+          padding: 5px;
+          font-weight: 700;
+          font-size: medium;
+        }
+      }
+      .log-out {
+        padding-left: 10px;
+      }
+      .p-divider {
+        margin: 0;
+      }
+    }
+  }
+}

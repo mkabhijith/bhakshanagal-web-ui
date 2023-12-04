@@ -10,6 +10,7 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
+import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     CardModule,
     ButtonModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    SharedComponentModule
   ]
 })
 export class HomeModule { }
