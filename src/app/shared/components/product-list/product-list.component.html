@@ -1,0 +1,23 @@
+<div class="product-list">
+  <p-card
+    header="{{ item.productName }}"
+    subheader="{{ item.quantity }}"
+    *ngFor="let item of dropdownItems"
+  >
+    <ng-template pTemplate="header">
+      <img alt="Card" [src]="item.imageUrl" />
+    </ng-template>
+    <p>
+      {{ item.price | currency : "INR" }}
+    </p>
+    <ng-template pTemplate="footer">
+      <p-button label="Buy Now" (onClick)="selectBuyOption(item.id)"></p-button>
+      <p-button
+        label="Cart"
+        icon="pi pi-shopping-cart"
+        styleClass="p-button-secondary"
+        [style]="{ 'margin-left': '.5em' }"
+      ></p-button>
+    </ng-template>
+  </p-card>
+</div>

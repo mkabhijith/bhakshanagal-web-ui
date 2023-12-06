@@ -45,10 +45,11 @@
 <div class="navbar-container-for-mobile">
   <div class="navbar-top">
     <div class="navbar-left">
-      <p-sidebar [(visible)]="sidebarVisible1" position="left">
-        <h3>Left Sidebar</h3>
-      </p-sidebar>
-      <i class="p-toolbar-separator pi pi-bars mr-2" style="vertical-align: middle" (click)="sidebarVisible1=true"></i>
+      <i
+        class="p-toolbar-separator pi pi-bars mr-2"
+        style="vertical-align: middle"
+        (click)="sidebarVisible()"
+      ></i>
       <div class="bhakshanam-logo" routerLink="home">
         <img
           src="/assets/images/logo_6-removebg-preview.png"
@@ -72,4 +73,11 @@
       <i class="pi pi-search"></i>
     </div>
   </div>
+  <app-sidebar [triggerUpdate]="sliderVisible"></app-sidebar>
+  <!-- <p-sidebar [(visible)]="sidebarVisible1" position="left">
+    <ng-template pTemplate="header"><img src="../../../../assets/images/logo_6-removebg-preview.png" alt=""></ng-template>
+    <ng-template pTemplate="content">Body Content</ng-template>
+    <ng-template pTemplate="footer">Footer Content</ng-template> -->
+  <!-- <h4>Left Sidebar</h4> -->
+  <!-- </p-sidebar> -->
 </div>

@@ -42,6 +42,30 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'offers',
+        loadChildren: () =>
+          import('../core/offers/offers.module').then((m) => m.OffersModule),
+      },
+      {
+        path: 'offers/:id',
+        loadChildren: () =>
+          import('../core/offers/offers-list/offers-list.module').then(
+            (m) => m.OffersListModule
+          ),
+      },
+      {
+        path: 'origin/:id',
+        loadChildren: () =>
+          import('../core/origin/origin.module').then((m) => m.OriginModule),
+      },
+      {
+        path: 'categorys',
+        loadChildren: () =>
+          import('../core/category/category.module').then(
+            (m) => m.CategoryModule
+          ),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',

@@ -17,7 +17,6 @@ export class ProductComponent implements OnInit{
     this.route.params.subscribe({
       next: (params) => {
         const id = params['id']
-        console.log('id', this.list);
         this.product = this.list.find((item) => item.id == id)
         // console.log('product', this.list.find((item) => item.id == id));
       }

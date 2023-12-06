@@ -25,8 +25,6 @@ export class LanguageSelectorComponent {
 
     this.languageService.switchLanguage$.subscribe((latestLanguage) => {
       this.currentLanguage = latestLanguage;
-
-
     });
 
     this.countryOrginService.switchCountry$.subscribe({
