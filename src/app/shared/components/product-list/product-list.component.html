@@ -1,8 +1,7 @@
 <div class="product-list">
   <p-card
-    header="{{item.productName}}"
-    subheader="{{item.quantity}}"
-   
+    header="{{ item.productName }}"
+    subheader="{{ item.quantity }}"
     *ngFor="let item of dropdownItems"
   >
     <ng-template pTemplate="header">

@@ -19,6 +19,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { CardModule } from 'primeng/card';
+import { SidbarCardComponent } from './sidbar-card/sidbar-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CardModule } from 'primeng/card';
     ProfileComponent,
     SpinnerComponent,
     SidebarComponent,
-    ProductListComponent
+    ProductListComponent,
+    SidbarCardComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,8 @@ import { CardModule } from 'primeng/card';
     NavbarComponent,
     LanguageSelectorComponent,
     PrimaryButtonComponent,
-    ProductListComponent
+    ProductListComponent,
+    SidbarCardComponent
   ],
 })
 export class SharedComponentModule { }

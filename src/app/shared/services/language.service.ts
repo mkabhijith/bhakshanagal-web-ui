@@ -21,6 +21,7 @@ export class LanguageService {
       translation: 'LANGUAGE.ENGLISH',
       direction: 'ltr',
       code: SupportedLanguageCode.ENGLISH,
+      image:'/assets/images/origin/Tower Bridge London.jpeg'
     },
     {
       id: SupportedLanguage.ARABIC,
@@ -30,6 +31,7 @@ export class LanguageService {
       translation: 'LANGUAGE.ARABIC',
       direction: 'rtl',
       code: SupportedLanguageCode.ARABIC,
+      image:'/assets/images/origin/Building.jpeg'
     },
     {
       id: SupportedLanguage.HINDI,
@@ -39,6 +41,7 @@ export class LanguageService {
       translation: 'LANGUAGE.HINDI',
       direction: 'ltr',
       code: SupportedLanguageCode.HINDI,
+      image:'/assets/images/origin/Taj Mahal Magnet _ Taj-mahal.jpeg'
     },
     {
       id: SupportedLanguage.MALAYALAM,
@@ -48,8 +51,18 @@ export class LanguageService {
       translation: 'LANGUAGE.MALAYALAM',
       direction: 'ltr',
       code: SupportedLanguageCode.MALAYALAM,
+      image:'/assets/images/origin/Kerala in South India house boat in backwater vector.jpeg'
     },
-
+    {
+      id: SupportedLanguage.TAMIL,
+      name: 'Tamil (TA)',
+      ERHL: 'right',
+      ELHR: 'left',
+      translation: 'LANGUAGE.TAMIL',
+      direction: 'ltr',
+      code: SupportedLanguageCode.TAMIL,
+      image:'/assets/images/origin/Chennai1.jpeg'
+    },
   ];
 
   private currentLanguage = this.languages[0];
@@ -62,7 +75,8 @@ export class LanguageService {
       SupportedLanguageCode.ENGLISH,
       SupportedLanguageCode.ARABIC,
       SupportedLanguageCode.HINDI,
-      SupportedLanguageCode.MALAYALAM
+      SupportedLanguageCode.MALAYALAM,
+      SupportedLanguageCode.TAMIL
     ]);
     console.log('service', this.currentLanguage);
 

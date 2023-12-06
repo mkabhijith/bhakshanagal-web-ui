@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { HomeService } from '../home/home.service';
-import { IProducts } from 'src/app/shared/types/product.type';
+import { OffersService } from './offers.service';
+import { IcardType } from 'src/app/shared/types/card.type';
 
 @Component({
   selector: 'app-offers',
@@ -9,10 +8,9 @@ import { IProducts } from 'src/app/shared/types/product.type';
   styleUrls: ['./offers.component.scss'],
 })
 export class OffersComponent implements OnInit {
-  constructor(private homeService: HomeService) {}
-  list!: IProducts[];
+  constructor(private offerService: OffersService) {}
+  offerList!: IcardType[];
   ngOnInit(): void {
-   this.list= this.homeService.getList();
-   window.scrollTo(0, 0);
+    this.offerList = this.offerService.getOffer();
   }
 }
