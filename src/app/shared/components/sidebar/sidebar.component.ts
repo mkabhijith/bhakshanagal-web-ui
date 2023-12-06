@@ -35,7 +35,7 @@ export class SidebarComponent {
         {
           id: 0,
           title: 'All categories',
-          route: 'categories',
+          route: 'categorys',
           icon: 'pi pi-th-large',
         },
       ],
@@ -43,13 +43,13 @@ export class SidebarComponent {
         {
           id: 0,
           title: 'choose Language',
-          route: 'language',
+          route: 'origin/language',
           icon: 'pi pi-language',
         },
         {
           id: 1,
           title: 'Choose Country',
-          route: 'country',
+          route: 'origin/country',
           icon: 'pi pi-globe',
         },
       ],
