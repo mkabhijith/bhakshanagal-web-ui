@@ -1,0 +1,30 @@
+<div class="main-container">
+  <div class="sidebar">
+    <div class="header-container">Account Name</div>
+    <div class="body--container">
+      <div class="items-container" *ngFor="let item of accountMenu">
+        <div class="title--container">
+          <i [class]="item.icon"></i>
+          <span class="title"> {{ item.title }}</span>
+        </div>
+        <p-divider></p-divider>
+        <div
+          class="items-list"
+          *ngFor="let item of item.options"
+          [routerLink]="[item.route]"
+          routerLinkActive="active"
+        >
+          <div class="item">{{ item.title }}</div>
+        </div>
+        <p-divider></p-divider>
+      </div>
+      <div class="footer-container">
+        <i class="pi pi-power-off"></i>
+        <span> LogOut </span>
+      </div>
+    </div>
+  </div>
+  <div class="right-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

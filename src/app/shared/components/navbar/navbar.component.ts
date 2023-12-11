@@ -23,7 +23,7 @@ export class NavbarComponent {
   constructor(private languageService: LanguageService) {}
 
   currentLanguage!: ILanguage;
-  sliderVisible = 0;
+  triggerSliderVisible = 0;
   languageSubscription!: Subscription;
 
   // sidebarVisible1: boolean = false;
@@ -70,6 +70,6 @@ export class NavbarComponent {
     return this.form.controls['searchTerm'];
   }
   sidebarVisible(){
-    this.sliderVisible +=1
+    this.triggerSliderVisible +=1
   }
 }

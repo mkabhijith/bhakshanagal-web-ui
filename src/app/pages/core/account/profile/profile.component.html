@@ -1,0 +1,32 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <div class="text">Personal Information</div>
+    <div class="edit" *ngIf="!onEdit" (click)="onEdit = true">Edit</div>
+    <div class="cancel" *ngIf="onEdit" (click)="onEdit = false">Cancel</div>
+  </div>
+  <div class="main-conatainer">
+    <form [formGroup]="profileForm">
+      <div class="label-field">
+        <label for="Name">Name</label>
+        <input type="text" pInputText formControlName="name" [readOnly]="!onEdit" />
+      </div>
+      <div class="label-field">
+        <label for="Email">Email</label>
+        <input type="text" pInputText formControlName="email" [readOnly]="!onEdit" />
+      </div>
+      <div class="label-field">
+        <label for="number">Mobile Number</label>
+        <p-inputNumber
+          inputId="withoutgrouping"
+          [useGrouping]="false"
+          formControlName="number"
+          [readonly]="!onEdit"
+        >
+        </p-inputNumber>
+      </div>
+      <div class="button-footer">
+        <button pButton class="p-button-warning" *ngIf="onEdit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="add-address-container">
+  <div class="caption-container">Edit address</div>
+  <div class="main-container">
+    <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+      <div class="input-box-container">
+        <div class="input-box">
+          <label for="" class="name">Name</label>
+          <input type="text" pInputText formControlName="name" />
+        </div>
+        <div class="input-box">
+          <label for="" class="name">Phone Number</label>
+          <p-inputNumber
+            inputId="withoutgrouping"
+            [useGrouping]="false"
+            formControlName="phoneNo"
+          >
+          </p-inputNumber>
+        </div>
+      </div>
+      <div class="input-box-container">
+        <div class="input-box">
+          <label for="" class="name">Pin code</label>
+          <p-inputNumber
+            inputId="withoutgrouping"
+            [useGrouping]="false"
+            formControlName="pinCode"
+          >
+          </p-inputNumber>
+        </div>
+        <div class="input-box">
+          <label for="" class="name">Locality</label>
+          <input type="text" pInputText formControlName="locality" />
+        </div>
+      </div>
+      <div class="input-box-container">
+        <div class="input-area">
+          <label for="" class="name">Address</label>
+          <textarea
+            rows="5"
+            cols="30"
+            pInputTextarea
+            formControlName="address"
+            [autoResize]="true"
+          ></textarea>
+        </div>
+      </div>
+      <div class="input-box-container">
+        <div class="input-box">
+          <label for="" class="name">City</label>
+          <input type="text" pInputText formControlName="city" />
+        </div>
+        <div class="input-box">
+          <label for="" class="name">State</label>
+          <input type="text" pInputText formControlName="state" />
+        </div>
+      </div>
+
+      <div class="input-box-container">
+        <div class="input-box">
+          <label for="" class="name">LandMark</label>
+          <input type="text" pInputText formControlName="landMark" />
+        </div>
+        <div class="input-box">
+          <label for="" class="name">Alternative Phone</label>
+          <p-inputNumber
+            inputId="withoutgrouping"
+            [useGrouping]="false"
+            formControlName="alternativeNo"
+          >
+          </p-inputNumber>
+        </div>
+      </div>
+      <div class="input-box-container">
+        <div class="address-type">
+          <p-radioButton
+            value="Home"
+            name="addressType"
+            formControlName="addressType"
+          ></p-radioButton>
+          <label for="home">Home</label>
+        </div>
+        <div class="address-type">
+          <p-radioButton
+            value="Office"
+            name="addressType"
+            formControlName="addressType"
+          ></p-radioButton>
+          <label for="home">Office</label>
+        </div>
+        <div class="address-type">
+          <p-radioButton
+            value="other"
+            name="addressType"
+            formControlName="addressType"
+          ></p-radioButton>
+          <label for="home">Other</label>
+        </div>
+      </div>
+      <div class="button-footer">
+        <button pButton class="p-button-warning" type="submit">save</button>
+        <span class="cancel" (click)="clearForm()">Cancel</span>
+      </div>
+    </form>
+  </div>
+</div>

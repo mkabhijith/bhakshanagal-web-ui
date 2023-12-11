@@ -66,6 +66,11 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'account',
+        loadChildren: () =>
+          import('../core/account/account.module').then((m) => m.AccountModule),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',

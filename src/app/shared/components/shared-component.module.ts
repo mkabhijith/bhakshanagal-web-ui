@@ -11,6 +11,9 @@ import { PrimaryButtonComponent } from './buttons/primary-button/primary-button.
 import { ProfileComponent } from './profile/profile.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { AddAddressComponent } from './add-address/add-address.component';
+import { SidbarCardComponent } from './sidbar-card/sidbar-card.component';
+import { EditDeleteButtonComponent } from './edit-delete-button/edit-delete-button.component';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { InputTextModule } from 'primeng/inputtext';
@@ -19,7 +22,9 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { CardModule } from 'primeng/card';
-import { SidbarCardComponent } from './sidbar-card/sidbar-card.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,10 @@ import { SidbarCardComponent } from './sidbar-card/sidbar-card.component';
     SpinnerComponent,
     SidebarComponent,
     ProductListComponent,
-    SidbarCardComponent
+    SidbarCardComponent,
+    AddAddressComponent,
+    EditDeleteButtonComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -43,14 +51,18 @@ import { SidbarCardComponent } from './sidbar-card/sidbar-card.component';
     SidebarModule,
     ButtonModule,
     DividerModule,
-    CardModule
+    CardModule,
+    InputNumberModule,
+    InputTextareaModule,
+    RadioButtonModule
   ],
   exports: [
     NavbarComponent,
     LanguageSelectorComponent,
     PrimaryButtonComponent,
     ProductListComponent,
-    SidbarCardComponent
+    SidbarCardComponent,
+    EditDeleteButtonComponent
   ],
 })
 export class SharedComponentModule { }

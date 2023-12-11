@@ -1,0 +1,60 @@
+.main-container {
+  padding: 20px;
+  .my-reviews {
+    font-weight: 600;
+    color: gray;
+  }
+  .review-container {
+    // height: 100px;
+    background-color: aqua;
+    display: flex;
+    gap: 15px;
+    padding-left: 15px;
+    align-items: center;
+    border-radius: 5px;
+    padding: 15px;
+    .image {
+      background-color: red;
+      height: 80px;
+      width: 80px;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .review {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .product-name {
+        font-weight: 600;
+      }
+      .rating-title {
+        font-weight: 400;
+      }
+      .review-comment{
+        .rating{
+            border-radius: 5px;
+            padding: 0px 11px;
+            width: fit-content;
+            background-color: orange;
+        }
+      }
+      .date{
+        color: gray;
+      }
+      .buttons{
+        display: flex;
+        gap: 10px;
+      ::ng-deep  .p-button {
+            // width: ;
+            padding: 4px;
+            width: 50px;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
+          }
+      }
+    }
+  }
+}

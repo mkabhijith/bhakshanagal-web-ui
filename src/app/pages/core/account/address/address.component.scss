@@ -1,0 +1,54 @@
+.address-container {
+  padding: 15px 0 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .address-header {
+  }
+  .main-contaianer {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    .add-address {
+      width: 90%;
+      border: 1px solid #e0e0e0;
+      padding: 10px;
+      color: orange;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .addresses {
+      ::ng-deep {
+        p-fieldset {
+            margin: 0;
+          .p-fieldset-legend {
+            padding: 15px;
+          }
+          .p-component {
+            width: 90%;
+            margin: 0;
+          }
+          .p-fieldset-content{
+            padding: 3px;
+          }
+          p{
+            margin: 0;
+          }
+          .button-footer{
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            .p-button{
+                // width: ;
+                padding: 4px;
+                width: 50px;
+                align-items: center;
+                justify-content: center;
+                height: fit-content;
+            }
+          }
+        }
+      }
+    }
+  }
+}

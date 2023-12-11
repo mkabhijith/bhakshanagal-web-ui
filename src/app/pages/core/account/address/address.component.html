@@ -1,0 +1,35 @@
+<p-toast></p-toast>
+<p-confirmDialog ></p-confirmDialog>
+
+<div class="address-container">
+  <div class="address-header">
+    <div class="text">Manage Address</div>
+  </div>
+  <div class="main-contaianer">
+    <div class="add-address" routerLink="/account/addAddress">+ Add a new address</div>
+    <div class="addresses" *ngFor="let item of addressList">
+      <p-fieldset>
+        <ng-template pTemplate="header">
+          <div class="flex align-items-center text-primary gap-5">
+            <span class="font-bold text-lg">{{ item.addressType }}</span>
+            <!-- <i class="pi pi-user-edit"></i> -->
+          </div>
+        </ng-template>
+        <div class="address-body-container">
+          <div class="name">{{ item.name }}</div>
+          <div class="details">
+            {{ item.address }}
+          </div>
+          <div class="number">{{ item.phoneNo }}</div>
+        </div>
+
+        <div class="button-footer">
+          <p-button styleClass="p-button-danger" (onClick)="confirm1()">
+            Delete
+          </p-button>
+          <p-button styleClass="p-button-warning" (onClick)="onEditAddress(item.id)">Edit</p-button>
+        </div>
+      </p-fieldset>
+    </div>
+  </div>
+</div>
