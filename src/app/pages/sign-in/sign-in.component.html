@@ -1,6 +1,14 @@
+<app-spinner *ngIf="loginInProgress" ></app-spinner>
 <div class="login-container">
   <div class="left-login"></div>
   <div class="right-login">
+    <div class="error-container" *ngIf="error || error1">
+      <i class="pi pi-exclamation-triangle"></i>
+      <div class="error" *ngIf="error">
+        Wrong login credential OR User is not activated!
+      </div>
+      <div class="error2" *ngIf="error1">incorrect password</div>
+    </div>
     <form class="sub-right" [formGroup]="loginForm" (ngSubmit)="loginUser()">
       <h1>LOG-IN</h1>
       <div class="input-container">
@@ -11,7 +19,7 @@
           type="email"
           class="input-field"
           placeholder="email@gmail.com"
-          formControlName="user"
+          formControlName="email"
         />
       </div>
       <div class="input-container">
@@ -39,9 +47,7 @@
         <div>Forget Passowrd?</div>
       </div>
       <app-primary-button type="submit">Log-in</app-primary-button>
-      <span
-        >Dont Have An Account? <a routerLink="/signup">Register</a>
-      </span>
+      <span>Dont Have An Account? <a routerLink="/signup">Register</a> </span>
     </form>
   </div>
 </div>

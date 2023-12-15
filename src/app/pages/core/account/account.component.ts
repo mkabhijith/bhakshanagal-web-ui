@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { Title } from '@angular/platform-browser';
+
 type IaccountMenu = {
   id: number;
   title: string;
@@ -21,7 +23,9 @@ type IOptions = {
   styleUrls: ['./account.component.scss'],
 })
 export class AccountComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private titleService: Title) {
+    this.titleService.setTitle('account');
+  }
   accountMenu: IaccountMenu[] = [
     {
       id: 1,
@@ -71,8 +75,8 @@ export class AccountComponent implements OnInit {
   ];
 
   ngOnInit(): void {}
-  find(r: any) {
-    console.log(r);
-    // this.router.navigate(['/orders']);
+
+  navigation(route: string) {
+    this.router.navigate([route]);
   }
 }

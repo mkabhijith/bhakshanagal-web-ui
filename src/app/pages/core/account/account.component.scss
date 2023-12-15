@@ -40,8 +40,8 @@
           padding: 10px;
           padding-left: 40px;
           font-weight: 500;
-          &.active{
-            background-color: rgb(245,250,255);
+          &.active {
+            background-color: rgb(245, 250, 255);
           }
         }
         ::ng-deep .p-divider {
@@ -53,7 +53,6 @@
         display: flex;
         gap: 10px;
         justify-content: center;
-      
       }
     }
   }
@@ -62,5 +61,49 @@
     min-height: 450px;
     background-color: #ffffff;
     border-radius: 4px;
+  }
+}
+
+.mobile-container {
+  display: none;
+  padding: 20px 20px;
+  flex-direction: column;
+  .mobile-body-container {
+    .items-container {
+      .title--container {
+        padding: 5px;
+        .title-heading {
+          font-size: 20px;
+        }
+      }
+      .list {
+        border: 1px solid #efefef;
+        border-radius: 5px;
+        background-color: #ffffff;
+        padding: 5px;
+        .items-list{
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .main-container {
+    .right-container {
+      width: 25rem;
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .main-container {
+    display: none;
+  }
+  .mobile-container {
+    display: flex;
   }
 }

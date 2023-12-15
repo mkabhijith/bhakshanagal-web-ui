@@ -6,15 +6,16 @@
   }
   .review-container {
     // height: 100px;
-    background-color: aqua;
     display: flex;
     gap: 15px;
     padding-left: 15px;
     align-items: center;
     border-radius: 5px;
     padding: 15px;
+    &:hover {
+      background-color: #f0f2f5;
+    }
     .image {
-      background-color: red;
       height: 80px;
       width: 80px;
       img {
@@ -32,28 +33,28 @@
       .rating-title {
         font-weight: 400;
       }
-      .review-comment{
-        .rating{
-            border-radius: 5px;
-            padding: 0px 11px;
-            width: fit-content;
-            background-color: orange;
+      .review-comment {
+        .rating {
+          border-radius: 5px;
+          padding: 0px 11px;
+          width: fit-content;
+          background-color: orange;
         }
       }
-      .date{
+      .date {
         color: gray;
       }
-      .buttons{
+      .buttons {
         display: flex;
         gap: 10px;
-      ::ng-deep  .p-button {
-            // width: ;
-            padding: 4px;
-            width: 50px;
-            align-items: center;
-            justify-content: center;
-            height: fit-content;
-          }
+        ::ng-deep .p-button {
+          // width: ;
+          padding: 4px;
+          width: 50px;
+          align-items: center;
+          justify-content: center;
+          height: fit-content;
+        }
       }
     }
   }

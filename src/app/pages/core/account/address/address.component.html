@@ -6,6 +6,7 @@
     <div class="text">Manage Address</div>
   </div>
   <div class="main-contaianer">
+    <div class="add-address-mobile" routerLink="/addAddress">+ Add a new address</div>
     <div class="add-address" routerLink="/account/addAddress">+ Add a new address</div>
     <div class="addresses" *ngFor="let item of addressList">
       <p-fieldset>
@@ -28,6 +29,12 @@
             Delete
           </p-button>
           <p-button styleClass="p-button-warning" (onClick)="onEditAddress(item.id)">Edit</p-button>
+        </div>
+        <div class="button-footer-mobile">
+          <p-button styleClass="p-button-danger" (onClick)="confirm1()">
+            Delete
+          </p-button>
+          <p-button styleClass="p-button-warning" (onClick)="onEditAddressMobile(item.id)">Edit</p-button>
         </div>
       </p-fieldset>
     </div>

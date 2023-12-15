@@ -28,3 +28,29 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+
+<!-- mobile design start here  -->
+
+<div class="mobile-container">
+  <div class="mobile-body-container">
+    <div class="account">Your Account</div>
+    <div class="items-container" *ngFor="let item of accountMenu">
+      <div class="title--container">
+        <i [class]="item.icon"></i>
+        <span class="title-heading"> {{ item.title }}</span>
+      </div>
+      <div class="list">
+        <div
+          class="items-list"
+          *ngFor="let item of item.options"
+          [routerLink]="[item.route]"
+          routerLinkActive="active"
+          (click)="navigation(item.route)"
+          >
+        <div class="item">{{ item.title }}</div>
+        <div class="icon"><i class="pi pi-angle-right"></i></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

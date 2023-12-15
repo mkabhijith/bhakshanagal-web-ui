@@ -62,7 +62,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     PrimaryButtonComponent,
     ProductListComponent,
     SidbarCardComponent,
-    EditDeleteButtonComponent
+    EditDeleteButtonComponent,
+    SpinnerComponent
   ],
 })
 export class SharedComponentModule { }
