@@ -1,0 +1,71 @@
+.add-address-container {
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .caption-container {
+    color: orange;
+  }
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .input-box-container {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        .input-area {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 15px;
+        }
+
+        .input-box {
+          display: flex;
+          width: 50%;
+          flex-direction: column;
+          gap: 15px;
+          ::ng-deep {
+            p-inputNumber {
+              width: 100%;
+              span {
+                width: 100%;
+              }
+              .p-component {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .address-type {
+          padding: 15px 0;
+          display: flex;
+          gap: 5px;
+        }
+      }
+      .button-footer {
+        display: flex;
+        gap: 10px;
+        .cancel {
+          width: 11rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // background-color: red;
+        }
+        ::ng-deep {
+          .p-button {
+            width: 11rem;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { StorageService } from '../../services/storage/storage.service';
 
 type IprofileActionArray = {
   id: number;
@@ -14,7 +15,7 @@ type IprofileActionArray = {
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
-  constructor(private route: Router) {}
+  constructor(private route: Router, private storageService: StorageService) {}
   show: boolean = false;
 
   profileActionArray: IprofileActionArray[] = [
@@ -38,9 +39,9 @@ export class ProfileComponent {
   onHideDropdown() {
     this.show = false;
   }
-  
+
   logOut() {
-    localStorage.clear();
+    this.storageService.clearData();
     this.route.navigateByUrl('/signin');
   }
 }

@@ -48,12 +48,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
     return this.adLists[this.currentAddIndex];
   }
-  navigateProduct(event: number) {
-    this.route.navigate(['/product', event]);
+  navigateProduct(id: number) {
+    this.route.navigate(['/product', id]);
   }
   navigateToOffers(){
-    console.log('offer clicked');
-    
-    this.route.navigate(['/offers'])
+    this.route.navigate(['/offers/1'])
   }
 }
