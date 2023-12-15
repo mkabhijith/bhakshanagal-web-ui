@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://api.exchangerate.host'
+    apiUrl: 'http://62.72.29.190:3000'
 };

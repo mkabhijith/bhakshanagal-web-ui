@@ -1,0 +1,48 @@
+import { Injectable } from '@angular/core';
+import {
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpInterceptor,
+} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HTTP_HEADERS } from '../shared/constants/http-headers';
+import { StorageService } from '../shared/services/storage/storage.service';
+
+const EXEMPTIONS: Record<string, string[]> = {
+  [HTTP_HEADERS.auth]: [
+    `login`,
+    `signup`,
+  ],
+};
+@Injectable()
+export class AuthHeaderInterceptor implements HttpInterceptor {
+  constructor(private storageService:StorageService) {}
+
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    const {url} =req;
+
+    if (!this.isUrlInArray(url, EXEMPTIONS[HTTP_HEADERS.auth])) {
+      req = req.clone({
+        setHeaders: {
+          [HTTP_HEADERS.auth]: ` ${this.storageService.authKey}`,
+        },
+      });
+    }
+    return next.handle(req);
+  }
+  private isUrlInArray(url: string, arr: string[]) {
+    let index;
+
+    for (index in arr) {
+      if (url.search(arr[index]) !== -1) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+}

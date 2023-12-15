@@ -1,0 +1,56 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 25px;
+  gap: 25px;
+  height: 100vvh;
+  .profile-header {
+    display: flex;
+    gap: 15px;
+    .edit {
+      color: orange;
+    }
+    .cancel {
+      color: red;
+    }
+  }
+  .main-conatainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      .label-field {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .button-footer {
+        width: 100%;
+        display: flex;
+        // justify-content: end;
+      }
+    }
+    ::ng-deep {
+      p-inputNumber {
+        width: 100%;
+        .p-inputnumber {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .profile-container{
+    .main-conatainer{
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+
+<p-toast></p-toast>
+<p-confirmDialog ></p-confirmDialog>
+
+<div class="main-container">
+  <div class="my-reviews">My Reviews</div>
+  <div class="review-container">
+    <div class="image"></div>
+    <div class="review">
+      <div class="product-name">achapam</div>
+      <div class="rating-title">nice product</div>
+      <div class="review-comment">
+        <div class="rating">
+          <i class="pi pi-star"></i>
+          4
+        </div>
+      </div>
+      <div class="date">12-dec-2023</div>
+      <!-- <app-edit-delete-button></app-edit-delete-button> -->
+      <div class="buttons">
+        <p-button styleClass="p-button-warning">Edit</p-button>
+        <p-button styleClass="p-button-danger" (onClick)="confirm1()"> Delete </p-button>
+      </div>
+    </div>
+  </div>
+</div>

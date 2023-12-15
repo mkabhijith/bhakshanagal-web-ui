@@ -1,0 +1,16 @@
+
+  .button-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+
+   ::ng-deep .p-button {
+      // width: ;
+      padding: 4px;
+      width: 50px;
+      align-items: center;
+      justify-content: center;
+      height: fit-content;
+    }
+  }
+

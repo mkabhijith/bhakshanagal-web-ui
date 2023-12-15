@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CoreComponent } from './core.component';
 import { authGurd } from './auth-gurd.guard';
+import { ProfileComponent } from './account/profile/profile.component';
+import { AddressComponent } from './account/address/address.component';
+import { AddAddressComponent } from 'src/app/shared/components/add-address/add-address.component';
 
 const routes: Routes = [
   {
@@ -66,9 +69,44 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'account',
+        loadChildren: () =>
+          import('../core/account/account.module').then((m) => m.AccountModule),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+      },
+      {
+        path: 'address',
+        component: AddressComponent,
+      },
+      {
+        path: 'addAddress',
+        component: AddAddressComponent,
+      },
+      {
+        path: 'addAddress/:id',
+        component: AddAddressComponent,
+      },
+      {
+        path: 'notifications',
+        loadChildren: () =>
+          import('../core/account/my-notifications/my-notifications.module').then(
+            (m) => m.MyNotificationsModule
+          ),
+      },
+      {
+        path: 'reviews',
+        loadChildren: () =>
+          import('../core/account/my-review-rating/my-review-rating.module').then(
+            (m) => m.MyReviewRatingModule
+          ),
       },
     ],
   },
