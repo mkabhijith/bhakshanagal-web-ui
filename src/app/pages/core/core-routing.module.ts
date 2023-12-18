@@ -74,11 +74,6 @@ const routes: Routes = [
           import('../core/account/account.module').then((m) => m.AccountModule),
       },
       {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',
-      },
-      {
         path: 'profile',
         component: ProfileComponent,
       },
@@ -97,16 +92,21 @@ const routes: Routes = [
       {
         path: 'notifications',
         loadChildren: () =>
-          import('../core/account/my-notifications/my-notifications.module').then(
-            (m) => m.MyNotificationsModule
-          ),
+          import(
+            '../core/account/my-notifications/my-notifications.module'
+          ).then((m) => m.MyNotificationsModule),
       },
       {
         path: 'reviews',
         loadChildren: () =>
-          import('../core/account/my-review-rating/my-review-rating.module').then(
-            (m) => m.MyReviewRatingModule
-          ),
+          import(
+            '../core/account/my-review-rating/my-review-rating.module'
+          ).then((m) => m.MyReviewRatingModule),
+      },
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
       },
     ],
   },
