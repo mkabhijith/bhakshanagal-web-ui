@@ -2,8 +2,5 @@
   <div class="offer-banner" (click)="navigateToOffers()">
     <img class="img" [src]="getPic()" alt="" />
   </div>
-  <app-product-list
-    [dropdownItems]="list"
-    (selectBuy)="navigateProduct($event)"
-  ></app-product-list>
+  <app-product-list [dropdownItems]="list"></app-product-list>
 </div>
