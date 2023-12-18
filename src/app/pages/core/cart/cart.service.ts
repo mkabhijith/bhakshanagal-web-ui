@@ -8,7 +8,7 @@ import { StorageService } from 'src/app/shared/services/storage/storage.service'
 export class CartService {
   constructor(private storageService: StorageService) {}
 
-  private _cartCount = new BehaviorSubject<any>(this.getCartLength());
+  private _cartCount = new BehaviorSubject<number>(this.getCartLength());
   cartCoun$ = this._cartCount.asObservable();
 
   private _cartList = new BehaviorSubject<any>([]);
@@ -139,12 +139,11 @@ export class CartService {
       if (index == -1) {
         ids.push(id);
       }
-      this.getCart()
+      this.getCart();
       localStorage.setItem('ids', JSON.stringify(ids));
       this._cartCount.next(ids.length);
-      this.getCart()
+      this.getCart();
     } else {
-      this._cartCount.next(5);
     }
   }
 
@@ -158,7 +157,7 @@ export class CartService {
       ids.splice(index, 1);
     }
     localStorage.setItem('ids', JSON.stringify(ids));
-    this.getCart()
+    this.getCart();
     this._cartCount.next(ids.length);
   }
 
@@ -176,9 +175,6 @@ export class CartService {
     const array = this.getLocalCart();
     const cartArray = this.getCartList();
     const cartList = cartArray.filter((cart) => array.includes(cart.id));
-    // return cartList;
-    console.log('get cart',cartList);
-    
-    this._cartList.next(cartList)
+    this._cartList.next(cartList);
   }
 }

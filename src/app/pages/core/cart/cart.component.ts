@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from './cart.service';
 import { StorageService } from 'src/app/shared/services/storage/storage.service';
 import { Subscription } from 'rxjs';
@@ -8,30 +8,20 @@ import { Subscription } from 'rxjs';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements OnInit {
-  constructor(
-    private cartService: CartService,
-    private storageService: StorageService
-  ) {}
+export class CartComponent implements OnInit, OnDestroy {
+  constructor(private cartService: CartService) {}
 
   cartListSubscription!: Subscription;
   cartList: any[] = [];
   ngOnInit(): void {
-    // this.cartService.getCart();
-    console.log('cart oninit');
-
-    // this.cartService.getCart();
     this.cartListSubscription = this.cartService.cartList$.subscribe({
       next: (res) => {
-        console.log(res);
-
         this.cartList = res;
-        console.log('cartlist', this.cartList);
       },
     });
-    console.log('ng', this.cartList);
-
-    console.log('after', this.cartList.length);
+  }
+  ngOnDestroy(): void {
+    this.cartListSubscription.unsubscribe();
   }
 
   onItemRemove(id: number) {
