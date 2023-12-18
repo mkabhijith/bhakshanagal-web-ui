@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 type ISidebar = {
   category: IsiddBarOptionValue[];
@@ -21,11 +22,12 @@ type IsiddBarOptionValue = {
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  constructor(private route: Router) {}
+  constructor(private route: Router, private sidebarService: SidebarService) {}
   @Input()
   set triggerUpdate(value: number) {
     if (value !== 0) {
       this.sidebarVisible = true;
+      this.sidebarService.changeSidebarVisible(true);
     }
   }
 
@@ -104,10 +106,16 @@ export class SidebarComponent {
     },
   ];
   sidebarVisible: boolean = false;
-  sideBarOptionSelect(e:string) {
-    console.log(e);
-    
-   this.route.navigate([e])
-   this.sidebarVisible = false;
+
+  sideBarOptionSelect(path: string) {
+    this.route.navigate([path]);
+    this.sidebarVisible = false;
+    this.sidebarService.changeSidebarVisible(false);
+  }
+  onSidebarHide() {
+    this.sidebarService.changeSidebarVisible(false);
+  }
+  onTrue() {
+    this.sidebarService.changeSidebarVisible(true);
   }
 }

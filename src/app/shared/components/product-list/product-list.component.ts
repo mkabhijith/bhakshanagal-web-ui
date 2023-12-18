@@ -1,17 +1,21 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProducts } from '../../types/product.type';
+import { CartService } from 'src/app/pages/core/cart/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
+  @Input() dropdownItems!: IProducts[];
+  constructor(private cartService: CartService, private route: Router) {}
 
-  @Input() dropdownItems!:IProducts[];
-  @Output() selectBuy = new EventEmitter<number>()
-
-  selectBuyOption(id:number){
-    this.selectBuy.emit(id)
+  addToCart(id: number) {
+    this.cartService.saveCart(id);
+  }
+  navigateProduct(id: number) {
+    this.route.navigate(['/product', id]);
   }
 }
