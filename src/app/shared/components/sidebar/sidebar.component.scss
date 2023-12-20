@@ -3,6 +3,9 @@ p-sidebar {
     height: 50px;
   }
   ::ng-deep {
+    .p-sidebar-left {
+      width: 13rem;
+    }
     .p-sidebar-header {
       padding: 5px 3px 0 5px;
       background-color: rgb(247, 247, 160);

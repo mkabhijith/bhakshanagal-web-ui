@@ -14,6 +14,7 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
+      .input-address-container,
       .input-box-container {
         display: flex;
         gap: 10px;
@@ -63,6 +64,22 @@
             width: 11rem;
             justify-content: center;
             align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .add-address-container {
+    .main-container {
+      form {
+        .input-box-container {
+          display: flex;
+          flex-direction: column;
+          .input-box {
+            width: 100%;
           }
         }
       }

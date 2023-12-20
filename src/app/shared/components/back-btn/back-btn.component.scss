@@ -1,0 +1,13 @@
+.back-btn-container {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  display: none;
+  gap: 5px;
+  align-items: center;
+}
+
+@media screen and (max-width: 580px) {
+    .back-btn-container{
+        display: flex;
+    }
+}

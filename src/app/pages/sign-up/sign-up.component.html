@@ -1,6 +1,13 @@
 <div class="sign-up-container">
   <div class="left-sign-up"></div>
   <div class="right-sign-up">
+    <div class="error-container" *ngIf="error || error1">
+      <i class="pi pi-exclamation-triangle"></i>
+      <div class="error" *ngIf="error">
+        Wrong sign up credential!
+      </div>
+      <div class="error2" *ngIf="error1">{{errorMessage}}</div>
+    </div>
     <form
       class="sub-right"
       [formGroup]="registerForm"
@@ -27,7 +34,7 @@
           id="email"
           class="input-field"
           placeholder="email@gmail.com"
-          formControlName="user"
+          formControlName="email"
         />
       </div>
       <div class="input-container">
@@ -48,26 +55,6 @@
           ></i>
         </div>
       </div>
-      <div class="input-container">
-        <div class="label">
-          <label for="Confirm-password">Confirm Passowrd</label>
-        </div>
-        <div class="password-container">
-          <input
-            [type]="showConfirmPassword ? 'text' : 'password'"
-            class="password"
-            id="Confirm-password"
-            placeholder="*********"
-            formControlName="confirmPassword"
-          />
-          <i
-            [class]="showConfirmPassword ? 'pi pi-eye' : 'pi pi-eye-slash '"
-            (click)="onToggleConfirmPasswordVisibility()"
-          ></i>
-        </div>
-        <div class="error" *ngIf="passwordMismatch">Please make sure your passwords match</div>
-   
-      </div>
       <div class="checkbox-container">
         <div class="policy">
           <input type="checkbox" id="checkbox" />
@@ -78,9 +65,7 @@
         </div>
       </div>
       <app-primary-button type="submit">sign-up</app-primary-button>
-      <div>
-        Already have and account?<a routerLink="/signin">Login</a>
-      </div>
+      <div>Already have and account?<a routerLink="/signin">Login</a></div>
     </form>
   </div>
 </div>

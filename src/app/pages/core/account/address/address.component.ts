@@ -63,6 +63,12 @@ export class AddressComponent implements OnInit {
     this.router.navigate(['account/addAddress',id])
   }
   onEditAddressMobile(id:number){
-    this.router.navigate(['account/addAddress',id])
+    console.log('addAddress');
+    
+    this.router.navigate(['/addAddress',id])
+  }
+
+  navgateToAccount(){
+    this.router.navigate(['account'])
   }
 }

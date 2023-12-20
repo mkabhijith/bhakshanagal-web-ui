@@ -1,24 +1,11 @@
 .cart-container {
-    background-color: lightgray;
-    display: grid;
-    grid-template-columns: 1fr .5fr;
-    gap: 10px;
-    padding: 50px 100px;
-    position: relative;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  gap: 10px;
+  padding: 25px 100px;
+  position: relative;
 
-    @media screen and (max-width: 1100px) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-
-    @media screen and (max-width: 700px) {
-        padding: 20px;
-    }
-}
-
-.adress {
+  .adress {
     border: 1px solid rosybrown;
     border-radius: 5px;
     background-color: white;
@@ -29,278 +16,304 @@
     gap: 10px;
     position: relative;
 
-    @media screen and (max-width: 1100px) {
-        display: none;
+    h3 {
+      position: absolute;
+      top: 10px;
+      left: 50px;
     }
-}
+    .adress-box {
+      box-shadow: 5px 5px 5px 5px rgba(237, 127, 127, 0.1);
+      display: flex;
+      padding: 10px;
+      padding-left: 20px;
+      gap: 20px;
+      .icon {
+        width: 20px;
 
-h3 {
-    position: absolute;
-    top: 10px;
-    left: 50px;
-}
+        .pi::before {
+          font-size: 23px;
+          font-weight: 400;
+          padding-top: 20px;
+        }
 
-.adress-box {
-    box-shadow: 5px 5px 5px 5px rgba(237, 127, 127, 0.1);
-    display: flex;
-    padding: 10px;
-    padding-left: 20px;
-    gap: 20px;
-}
+        #map {
+          padding-top: 17px;
+        }
+      }
+      .adress-details {
+        max-width: 300px;
 
-.icon {
-    width: 20px;
+        h2 {
+          font-size: 20px;
+        }
 
-    .pi::before {
-        font-size: 23px;
-        font-weight: 400;
-        padding-top: 20px;
+        .estimated-time {
+          margin-bottom: 20px;
+        }
+
+        .line {
+          margin-bottom: 20px;
+          width: 200px;
+          height: 21px;
+          color: rosybrown;
+        }
+
+        button {
+          padding: 10px 20px;
+          border-radius: 5px;
+          background-color: rgb(229, 188, 188);
+          border: 1px solid rgb(242, 142, 142);
+          font-size: 15px;
+          font-weight: 500;
+        }
+      }
     }
-
-    #map {
-        padding-top: 17px;
-    }
-}
-
-.adress-details {
-    max-width: 300px;
-
-    h2 {
-        font-size: 20px;
-    }
-
-    .estimated-time {
-        margin-bottom: 20px;
-    }
-
-    .line {
-        margin-bottom: 20px;
-        width: 200px;
-        height: 21px;
-        color: rosybrown;
-    }
-
-    button {
-        padding: 10px 20px;
-        border-radius: 5px;
-        background-color: rgb(229, 188, 188);
-        border: 1px solid rgb(242, 142, 142);
-        font-size: 15px;
-        font-weight: 500;
-    }
-}
-
-.cart-card {
+  }
+  .cart-card {
     border-radius: 5px;
     background-color: white;
     padding: 20px;
     border: 1px solid rosybrown;
 
-    @media screen and (max-width: 1100px) {
-        width: 100%;
-    }
-
     .watchlist {
-        padding: 10px;
-        border: 1px solid rosybrown;
-        border-radius: 5px;
-        max-height: 250px;
-        overflow: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-bottom: 15px;
-
+      padding: 10px;
+      border: 1px solid rosybrown;
+      border-radius: 5px;
+      max-height: 250px;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 15px;
     }
 
     .cart-snack {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid rosybrown;
+      padding: 10px;
+      border-radius: 5px;
+      max-height: 400px;
+
+      .image-name {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        border: 1px solid rosybrown;
-        padding: 10px;
-        border-radius: 5px;
-        max-height: 400px;
+        gap: 20px;
+        .snack-image {
+          width: 80px;
+          height: 80px;
 
-        b {
-            @media screen and (max-width: 515px) {
-
-                font-size: 15px;
-            }
-        }
-
-        @media screen and (max-width: 515px) {
-            border: none;
-            padding: unset;
-            border-bottom: 1px solid lightgray;
-            padding-bottom: 10px;
-            border-radius: unset;
-        }
-
-        .quantity-box {
-            display: flex;
-            gap: 20px;
-            border: 1px solid rosybrown;
-            padding: 5px 10px;
-            border-radius: 5px;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-
-            @media screen and (max-width: 515px) {
-                gap: 10px;
-                padding: 2px 5px;
-                font-size: 5px;
-            }
-
-            .count {
-                font-size: 20px;
-
-                @media screen and (max-width: 515px) {
-                    font-size: 15px;
-                }
-
-            }
-
-            .subtract:hover,
-            .add:hover {
-                cursor: pointer;
-                color: red;
-            }
-
-            button {
-                background-color: transparent;
-                border: none;
-                outline: none;
-            }
-
-        }
-    }
-
-    .snack-image {
-        width: 80px;
-        height: 80px;
-
-        @media screen and (max-width: 630px) {
-            display: none;
-        }
-
-        img {
+          img {
             width: 100%;
             height: 100%;
             border-radius: 5px;
-
-            @media screen and (max-width: 630px) {
-                display: none;
-            }
+          }
         }
+      }
+      .cart-box-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .quantity-box {
+          display: flex;
+          gap: 20px;
+          border: 1px solid rosybrown;
+          padding: 5px 10px;
+          border-radius: 5px;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+
+          .count {
+            font-size: 20px;
+          }
+
+          .subtract:hover,
+          .add:hover {
+            cursor: pointer;
+            color: red;
+          }
+
+          button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+          }
+        }
+        .delete-icon{
+          display: flex;
+          align-items: center;
+          color: orange;
+        }
+      }
     }
 
     .bill-details {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .suggestion-box {
         width: 100%;
+        outline: none;
+        border: none;
+        background-color: rgb(236, 201, 201);
+        border-radius: 5px;
+        height: 50px;
+        padding: 10px;
+      }
+
+      .checkbox {
+        display: flex;
+        gap: 5px;
+        border: 1px solid rosybrown;
+        padding: 10px;
+        align-items: flex-start;
+
+        .details {
+          font-weight: 600;
+        }
+      }
+
+      .bill-amount {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        border-bottom: 2px solid lightgray;
 
-        .suggestion-box {
-            width: 100%;
-            outline: none;
-            border: none;
-            background-color: rgb(236, 201, 201);
-            border-radius: 5px;
-            height: 50px;
-            padding: 10px;
+        .amount {
+          display: flex;
+          justify-content: space-between;
+
+          h5 {
+            font-weight: 500;
+          }
         }
+      }
 
-        .checkbox {
-            display: flex;
-            gap: 5px;
-            border: 1px solid rosybrown;
-            padding: 10px;
-            align-items: flex-start;
+      .delivery-fee {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid lightgray;
 
-            .details {
-                font-weight: 600;
-            }
+        span {
+          color: green;
         }
+      }
 
-        .bill-amount {
-            display: flex;
-            flex-direction: column;
-            border-bottom: 2px solid lightgray;
+      .Total-amount {
+        display: flex;
+        justify-content: space-between;
+      }
 
-            .amount {
-                display: flex;
-                justify-content: space-between;
+      .adress-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-                h5 {
-                    font-weight: 500;
-                }
-            }
+        button {
+          background-color: rgb(236, 187, 187);
+          border: none;
+          outline: none;
+          width: 100%;
+          padding: 20px;
+          border-radius: 5px;
+          font-size: 14px;
+          display: none;
+
+          @media screen and (max-width: 1100px) {
+            display: block;
+          }
         }
-
-        .delivery-fee {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 2px solid lightgray;
-
-            span {
-                color: green;
-            }
-        }
-
-        .Total-amount {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .adress-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            button {
-                background-color: rgb(236, 187, 187);
-                border: none;
-                outline: none;
-                width: 100%;
-                padding: 20px;
-                border-radius: 5px;
-                font-size: 14px;
-                display: none;
-
-                @media screen and (max-width: 1100px) {
-                    display: block;
-                }
-            }
-
-        }
+      }
     }
 
     .empty-cart {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100%;
-        gap: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
 
-        img {
-            width: 200px;
-            height: 200px;
+      img {
+        width: 200px;
+        height: 200px;
+      }
+
+      button {
+        padding: 10px 15px;
+        outline: none;
+        background-color: rgb(242, 194, 194);
+        border: 1px solid rosybrown;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: transform 0.3s ease;
         }
-
-        button {
-            padding: 10px 15px;
-            outline: none;
-            background-color: rgb(242, 194, 194);
-            border: 1px solid rosybrown;
-
-            &:hover {
-                transform: scale(1.1);
-                transition: transform 0.3s ease;
-            }
-        }
+      }
     }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .adress {
+      display: none;
+    }
+    .cart-card {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .cart-container {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .cart-container {
+    .cart-card {
+      .watchlist {
+        .cart-snack {
+          .snack-image {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .cart-container {
+    .cart-card {
+      .watchlist {
+        .cart-snack {
+          border: none;
+          padding: unset;
+          border-bottom: 1px solid lightgray;
+          padding-bottom: 10px;
+          border-radius: unset;
+          b {
+            font-size: 15px;
+          }
+          .quantity-box {
+            gap: 10px;
+            padding: 2px 5px;
+            font-size: 5px;
+            .count {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

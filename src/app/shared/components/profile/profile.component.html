@@ -17,9 +17,13 @@
       <div class="name" routerLink="orders">{{ item.name }}</div>
     </div>
 
-    <div class="available-list" (click)="logOut()">
+    <div class="available-list" (click)="logOut()" *ngIf="onAuthorise">
       <i class="pi pi-sign-out"></i>
       <div class="name">Log Out</div>
+    </div>
+    <div class="available-list" (click)="logIn()" *ngIf="!onAuthorise">
+      <i class="pi pi-sign-in"></i>
+      <div class="name">Log In</div>
     </div>
   </div>
 </div>

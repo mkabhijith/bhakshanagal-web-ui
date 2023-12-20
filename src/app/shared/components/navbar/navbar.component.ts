@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 import { LanguageService } from '../../services/language.service';
 
 import { ILanguage } from '../../types/language.type';
+
+import { CartService } from 'src/app/pages/core/cart/cart.service';
+import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 import { Subscription, debounceTime } from 'rxjs';
 
@@ -19,14 +22,24 @@ type INavBar = {
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent {
-  constructor(private languageService: LanguageService) {}
+export class NavbarComponent implements OnInit, OnDestroy {
+  constructor(
+    private languageService: LanguageService,
+    private cartService: CartService,
+    private sidebarService: SidebarService,
+    private cdr: ChangeDetectorRef
+  ) {}
+
+  languageSubscription!: Subscription;
+  localCartSubscription!: Subscription;
+  sidebarSubscription!: Subscription;
 
   currentLanguage!: ILanguage;
   triggerSliderVisible = 0;
-  languageSubscription!: Subscription;
+  isNavbarFixed = false;
+  searchTerm!: string;
+  values: any = 0;
 
-  // sidebarVisible1: boolean = false;
   linksForNavbar: INavBar[] = [
     {
       id: 0,
@@ -39,20 +52,11 @@ export class NavbarComponent {
       title: 'Orders',
       route: 'orders',
     },
-
-    // {
-    //   id: 3,
-    //   title :'NAVBAR.CANCEL_ORDERS',
-    //   route :''
-    // }
   ];
 
   form = new FormGroup({
     searchTerm: new FormControl(''),
   });
-
-  searchTerm: any;
-  values: any = 0;
 
   ngOnInit(): void {
     this.searchTermControl.valueChanges
@@ -60,16 +64,36 @@ export class NavbarComponent {
       .subscribe((res) => {
         console.log('debounce time ', res);
       });
+
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (res) => {
         this.currentLanguage = res;
       },
     });
+    this.cartService.getCart();
+    this.localCartSubscription = this.cartService.cartCoun$.subscribe({
+      next: (count) => {
+        this.values = count;
+      },
+    });
+
+    this.sidebarSubscription =
+      this.sidebarService.switchSidebarVisible$.subscribe({
+        next: (res) => {
+          this.isNavbarFixed = res;
+          this.cdr.detectChanges();
+        },
+      });
+  }
+  ngOnDestroy(): void {
+    this.languageSubscription.unsubscribe();
+    this.localCartSubscription.unsubscribe();
+    this.sidebarSubscription.unsubscribe();
   }
   get searchTermControl() {
     return this.form.controls['searchTerm'];
   }
-  sidebarVisible(){
-    this.triggerSliderVisible +=1
+  sidebarVisible() {
+    this.triggerSliderVisible += 1;
   }
 }

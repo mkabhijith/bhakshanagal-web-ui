@@ -40,57 +40,58 @@
       </div>
       <div class="adress-details">
         <h2>Add New Address</h2>
-        <p>
-          near hotel karthika park kazhakkoottam trivandrum,695584
-        </p>
+        <p>near hotel karthika park kazhakkoottam trivandrum,695584</p>
         <div class="estimated-time">10mins</div>
         <button>ADD NEW</button>
       </div>
     </div>
   </div>
 
-
   <div class="cart-card">
-    <ng-container *ngIf="true">
-      <div class="watchlist">
-        <div class="cart-snack">
-          <div style="display: flex; align-items: center; gap: 20px">
-            <div class="snack-image">
-              <img src="https://static.toiimg.com/photo/101353978.cms" alt="snack" />
+    <ng-container *ngIf="cartList.length !== 0">
+      <p-scrollPanel
+        [style]="{ width: '100%', height: '200px' }"
+        styleClass="custombar1"
+      >
+        <div class="watchlist">
+          <div class="cart-snack" *ngFor="let item of cartList">
+            <div class="image-name">
+              <div class="snack-image">
+                <img [src]="item.imageUrl" alt="snack" />
+              </div>
+              <div class="snack-name">
+                <b>{{ item.productName }}</b>
+              </div>
             </div>
-            <div class="snack-name"><b>chilli cheese</b></div>
-          </div>
-          <div class="quantity-box">
-            <div class="subtract"><i style="font-size: 10px;" class="pi pi-minus"></i>
+            <div class="cart-box-right">
+              <div class="quantity-box">
+                <div class="subtract">
+                  <i style="font-size: 10px" class="pi pi-minus"></i>
+                </div>
+                <div class="count">1</div>
+                <div class="add">
+                  <b><i style="font-size: 10px" class="pi pi-plus"></i> </b>
+                </div>
+              </div>
+              <div class="total-amoun">{{ item.price }}</div>
+              <div class="delete-icon" (click)="onItemRemove(item.id)">
+                <i class="pi pi-delete-left"></i>
+              </div>
             </div>
-            <div class="count">1</div>
-            <div class="add"><b><i style="font-size: 10px;" class="pi pi-plus"></i>
-              </b></div>
           </div>
-          <div class="total-amoun">$5000</div>
         </div>
-        <div class="cart-snack">
-          <div style="display: flex; align-items: center; gap: 20px">
-            <div class="snack-image">
-              <img src="https://static.toiimg.com/photo/101353978.cms" alt="snack" />
-            </div>
-            <div class="snack-name"><b>chilli cheese</b></div>
-          </div>
-          <div class="quantity-box">
-            <div class="subtract"><i style="font-size: 10px;" class="pi pi-minus"></i>
-            </div>
-            <div class="count">1</div>
-            <div class="add"><b><i style="font-size: 10px;" class="pi pi-plus"></i>
-              </b></div>
-          </div>
-          <div class="total-amoun">$5000</div>
-        </div>
-      </div>
+      </p-scrollPanel>
       <div class="bill-details">
-        <input type="text" class="suggestion-box" placeholder="any suggestions or request">
+        <input
+          type="text"
+          class="suggestion-box"
+          placeholder="any suggestions or request"
+        />
         <div class="checkbox">
-          <input type="checkbox">
-          <div class="details">If you are not well, kinldy click the box for no contact delivery</div>
+          <input type="checkbox" />
+          <div class="details">
+            If you are not well, kinldy click the box for no contact delivery
+          </div>
         </div>
         <div class="bill-amount">
           <b>Bill Details</b>
@@ -112,11 +113,13 @@
         </div>
       </div>
     </ng-container>
-    <div *ngIf="false" class="empty-cart">
-      <img src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-5521508-4610092.png" alt="empty cart">
+    <div *ngIf="cartList.length == 0" class="empty-cart">
+      <img
+        src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-5521508-4610092.png"
+        alt="empty cart"
+      />
       <b> Your cart is empty</b>
       <button routerLink="home">Shop now</button>
     </div>
   </div>
-
 </div>

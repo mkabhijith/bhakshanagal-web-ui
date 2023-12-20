@@ -19,6 +19,7 @@ import { ButtonModule } from 'primeng/button';
     ButtonModule,
     ConfirmDialogModule,
     ToastModule,
+    SharedComponentModule
   ],
   providers: [ConfirmationService, MessageService],
 })

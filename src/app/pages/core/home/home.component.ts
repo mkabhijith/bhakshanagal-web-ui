@@ -3,6 +3,8 @@ import { HomeService } from './home.service';
 
 import { CountryOrginService } from 'src/app/shared/services/country-orgin.service';
 import { Router } from '@angular/router';
+import { StorageService } from 'src/app/shared/services/storage/storage.service';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -12,15 +14,14 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit, OnDestroy {
   currentAddIndex = 0;
   adLists: string[] = [
-    '/assets/images/food/Free PSD _ Food menu and restaurant social media cover template.jpg',
-    '/assets/images/food/Free Vector _ Brunch banner template.jpg',
+    '/assets/images/poster/b baner.1.jpg',
+    '/assets/images/poster/B B2.jpg',
   ];
-  ratingValue = 2.2;
 
   constructor(
     private homeService: HomeService,
     private currencyService: CountryOrginService,
-    private route: Router
+    private route: Router,
   ) {}
   list!: any[];
 
@@ -48,10 +49,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
     return this.adLists[this.currentAddIndex];
   }
-  navigateProduct(id: number) {
-    this.route.navigate(['/product', id]);
-  }
-  navigateToOffers(){
-    this.route.navigate(['/offers/1'])
+ 
+  navigateToOffers() {
+    this.route.navigate(['/offers/1']);
   }
 }

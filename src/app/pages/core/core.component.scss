@@ -1,0 +1,13 @@
+.core-container {
+  .sub-container {
+    padding-top: 69px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .core-container {
+    .sub-container {
+      padding-top: 110px;
+    }
+  }
+}
