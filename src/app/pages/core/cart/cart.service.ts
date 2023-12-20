@@ -130,7 +130,7 @@ export class CartService {
   }
 
   saveCart(id: number) {
-    if (this.storageService.authKey) {
+    if (!this.storageService.authKey) {
       const storedCart = this.getLocalCart();
       const ids: number[] = storedCart;
       const index = ids.findIndex((item) => {
@@ -144,6 +144,7 @@ export class CartService {
       this._cartCount.next(ids.length);
       this.getCart();
     } else {
+      console.log('else');
     }
   }
 

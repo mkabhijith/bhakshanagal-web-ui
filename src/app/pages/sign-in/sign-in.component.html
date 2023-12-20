@@ -7,7 +7,7 @@
       <div class="error" *ngIf="error">
         Wrong login credential OR User is not activated!
       </div>
-      <div class="error2" *ngIf="error1">incorrect password</div>
+      <div class="error2" *ngIf="error1">{{errorMessage}}</div>
     </div>
     <form class="sub-right" [formGroup]="loginForm" (ngSubmit)="loginUser()">
       <h1>LOG-IN</h1>

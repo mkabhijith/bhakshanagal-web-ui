@@ -97,5 +97,20 @@
         display: contents;
       }
     }
+    .error-container {
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 17px 13px;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: inset 0 0 10px #f8a100;
+      i {
+        font-size: xx-large;
+        color: red;
+      }
+    }
   }
 }

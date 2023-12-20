@@ -5,12 +5,12 @@
     *ngFor="let item of dropdownItems"
   >
     <ng-template pTemplate="header">
-      <img src="/assets/images/poster/ptoto chips mckp.jpg" alt="">
+      <img src="/assets/images/poster/ptoto chips mckp.jpg" alt="" />
       <!-- <img alt="Card" [src]="item.imageUrl" /> -->
     </ng-template>
-    <p>
+    <div class="price">
       {{ item.price | currency : "INR" }}
-    </p>
+    </div>
     <ng-template pTemplate="footer">
       <p-button label="Buy Now" (onClick)="navigateProduct(item.id)"></p-button>
       <p-button

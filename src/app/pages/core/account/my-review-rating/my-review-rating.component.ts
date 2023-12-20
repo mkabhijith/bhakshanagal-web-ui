@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   ConfirmEventType,
   ConfirmationService,
@@ -21,7 +22,8 @@ type IreviewList = {
 export class MyReviewRatingComponent {
   constructor(
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router:Router
   ) {}
 
   reviewList: IreviewList[] = [
@@ -65,5 +67,8 @@ export class MyReviewRatingComponent {
         }
       },
     });
+  }
+  navgateToAccount() {
+    this.router.navigate(['account']);
   }
 }

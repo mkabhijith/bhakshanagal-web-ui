@@ -1,0 +1,16 @@
+{
+    "LOGIN": {
+        "LANGUAGE": "Language"
+    },
+    "LANGUAGE": {
+        "ENGLISH": "EN",
+        "HEBREW": "Hebrew",
+        "ARABIC": "Arabic",
+        "_": "Language"
+    },
+    "NAVBAR": {
+        "HOME": "emoh",
+        "ABOUT": "About",
+        "CANCEL_ORDERS": "Order"
+    }
+}

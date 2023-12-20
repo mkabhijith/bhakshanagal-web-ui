@@ -19,10 +19,6 @@ const routes: Routes = [
       import('./pages/sign-up/sign-up.module').then((m) => m.SignUpModule),
   },
   {
-    path: 'launching',
-    component: PosterComponent,
-  },
-  {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full',
@@ -30,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes ,{ useHash: true})],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

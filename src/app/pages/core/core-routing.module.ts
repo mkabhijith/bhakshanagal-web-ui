@@ -34,11 +34,13 @@ const routes: Routes = [
       },
       {
         path: 'orders',
+        canActivate: [authGurd],
         loadChildren: () =>
           import('../core/orders/orders.module').then((m) => m.OrdersModule),
       },
       {
         path: 'orderDetails/:id',
+        canActivate: [authGurd],
         loadChildren: () =>
           import('../core/orders/order-details/order-details.module').then(
             (m) => m.OrderDetailsModule
@@ -70,6 +72,7 @@ const routes: Routes = [
       },
       {
         path: 'account',
+        canActivate: [authGurd],
         loadChildren: () =>
           import('../core/account/account.module').then((m) => m.AccountModule),
       },
