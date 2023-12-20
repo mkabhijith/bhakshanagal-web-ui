@@ -1,31 +1,52 @@
-<p-sidebar [(visible)]="sidebarVisible" position="left">
+<p-sidebar
+  [dismissible]="true"
+  (onHide)="onSidebarHide()"
+  [(visible)]="sidebarVisible"
+  position="left"
+>
   <ng-template pTemplate="header"
     ><img src="/assets/images/logo_6-removebg-preview.png" alt=""
   /></ng-template>
   <ng-template pTemplate="content">
     <div class="side-options" *ngFor="let option of sideOptions">
-      <div class="category" *ngFor="let categories of option.category"  (click)="sideBarOptionSelect( categories.route)">
+      <div
+        class="category"
+        *ngFor="let categories of option.category"
+        (click)="sideBarOptionSelect(categories.route)"
+      >
         <div class="option-container">
           <i [class]="categories.icon"></i>
           <div class="text">{{ categories.title }}</div>
         </div>
       </div>
       <p-divider></p-divider>
-      <div class="orgin" *ngFor="let orgin of option.Orgin" (click)="sideBarOptionSelect( orgin.route)">
+      <div
+        class="orgin"
+        *ngFor="let orgin of option.Orgin"
+        (click)="sideBarOptionSelect(orgin.route)"
+      >
         <div class="option-container">
           <i [class]="orgin.icon"></i>
           <div class="text">{{ orgin.title }}</div>
         </div>
       </div>
       <p-divider></p-divider>
-      <div class="offer" *ngFor="let offer of option.offer" (click)="sideBarOptionSelect( offer.route)">
+      <div
+        class="offer"
+        *ngFor="let offer of option.offer"
+        (click)="sideBarOptionSelect(offer.route)"
+      >
         <div class="option-container">
           <i [class]="offer.icon"></i>
           <div class="text">{{ offer.title }}</div>
         </div>
       </div>
       <p-divider></p-divider>
-      <div class="account" *ngFor="let account of option.account" (click)="sideBarOptionSelect( account.route)">
+      <div
+        class="account"
+        *ngFor="let account of option.account"
+        (click)="sideBarOptionSelect(account.route)"
+      >
         <div class="option-container">
           <i [class]="account.icon"></i>
           <div class="text">{{ account.title }}</div>
@@ -35,7 +56,11 @@
   </ng-template>
 
   <ng-template pTemplate="footer">
-    <div class="service" *ngFor="let service of sideOptions[0].service" [routerLink]="[service.route]">
+    <div
+      class="service"
+      *ngFor="let service of sideOptions[0].service"
+      [routerLink]="[service.route]"
+    >
       <div class="option-container">
         <div class="icon"></div>
         <div class="text">{{ service.title }}</div>

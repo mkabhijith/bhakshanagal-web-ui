@@ -14,6 +14,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { AddAddressComponent } from './add-address/add-address.component';
 import { SidbarCardComponent } from './sidbar-card/sidbar-card.component';
 import { EditDeleteButtonComponent } from './edit-delete-button/edit-delete-button.component';
+import { BackBtnComponent } from './back-btn/back-btn.component';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { InputTextModule } from 'primeng/inputtext';
@@ -39,6 +40,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     SidbarCardComponent,
     AddAddressComponent,
     EditDeleteButtonComponent,
+    BackBtnComponent,
     
   ],
   imports: [
@@ -63,7 +65,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     ProductListComponent,
     SidbarCardComponent,
     EditDeleteButtonComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    BackBtnComponent
   ],
 })
 export class SharedComponentModule { }

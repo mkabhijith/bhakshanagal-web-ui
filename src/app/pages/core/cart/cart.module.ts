@@ -16,4 +16,6 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
     ScrollPanelModule
   ]
 })
-export class CartModule { }
+export class CartModule {
+  
+ }

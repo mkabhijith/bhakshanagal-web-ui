@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { StorageService } from '../../services/storage/storage.service';
 
 type IprofileActionArray = {
@@ -14,10 +15,10 @@ type IprofileActionArray = {
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
   constructor(private route: Router, private storageService: StorageService) {}
   show: boolean = false;
-
+  onAuthorise: boolean = false;
   profileActionArray: IprofileActionArray[] = [
     {
       id: 0,
@@ -33,6 +34,12 @@ export class ProfileComponent {
     },
   ];
 
+  ngOnInit(): void {
+    if (this.storageService.authKey) {
+      this.onAuthorise = true;
+    }
+  }
+
   onDropdown() {
     this.show = !this.show;
   }
@@ -42,6 +49,9 @@ export class ProfileComponent {
 
   logOut() {
     this.storageService.clearData();
+    this.onHideDropdown()
+  }
+  logIn() {
     this.route.navigateByUrl('/signin');
   }
 }

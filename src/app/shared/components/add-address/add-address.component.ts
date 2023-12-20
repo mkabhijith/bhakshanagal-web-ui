@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AddressService } from 'src/app/pages/core/account/address/address.service';
 import { IAddressForm, IAddressList } from '../../types/address.type';
 @Component({
@@ -11,7 +11,8 @@ import { IAddressForm, IAddressList } from '../../types/address.type';
 export class AddAddressComponent implements OnInit {
   constructor(
     private addressService: AddressService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   addressForm = new FormGroup<IAddressForm>({
@@ -29,7 +30,7 @@ export class AddAddressComponent implements OnInit {
 
   addressArray!: IAddressList[];
   addressData!: IAddressList;
-
+  onEditForm = false;
   ngOnInit(): void {
     this.addressArray = this.addressService.getAddress();
 
@@ -39,6 +40,7 @@ export class AddAddressComponent implements OnInit {
         const address = this.addressArray.find((item) => item.id == id);
         if (address) {
           this.addressData = { ...address };
+          this.onEditForm = true;
         }
       },
     });
@@ -62,7 +64,10 @@ export class AddAddressComponent implements OnInit {
       console.log('valid form', this.addressForm.value);
     }
   }
-  clearForm(){
-    this.addressForm.reset()
+  clearForm() {
+    this.addressForm.reset();
+  }
+  navgateToAccount() {
+    this.router.navigate(['address']);
   }
 }

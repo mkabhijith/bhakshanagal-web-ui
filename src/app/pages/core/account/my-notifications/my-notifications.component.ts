@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 type Inotification = {
   id: number;
@@ -12,6 +13,7 @@ type Inotification = {
   styleUrls: ['./my-notifications.component.scss'],
 })
 export class MyNotificationsComponent {
+  constructor(private router:Router){}
   notificationList: Inotification[] = [
     {
       id: 0,
@@ -27,4 +29,7 @@ export class MyNotificationsComponent {
       date: '12/Dec/2023',
     },
   ];
+  navgateToAccount() {
+    this.router.navigate(['account']);
+  }
 }

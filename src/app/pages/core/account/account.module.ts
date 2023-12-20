@@ -17,6 +17,7 @@ import { ButtonModule } from 'primeng/button';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
+import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
 
 @NgModule({
   declarations: [AccountComponent, ProfileComponent,AddressComponent],
@@ -31,7 +32,8 @@ import { ToastModule } from 'primeng/toast';
     ButtonModule,
     FormsModule,
     ConfirmDialogModule,
-    ToastModule
+    ToastModule,
+    SharedComponentModule
   ],
   
   providers: [ConfirmationService, MessageService],

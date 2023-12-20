@@ -6,7 +6,6 @@ import { authGurd } from '../auth-gurd.guard';
 const routes: Routes = [
   {
     path: '',
-    canActivate: [authGurd],
     component: ProductComponent
   }
 ];

@@ -34,11 +34,13 @@ const routes: Routes = [
       },
       {
         path: 'orders',
+        canActivate: [authGurd],
         loadChildren: () =>
           import('../core/orders/orders.module').then((m) => m.OrdersModule),
       },
       {
         path: 'orderDetails/:id',
+        canActivate: [authGurd],
         loadChildren: () =>
           import('../core/orders/order-details/order-details.module').then(
             (m) => m.OrderDetailsModule
@@ -70,13 +72,9 @@ const routes: Routes = [
       },
       {
         path: 'account',
+        canActivate: [authGurd],
         loadChildren: () =>
           import('../core/account/account.module').then((m) => m.AccountModule),
-      },
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',
       },
       {
         path: 'profile',
@@ -97,16 +95,21 @@ const routes: Routes = [
       {
         path: 'notifications',
         loadChildren: () =>
-          import('../core/account/my-notifications/my-notifications.module').then(
-            (m) => m.MyNotificationsModule
-          ),
+          import(
+            '../core/account/my-notifications/my-notifications.module'
+          ).then((m) => m.MyNotificationsModule),
       },
       {
         path: 'reviews',
         loadChildren: () =>
-          import('../core/account/my-review-rating/my-review-rating.module').then(
-            (m) => m.MyReviewRatingModule
-          ),
+          import(
+            '../core/account/my-review-rating/my-review-rating.module'
+          ).then((m) => m.MyReviewRatingModule),
+      },
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
       },
     ],
   },

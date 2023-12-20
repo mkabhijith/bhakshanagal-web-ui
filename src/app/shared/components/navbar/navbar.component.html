@@ -35,6 +35,12 @@
         [value]="values"
         style="font-size: 2rem"
         severity="success"
+        *ngIf="values !== 0"
+      ></i>
+      <i
+        class="pi pi-shopping-cart"
+        style="font-size: 2rem"
+        *ngIf="values == 0"
       ></i>
     </div>
     <app-language-selector></app-language-selector>
@@ -42,7 +48,11 @@
   </div>
 </div>
 <!-- mobile design start here  -->
-<div class="navbar-container-for-mobile">
+<div
+  class="navbar-container-for-mobile"
+  [class.fixed]="isNavbarFixed"
+  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
+>
   <div class="navbar-top">
     <div class="navbar-left">
       <i
@@ -58,6 +68,21 @@
       </div>
     </div>
     <div class="navbar-right">
+      <div class="cart" routerLink="/cart">
+        <i
+          class="pi pi-shopping-cart"
+          pBadge
+          [value]="values"
+          style="font-size: 1.5rem"
+          severity="success"
+          *ngIf="values !== 0"
+        ></i>
+        <i
+          class="pi pi-shopping-cart"
+          style="font-size: 1.5rem"
+          *ngIf="values == 0"
+        ></i>
+      </div>
       <app-language-selector></app-language-selector>
       <app-profile></app-profile>
     </div>
@@ -74,10 +99,4 @@
     </div>
   </div>
   <app-sidebar [triggerUpdate]="triggerSliderVisible"></app-sidebar>
-  <!-- <p-sidebar [(visible)]="sidebarVisible1" position="left">
-    <ng-template pTemplate="header"><img src="../../../../assets/images/logo_6-removebg-preview.png" alt=""></ng-template>
-    <ng-template pTemplate="content">Body Content</ng-template>
-    <ng-template pTemplate="footer">Footer Content</ng-template> -->
-  <!-- <h4>Left Sidebar</h4> -->
-  <!-- </p-sidebar> -->
 </div>
