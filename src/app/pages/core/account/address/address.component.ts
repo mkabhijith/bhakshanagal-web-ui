@@ -1,27 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AddressService } from './address.service';
+import { ILanguage } from 'src/app/shared/types/language.type';
+
 import {
   ConfirmEventType,
   ConfirmationService,
   MessageService,
 } from 'primeng/api';
-import { AddressService } from './address.service';
-import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { LanguageService } from 'src/app/shared/services/language.service';
 
 @Component({
   selector: 'app-address',
   templateUrl: './address.component.html',
   styleUrls: ['./address.component.scss'],
 })
-export class AddressComponent implements OnInit {
+export class AddressComponent implements OnInit, OnDestroy {
   constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private addService:AddressService,
-    private router: Router
+    private addService: AddressService,
+    private router: Router,
+    private languageService: LanguageService
   ) {}
-  addressList!:any[]
+  currentLanguage!: ILanguage;
+  languageSubscription!: Subscription;
+
+  addressList!: any[];
   ngOnInit(): void {
-   this.addressList= this.addService.getAddress()
+    this.addressList = this.addService.getAddress();
+    this.languageSubscription = this.languageService.switchLanguage$.subscribe({
+      next: (lang) => {
+        this.currentLanguage = lang;
+      },
+    });
+  }
+  ngOnDestroy(): void {
+    this.languageSubscription.unsubscribe();
   }
   confirm1() {
     console.log('clicked');
@@ -57,18 +73,18 @@ export class AddressComponent implements OnInit {
       },
     });
   }
-  onEditAddress(id:number) {
+  onEditAddress(id: number) {
     console.log(id);
-    
-    this.router.navigate(['account/addAddress',id])
+
+    this.router.navigate(['account/addAddress', id]);
   }
-  onEditAddressMobile(id:number){
+  onEditAddressMobile(id: number) {
     console.log('addAddress');
-    
-    this.router.navigate(['/addAddress',id])
+
+    this.router.navigate(['/addAddress', id]);
   }
 
-  navgateToAccount(){
-    this.router.navigate(['account'])
+  navgateToAccount() {
+    this.router.navigate(['account']);
   }
 }

@@ -70,7 +70,9 @@
     }
   }
 }
-
+.add-address-container.ar{
+  direction: rtl;
+}
 @media screen and (max-width: 580px) {
   .add-address-container {
     .main-container {

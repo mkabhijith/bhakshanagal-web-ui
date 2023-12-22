@@ -1,4 +1,4 @@
-<div class="product-list">
+<div class="product-list" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
   <p-card
     header="{{ item.productName }}"
     subheader="{{ item.quantity }}"
@@ -12,9 +12,12 @@
       {{ item.price | currency : "INR" }}
     </div>
     <ng-template pTemplate="footer">
-      <p-button label="Buy Now" (onClick)="navigateProduct(item.id)"></p-button>
       <p-button
-        label="Cart"
+        label="{{ 'HOME.BUY_NOW' | translate }}"
+        (onClick)="navigateProduct(item.id)"
+      ></p-button>
+      <p-button
+        label="{{ 'HOME.CART' | translate }}"
         icon="pi pi-shopping-cart"
         styleClass="p-button-secondary"
         [style]="{ 'margin-left': '.5em' }"

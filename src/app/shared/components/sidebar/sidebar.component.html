@@ -3,6 +3,7 @@
   (onHide)="onSidebarHide()"
   [(visible)]="sidebarVisible"
   position="left"
+  [ngClass]="{ar:currentLanguage.code ==='ar'}"
 >
   <ng-template pTemplate="header"
     ><img src="/assets/images/logo_6-removebg-preview.png" alt=""
@@ -16,7 +17,7 @@
       >
         <div class="option-container">
           <i [class]="categories.icon"></i>
-          <div class="text">{{ categories.title }}</div>
+          <div class="text">{{ categories.title |translate }}</div>
         </div>
       </div>
       <p-divider></p-divider>
@@ -27,7 +28,7 @@
       >
         <div class="option-container">
           <i [class]="orgin.icon"></i>
-          <div class="text">{{ orgin.title }}</div>
+          <div class="text">{{ orgin.title |translate }}</div>
         </div>
       </div>
       <p-divider></p-divider>
@@ -38,7 +39,7 @@
       >
         <div class="option-container">
           <i [class]="offer.icon"></i>
-          <div class="text">{{ offer.title }}</div>
+          <div class="text">{{ offer.title |translate }}</div>
         </div>
       </div>
       <p-divider></p-divider>
@@ -49,7 +50,7 @@
       >
         <div class="option-container">
           <i [class]="account.icon"></i>
-          <div class="text">{{ account.title }}</div>
+          <div class="text">{{ account.title |translate}}</div>
         </div>
       </div>
     </div>
@@ -63,10 +64,10 @@
     >
       <div class="option-container">
         <div class="icon"></div>
-        <div class="text">{{ service.title }}</div>
+        <div class="text">{{ service.title |translate}}</div>
       </div>
     </div>
     <p-divider></p-divider>
-    <h3 class="log-out">log Out</h3>
+    <h3 class="log-out">{{"LOGIN.LOG_OUT"|translate}}</h3>
   </ng-template>
 </p-sidebar>

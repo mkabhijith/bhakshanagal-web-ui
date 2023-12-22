@@ -30,13 +30,13 @@
     padding: 0 15px;
     .order-image-details {
       display: flex;
+      gap: 40px;
       img {
         width: 120px;
         height: 100px;
       }
       .order-details {
         width: 350px;
-        padding-left: 40px;
         gap: 10px;
         display: flex;
         flex-direction: column;
@@ -113,7 +113,12 @@
     }
   }
 }
+.orders--container.ar {
+  direction: rtl;
+  .order-box{
 
+  }
+}
 @media screen and (max-width: 1160px) {
   .orders--container {
     .order-container {

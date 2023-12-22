@@ -1,19 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AddressService } from 'src/app/pages/core/account/address/address.service';
+import { LanguageService } from '../../services/language.service';
 import { IAddressForm, IAddressList } from '../../types/address.type';
+import { ILanguage } from '../../types/language.type';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-add-address',
   templateUrl: './add-address.component.html',
   styleUrls: ['./add-address.component.scss'],
 })
-export class AddAddressComponent implements OnInit {
+export class AddAddressComponent implements OnInit, OnDestroy {
   constructor(
     private addressService: AddressService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private languageService: LanguageService
   ) {}
+  currentLanguage!: ILanguage;
+  languageSubscription!: Subscription;
 
   addressForm = new FormGroup<IAddressForm>({
     name: new FormControl('', Validators.required),
@@ -58,6 +64,15 @@ export class AddAddressComponent implements OnInit {
         addressType: this.addressData.addressType,
       });
     }
+
+    this.languageSubscription = this.languageService.switchLanguage$.subscribe({
+      next: (lang) => {
+        this.currentLanguage = lang;
+      },
+    });
+  }
+  ngOnDestroy(): void {
+    this.languageSubscription.unsubscribe();
   }
   onSubmit() {
     if (this.addressForm.valid) {

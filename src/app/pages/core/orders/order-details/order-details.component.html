@@ -1,7 +1,7 @@
-<div class="order--container">
-  <p-toast  position="top-center" ></p-toast>
-  <p-confirmDialog ></p-confirmDialog>
- 
+<div class="order--container" [ngClass]="{ ar: currentLanguage.code ==='ar' }">
+  <p-toast position="top-center"></p-toast>
+  <p-confirmDialog></p-confirmDialog>
+
   <div class="order--header"></div>
   <div class="order-box">
     <div class="order--details">
@@ -9,7 +9,7 @@
         <div class="order-details">
           <div class="details">Kuzhlapam</div>
           <div class="quantity">450g</div>
-          <div class="price">{{45 | currency:'INR'}} </div>
+          <div class="price">{{ 45 | currency : "INR" }}</div>
         </div>
       </div>
       <div class="image">
@@ -19,13 +19,13 @@
       </div>
     </div>
     <div class="action-and-review-details">
-      <div class="text">Need Help? </div>
+      <div class="text">Need Help?</div>
       <div>|</div>
       <p-button
-      label="Cancel Order"
-      (onClick)="onCancelOrder()"
-      styleClass="p-button-raised p-button-text p-button-warning"
-    ></p-button>
+        label="Cancel Order"
+        (onClick)="onCancelOrder()"
+        styleClass="p-button-raised p-button-text p-button-warning"
+      ></p-button>
     </div>
     <div class="tracking-details">
       <p-timeline [value]="events">
@@ -35,7 +35,7 @@
       </p-timeline>
     </div>
     <div class="address-container">
-      <div class="heading">Shipping Details</div>
+      <div class="heading">{{"ORDERS.SHIPPING_DETAILS"|translate}}</div>
       <div class="shipping-details">
         <div class="name">sachu</div>
         <div class="house-name">Lunar</div>

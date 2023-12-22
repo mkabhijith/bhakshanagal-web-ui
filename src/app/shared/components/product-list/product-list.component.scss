@@ -23,6 +23,8 @@
     .p-card-footer {
       padding: 0;
       padding-top: 5px;
+      display: flex;
+      gap: 10px;
     }
     .p-card-body{
       padding: 10px 20px;
@@ -33,6 +35,9 @@
   }
 }
 
+.product-list.ar{
+  direction: rtl;
+}
 
 @media screen and (max-width: 1410px){
   .product-list {

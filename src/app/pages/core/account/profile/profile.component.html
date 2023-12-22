@@ -1,14 +1,23 @@
-<app-back-btn (click)="navgateToAccount()">My Account</app-back-btn>
-<div class="profile-container">
+<app-back-btn (click)="navgateToAccount()">{{
+  "SIDE_BAR.MY_ACCOUNT" | translate
+}}</app-back-btn>
+<div
+  class="profile-container"
+  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
+>
   <div class="profile-header">
-    <div class="text">Personal Information</div>
-    <div class="edit" *ngIf="!onEdit" (click)="onEdit = true">Edit</div>
-    <div class="cancel" *ngIf="onEdit" (click)="onEdit = false">Cancel</div>
+    <div class="text">{{ "ACCOUNT.PERSONAL_INFORMATION" | translate }}</div>
+    <div class="edit" *ngIf="!onEdit" (click)="onEdit = true">
+      {{ "BUTTON_ACTIONS.EDIT" | translate }}
+    </div>
+    <div class="cancel" *ngIf="onEdit" (click)="onEdit = false">
+      {{ "BUTTON_ACTIONS.CANCEL" | translate }}
+    </div>
   </div>
   <div class="main-conatainer">
     <form [formGroup]="profileForm">
       <div class="label-field">
-        <label for="Name">Name</label>
+        <label for="Name">{{ "FORM_FIELD.NAME" | translate }}</label>
         <input
           type="text"
           pInputText
@@ -17,7 +26,7 @@
         />
       </div>
       <div class="label-field">
-        <label for="Email">Email</label>
+        <label for="Email">{{ "FORM_FIELD.EMAIL_ADDRESS" | translate }}</label>
         <input
           type="text"
           pInputText
@@ -26,7 +35,7 @@
         />
       </div>
       <div class="label-field">
-        <label for="number">Mobile Number</label>
+        <label for="number">{{ "FORM_FIELD.PHONE_NUMBER" | translate }}</label>
         <p-inputNumber
           inputId="withoutgrouping"
           [useGrouping]="false"
@@ -36,7 +45,9 @@
         </p-inputNumber>
       </div>
       <div class="button-footer">
-        <button pButton class="p-button-warning" *ngIf="onEdit">Submit</button>
+        <button pButton class="p-button-warning" *ngIf="onEdit">
+          {{ "BUTTON_ACTIONS.SUBMIT" | translate }}
+        </button>
       </div>
     </form>
   </div>

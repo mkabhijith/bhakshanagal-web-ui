@@ -1,6 +1,9 @@
-<div class="back-btn-container">
-    <i class="pi pi-arrow-left"></i>
-    <ng-content></ng-content>
+<div
+  class="back-btn-container"
+  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
+>
+  <i class="pi pi-arrow-left"></i>
+  <ng-content></ng-content>
 </div>
 
 <!-- <div class="profile"> Your Account</div> -->

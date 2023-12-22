@@ -1,17 +1,93 @@
 {
-    "LOGIN": {
-        "LANGUAGE": "ഭാഷ"
-    },
-    "LANGUAGE": {
-        "ENGLISH": "EN",
-        "HINDI": "Hebrew",
-        "ARABIC": "Arabic",
-        "MALAYALAM": "ML",
-        "_": "Language"
-    },
-    "NAVBAR": {
-        "HOME": "Home",
-        "ABOUT": "About",
-        "CANCEL_ORDERS": "Order"
-    }
+  "LOGIN": {
+    "LANGUAGE": "ഭാഷ",
+    "LOG_IN": "ലോഗിൻ",
+    "LOG_OUT": "പുറത്തുകടക്കുക"
+  },
+  "LANGUAGE": {
+    "HINDI": "ഹിന്ദി",
+    "ARABIC": "अरबी",
+    "ENGLISH": "ENGLISH",
+    "MALAYALAM": "ML",
+    "TAMIL": "தமிழ்",
+    "_": "ഭാഷ"
+  },
+  "MENU": {
+    "HOME": "ഹോം",
+    "ORDERS": "ഓർഡർ",
+    "ACCOUNT": "അക്കൗണ്ട്"
+  },
+  "HOME": {
+    "BUY_NOW": "ഇപ്പോൾ വാങ്ങുക",
+    "CART": "കാർട്ട്"
+  },
+  "FORM_FIELD": {
+    "EMAIL_ADDRESS": "ഇമെയിൽ വിലാസം",
+    "PASSWORD": "പാസ്വേഡ്",
+    "USER_NAME": "ഉപയോക്തൃനാമം",
+    "NAME": "പേര്",
+    "PHONE_NUMBER": "ഫോൺ നമ്പർ",
+    "PIN_CODE": "പിൻ കോഡ്",
+    "LOCALITY": "ലൊക്കലിറ്റി",
+    "ADDRESS": "വിലാസം",
+    "CITY": "നഗരം",
+    "STATE": "സംസ്ഥാനം",
+    "LANDMARK": "ലാൻഡ്മാർക്ക്",
+    "ALTERNATIVE_PHONE": "ഇതര ഫോൺ"
+  },
+  "ADDRESS": {
+    "HOME": "വീട്",
+    "OFFICE": "ഓഫീസ്",
+    "OTHER": "മറ്റുള്ളവ",
+    "ADD_ADDRESS": "വിലാസം ചേർക്കുക",
+    "EDIT_ADDRESS": "വിലാസം എഡിറ്റ് ചെയ്യുക"
+  },
+  "BUTTON_ACTIONS": {
+    "SAVE": "സേവ്",
+    "CANCEL": "റദ്ദാക്കുക",
+    "EDIT": "എഡിറ്റ്",
+    "DELETE": "ഇല്ലാതാക്കുക",
+    "ADD_NEW_ADDRESS": "ഒരു പുതിയ വിലാസം ചേർക്കുക",
+    "LOG_OUT": "പുറത്തുകടക്കുക",
+    "DELIVER": "മോചിപ്പിക്കുക",
+    "ADD_NEW": "പുതിയത് ചേർക്കുക",
+    "CANCEL_ORDER": "ഓർഡർ റദ്ദാക്കാൻ",
+    "SIGN_UP":"സൈൻ അപ്പ് ചെയ്യുക",
+    "SUBMIT": "കീഴടങ്ങുക"
+  },
+  "PRODUCT": {
+    "STATUS": "പദവി",
+    "OUT_OF_STOCK": "സ്റ്റോക്കില്ല",
+    "IN_STOCK": "സ്റ്റോക്കുണ്ട്"
+  },
+  "ORDERS": {
+    "YOUR_ORDERS": "നിങ്ങളുടെ ഓർഡറുകൾ",
+    "ORDER_PLACED": "ഓർഡർ ചെയ്തു",
+    "SHIPPING_DETAILS": "അയക്കേണ്ട വിലാസം"
+  },
+  "ACCOUNT":{
+    "ACC_NAME":"അക്കൗണ്ട് നാമം",
+    "ACC_SETTING":"അക്കൗണ്ട് ക്രമീകരണങ്ങൾ",
+    "PROFILE_INFORMATION":"വ്യക്തിഗത വിവരങ്ങൾ",
+    "MANAGE_ADDRESS":"വിലാസങ്ങൾ നിയന്ത്രിക്കുക",
+    "MY_HOLDINGS":"എന്റെ കൈവശം",
+    "MY_CART":"എന്റെ കാർട്ട്",
+    "MY_ORDERS":"എന്റെ ഓർഡറുകൾ",
+    "MY_NOTIFICATION":"എന്റെ അറിയിപ്പുകൾ",
+    "MY_REVIEW_RATING":"എന്റെ അവലോകനവും റേറ്റിംഗും",
+    "MY_REVIEWS":"എന്റെ അവലോകനങ്ങൾ",
+    "PERSONAL_INFORMATION":"സ്വകാര്യ വിവരം",
+    "ALL_NOTIFICATION":"എല്ലാ വിജ്ഞാപനവും",
+    "YOUR_ACC":"നിങ്ങളുടെ അക്കൗണ്ട്"
+  },
+  "SIDE_BAR":{
+    "ALL_CATEGORIES":"എല്ലാ വിഭാഗങ്ങളും",
+    "CHOOSE_LANGUAGE":"ഭാഷ തിരഞ്ഞെടുക്കുക",
+    "CHOOSE_COUNTRY":"രാജ്യം തിരഞ്ഞെടുക്കുക",
+    "OFFER_ZONE":"ഓഫർ സോൺ",
+    "MY_ACCOUNT":"എന്റെ അക്കൗണ്ട്",
+    "HELP":"സഹായം",
+    "ABOUT_US":"ഞങ്ങളേക്കുറിച്ച്",
+    "CONTACT_US":"ഞങ്ങളെ സമീപിക്കുക"
+  }
 }

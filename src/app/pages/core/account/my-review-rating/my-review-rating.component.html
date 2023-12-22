@@ -1,9 +1,11 @@
 <p-toast></p-toast>
-<p-confirmDialog ></p-confirmDialog>
-<app-back-btn (click)="navgateToAccount()">My Account</app-back-btn>
+<p-confirmDialog></p-confirmDialog>
+<app-back-btn (click)="navgateToAccount()">{{
+  "SIDE_BAR.MY_ACCOUNT" | translate
+}}</app-back-btn>
 
 <div class="main-container">
-  <div class="my-reviews">My Reviews</div>
+  <div class="my-reviews">{{ "ACCOUNT.MY_REVIEWS" | translate }}</div>
   <div class="review-container">
     <div class="image"></div>
     <div class="review">
@@ -18,8 +20,12 @@
       <div class="date">12-dec-2023</div>
       <!-- <app-edit-delete-button></app-edit-delete-button> -->
       <div class="buttons">
-        <p-button styleClass="p-button-warning">Edit</p-button>
-        <p-button styleClass="p-button-danger" (onClick)="confirm1()"> Delete </p-button>
+        <p-button styleClass="p-button-warning">{{
+          "BUTTON_ACTIONS.EDIT" | translate
+        }}</p-button>
+        <p-button styleClass="p-button-danger" (onClick)="confirm1()">
+          {{ "BUTTON_ACTIONS.DELETE" | translate }}
+        </p-button>
       </div>
     </div>
   </div>

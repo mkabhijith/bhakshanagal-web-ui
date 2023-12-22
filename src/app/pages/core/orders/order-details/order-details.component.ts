@@ -1,20 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   ConfirmEventType,
   MessageService,
   ConfirmationService,
 } from 'primeng/api';
+import { Subscription } from 'rxjs';
+import { LanguageService } from 'src/app/shared/services/language.service';
+import { ILanguage } from 'src/app/shared/types/language.type';
 
 @Component({
   selector: 'app-order-details',
   templateUrl: './order-details.component.html',
   styleUrls: ['./order-details.component.scss'],
 })
-export class OrderDetailsComponent implements OnInit {
+export class OrderDetailsComponent implements OnInit, OnDestroy {
+  currentLanguage!: ILanguage;
+  languageSubscription!: Subscription;
   events!: any[];
   constructor(
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private languageService: LanguageService
   ) {}
 
   ngOnInit(): void {
@@ -45,6 +51,14 @@ export class OrderDetailsComponent implements OnInit {
         color: '#607D8B',
       },
     ];
+    this.languageSubscription = this.languageService.switchLanguage$.subscribe({
+      next: (lang) => {
+        this.currentLanguage = lang;
+      },
+    });
+  }
+  ngOnDestroy(): void {
+    this.languageSubscription.unsubscribe();
   }
   onCancelOrder() {
     this.confirmationService.confirm({

@@ -1,16 +1,27 @@
-<app-back-btn (click)="navgateToAccount()">My Account</app-back-btn>
-<div class="add-address-container">
-  <div class="caption-container" *ngIf="onEditForm">Edit address</div>
-  <div class="caption-container" *ngIf="!onEditForm">Add address</div>
+<app-back-btn (click)="navgateToAccount()">{{
+  "SIDE_BAR.MY_ACCOUNT" | translate
+}}</app-back-btn>
+<div
+  class="add-address-container"
+  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
+>
+  <div class="caption-container" *ngIf="onEditForm">
+    {{ "ADDRESS.EDIT_ADDRESS" | translate }}
+  </div>
+  <div class="caption-container" *ngIf="!onEditForm">
+    {{ "ADDRESS.ADD_ADDRESS" | translate }}
+  </div>
   <div class="main-container">
     <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
       <div class="input-box-container">
         <div class="input-box">
-          <label for="" class="name">Name</label>
+          <label for="" class="name">{{ "FORM_FIELD.NAME" | translate }}</label>
           <input type="text" pInputText formControlName="name" />
         </div>
         <div class="input-box">
-          <label for="" class="name">Phone Number</label>
+          <label for="" class="name">{{
+            "FORM_FIELD.PHONE_NUMBER" | translate
+          }}</label>
           <p-inputNumber
             inputId="withoutgrouping"
             [useGrouping]="false"
@@ -21,7 +32,9 @@
       </div>
       <div class="input-box-container">
         <div class="input-box">
-          <label for="" class="name">Pin code</label>
+          <label for="" class="name">{{
+            "FORM_FIELD.PIN_CODE" | translate
+          }}</label>
           <p-inputNumber
             inputId="withoutgrouping"
             [useGrouping]="false"
@@ -30,13 +43,17 @@
           </p-inputNumber>
         </div>
         <div class="input-box">
-          <label for="" class="name">Locality</label>
+          <label for="" class="name">{{
+            "FORM_FIELD.LOCALITY" | translate
+          }}</label>
           <input type="text" pInputText formControlName="locality" />
         </div>
       </div>
       <div class="input-box-container">
         <div class="input-area">
-          <label for="" class="name">Address</label>
+          <label for="" class="name">{{
+            "FORM_FIELD.ADDRESS" | translate
+          }}</label>
           <textarea
             rows="5"
             cols="30"
@@ -48,22 +65,28 @@
       </div>
       <div class="input-box-container">
         <div class="input-box">
-          <label for="" class="name">City</label>
+          <label for="" class="name">{{ "FORM_FIELD.CITY" | translate }}</label>
           <input type="text" pInputText formControlName="city" />
         </div>
         <div class="input-box">
-          <label for="" class="name">State</label>
+          <label for="" class="name">{{
+            "FORM_FIELD.STATE" | translate
+          }}</label>
           <input type="text" pInputText formControlName="state" />
         </div>
       </div>
 
       <div class="input-box-container">
         <div class="input-box">
-          <label for="" class="name">LandMark</label>
+          <label for="" class="name">{{
+            "FORM_FIELD.LANDMARK" | translate
+          }}</label>
           <input type="text" pInputText formControlName="landMark" />
         </div>
         <div class="input-box">
-          <label for="" class="name">Alternative Phone</label>
+          <label for="" class="name">{{
+            "FORM_FIELD.ALTERNATIVE_PHONE" | translate
+          }}</label>
           <p-inputNumber
             inputId="withoutgrouping"
             [useGrouping]="false"
@@ -79,7 +102,7 @@
             name="addressType"
             formControlName="addressType"
           ></p-radioButton>
-          <label for="home">Home</label>
+          <label for="home">{{ "ADDRESS.HOME" | translate }}</label>
         </div>
         <div class="address-type">
           <p-radioButton
@@ -87,7 +110,7 @@
             name="addressType"
             formControlName="addressType"
           ></p-radioButton>
-          <label for="home">Office</label>
+          <label for="home">{{ "ADDRESS.OFFICE" | translate }}</label>
         </div>
         <div class="address-type">
           <p-radioButton
@@ -95,12 +118,16 @@
             name="addressType"
             formControlName="addressType"
           ></p-radioButton>
-          <label for="home">Other</label>
+          <label for="home">{{ "ADDRESS.OTHER" | translate }}r</label>
         </div>
       </div>
       <div class="button-footer">
-        <button pButton class="p-button-warning" type="submit">save</button>
-        <span class="cancel" (click)="clearForm()">Cancel</span>
+        <button pButton class="p-button-warning" type="submit">
+          {{ "BUTTON_ACTIONS.SAVE" | translate }}
+        </button>
+        <span class="cancel" (click)="clearForm()">{{
+          "BUTTON_ACTIONS.CANCEL" | translate
+        }}</span>
       </div>
     </form>
   </div>

@@ -3,8 +3,6 @@ import { HomeService } from './home.service';
 
 import { CountryOrginService } from 'src/app/shared/services/country-orgin.service';
 import { Router } from '@angular/router';
-import { StorageService } from 'src/app/shared/services/storage/storage.service';
-import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -34,6 +32,8 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.currency = latestCurrecy.currency;
       },
     });
+
+    
 
     setInterval(() => {
       this.currentAddIndex++;

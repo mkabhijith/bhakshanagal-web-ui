@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HomeService } from '../home/home.service';
-import { StorageService } from 'src/app/shared/services/storage/storage.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+
 import { OrdersService } from './orders.service';
 import {
   ConfirmEventType,
@@ -8,23 +7,36 @@ import {
   MessageService,
 } from 'primeng/api';
 import { Router } from '@angular/router';
+import { LanguageService } from 'src/app/shared/services/language.service';
+import { Subscription } from 'rxjs';
+import { ILanguage } from 'src/app/shared/types/language.type';
 
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.scss'],
 })
-export class OrdersComponent {
+export class OrdersComponent implements OnInit, OnDestroy {
   constructor(
     private orderservice: OrdersService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private route: Router
+    private route: Router,
+    private languageService: LanguageService
   ) {}
   products: any[] = [];
-
+  currentLanguage!: ILanguage;
+  languageSubscription!: Subscription;
   ngOnInit() {
     this.products = this.orderservice.returnOrderList();
+    this.languageSubscription = this.languageService.switchLanguage$.subscribe({
+      next: (lang) => {
+        this.currentLanguage = lang;
+      },
+    });
+  }
+  ngOnDestroy(): void {
+    this.languageSubscription.unsubscribe()
   }
   confirm1() {
     this.confirmationService.confirm({
@@ -61,6 +73,6 @@ export class OrdersComponent {
 
   orderDetails(item: any) {
     console.log('item', item);
-    this.route.navigate(['/orderDetails',item]);
+    this.route.navigate(['/orderDetails', item]);
   }
 }

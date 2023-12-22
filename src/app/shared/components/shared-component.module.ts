@@ -56,7 +56,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     CardModule,
     InputNumberModule,
     InputTextareaModule,
-    RadioButtonModule
+    RadioButtonModule,
+    TranslateModule
   ],
   exports: [
     NavbarComponent,

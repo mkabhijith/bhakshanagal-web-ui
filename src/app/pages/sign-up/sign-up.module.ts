@@ -5,6 +5,7 @@ import { SignUpRoutingModule } from './sign-up-routing.module';
 import { SignUpComponent } from './sign-up.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -16,7 +17,8 @@ import { SharedComponentModule } from 'src/app/shared/components/shared-componen
     CommonModule,
     SignUpRoutingModule,
     ReactiveFormsModule,
-    SharedComponentModule
+    SharedComponentModule,
+    TranslateModule
   ]
 })
 export class SignUpModule { }

@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [OrderDetailsComponent],
@@ -20,7 +21,8 @@ import { ToastModule } from 'primeng/toast';
     DividerModule,
     ButtonModule,
     ConfirmDialogModule,
-    ToastModule
+    ToastModule,
+    TranslateModule
   ],
   providers: [MessageService, ConfirmationService],
 })

@@ -1,15 +1,93 @@
-{  
-    "LOGIN": {
-        "LANGUAGE": "لغة"
-    },
-    "LANGUAGE": {
-        "ENGLISH": "إنجليزي",
-        "HEBREW": "עברית",
-        "ARABIC":"عربي",
-        "_": "لغة"
-    },
-    "NAVBAR": {
-        "HOME": "بيت",
-        "ABOUT": "عن"
-    }
+{
+  "LOGIN": {
+    "LANGUAGE": "لغة",
+    "LOG_IN": "تسجيل الدخول",
+    "LOG_OUT": "تسجيل خروج"
+  },
+  "LANGUAGE": {
+    "ARABIC": "AR",
+    "ENGLISH": "ENGLISH",
+    "HINDI": "Hebrew",
+    "MALAYALAM": "ML",
+    "TAMIL": "தமிழ்",
+    "_": "لغة"
+  },
+  "MENU": {
+    "HOME": "بيت",
+    "ORDERS": "طلبات",
+    "ACCOUNT": "حساب"
+  },
+  "HOME": {
+    "BUY_NOW": "اشتري الآن",
+    "CART": "عربة التسوق"
+  },
+  "FORM_FIELD": {
+    "EMAIL_ADDRESS": "عنوان البريد الإلكتروني",
+    "PASSWORD": "كلمة المرور",
+    "USER_NAME": "اسم المستخدم",
+    "NAME": "اسم",
+    "PHONE_NUMBER": "رقم التليفون",
+    "PIN_CODE": "رمز التعريف الشخصي",
+    "LOCALITY": "الموقع",
+    "ADDRESS": "عنوان",
+    "CITY": "مدينة",
+    "STATE": "ولاية",
+    "LANDMARK": "معلم معروف",
+    "ALTERNATIVE_PHONE": "هاتف بديل"
+  },
+  "ADDRESS": {
+    "HOME": "بيت",
+    "OFFICE": "مكتب",
+    "OTHER": "آخر",
+    "ADD_ADDRESS": "اضف عنوان",
+    "EDIT_ADDRESS": "تعديل العنوان"
+  },
+  "BUTTON_ACTIONS": {
+    "SAVE": "يحفظ",
+    "CANCEL": "يلغي",
+    "EDIT": "يحرر",
+    "DELETE": "يمسح",
+    "ADD_NEW_ADDRESS": "أضف عنوانا جديدا",
+    "LOG_OUT": "تسجيل خروج",
+    "DELIVER": "يسلم",
+    "ADD_NEW": "اضف جديد",
+    "CANCEL_ORDER": "الغاء الطلب",
+    "SIGN_UP": "اشتراك",
+    "SUBMIT": "يُقدِّم"
+  },
+  "PRODUCT": {
+    "STATUS": "حالة",
+    "OUT_OF_STOCK": "إنتهى من المخزن",
+    "IN_STOCK": "في الأوراق المالية"
+  },
+  "ORDERS": {
+    "YOUR_ORDERS": "طلباتك",
+    "ORDER_PLACED": "تم الطلب",
+    "SHIPPING_DETAILS": "تفاصيل الشحن"
+  },
+  "ACCOUNT": {
+    "ACC_NAME": "إسم الحساب",
+    "ACC_SETTING": "إعدادت الحساب",
+    "PROFILE_INFORMATION": "معلومات الملف الشخصي",
+    "MANAGE_ADDRESS": "إدارة العناوين",
+    "MY_HOLDINGS": "ممتلكاتي",
+    "MY_CART": "عربة التسوق الخاصة بي",
+    "MY_ORDERS": "طلباتي",
+    "MY_NOTIFICATION": "الإشعارات الخاصة بي",
+    "MY_REVIEW_RATING": "تقييمي وتصنيفه",
+    "MY_REVIEWS": "مراجعاتي",
+    "PERSONAL_INFORMATION": "معلومات شخصية",
+    "ALL_NOTIFICATION": "كل الإخطار",
+    "YOUR_ACC":"الحساب الخاص بك"
+  },
+  "SIDE_BAR": {
+    "ALL_CATEGORIES": "جميع الفئات",
+    "CHOOSE_LANGUAGE": "اختر اللغة",
+    "CHOOSE_COUNTRY": "اختر البلد",
+    "OFFER_ZONE": "منطقة العرض",
+    "MY_ACCOUNT": "حسابي",
+    "HELP": "يساعد",
+    "ABOUT_US": "معلومات عنا",
+    "CONTACT_US": "اتصل بنا"
+  }
 }

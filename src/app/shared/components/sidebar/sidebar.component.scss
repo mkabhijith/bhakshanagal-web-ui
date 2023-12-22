@@ -49,3 +49,23 @@ p-sidebar {
     }
   }
 }
+p-sidebar.ar {
+  ::ng-deep {
+    .p-sidebar-left {
+      width: 13rem;
+      left: auto;
+      right: 0;
+    }
+    .p-sidebar .p-sidebar-header .p-sidebar-close,
+    .p-sidebar .p-sidebar-header .p-sidebar-icon {
+      margin-left: 0;
+      margin-right: auto;
+    }
+    .side-options {
+      padding-right: 10px;
+    }
+    .p-sidebar-footer {
+      padding-right: 10px;
+    }
+  }
+}

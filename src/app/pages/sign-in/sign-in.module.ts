@@ -5,6 +5,7 @@ import { SignInRoutingModule } from './sign-in-routing.module';
 import { SignInComponent } from './sign-in.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SharedComponentModule } from 'src/app/shared/components/shared-componen
     CommonModule,
     SignInRoutingModule,
     ReactiveFormsModule,
-    SharedComponentModule
+    SharedComponentModule,
+    TranslateModule
   ]
 })
 export class SignInModule { }

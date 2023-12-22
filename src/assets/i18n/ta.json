@@ -1,16 +1,93 @@
 {
-    "LOGIN": {
-        "LANGUAGE": "Language"
-    },
-    "LANGUAGE": {
-        "ENGLISH": "EN",
-        "HEBREW": "Hebrew",
-        "ARABIC": "Arabic",
-        "_": "Language"
-    },
-    "NAVBAR": {
-        "HOME": "emoh",
-        "ABOUT": "About",
-        "CANCEL_ORDERS": "Order"
-    }
+  "LOGIN": {
+    "LANGUAGE": "மொழி",
+    "LOG_IN": "உள்நுழைய",
+    "LOG_OUT": "வெளியேறு"
+  },
+  "LANGUAGE": {
+    "ARABIC": "AR",
+    "ENGLISH": "ENGLISH",
+    "HINDI": "Hebrew",
+    "MALAYALAM": "ML",
+    "TAMIL": "தமிழ்",
+    "_": "لغة"
+  },
+  "MENU": {
+    "HOME": "வீடு",
+    "ORDERS": "ஆர்டர்கள்",
+    "ACCOUNT": "சுயவிவரம்"
+  },
+  "HOME": {
+    "BUY_NOW": "இப்போது வாங்க",
+    "CART": "வண்டி"
+  },
+  "FORM_FIELD": {
+    "EMAIL_ADDRESS": "மின்னஞ்சல் முகவரி",
+    "PASSWORD": "கடவுச்சொல்",
+    "USER_NAME": "பயனர் பெயர்",
+    "NAME": "பெயர்",
+    "PHONE_NUMBER": "தொலைபேசி எண்",
+    "PIN_CODE": "அஞ்சல் குறியீடு",
+    "LOCALITY": "வட்டாரம்",
+    "ADDRESS": "முகவரி",
+    "CITY": "நகரம்",
+    "STATE": "நிலை",
+    "LANDMARK": "லேண்ட்மார்க்",
+    "ALTERNATIVE_PHONE": "மாற்று தொலைபேசி"
+  },
+  "ADDRESS": {
+    "HOME": "வீடு",
+    "OFFICE": "அலுவலகம்",
+    "OTHER": "மற்றவை",
+    "ADD_ADDRESS": "முகவரியைச் சேர்",
+    "EDIT_ADDRESS": "முகவரியைத் திருத்து"
+  },
+  "BUTTON_ACTIONS": {
+    "SAVE": "சேமிக்க",
+    "CANCEL": "ரத்துசெய்",
+    "EDIT": "தொகு",
+    "DELETE": "அழி",
+    "ADD_NEW_ADDRESS": "புதிய முகவரியைச் சேர்க்கவும்",
+    "LOG_OUT": "வெளியேறு",
+    "DELIVER": "வழங்கவும்",
+    "ADD_NEW": "புதிதாக சேர்க்கவும்",
+    "CANCEL_ORDER": "ஆர்டரை ரத்துசெய்",
+    "SIGN_UP": "பதிவு செய்க",
+    "SUBMIT": "சமர்ப்பிக்கவும்"
+  },
+  "PRODUCT": {
+    "STATUS": "நிலை",
+    "OUT_OF_STOCK": "பங்கு இல்லை",
+    "IN_STOCK": "கையிருப்பில்"
+  },
+  "ORDERS": {
+    "YOUR_ORDERS": "உங்கள் ஆர்டர்கள்",
+    "ORDER_PLACED": "ஒழுங்கு வைக்கப்பட்டது",
+    "SHIPPING_DETAILS": "கப்பல் விவரங்கள்"
+  },
+  "ACCOUNT": {
+    "ACC_NAME": "கணக்கின் பெயர்",
+    "ACC_SETTING": "கணக்கு அமைப்புகள்",
+    "PROFILE_INFORMATION": "சுயவிவர தகவல்",
+    "MANAGE_ADDRESS": "முகவரிகளை நிர்வகிக்கவும்",
+    "MY_HOLDINGS": "எனது இருப்புக்கள்",
+    "MY_CART": "என் வண்டி",
+    "MY_ORDERS": "என் கட்டளைகள்",
+    "MY_NOTIFICATION": "எனது அறிவிப்புகள்",
+    "MY_REVIEW_RATING": "எனது விமர்சனம் & மதிப்பீடு",
+    "MY_REVIEWS": "எனது மதிப்புரைகள்",
+    "PERSONAL_INFORMATION": "தனிப்பட்ட தகவல்",
+    "ALL_NOTIFICATION": "அனைத்து அறிவிப்பும்",
+    "YOUR_ACC":"உங்கள் கணக்கு"
+  },
+  "SIDE_BAR": {
+    "ALL_CATEGORIES": "அனைத்து பிரிவுகளும்",
+    "CHOOSE_LANGUAGE": "மொழியைத் தேர்வுசெய்க",
+    "CHOOSE_COUNTRY": "நாட்டைத் தேர்வுசெய்க",
+    "OFFER_ZONE": "சலுகை மண்டலம்",
+    "MY_ACCOUNT": "என் கணக்கு",
+    "HELP": "உதவி",
+    "ABOUT_US": "எங்களை பற்றி",
+    "CONTACT_US": "எங்களை தொடர்பு கொள்ள"
+  }
 }

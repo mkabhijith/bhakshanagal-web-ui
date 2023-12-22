@@ -5,9 +5,15 @@
   gap: 5px;
   align-items: center;
 }
+.back-btn-container.ar {
+  direction: rtl;
+  i {
+    rotate: 180deg;
+  }
+}
 
 @media screen and (max-width: 580px) {
-    .back-btn-container{
-        display: flex;
-    }
+  .back-btn-container {
+    display: flex;
+  }
 }

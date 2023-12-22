@@ -1,15 +1,93 @@
 {
-    "LOGIN": {
-        "LANGUAGE": "שפה"
-    },
-    "LANGUAGE": {
-        "ENGLISH": "אנגלית",
-        "HINDI": "עברית",
-        "ARABIC": "ARABIC",
-        "_": "שפה"
-    },
-    "NAVBAR": {
-        "HOME": "בית",
-        "ABOUT": "על אודות"
-    }
+  "LOGIN": {
+    "LANGUAGE": "भाषा",
+    "LOG_IN": "लॉग इन करें",
+    "LOG_OUT": "लॉग आउट"
+  },
+  "LANGUAGE": {
+    "HINDI": "HI",
+    "ARABIC": "अरबी",
+    "ENGLISH": "ENGLISH",
+    "MALAYALAM": "ML",
+    "TAMIL": "தமிழ்",
+    "_": "भाषा"
+  },
+  "MENU": {
+    "HOME": "मुख्य",
+    "ORDERS": "आदेश",
+    "ACCOUNT": "खाता"
+  },
+  "HOME": {
+    "BUY_NOW": "अभी खरीदें",
+    "CART": "कार्ट"
+  },
+  "FORM_FIELD": {
+    "EMAIL_ADDRESS": "मेल पता",
+    "PASSWORD": "पासवर्ड",
+    "USER_NAME": "उपयोगकर्ता नाम",
+    "NAME": "नाम",
+    "PHONE_NUMBER": "फ़ोन नंबर",
+    "PIN_CODE": "पिन कोड",
+    "LOCALITY": "इलाका",
+    "ADDRESS": "पता",
+    "CITY": "शहर",
+    "STATE": "राज्य",
+    "LANDMARK": "सीमाचिह्न",
+    "ALTERNATIVE_PHONE": "वैकल्पिक फ़ोन"
+  },
+  "ADDRESS":{
+    "HOME":"घर",
+    "OFFICE":"कार्यालय",
+    "OTHER":"अन्य",
+    "ADD_ADDRESS":"पता जोड़ें",
+    "EDIT_ADDRESS":"पता संपादित करें"
+  },
+  "BUTTON_ACTIONS": {
+    "SAVE": "बचाना",
+    "CANCEL": "रद्द करना",
+    "EDIT": "संपादन करना",
+    "DELETE": "मिटाना",
+    "ADD_NEW_ADDRESS": "एक नया पता लिखो",
+    "LOG_OUT": "लॉग आउट",
+    "DELIVER": "बाँटना",
+    "ADD_NEW": "नया जोड़ो",
+    "CANCEL_ORDER": "आदेश रद्द",
+    "SIGN_UP":"साइन अप करें",
+    "SUBMIT": "जमा करना"
+  },
+  "PRODUCT": {
+    "STATUS": "स्थिति",
+    "OUT_OF_STOCK": "स्टॉक ख़त्म",
+    "IN_STOCK": "स्टॉक में"
+  },
+  "ORDERS": {
+    "YOUR_ORDERS": "तुम्हारे ऑर्डर",
+    "ORDER_PLACED": "आदेश रखा",
+    "SHIPPING_DETAILS": "शिपिंग की जानकारियां"
+  },
+  "ACCOUNT":{
+    "ACC_NAME":"खाता नाम",
+    "ACC_SETTING":"अकाउंट सेटिंग",
+    "PROFILE_INFORMATION":"प्रोफाइल की जानकारी",
+    "MANAGE_ADDRESS":"पते प्रबंधित करें",
+    "MY_HOLDINGS":"मेरी होल्डिंग्स",
+    "MY_CART":"मेरी गाड़ी",
+    "MY_ORDERS":"मेरे आदेश",
+    "MY_NOTIFICATION":"मेरी सूचनाएँ",
+    "MY_REVIEW_RATING":"मेरी समीक्षा और रेटिंग",
+    "MY_REVIEWS":"मेरी समीक्षा",
+    "PERSONAL_INFORMATION":"व्यक्तिगत जानकारी",
+    "ALL_NOTIFICATION":"सभी अधिसूचना",
+    "YOUR_ACC":"आपका खाता"
+  },
+  "SIDE_BAR":{
+    "ALL_CATEGORIES":"सब वर्ग",
+    "CHOOSE_LANGUAGE":"भाषा चुनें",
+    "CHOOSE_COUNTRY":"देश चुनें",
+    "OFFER_ZONE":"प्रस्ताव क्षेत्र",
+    "MY_ACCOUNT":"मेरा खाता",
+    "HELP":"मदद",
+    "ABOUT_US":"हमारे बारे में",
+    "CONTACT_US":"संपर्क करें"
+  }
 }

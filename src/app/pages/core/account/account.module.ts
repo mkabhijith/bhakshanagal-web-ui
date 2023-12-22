@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
 
 import { DividerModule } from 'primeng/divider';
 import { InputTextModule } from 'primeng/inputtext';
@@ -17,7 +18,7 @@ import { ButtonModule } from 'primeng/button';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
-import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [AccountComponent, ProfileComponent,AddressComponent],
@@ -33,7 +34,8 @@ import { SharedComponentModule } from 'src/app/shared/components/shared-componen
     FormsModule,
     ConfirmDialogModule,
     ToastModule,
-    SharedComponentModule
+    SharedComponentModule,
+    TranslateModule
   ],
   
   providers: [ConfirmationService, MessageService],

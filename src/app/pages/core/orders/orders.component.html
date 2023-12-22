@@ -1,8 +1,13 @@
-<div class="orders--container">
+<div
+  class="orders--container"
+  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
+>
   <p-toast></p-toast>
   <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
   <div class="order-container">
-    <div class="heading"><h1>Your Orders</h1></div>
+    <div class="heading">
+      <h1>{{ "ORDERS.YOUR_ORDERS" | translate }}</h1>
+    </div>
   </div>
   <div class="order-box" *ngFor="let item of products">
     <div class="order-image-details" (click)="orderDetails(item.id)">
@@ -20,21 +25,25 @@
     <div class="order-status-container">
       <div class="order-status">
         <div class="status-icon"></div>
-        <span>order placed</span>
+        <span>{{ "ORDERS.ORDER_PLACED" | translate }}</span>
       </div>
       <div class="order-action">
         <p-button
-          label="Cancel Order"
           (onClick)="confirm1()"
           styleClass="p-button-raised p-button-text p-button-warning"
-        ></p-button>
+          >{{ "BUTTON_ACTIONS.CANCEL_ORDER" | translate }}</p-button
+        >
       </div>
     </div>
   </div>
 
   <!-- mobile design start here -->
 
-  <div class="order-box-mobile" *ngFor="let item of products" (click)="orderDetails(item.id)">
+  <div
+    class="order-box-mobile"
+    *ngFor="let item of products"
+    (click)="orderDetails(item.id)"
+  >
     <div class="order-image">
       <img [src]="item.imageUrl" alt="" />
     </div>
@@ -49,9 +58,9 @@
       <div class="price">{{ item.price | currency : "INR" }}</div>
     </div>
     <div class="order-action">
-     
-    <div class="icon">
-      <i class="pi pi-angle-right"></i>
+      <div class="icon">
+        <i class="pi pi-angle-right"></i>
+      </div>
     </div>
   </div>
 </div>

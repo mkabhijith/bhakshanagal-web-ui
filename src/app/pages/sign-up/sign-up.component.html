@@ -1,12 +1,13 @@
-<div class="sign-up-container">
+<div
+  class="sign-up-container"
+  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
+>
   <div class="left-sign-up"></div>
   <div class="right-sign-up">
     <div class="error-container" *ngIf="error || error1">
       <i class="pi pi-exclamation-triangle"></i>
-      <div class="error" *ngIf="error">
-        Wrong sign up credential!
-      </div>
-      <div class="error2" *ngIf="error1">{{errorMessage}}</div>
+      <div class="error" *ngIf="error">Wrong sign up credential!</div>
+      <div class="error2" *ngIf="error1">{{ errorMessage }}</div>
     </div>
     <form
       class="sub-right"
@@ -16,7 +17,7 @@
       <h1>Register</h1>
       <div class="input-container">
         <div class="label">
-          <label for="name">User name</label>
+          <label for="name">{{ "FORM_FIELD.USER_NAME" | translate }}</label>
         </div>
         <input
           type="text"
@@ -27,7 +28,9 @@
       </div>
       <div class="input-container">
         <div class="label">
-          <label for="email">Email Adress</label>
+          <label for="email">{{
+            "FORM_FIELD.EMAIL_ADDRESS" | translate
+          }}</label>
         </div>
         <input
           type="email"
@@ -39,7 +42,7 @@
       </div>
       <div class="input-container">
         <div class="label">
-          <label for="password">Passowrd</label>
+          <label for="password">{{ "FORM_FIELD.PASSWORD" | translate }}</label>
         </div>
         <div class="password-container">
           <input

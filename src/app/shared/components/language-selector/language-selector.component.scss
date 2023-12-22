@@ -109,3 +109,16 @@
     }
   }
 }
+
+.language-selector-container.ar {
+  .languages-dropdown {
+    right: auto;
+  }
+  .countrys-dropdown {
+    right: auto;
+    .available-country{
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}

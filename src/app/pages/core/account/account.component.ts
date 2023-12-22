@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Title } from '@angular/platform-browser';
+import { ILanguage } from 'src/app/shared/types/language.type';
+import { Subscription } from 'rxjs';
+import { LanguageService } from 'src/app/shared/services/language.service';
 
 type IaccountMenu = {
   id: number;
@@ -22,24 +25,32 @@ type IOptions = {
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss'],
 })
-export class AccountComponent implements OnInit {
-  constructor(private router: Router, private titleService: Title) {
+export class AccountComponent implements OnInit, OnDestroy {
+  constructor(
+    private router: Router,
+    private titleService: Title,
+    private languageService: LanguageService
+  ) {
     this.titleService.setTitle('account');
   }
+
+  currentLanguage!: ILanguage;
+  languageSubscription!: Subscription;
+
   accountMenu: IaccountMenu[] = [
     {
       id: 1,
-      title: 'ACCOUNT SETTINGS',
+      title: 'ACCOUNT.ACC_SETTING',
       icon: 'pi pi-spin pi-cog',
       options: [
         {
           id: 0,
-          title: 'Profile information',
+          title: 'ACCOUNT.PROFILE_INFORMATION',
           route: 'profile',
         },
         {
           id: 1,
-          title: 'Manage Addresses',
+          title: 'ACCOUNT.MANAGE_ADDRESS',
           route: 'address',
         },
       ],
@@ -47,34 +58,43 @@ export class AccountComponent implements OnInit {
 
     {
       id: 3,
-      title: 'MY HOLDINGS',
+      title: 'ACCOUNT.MY_HOLDINGS',
       icon: 'pi pi-wallet',
       options: [
         {
           id: 0,
-          title: 'My cart',
+          title: 'ACCOUNT.MY_CART',
           route: '/cart',
         },
         {
           id: 1,
-          title: 'MY ORDERS',
+          title: 'ACCOUNT.MY_ORDERS',
           route: '/orders',
         },
         {
           id: 2,
-          title: 'MY Notifications',
+          title: 'ACCOUNT.MY_NOTIFICATION',
           route: 'notifications',
         },
         {
           id: 2,
-          title: 'My review & rating',
+          title: 'ACCOUNT.MY_REVIEW_RATING',
           route: 'reviews',
         },
       ],
     },
   ];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.languageSubscription = this.languageService.switchLanguage$.subscribe({
+      next: (lang) => {
+        this.currentLanguage = lang;
+      },
+    });
+  }
+  ngOnDestroy(): void {
+    this.languageSubscription.unsubscribe()
+  }
 
   navigation(route: string) {
     this.router.navigate([route]);

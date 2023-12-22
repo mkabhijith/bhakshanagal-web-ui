@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
 import { ICountry, orginCountry } from '../types/contry-orgin.type';
 import { ILanguage } from '../types/language.type';
 import { LanguageService } from './language.service';
 import { BehaviorSubject } from 'rxjs';
+import { StorageService } from './storage/storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CountryOrginService {
   constructor(
-    private http: HttpClient,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private storageService: StorageService
   ) {}
 
   languagesArray: ILanguage[] = this.languageService.getAllLanguages();
@@ -74,19 +73,26 @@ export class CountryOrginService {
     return this.country;
   }
 
-  getcurrencydata(country1: string) {
-    // const url = `${environment.apiUrl}/{latest?base=USD'+ country1}`
-    const url = `https://v6.exchangerate-api.com/v6/1c7c53b7135da7f380f9e17d/latest/USD`;
-    // let url = 'https://api.exchangerate.host/latest?base=USD' + country1;
-    return this.http.get(url).pipe();
-  }
-
   private findCountry(countryId: orginCountry) {
     return this.country.find((country) => country.id === countryId);
+  }
+  init() {
+    const lastUsedCountryId = this.storageService.countryId;
+    this.currentCountry = this.country[0];
+    if (lastUsedCountryId) {
+      this.currentCountry = this.findCountry(lastUsedCountryId)!;
+    }
+    this._CountryChange.next(this.currentCountry);
   }
 
   changeCountryTo(country: orginCountry) {
     this.currentCountry = this.findCountry(country)!;
+    this.setCountry(country);
     this._CountryChange.next(this.currentCountry);
+    this.languageService.changeLanguageTo(this.currentCountry.languages[0].id);
+  }
+
+  private setCountry(country: orginCountry) {
+    this.storageService.countryId = country;
   }
 }

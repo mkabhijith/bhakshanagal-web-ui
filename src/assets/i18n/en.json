@@ -1,16 +1,93 @@
 {
-    "LOGIN": {
-        "LANGUAGE": "Language"
-    },
-    "LANGUAGE": {
-        "ENGLISH": "EN",
-        "HEBREW": "Hebrew",
-        "ARABIC": "Arabic",
-        "_": "Language"
-    },
-    "NAVBAR": {
-        "HOME": "Home",
-        "ABOUT": "About",
-        "CANCEL_ORDERS": "Order"
-    }
+  "LOGIN": {
+    "LANGUAGE": "Language",
+    "LOG_IN": "Log In",
+    "LOG_OUT": "Log Out"
+  },
+  "LANGUAGE": {
+    "ENGLISH": "EN",
+    "ARABIC": "عربي",
+    "HINDI": "हिंदी",
+    "MALAYALAM": "ML",
+    "TAMIL": "தமிழ்",
+    "_": "Language"
+  },
+  "MENU": {
+    "HOME": "Home",
+    "ORDERS": "Orders",
+    "ACCOUNT": "Account"
+  },
+  "HOME": {
+    "BUY_NOW": "Buy Now",
+    "CART": "Cart"
+  },
+  "FORM_FIELD": {
+    "EMAIL_ADDRESS": "Email Address",
+    "PASSWORD": "Password",
+    "USER_NAME": "User Name",
+    "NAME": "Name",
+    "PHONE_NUMBER": "Phone Number",
+    "PIN_CODE": "Pin Code",
+    "LOCALITY": "Locality",
+    "ADDRESS": "Address",
+    "CITY": "City",
+    "STATE": "State",
+    "LANDMARK": "Landmark",
+    "ALTERNATIVE_PHONE": "Alternative Number"
+  },
+  "ADDRESS": {
+    "HOME": "Home",
+    "OFFICE": "Office",
+    "OTHER": "Other",
+    "ADD_ADDRESS": "Add Address",
+    "EDIT_ADDRESS": "Edit Address"
+  },
+  "BUTTON_ACTIONS": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "EDIT": "Edit",
+    "DELETE": "Delete",
+    "ADD_NEW_ADDRESS": "Add a new address",
+    "LOG_OUT": "Log Out",
+    "DELIVER": "DELIVER",
+    "ADD_NEW": "ADD NEW",
+    "CANCEL_ORDER": "Cancel Order",
+    "SIGN_UP": "Sign Up",
+    "SUBMIT": "Submit"
+  },
+  "PRODUCT": {
+    "STATUS": "Status",
+    "OUT_OF_STOCK": "OutOfStock",
+    "IN_STOCK": "InStock"
+  },
+  "ORDERS": {
+    "YOUR_ORDERS": "Your Orders",
+    "ORDER_PLACED": "Order placed",
+    "SHIPPING_DETAILS": "Shipping Details"
+  },
+  "ACCOUNT": {
+    "ACC_NAME": "Account Name",
+    "ACC_SETTING": "ACCOUNT SETTINGS",
+    "PROFILE_INFORMATION": "Profile information",
+    "MANAGE_ADDRESS": "Manage Addresses",
+    "MY_HOLDINGS": "MY HOLDINGS",
+    "MY_CART": "My Cart",
+    "MY_ORDERS": "My Orders",
+    "MY_NOTIFICATION": "MY Notifications",
+    "MY_REVIEW_RATING": "My review & rating",
+    "MY_REVIEWS": "My Reviews",
+    "PERSONAL_INFORMATION": "Personal Information",
+    "ALL_NOTIFICATION": "All Notification",
+    "YOUR_ACC": "Your Account"
+  },
+  "SIDE_BAR": {
+    "ALL_CATEGORIES": "All categories",
+    "CHOOSE_LANGUAGE": "Choose Language",
+    "CHOOSE_COUNTRY": "Choose Country",
+    "OFFER_ZONE": "Offer zone",
+    "MY_ACCOUNT": "My Account",
+    "HELP": "help",
+    "ABOUT_US": "About us",
+    "CONTACT_US": "Contact us"
+  }
 }

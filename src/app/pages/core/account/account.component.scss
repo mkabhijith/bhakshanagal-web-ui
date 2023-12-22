@@ -81,7 +81,7 @@
         border-radius: 5px;
         background-color: #ffffff;
         padding: 5px;
-        .items-list{
+        .items-list {
           display: flex;
           justify-content: space-between;
           padding: 10px 15px;
@@ -91,6 +91,23 @@
   }
 }
 
+.main-container.ar {
+  direction: rtl;
+}
+.mobile-container.ar {
+  direction: rtl;
+  .mobile-body-container {
+    .items-container {
+      .list {
+        .items-list {
+          .icon {
+            rotate: 180deg;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 680px) {
   .main-container {
     .right-container {

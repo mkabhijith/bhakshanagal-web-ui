@@ -9,6 +9,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [MyReviewRatingComponent],
@@ -19,7 +20,8 @@ import { ButtonModule } from 'primeng/button';
     ButtonModule,
     ConfirmDialogModule,
     ToastModule,
-    SharedComponentModule
+    SharedComponentModule,
+    TranslateModule
   ],
   providers: [ConfirmationService, MessageService],
 })

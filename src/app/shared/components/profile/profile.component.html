@@ -1,9 +1,13 @@
-<div class="account-container" (clickElsewhere)="onHideDropdown()">
+<div
+  class="account-container"
+  (clickElsewhere)="onHideDropdown()"
+  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
+>
   <div class="account-details" (click)="onDropdown()">
     <div class="user-icon">
       <i class="pi pi-user"></i>
     </div>
-    <div class="user">account</div>
+    <div class="user">{{ "MENU.ACCOUNT" | translate }}</div>
   </div>
 
   <div class="account-dropdown" [ngClass]="{ active: show }">
@@ -14,16 +18,16 @@
       (click)="onHideDropdown()"
     >
       <i [class]="item.icon"></i>
-      <div class="name" routerLink="orders">{{ item.name }}</div>
+      <div class="name" routerLink="orders">{{ item.name | translate }}</div>
     </div>
 
     <div class="available-list" (click)="logOut()" *ngIf="onAuthorise">
       <i class="pi pi-sign-out"></i>
-      <div class="name">Log Out</div>
+      <div class="name">{{ "LOGIN.LOG_OUT" | translate }}</div>
     </div>
     <div class="available-list" (click)="logIn()" *ngIf="!onAuthorise">
       <i class="pi pi-sign-in"></i>
-      <div class="name">Log In</div>
+      <div class="name">{{ "LOGIN.LOG_IN" | translate }}</div>
     </div>
   </div>
 </div>

@@ -19,7 +19,7 @@
     h3 {
       position: absolute;
       top: 10px;
-      left: 50px;
+      padding-left: 50px;
     }
     .adress-box {
       box-shadow: 5px 5px 5px 5px rgba(237, 127, 127, 0.1);
@@ -141,7 +141,7 @@
             outline: none;
           }
         }
-        .delete-icon{
+        .delete-icon {
           display: flex;
           align-items: center;
           color: orange;
@@ -256,6 +256,15 @@
     }
   }
 }
+
+// .cart-container.ar {
+//   direction: rtl;
+//   .adress{
+//     h3{
+//       padding-right: 50px;
+//     }
+//   }
+// }
 
 @media screen and (max-width: 1100px) {
   .cart-container {

@@ -1,5 +1,5 @@
 import { inject } from '@angular/core';
-import { CanActivateFn, Router, RouterStateSnapshot } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 import { StorageService } from 'src/app/shared/services/storage/storage.service';
 
 export const authGurd: CanActivateFn = (route, state) => {
@@ -9,7 +9,6 @@ export const authGurd: CanActivateFn = (route, state) => {
   if (storage.authKey) {
     return true;
   } else {
-    alert('access denied auth');
     router.navigate(['/signin'], {
       queryParams: { returnUrl: state.url },
     });

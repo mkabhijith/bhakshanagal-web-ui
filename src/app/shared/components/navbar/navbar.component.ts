@@ -43,13 +43,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
   linksForNavbar: INavBar[] = [
     {
       id: 0,
-      title: 'NAVBAR.HOME',
+      title: 'MENU.HOME',
       route: 'home',
     },
 
     {
       id: 2,
-      title: 'Orders',
+      title: 'MENU.ORDERS',
       route: 'orders',
     },
   ];

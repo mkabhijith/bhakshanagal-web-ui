@@ -6,10 +6,10 @@ import { OrdersComponent } from './orders.component';
 
 import { DataViewModule } from 'primeng/dataview';
 import { ButtonModule } from 'primeng/button';
-// import { TimelineModule } from 'primeng/timeline';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -19,9 +19,9 @@ import { ToastModule } from 'primeng/toast';
     OrdersRoutingModule,
     DataViewModule,
     ButtonModule,
-    // TimelineModule,
     ConfirmDialogModule,
-    ToastModule
+    ToastModule,
+    TranslateModule
   ],
   providers: [ConfirmationService, MessageService],
 })

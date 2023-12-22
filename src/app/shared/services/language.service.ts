@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
-import { SupportedLanguage, SupportedLanguageCode, ILanguage } from '../types/language.type'
+import {
+  SupportedLanguage,
+  SupportedLanguageCode,
+  ILanguage,
+} from '../types/language.type';
 import { StorageService } from './storage/storage.service';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LanguageService {
-
-  constructor(private storageService: StorageService, private translate: TranslateService) {
-    this.init
+  constructor(
+    private storageService: StorageService,
+    private translate: TranslateService
+  ) {
+    this.init;
   }
   private languages: ILanguage[] = [
     {
@@ -21,7 +27,7 @@ export class LanguageService {
       translation: 'LANGUAGE.ENGLISH',
       direction: 'ltr',
       code: SupportedLanguageCode.ENGLISH,
-      image:'/assets/images/origin/Tower Bridge London.jpeg'
+      image: '/assets/images/origin/Tower Bridge London.jpeg',
     },
     {
       id: SupportedLanguage.ARABIC,
@@ -31,7 +37,7 @@ export class LanguageService {
       translation: 'LANGUAGE.ARABIC',
       direction: 'rtl',
       code: SupportedLanguageCode.ARABIC,
-      image:'/assets/images/origin/Building.jpeg'
+      image: '/assets/images/origin/Building.jpeg',
     },
     {
       id: SupportedLanguage.HINDI,
@@ -41,7 +47,7 @@ export class LanguageService {
       translation: 'LANGUAGE.HINDI',
       direction: 'ltr',
       code: SupportedLanguageCode.HINDI,
-      image:'/assets/images/origin/Taj Mahal Magnet _ Taj-mahal.jpeg'
+      image: '/assets/images/origin/Taj Mahal Magnet _ Taj-mahal.jpeg',
     },
     {
       id: SupportedLanguage.MALAYALAM,
@@ -51,7 +57,8 @@ export class LanguageService {
       translation: 'LANGUAGE.MALAYALAM',
       direction: 'ltr',
       code: SupportedLanguageCode.MALAYALAM,
-      image:'/assets/images/origin/Kerala in South India house boat in backwater vector.jpeg'
+      image:
+        '/assets/images/origin/Kerala in South India house boat in backwater vector.jpeg',
     },
     {
       id: SupportedLanguage.TAMIL,
@@ -61,7 +68,7 @@ export class LanguageService {
       translation: 'LANGUAGE.TAMIL',
       direction: 'ltr',
       code: SupportedLanguageCode.TAMIL,
-      image:'/assets/images/origin/Chennai1.jpeg'
+      image: '/assets/images/origin/Chennai1.jpeg',
     },
   ];
 
@@ -70,15 +77,38 @@ export class LanguageService {
   switchLanguage$ = this._langChange.asObservable();
 
   init() {
+    const lastUsedLanguageId = this.storageService.languageId;
 
+    switch (lastUsedLanguageId) {
+      case SupportedLanguage.ENGLISH:
+      case SupportedLanguage.ARABIC:
+        this.currentLanguage = this.findLanguage(lastUsedLanguageId)!;
+        this.setLanguage(lastUsedLanguageId);
+        break;
+      case SupportedLanguage.HINDI:
+        this.currentLanguage = this.findLanguage(lastUsedLanguageId)!;
+        this.setLanguage(lastUsedLanguageId);
+        break;
+      case SupportedLanguage.MALAYALAM:
+        this.currentLanguage = this.findLanguage(lastUsedLanguageId)!;
+        this.setLanguage(lastUsedLanguageId);
+        break;
+      case SupportedLanguage.TAMIL:
+        this.currentLanguage = this.findLanguage(lastUsedLanguageId)!;
+        this.setLanguage(lastUsedLanguageId);
+        break;
+      default:
+        this.currentLanguage = this.languages[0];
+        this.setLanguage(SupportedLanguage.ENGLISH);
+        break;
+    }
     this.translate.addLangs([
       SupportedLanguageCode.ENGLISH,
       SupportedLanguageCode.ARABIC,
       SupportedLanguageCode.HINDI,
       SupportedLanguageCode.MALAYALAM,
-      SupportedLanguageCode.TAMIL
+      SupportedLanguageCode.TAMIL,
     ]);
-    console.log('service', this.currentLanguage);
 
     this.translate.setDefaultLang(this.currentLanguage.code);
     this._langChange.next(this.currentLanguage);

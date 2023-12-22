@@ -1,4 +1,8 @@
-<div class="language-selector-container" (clickElsewhere)="onHideDropdown()">
+<div
+  class="language-selector-container"
+  (clickElsewhere)="onHideDropdown()"
+  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
+>
   <div class="language-details">
     <div class="icon rk-caret-down"></div>
     <div class="flag" (click)="onCountryDropdown()">
@@ -10,18 +14,23 @@
   </div>
 
   <div class="languages-dropdown" [ngClass]="{ active: showLanguage }">
-    <div class="available-language" *ngFor="let language of currentCountry.languages" (click)="onLanguageChange(language.id)">
+    <div
+      class="available-language"
+      *ngFor="let language of currentCountry.languages"
+      (click)="onLanguageChange(language.id)"
+    >
       <div class="name">{{ language.name | translate }}</div>
     </div>
   </div>
 
   <div class="countrys-dropdown" [ngClass]="{ active: showCountry }">
-
-    <div class="available-country" *ngFor="let country of countryArray" (click)="onCountryChange(country.id)">
-    
+    <div
+      class="available-country"
+      *ngFor="let country of countryArray"
+      (click)="onCountryChange(country.id)"
+    >
       <div class="flag"><img [src]="country.flag" /></div>
       <div class="name">{{ country.name | translate }}</div>
-
     </div>
   </div>
 </div>

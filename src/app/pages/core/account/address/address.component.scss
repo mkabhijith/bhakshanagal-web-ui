@@ -61,6 +61,10 @@
     }
   }
 }
+.address-container.ar {
+  direction: rtl;
+  padding: 15px 20px 20px 0;
+}
 
 @media screen and (max-width: 580px) {
   .address-container {
@@ -71,11 +75,11 @@
       .add-address-mobile {
         display: flex;
       }
-      .addresses{
-        .button-footer{
+      .addresses {
+        .button-footer {
           display: none;
         }
-        .button-footer-mobile{
+        .button-footer-mobile {
           display: flex;
         }
       }

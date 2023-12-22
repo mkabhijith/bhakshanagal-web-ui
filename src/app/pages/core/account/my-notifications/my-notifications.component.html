@@ -1,7 +1,9 @@
-<app-back-btn (click)="navgateToAccount()">My Account</app-back-btn>
+<app-back-btn (click)="navgateToAccount()">{{
+  "SIDE_BAR.MY_ACCOUNT" | translate
+}}</app-back-btn>
 <div class="notification-container">
   <div class="notification-header">
-    <span>All Notification</span>
+    <span>{{ "ACCOUNT.ALL_NOTIFICATION" | translate }}</span>
   </div>
   <div class="main-contatiner" *ngFor="let item of notificationList">
     <div class="image">

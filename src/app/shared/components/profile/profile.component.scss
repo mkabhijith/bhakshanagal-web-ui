@@ -59,13 +59,21 @@
     }
   }
 }
+.account-container.ar {
+  .account-dropdown {
+    right: auto;
+    .available-list {
+      gap: 5px;
+    }
+  }
+}
 
 @media screen and (max-width: 980px) {
   .account-container {
     .account-details {
-   .user{
-    display: none;
-   }
+      .user {
+        display: none;
+      }
     }
   }
 }
