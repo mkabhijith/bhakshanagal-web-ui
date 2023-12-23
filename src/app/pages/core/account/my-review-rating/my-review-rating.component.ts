@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   ConfirmEventType,
   ConfirmationService,
   MessageService,
 } from 'primeng/api';
+import { TitleService } from 'src/app/shared/services/title/title.service';
 
 type IreviewList = {
   id: number;
@@ -19,13 +20,16 @@ type IreviewList = {
   templateUrl: './my-review-rating.component.html',
   styleUrls: ['./my-review-rating.component.scss'],
 })
-export class MyReviewRatingComponent {
+export class MyReviewRatingComponent implements OnInit {
   constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private router:Router
+    private router: Router,
+    private titleSerice: TitleService
   ) {}
-
+  ngOnInit(): void {
+    this.titleSerice.changeTitle('My Review');
+  }
   reviewList: IreviewList[] = [
     {
       id: 0,

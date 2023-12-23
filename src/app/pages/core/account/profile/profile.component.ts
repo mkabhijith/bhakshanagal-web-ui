@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
+import { TitleService } from 'src/app/shared/services/title/title.service';
 import { ILanguage } from 'src/app/shared/types/language.type';
 
 @Component({
@@ -13,7 +14,8 @@ import { ILanguage } from 'src/app/shared/types/language.type';
 export class ProfileComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private titleSerice: TitleService
   ) {}
   onEdit: boolean = false;
 
@@ -26,6 +28,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     number: new FormControl(),
   });
   ngOnInit(): void {
+    this.titleSerice.changeTitle("Profile")
     this.profileForm.setValue({
       name: 'rahul',
       email: 'yahoo@gmail.com',

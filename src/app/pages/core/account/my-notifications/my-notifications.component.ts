@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TitleService } from 'src/app/shared/services/title/title.service';
 
 type Inotification = {
   id: number;
@@ -12,8 +13,8 @@ type Inotification = {
   templateUrl: './my-notifications.component.html',
   styleUrls: ['./my-notifications.component.scss'],
 })
-export class MyNotificationsComponent {
-  constructor(private router:Router){}
+export class MyNotificationsComponent implements OnInit {
+  constructor(private router: Router, private titleSerice: TitleService) {}
   notificationList: Inotification[] = [
     {
       id: 0,
@@ -29,6 +30,9 @@ export class MyNotificationsComponent {
       date: '12/Dec/2023',
     },
   ];
+  ngOnInit(): void {
+    this.titleSerice.changeTitle('Notifications');
+  }
   navgateToAccount() {
     this.router.navigate(['account']);
   }

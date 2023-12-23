@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { ILanguage } from 'src/app/shared/types/language.type';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
+import { TitleService } from 'src/app/shared/services/title/title.service';
 
 type IaccountMenu = {
   id: number;
@@ -28,11 +29,9 @@ type IOptions = {
 export class AccountComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
-    private titleService: Title,
+    private titleSerice: TitleService,
     private languageService: LanguageService
-  ) {
-    this.titleService.setTitle('account');
-  }
+  ) {}
 
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
@@ -86,6 +85,7 @@ export class AccountComponent implements OnInit, OnDestroy {
   ];
 
   ngOnInit(): void {
+    this.titleSerice.changeTitle('Account')
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {
         this.currentLanguage = lang;
@@ -93,7 +93,7 @@ export class AccountComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy(): void {
-    this.languageSubscription.unsubscribe()
+    this.languageSubscription.unsubscribe();
   }
 
   navigation(route: string) {

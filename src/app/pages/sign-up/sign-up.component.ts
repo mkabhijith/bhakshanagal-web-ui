@@ -7,6 +7,7 @@ import { ISignUpPayload } from './sign-up.type';
 import { ILanguage } from 'src/app/shared/types/language.type';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
+import { TitleService } from 'src/app/shared/services/title/title.service';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -16,7 +17,8 @@ export class SignUpComponent implements OnInit, OnDestroy {
   constructor(
     private signupService: SignUpService,
     private router: Router,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private titleSerice: TitleService
   ) {}
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
@@ -38,6 +40,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
         this.currentLanguage = lang;
       },
     });
+    this.titleSerice.changeTitle('Sign up');
   }
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
