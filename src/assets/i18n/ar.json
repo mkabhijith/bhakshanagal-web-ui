@@ -2,7 +2,13 @@
   "LOGIN": {
     "LANGUAGE": "لغة",
     "LOG_IN": "تسجيل الدخول",
-    "LOG_OUT": "تسجيل خروج"
+    "LOG_OUT": "تسجيل خروج",
+    "FORGET_PASSWORD": "تنسى passowrd؟",
+    "DNT_HAVE_AN_ACC": "ليس لديك حساب؟",
+    "ALREADY_HAVE_AN_ACC": "هل لديك بالفعل وحساب؟",
+    "REGISTER": "يسجل",
+    "KEEP_ME_LOGGED_IN": "أبق تسجيل دخولي",
+    "I_AGREE_TERMS_CON": "أوافق على شروط الخدمة وسياسة الخصوصية"
   },
   "LANGUAGE": {
     "ARABIC": "AR",
@@ -78,7 +84,7 @@
     "MY_REVIEWS": "مراجعاتي",
     "PERSONAL_INFORMATION": "معلومات شخصية",
     "ALL_NOTIFICATION": "كل الإخطار",
-    "YOUR_ACC":"الحساب الخاص بك"
+    "YOUR_ACC": "الحساب الخاص بك"
   },
   "SIDE_BAR": {
     "ALL_CATEGORIES": "جميع الفئات",

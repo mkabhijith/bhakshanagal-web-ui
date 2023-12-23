@@ -3,6 +3,7 @@ import { HomeService } from './home.service';
 
 import { CountryOrginService } from 'src/app/shared/services/country-orgin.service';
 import { Router } from '@angular/router';
+import { TitleService } from 'src/app/shared/services/title/title.service';
 
 @Component({
   selector: 'app-home',
@@ -20,20 +21,20 @@ export class HomeComponent implements OnInit, OnDestroy {
     private homeService: HomeService,
     private currencyService: CountryOrginService,
     private route: Router,
+    private titleSerice: TitleService
   ) {}
   list!: any[];
 
   currencyValue!: number;
   currency!: string;
   ngOnInit() {
+    this.titleSerice.changeTitle('home');
     this.currencyService.switchCountry$.subscribe({
       next: (latestCurrecy) => {
         this.currencyValue = latestCurrecy.exchangeRate;
         this.currency = latestCurrecy.currency;
       },
     });
-
-    
 
     setInterval(() => {
       this.currentAddIndex++;
@@ -49,7 +50,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
     return this.adLists[this.currentAddIndex];
   }
- 
+
   navigateToOffers() {
     this.route.navigate(['/offers/1']);
   }

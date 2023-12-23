@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { LanguageService } from 'src/app/shared/services/language.service';
 import { Subscription } from 'rxjs';
 import { ILanguage } from 'src/app/shared/types/language.type';
+import { TitleService } from 'src/app/shared/services/title/title.service';
 
 @Component({
   selector: 'app-orders',
@@ -22,12 +23,14 @@ export class OrdersComponent implements OnInit, OnDestroy {
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
     private route: Router,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private titleSerice: TitleService
   ) {}
   products: any[] = [];
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
   ngOnInit() {
+    this.titleSerice.changeTitle('Orders');
     this.products = this.orderservice.returnOrderList();
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {
@@ -36,7 +39,7 @@ export class OrdersComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy(): void {
-    this.languageSubscription.unsubscribe()
+    this.languageSubscription.unsubscribe();
   }
   confirm1() {
     this.confirmationService.confirm({

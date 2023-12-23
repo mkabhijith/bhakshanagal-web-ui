@@ -2,7 +2,13 @@
   "LOGIN": {
     "LANGUAGE": "மொழி",
     "LOG_IN": "உள்நுழைய",
-    "LOG_OUT": "வெளியேறு"
+    "LOG_OUT": "வெளியேறு",
+    "FORGET_PASSWORD":"பாஸார்ட் மறக்கவா?",
+    "DNT_HAVE_AN_ACC":"கணக்கு இல்லையா?",
+    "ALREADY_HAVE_AN_ACC":"ஏற்கனவே மற்றும் கணக்கு?",
+    "REGISTER":"பதிவு",
+    "KEEP_ME_LOGGED_IN":"என்னை உள்நுழைந்திருங்கள்",
+    "I_AGREE_TERMS_CON":"சேவை விதிமுறைகள் மற்றும் தனியுரிமைக் கொள்கையை நான் ஒப்புக்கொள்கிறேன்"
   },
   "LANGUAGE": {
     "ARABIC": "AR",

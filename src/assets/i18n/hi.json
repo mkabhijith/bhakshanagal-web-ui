@@ -2,7 +2,13 @@
   "LOGIN": {
     "LANGUAGE": "भाषा",
     "LOG_IN": "लॉग इन करें",
-    "LOG_OUT": "लॉग आउट"
+    "LOG_OUT": "लॉग आउट",
+    "FORGET_PASSWORD":"Passowrd को भूल जाओ?",
+    "DNT_HAVE_AN_ACC":"कोई खाता नहीं है?",
+    "ALREADY_HAVE_AN_ACC":"पहले से ही और खाता है?",
+    "REGISTER":"पंजीकरण करवाना",
+    "KEEP_ME_LOGGED_IN":"मुझे लोग्ड इन रखें",
+    "I_AGREE_TERMS_CON":"मैं सेवा और गोपनीयता नीति की शर्तों से सहमत हूं"
   },
   "LANGUAGE": {
     "HINDI": "HI",

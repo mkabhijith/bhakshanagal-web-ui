@@ -61,14 +61,18 @@
       <div class="checkbox-container">
         <div class="policy">
           <input type="checkbox" id="checkbox" />
-          <label for="checkbox"
-            >I agree to the
-            <span>Terms of Service and <span>Privacy Policy</span></span></label
-          >
+          <label for="checkbox">{{
+            "LOGIN.I_AGREE_TERMS_CON" | translate
+          }}</label>
         </div>
       </div>
-      <app-primary-button type="submit">sign-up</app-primary-button>
-      <div>Already have and account?<a routerLink="/signin">Login</a></div>
+      <app-primary-button type="submit">{{
+        "BUTTON_ACTIONS.SIGN_UP" | translate
+      }}</app-primary-button>
+      <div>
+        {{ "LOGIN.ALREADY_HAVE_AN_ACC" | translate
+        }}<a routerLink="/signin">{{ "LOGIN.LOG_IN" | translate }}</a>
+      </div>
     </form>
   </div>
 </div>
