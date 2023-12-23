@@ -10,6 +10,7 @@ import {
 } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
+import { TitleService } from 'src/app/shared/services/title/title.service';
 
 @Component({
   selector: 'app-address',
@@ -22,13 +23,15 @@ export class AddressComponent implements OnInit, OnDestroy {
     private messageService: MessageService,
     private addService: AddressService,
     private router: Router,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private titleSerice: TitleService
   ) {}
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
 
   addressList!: any[];
   ngOnInit(): void {
+    this.titleSerice.changeTitle('Address');
     this.addressList = this.addService.getAddress();
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {

@@ -14,6 +14,7 @@ const EXEMPTIONS: Record<string, string[]> = {
     `login`,
     `signup`,
   ],
+  [HTTP_HEADERS.language]: [ ],
 };
 @Injectable()
 export class AuthHeaderInterceptor implements HttpInterceptor {
@@ -25,6 +26,13 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     const {url} =req;
 
+    if (!this.isUrlInArray(url, EXEMPTIONS[HTTP_HEADERS.language])) {
+      req = req.clone({
+        setHeaders: {
+          [HTTP_HEADERS.language]: ` ${this.storageService.languageId}`,
+        },
+      });
+    }
     if (!this.isUrlInArray(url, EXEMPTIONS[HTTP_HEADERS.auth])) {
       req = req.clone({
         setHeaders: {
@@ -32,6 +40,7 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
         },
       });
     }
+    
     return next.handle(req);
   }
   private isUrlInArray(url: string, arr: string[]) {

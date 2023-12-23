@@ -4,6 +4,7 @@ import { StorageService } from 'src/app/shared/services/storage/storage.service'
 import { Subscription } from 'rxjs';
 import { ILanguage } from 'src/app/shared/types/language.type';
 import { LanguageService } from 'src/app/shared/services/language.service';
+import { TitleService } from 'src/app/shared/services/title/title.service';
 
 @Component({
   selector: 'app-cart',
@@ -13,7 +14,8 @@ import { LanguageService } from 'src/app/shared/services/language.service';
 export class CartComponent implements OnInit, OnDestroy {
   constructor(
     private cartService: CartService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private titleSerice: TitleService
   ) {}
 
   currentLanguage!: ILanguage;
@@ -21,6 +23,7 @@ export class CartComponent implements OnInit, OnDestroy {
   cartListSubscription!: Subscription;
   cartList: any[] = [];
   ngOnInit(): void {
+    this.titleSerice.changeTitle('Cart')
     this.cartListSubscription = this.cartService.cartList$.subscribe({
       next: (res) => {
         this.cartList = res;

@@ -6,6 +6,7 @@ import { ISignInPayload } from './sign-in.type';
 import { ILanguage } from 'src/app/shared/types/language.type';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
+import { TitleService } from 'src/app/shared/services/title/title.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -34,7 +35,8 @@ export class SignInComponent implements OnInit, OnDestroy {
     private signInservice: SignInService,
     private router: Router,
     private route: ActivatedRoute,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private titleSerice: TitleService
   ) {}
 
   ngOnInit(): void {
@@ -44,6 +46,7 @@ export class SignInComponent implements OnInit, OnDestroy {
         this.currentLanguage = lang;
       },
     });
+    this.titleSerice.changeTitle("sign in")
   }
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe()

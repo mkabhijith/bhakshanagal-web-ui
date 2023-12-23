@@ -44,12 +44,17 @@
       <div class="checkbox-container">
         <div>
           <input type="checkbox" id="checkbox" />
-          <label for="checkbox">Keep me logged in</label>
+          <label for="checkbox">{{'LOGIN.KEEP_ME_LOGGED_IN'|translate}}</label>
         </div>
-        <div>Forget Passowrd?</div>
+        <div>{{'LOGIN.FORGET_PASSWORD'|translate}}</div>
       </div>
-      <app-primary-button type="submit">Log-in</app-primary-button>
-      <span>Dont Have An Account? <a routerLink="/signup">Register</a> </span>
+      <app-primary-button type="submit">{{
+        "LOGIN.LOG_IN" | translate
+      }}</app-primary-button>
+      <span
+        >{{ "LOGIN.DNT_HAVE_AN_ACC" | translate }}
+        <a routerLink="/signup">{{ "LOGIN.REGISTER" | translate }}</a>
+      </span>
     </form>
   </div>
 </div>
