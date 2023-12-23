@@ -28,6 +28,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
   errorMessage: string = '';
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
+  signInProgress: boolean = false;
 
   registerForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -48,16 +49,24 @@ export class SignUpComponent implements OnInit, OnDestroy {
 
   registerUser() {
     if (this.registerForm.valid) {
+      this.signInProgress = true;
       this.signupService
         .userSignUp(this.registerForm.value as ISignUpPayload)
         .subscribe({
           next: (res) => {
             if (res.status) {
+              this.signInProgress = false;
               this.router.navigateByUrl('/signin');
             } else {
+              this.signInProgress = false
               this.error1 = true;
               this.errorMessage = res.message;
             }
+          },
+          error: (err) => {
+            this.signInProgress = false
+            this.error1 = true;
+            this.errorMessage = 'Request fail';
           },
         });
     } else {

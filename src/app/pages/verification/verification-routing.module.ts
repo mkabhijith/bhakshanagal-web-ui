@@ -15,7 +15,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes), // Add RouterModule.forChild(routes) here
+    RouterModule.forChild(routes), 
   ],
 })
 export class VerificationRoutingModule { }

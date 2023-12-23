@@ -19,6 +19,13 @@ const routes: Routes = [
       import('./pages/sign-up/sign-up.module').then((m) => m.SignUpModule),
   },
   {
+    path: 'verification',
+    loadChildren: () =>
+      import('./pages/verification/verification.module').then(
+        (m) => m.VerificationModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full',
