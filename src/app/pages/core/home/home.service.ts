@@ -45,7 +45,7 @@ export class HomeService {
       productName: 'Achappam',
       price: 55,
       description: 'Description for Product 2.',
-      quantity: '10piese',
+      quantity: '10piece',
     },
     {
       id: 5,

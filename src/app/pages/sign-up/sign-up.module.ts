@@ -6,7 +6,8 @@ import { SignUpComponent } from './sign-up.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { TranslateModule } from '@ngx-translate/core';
     SignUpRoutingModule,
     ReactiveFormsModule,
     SharedComponentModule,
-    TranslateModule
-  ]
+    TranslateModule,
+    ToastModule
+  ],
+  providers: [ConfirmationService, MessageService],
 })
 export class SignUpModule { }

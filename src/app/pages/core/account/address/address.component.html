@@ -34,7 +34,7 @@
         </div>
 
         <div class="button-footer">
-          <p-button styleClass="p-button-danger" (onClick)="confirm1()">
+          <p-button styleClass="p-button-danger" (onClick)="deleteAddress(item.id)">
             {{ "BUTTON_ACTIONS.DELETE" | translate }}
           </p-button>
           <p-button
@@ -44,7 +44,7 @@
           >
         </div>
         <div class="button-footer-mobile">
-          <p-button styleClass="p-button-danger" (onClick)="confirm1()">
+          <p-button styleClass="p-button-danger" (onClick)="deleteAddress(item.id)">
             {{ "BUTTON_ACTIONS.DELETE" | translate }}
           </p-button>
           <p-button

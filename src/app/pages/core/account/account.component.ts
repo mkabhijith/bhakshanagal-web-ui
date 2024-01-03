@@ -6,6 +6,7 @@ import { ILanguage } from 'src/app/shared/types/language.type';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
 import { TitleService } from 'src/app/shared/services/title/title.service';
+import { StorageService } from 'src/app/shared/services/storage/storage.service';
 
 type IaccountMenu = {
   id: number;
@@ -30,7 +31,8 @@ export class AccountComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private titleSerice: TitleService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private storageService :StorageService
   ) {}
 
   currentLanguage!: ILanguage;
@@ -98,5 +100,9 @@ export class AccountComponent implements OnInit, OnDestroy {
 
   navigation(route: string) {
     this.router.navigate([route]);
+  }
+  logOut(){
+    this.storageService.clearData()
+    this.router.navigateByUrl('/home')
   }
 }

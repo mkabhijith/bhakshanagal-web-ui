@@ -4,6 +4,7 @@ import { SidebarService } from '../../services/sidebar/sidebar.service';
 import { Subscription } from 'rxjs';
 import { ILanguage } from '../../types/language.type';
 import { LanguageService } from '../../services/language.service';
+import { StorageService } from '../../services/storage/storage.service';
 
 type ISidebar = {
   category: IsiddBarOptionValue[];
@@ -28,7 +29,9 @@ export class SidebarComponent implements OnInit, OnDestroy {
   constructor(
     private route: Router,
     private sidebarService: SidebarService,
-    private LanguageService: LanguageService
+    private LanguageService: LanguageService,
+    private storageService: StorageService,
+    private router: Router
   ) {}
   languageSubscription!: Subscription;
   currentLanguage!: ILanguage;
@@ -115,12 +118,16 @@ export class SidebarComponent implements OnInit, OnDestroy {
     },
   ];
   sidebarVisible: boolean = false;
+  onAuthorise: boolean = false;
   ngOnInit(): void {
     this.languageSubscription = this.LanguageService.switchLanguage$.subscribe({
       next: (lang) => {
         this.currentLanguage = lang;
       },
     });
+    if (this.storageService.authKey) {
+      this.onAuthorise = true;
+    }
   }
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
@@ -135,5 +142,14 @@ export class SidebarComponent implements OnInit, OnDestroy {
   }
   onTrue() {
     this.sidebarService.changeSidebarVisible(true);
+  }
+  logOut() {
+    this.storageService.clearData();
+    this.onAuthorise = false;
+    this.router.navigateByUrl('/home');
+  }
+
+  logIn() {
+    this.route.navigateByUrl('/signin');
   }
 }

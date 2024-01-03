@@ -1,0 +1,134 @@
+.main-container {
+  display: flex;
+  //   align-items: center;
+  flex-direction: column;
+  //   justify-content: center;
+  //   padding-right: 5px;
+  gap: 5px;
+  .product-list {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto auto auto auto;
+    display: grid;
+    gap: 25px;
+
+    img {
+      width: 330px;
+      height: 230px;
+    }
+
+    p-card {
+      width: 330px;
+    }
+    ::ng-deep p-card {
+      .p-card-content {
+        padding: 0;
+      }
+      .p-card-footer {
+        padding: 0;
+        padding-top: 5px;
+        display: flex;
+        gap: 10px;
+      }
+      .p-card-body {
+        padding: 10px 20px;
+        .p-card-title {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .show-more {
+    height: 50px;
+    width: 100%;
+    // background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+.product-list.ar {
+  direction: rtl;
+}
+
+@media screen and (max-width: 1410px) {
+  .main-container {
+    .product-list {
+      img {
+        width: 300px;
+      }
+      p-card {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .main-container {
+    .product-list {
+      grid-template-columns: auto auto auto auto;
+      img {
+        width: 280px;
+      }
+      p-card {
+        width: 280px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1210px) {
+  .main-container {
+    .product-list {
+      grid-template-columns: auto auto auto;
+      img {
+        width: 300px;
+      }
+      p-card {
+        width: 300px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 920px) {
+  .main-container {
+    .product-list {
+      grid-template-columns: auto auto;
+      img {
+        width: 300px;
+      }
+      p-card {
+        width: 300px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 660px) {
+  .main-container {
+    .product-list {
+      grid-template-columns: auto;
+      img {
+        width: 360px;
+      }
+      p-card {
+        width: 360px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .main-container {
+    .product-list {
+      grid-template-columns: auto;
+      img {
+        width: 280px;
+      }
+      p-card {
+        width: 280px;
+      }
+    }
+  }
+}
