@@ -68,6 +68,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.storageService.clearData();
     this.onHideDropdown();
     this.onAuthorise = false;
+    this.route.navigateByUrl('/home');
   }
   logIn() {
     this.route.navigateByUrl('/signin');

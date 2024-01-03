@@ -76,6 +76,7 @@ export class AddAddressComponent implements OnInit, OnDestroy {
   }
   onSubmit() {
     if (this.addressForm.valid) {
+      this.addressService.addAddress(this.addressForm.value)
       console.log('valid form', this.addressForm.value);
     }
   }

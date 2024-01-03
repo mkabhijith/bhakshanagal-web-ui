@@ -2,7 +2,7 @@
   class="orders--container"
   [ngClass]="{ ar: currentLanguage.code === 'ar' }"
 >
-  <p-toast></p-toast>
+  <p-toast ></p-toast>
   <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
   <div class="order-container">
     <div class="heading">
@@ -29,7 +29,7 @@
       </div>
       <div class="order-action">
         <p-button
-          (onClick)="confirm1()"
+          (onClick)="cancelOrder(item.id)"
           styleClass="p-button-raised p-button-text p-button-warning"
           >{{ "BUTTON_ACTIONS.CANCEL_ORDER" | translate }}</p-button
         >

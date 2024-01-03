@@ -130,22 +130,22 @@ export class CartService {
   }
 
   saveCart(id: number) {
-    if (!this.storageService.authKey) {
-      const storedCart = this.getLocalCart();
-      const ids: number[] = storedCart;
-      const index = ids.findIndex((item) => {
-        return item == id;
-      });
-      if (index == -1) {
-        ids.push(id);
-      }
-      this.getCart();
-      localStorage.setItem('ids', JSON.stringify(ids));
-      this._cartCount.next(ids.length);
-      this.getCart();
-    } else {
-      console.log('else');
+    // if (!this.storageService.authKey) {
+    const storedCart = this.getLocalCart();
+    const ids: number[] = storedCart;
+    const index = ids.findIndex((item) => {
+      return item == id;
+    });
+    if (index == -1) {
+      ids.push(id);
     }
+    this.getCart();
+    localStorage.setItem('ids', JSON.stringify(ids));
+    this._cartCount.next(ids.length);
+    this.getCart();
+    // } else {
+    //   console.log('else');
+    // }
   }
 
   onCartRemoveItem(id: number) {

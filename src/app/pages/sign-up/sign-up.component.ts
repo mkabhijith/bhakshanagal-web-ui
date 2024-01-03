@@ -8,6 +8,7 @@ import { ILanguage } from 'src/app/shared/types/language.type';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
 import { TitleService } from 'src/app/shared/services/title/title.service';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -18,7 +19,8 @@ export class SignUpComponent implements OnInit, OnDestroy {
     private signupService: SignUpService,
     private router: Router,
     private languageService: LanguageService,
-    private titleSerice: TitleService
+    private titleSerice: TitleService,
+    private messageService: MessageService
   ) {}
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
@@ -56,6 +58,11 @@ export class SignUpComponent implements OnInit, OnDestroy {
           next: (res) => {
             if (res.status) {
               this.signInProgress = false;
+              this.messageService.add({
+                severity: 'info',
+                summary: 'success',
+                detail: res.message,
+              });
               this.router.navigateByUrl('/signin');
             } else {
               this.signInProgress = false

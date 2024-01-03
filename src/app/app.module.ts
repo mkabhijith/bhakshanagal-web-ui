@@ -12,7 +12,7 @@ import {
   HttpClient,
   HttpClientModule,
 } from '@angular/common/http';
-import { PosterComponent } from './pages/poster/poster.component';
+
 import { ApiPathInterceptor } from './interceptors/api-path.interceptor';
 import { AuthHeaderInterceptor } from './interceptors/auth-header.interceptor';
 
@@ -21,7 +21,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [AppComponent, PosterComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

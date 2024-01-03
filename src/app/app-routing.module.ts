@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PosterComponent } from './pages/poster/poster.component';
 
 const routes: Routes = [
   {
@@ -19,10 +18,17 @@ const routes: Routes = [
       import('./pages/sign-up/sign-up.module').then((m) => m.SignUpModule),
   },
   {
-    path: 'verification',
+    path: 'forgot-password',
     loadChildren: () =>
-      import('./pages/verification/verification.module').then(
-        (m) => m.VerificationModule
+      import('./pages/forgot-password/forgot-password.module').then(
+        (m) => m.ForgotPasswordModule
+      ),
+  },
+  {
+    path: 'change-password/:id',
+    loadChildren: () =>
+      import('./pages/change-password/change-password.module').then(
+        (m) => m.ChangePasswordModule
       ),
   },
   {
