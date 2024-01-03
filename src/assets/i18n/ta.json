@@ -10,6 +10,13 @@
     "KEEP_ME_LOGGED_IN":"என்னை உள்நுழைந்திருங்கள்",
     "I_AGREE_TERMS_CON":"சேவை விதிமுறைகள் மற்றும் தனியுரிமைக் கொள்கையை நான் ஒப்புக்கொள்கிறேன்"
   },
+  "FORGOT": {
+    "ENTER_EMAIL": "மின்னஞ்சலை உள்ளிடவும்",
+    "GET_OTP": "OTP ஐப் பெறுங்கள்",
+    "ENTER_OTP": "OTP ஐ உள்ளிடவும்",
+    "VERIFY": "சரிபார்க்கவும்",
+    "CHANGE_PASSWORD":"கடவுச்சொல்லை மாற்று"
+  },
   "LANGUAGE": {
     "ARABIC": "AR",
     "ENGLISH": "ENGLISH",

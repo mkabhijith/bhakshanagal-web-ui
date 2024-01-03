@@ -10,6 +10,13 @@
     "KEEP_ME_LOGGED_IN":"मुझे लोग्ड इन रखें",
     "I_AGREE_TERMS_CON":"मैं सेवा और गोपनीयता नीति की शर्तों से सहमत हूं"
   },
+  "FORGOT": {
+    "ENTER_EMAIL": "ईमेल दर्ज करें",
+    "GET_OTP": "OTP प्राप्त करें",
+    "ENTER_OTP": "OTP दर्ज करें",
+    "VERIFY": "सत्यापित करें",
+    "CHANGE_PASSWORD":"पासवर्ड बदलें"
+  },
   "LANGUAGE": {
     "HINDI": "HI",
     "ARABIC": "अरबी",

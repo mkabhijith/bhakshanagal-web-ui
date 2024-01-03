@@ -41,12 +41,18 @@ export class OrdersComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
   }
-  confirm1() {
+  cancelOrder(id: number) {
     this.confirmationService.confirm({
       message: 'Are you sure that you want to cancel order?',
       header: 'Confirmation',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
+        const index = this.products.findIndex((item) => {
+          return item.id == id;
+        });
+        if (index !== -1) {
+          this.products.splice(index, 1);
+        }
         this.messageService.add({
           severity: 'info',
           summary: 'Confirmed',
@@ -75,7 +81,6 @@ export class OrdersComponent implements OnInit, OnDestroy {
   }
 
   orderDetails(item: any) {
-    console.log('item', item);
     this.route.navigate(['/orderDetails', item]);
   }
 }

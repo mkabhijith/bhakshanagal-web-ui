@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
@@ -15,6 +15,9 @@ import { AddAddressComponent } from './add-address/add-address.component';
 import { SidbarCardComponent } from './sidbar-card/sidbar-card.component';
 import { EditDeleteButtonComponent } from './edit-delete-button/edit-delete-button.component';
 import { BackBtnComponent } from './back-btn/back-btn.component';
+import { CategoryListComponent } from './category-list/category-list.component';
+import { FooterComponent } from './footer/footer.component';
+import { CategoryProductListComponent } from './category-product-list/category-product-list.component';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { InputTextModule } from 'primeng/inputtext';
@@ -26,6 +29,9 @@ import { CardModule } from 'primeng/card';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { CarouselModule } from 'primeng/carousel';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -41,6 +47,9 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     AddAddressComponent,
     EditDeleteButtonComponent,
     BackBtnComponent,
+    CategoryListComponent,
+    FooterComponent,
+    CategoryProductListComponent,
     
   ],
   imports: [
@@ -57,7 +66,11 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     InputNumberModule,
     InputTextareaModule,
     RadioButtonModule,
-    TranslateModule
+    TranslateModule,
+    ScrollPanelModule,
+    CarouselModule,
+    DropdownModule,
+    FormsModule
   ],
   exports: [
     NavbarComponent,
@@ -67,7 +80,10 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     SidbarCardComponent,
     EditDeleteButtonComponent,
     SpinnerComponent,
-    BackBtnComponent
+    BackBtnComponent,
+    CategoryListComponent,
+    FooterComponent,
+    CategoryProductListComponent
   ],
 })
 export class SharedComponentModule { }

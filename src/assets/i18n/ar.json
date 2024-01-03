@@ -3,12 +3,19 @@
     "LANGUAGE": "لغة",
     "LOG_IN": "تسجيل الدخول",
     "LOG_OUT": "تسجيل خروج",
-    "FORGET_PASSWORD": "تنسى passowrd؟",
+    "FORGET_PASSWORD": "تنسى password؟",
     "DNT_HAVE_AN_ACC": "ليس لديك حساب؟",
     "ALREADY_HAVE_AN_ACC": "هل لديك بالفعل وحساب؟",
     "REGISTER": "يسجل",
     "KEEP_ME_LOGGED_IN": "أبق تسجيل دخولي",
     "I_AGREE_TERMS_CON": "أوافق على شروط الخدمة وسياسة الخصوصية"
+  },
+  "FORGOT": {
+    "ENTER_EMAIL": "أدخل البريد الإلكتروني",
+    "GET_OTP": "الحصول على OTP",
+    "ENTER_OTP": "أدخل OTP",
+    "VERIFY": "يؤكد",
+    "CHANGE_PASSWORD":"تغيير كلمة المرور"
   },
   "LANGUAGE": {
     "ARABIC": "AR",

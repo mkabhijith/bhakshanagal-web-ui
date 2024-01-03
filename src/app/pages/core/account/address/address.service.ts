@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IAddressList } from 'src/app/shared/types/address.type';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -42,5 +40,17 @@ export class AddressService {
 
   getAddress() {
     return this.addressList;
+  }
+
+  addAddress(form: any) {
+    // const count = 0;
+    form.id = 3;
+    this.addressList.push(form);
+  }
+  removeAddress(id: number) {
+    const index = this.addressList.findIndex((user) => user.id === id);
+    if (index !== -1) {
+      this.addressList.splice(index, 1);
+    }
   }
 }

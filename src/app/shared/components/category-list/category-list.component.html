@@ -1,0 +1,35 @@
+<p-carousel
+  [value]="dropdownItems"
+  [numVisible]="4"
+  [numScroll]="1"
+  [circular]="false"
+  [responsiveOptions]="responsiveOptions"
+>
+  <ng-template let-product pTemplate="item">
+    <p-card
+      header="{{ product.productName }}"
+      subheader="{{ product.quantity }}"
+    >
+      <ng-template pTemplate="header">
+        <img src="/assets/images/poster/ptoto chips mckp.jpg" alt="" />
+        <!-- <img alt="Card" [src]="item.imageUrl" /> -->
+      </ng-template>
+      <div class="price">
+        {{ product.price | currency : "INR" }}
+      </div>
+      <ng-template pTemplate="footer">
+        <p-button
+          label="{{ 'HOME.BUY_NOW' | translate }}"
+          (onClick)="navigateProduct(product.id)"
+        ></p-button>
+        <p-button
+          label="{{ 'HOME.CART' | translate }}"
+          icon="pi pi-shopping-cart"
+          styleClass="p-button-secondary"
+          [style]="{ 'margin-left': '.5em' }"
+          (onClick)="addToCart(product.id)"
+        ></p-button>
+      </ng-template>
+    </p-card>
+  </ng-template>
+</p-carousel>

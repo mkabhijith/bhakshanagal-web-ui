@@ -3,12 +3,19 @@
     "LANGUAGE": "ഭാഷ",
     "LOG_IN": "ലോഗിൻ",
     "LOG_OUT": "പുറത്തുകടക്കുക",
-    "FORGET_PASSWORD":"Pacowrd മറന്നോ?",
+    "FORGET_PASSWORD":"പാസ്വേഡ് മറന്നോ?",
     "DNT_HAVE_AN_ACC":"ഒരു അക്കൗണ്ട് ഇല്ലേ?",
     "ALREADY_HAVE_AN_ACC":"ഇതിനകം തന്നെ അക്കൗണ്ടും ഉണ്ടോ?",
     "REGISTER":"പട്ടികയുണ്ടാക്കുക",
     "KEEP_ME_LOGGED_IN":"എന്നെ ലോഗിൻ ചെയ്ത് നിലനിർത്തുക",
     "I_AGREE_TERMS_CON":"സേവന നിബന്ധനകളും സ്വകാര്യതാ നയവും ഞാൻ അംഗീകരിക്കുന്നു"
+  },
+  "FORGOT": {
+    "ENTER_EMAIL": "ഇമെയിൽ നൽകുക",
+    "GET_OTP": "OTP നേടുക",
+    "ENTER_OTP": "OTP നൽകുക",
+    "VERIFY": "പമാണീകരിക്കുക",
+    "CHANGE_PASSWORD":"പാസ്വേഡ് മാറ്റുക"
   },
   "LANGUAGE": {
     "HINDI": "ഹിന്ദി",

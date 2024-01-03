@@ -68,6 +68,8 @@
       </div>
     </div>
     <p-divider></p-divider>
-    <h3 class="log-out">{{"LOGIN.LOG_OUT"|translate}}</h3>
+    <h3 class="log-out" (click)="logOut()" *ngIf="onAuthorise">{{"LOGIN.LOG_OUT"|translate}}</h3>
+    
+    <h3 class="log-out" (click)="logIn()" *ngIf="!onAuthorise">{{"LOGIN.LOG_IN"|translate}}</h3>
   </ng-template>
 </p-sidebar>
