@@ -48,4 +48,5 @@ export class ProductComponent implements OnInit, OnDestroy {
   addToCart(id: number) {
     this.cartService.saveCart(id);
   }
+  buyNow(id:number){}
 }

@@ -3,13 +3,20 @@
     "LANGUAGE": "Language",
     "LOG_IN": "Log In",
     "LOG_OUT": "Log Out",
-    "FORGET_PASSWORD":"Forget Passowrd ?",
-    "DNT_HAVE_AN_ACC":"Dont Have An Account?",
-    "ALREADY_HAVE_AN_ACC":"Already have and account?",
-    "REGISTER":"Register",
-    "KEEP_ME_LOGGED_IN":"Keep me logged in",
-    "I_AGREE_TERMS_CON":"I agree to the Terms of Service and Privacy Policy",
-    "SIGN_UP":"Sign Up"
+    "FORGET_PASSWORD": "Forget Passowrd ?",
+    "DNT_HAVE_AN_ACC": "Dont Have An Account?",
+    "ALREADY_HAVE_AN_ACC": "Already have and account?",
+    "REGISTER": "Register",
+    "KEEP_ME_LOGGED_IN": "Keep me logged in",
+    "I_AGREE_TERMS_CON": "I agree to the Terms of Service and Privacy Policy",
+    "SIGN_UP": "Sign Up"
+  },
+  "FORGOT": {
+    "ENTER_EMAIL": "Enter Email",
+    "GET_OTP": "Get OTP",
+    "ENTER_OTP": "Enter OTP",
+    "VERIFY": "VERIFY",
+    "CHANGE_PASSWORD":"Change password"
   },
   "LANGUAGE": {
     "ENGLISH": "EN",

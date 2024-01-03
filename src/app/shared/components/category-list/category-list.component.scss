@@ -1,0 +1,83 @@
+
+img {
+  width: 330px;
+  height: 230px;
+}
+
+::ng-deep {
+  .p-carousel-item {
+    display: flex;
+    align-items: center;
+  }
+  p-card {
+    display: block;
+    width: 330px;
+  }
+  .p-card-content {
+    padding: 0;
+  }
+  .p-card-footer {
+    padding: 0;
+    padding-top: 5px;
+    display: flex;
+    gap: 10px;
+  }
+  .p-card-body {
+    padding: 10px 20px;
+    .p-card-title {
+      margin-bottom: 0;
+    }
+  }
+}
+
+  @media screen and (max-width: 1410px) {
+    img {
+      width: 300px;
+    }
+    p-card {
+      width: 300px;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    img {
+      width: 280px;
+    }
+    p-card {
+      width: 280px;
+    }
+  }
+  @media screen and (max-width: 1210px) {
+    img {
+      width: 300px;
+    }
+    p-card {
+      width: 300px;
+    }
+  }
+  @media screen and (max-width: 920px) {
+    img {
+      width: 300px;
+    }
+    p-card {
+      width: 300px;
+    }
+  }
+  @media screen and (max-width: 660px) {
+    img {
+      width: 360px;
+    }
+    p-card {
+      width: 360px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    img {
+      width: 280px;
+    }
+    p-card {
+      width: 280px;
+    }
+  }
+
+

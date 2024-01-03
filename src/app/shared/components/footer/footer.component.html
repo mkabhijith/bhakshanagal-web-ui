@@ -1,0 +1,74 @@
+<div class="main-container">
+  <div class="back-to-top" (click)="backToTop()">
+    <h4 class="back">Back to Top</h4>
+  </div>
+  <div class="footer-container">
+    <div class="get-know">
+      <div class="heading">Get It Know Us</div>
+      <div class="text" *ngFor="let item of getItKnowUS">{{ item.item }}</div>
+    </div>
+    <div class="shop-with-us">
+      <div class="heading">Shop With Us</div>
+      <div class="text" *ngFor="let item of shopWithUs">{{ item.item }}</div>
+    </div>
+    <div class="mobile-app">
+      <div class="heading">Download the DriveNow app today</div>
+      <div class="links">
+        <div class="app-store">
+          <i class="pi pi-apple"></i>
+          <div class="text">Download on App Store</div>
+        </div>
+        <div class="play-store">
+          <i class="pi pi-android"></i>
+          <div class="text">Download on Google Play</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="logo">
+      <img src="/assets/images/logo_6-removebg-preview.png" alt="">
+    </div>
+    <div
+      class="language-selector-container"
+      (clickElsewhere)="onHideDropdown()"
+    >
+      <!-- [ngClass]="{ ar: currentLanguage.code === 'ar' }" -->
+
+      <div class="language-container" (click)="onDropdown()">
+        <i class="pi pi-globe"></i>
+        <div class="language-selected">
+          {{ currentLanguage.name | translate }}
+        </div>
+      </div>
+
+      <div class="country-container">
+        <div class="icon rk-caret-down"></div>
+        <div class="flag" (click)="onCountryDropdown()">
+          <img [src]="currentCountry.flag" alt="language" />
+          <div>{{ currentCountry.name | translate }}</div>
+        </div>
+      </div>
+      <div class="languages-dropdown" [ngClass]="{ active: showLanguage }">
+        <div
+          class="available-language"
+          *ngFor="let language of currentCountry.languages"
+          (click)="onLanguageChange(language.id)"
+        >
+          <div class="name">{{ language.name | translate }}</div>
+        </div>
+      </div>
+
+      <div class="countrys-dropdown" [ngClass]="{ active: showCountry }">
+        <div
+          class="available-country"
+          *ngFor="let country of countryArray"
+          (click)="onCountryChange(country.id)"
+        >
+          <div class="flag"><img [src]="country.flag" /></div>
+          <div class="name">{{ country.name | translate }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

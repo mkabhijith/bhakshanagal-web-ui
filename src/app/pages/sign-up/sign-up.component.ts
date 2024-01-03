@@ -8,6 +8,7 @@ import { ILanguage } from 'src/app/shared/types/language.type';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
 import { TitleService } from 'src/app/shared/services/title/title.service';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -18,7 +19,8 @@ export class SignUpComponent implements OnInit, OnDestroy {
     private signupService: SignUpService,
     private router: Router,
     private languageService: LanguageService,
-    private titleSerice: TitleService
+    private titleSerice: TitleService,
+    private messageService: MessageService
   ) {}
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
@@ -28,6 +30,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
   errorMessage: string = '';
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
+  signInProgress: boolean = false;
 
   registerForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -48,16 +51,29 @@ export class SignUpComponent implements OnInit, OnDestroy {
 
   registerUser() {
     if (this.registerForm.valid) {
+      this.signInProgress = true;
       this.signupService
         .userSignUp(this.registerForm.value as ISignUpPayload)
         .subscribe({
           next: (res) => {
             if (res.status) {
+              this.signInProgress = false;
+              this.messageService.add({
+                severity: 'info',
+                summary: 'success',
+                detail: res.message,
+              });
               this.router.navigateByUrl('/signin');
             } else {
+              this.signInProgress = false
               this.error1 = true;
               this.errorMessage = res.message;
             }
+          },
+          error: (err) => {
+            this.signInProgress = false
+            this.error1 = true;
+            this.errorMessage = 'Request fail';
           },
         });
     } else {
