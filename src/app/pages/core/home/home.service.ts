@@ -134,4 +134,10 @@ export class HomeService {
   getList() {
     return this.products;
   }
+  removeAddress(id: number) {
+    const index = this.products.findIndex((user) => user.id === id);
+    if (index !== -1) {
+      this.products.splice(index, 1);
+    }
+  }
 }

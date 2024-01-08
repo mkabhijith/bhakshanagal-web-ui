@@ -10,6 +10,7 @@
     justify-content: center;
     padding: 10px;
     border-bottom: 1px solid gray;
+    cursor: pointer;
     .back {
       margin: 0;
       color: gray;
@@ -26,6 +27,7 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
+      cursor: pointer;
       .heading {
         font-weight: 700;
       }
@@ -38,12 +40,14 @@
         width: 190px;
         font-size: large;
         font-weight: 600;
+        cursor: pointer;
       }
       .links {
         display: flex;
         gap: 10px;
         .app-store,
         .play-store {
+          cursor: pointer;
           border: 1px solid black;
           // color: #ffffff;
           padding: 2px 5px;
@@ -75,10 +79,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      cursor: pointer;
     }
     .country-container {
       border: 1px solid gray;
       padding: 5px;
+      cursor: pointer;
       .flag {
         display: flex;
         align-items: center;

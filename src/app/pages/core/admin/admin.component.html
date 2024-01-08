@@ -1,0 +1,56 @@
+<div class="main-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
+  <div class="sidebar">
+    <div class="header-container">Admin panel</div>
+    <div class="body--container">
+      <div class="items-container" *ngFor="let item of admintMenu" [routerLink]="[item.route]">
+        <div class="title--container">
+          <i [class]="item.icon"></i>
+          <span class="title"> {{ item.title | translate }}</span>
+        </div>
+        <p-divider></p-divider>
+        <div
+          class="items-list"
+          *ngFor="let item of item.options"
+          [routerLink]="[item.route]"
+          routerLinkActive="active"
+        >
+          <div class="item">{{ item.title | translate }}</div>
+        </div>
+        <p-divider></p-divider>
+      </div>
+      <div class="footer-container" (click)="logOut()">
+        <i class="pi pi-power-off"></i>
+        <span> {{ "LOGIN.LOG_OUT" | translate }} </span>
+      </div>
+    </div>
+  </div>
+  <div class="right-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- mobile design start here  -->
+
+<div class="mobile-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
+  <div class="mobile-body-container">
+    <div class="account">{{ "ACCOUNT.YOUR_ACC" | translate }}</div>
+    <div class="items-container" *ngFor="let item of admintMenu">
+      <div class="title--container">
+        <i [class]="item.icon"></i>
+        <span class="title-heading"> {{ item.title | translate }}</span>
+      </div>
+      <div class="list">
+        <div
+          class="items-list"
+          *ngFor="let item of item.options"
+          [routerLink]="[item.route]"
+          routerLinkActive="active"
+          (click)="navigation(item.route)"
+        >
+          <div class="item">{{ item.title | translate }}</div>
+          <div class="icon"><i class="pi pi-angle-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

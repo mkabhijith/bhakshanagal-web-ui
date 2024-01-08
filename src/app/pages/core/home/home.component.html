@@ -1,17 +1,17 @@
-<div class="main-container">
+<div class="main-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
   <div class="offer-banner" (click)="navigateToOffers()">
     <img class="img" [src]="getPic()" alt="" />
   </div>
-  <div class="title">Sweets</div>
+  <div class="title">{{"HOME.SWEETS" | translate}}</div>
   <app-category-product-list [dropdownItems]="list"></app-category-product-list>
   <!-- <app-category-list [dropdownItems]="list"></app-category-list> -->
 
-  <div class="title">crispies</div>
+  <div class="title">{{"HOME.CRISPIES" | translate}}</div>
   <app-category-product-list [dropdownItems]="list"></app-category-product-list>
 
   <!-- <app-category-list [dropdownItems]="list"></app-category-list> -->
 
-  <div class="title">chips</div>
+  <div class="title">{{"HOME.CHIPS" | translate}}</div>
   <app-category-product-list [dropdownItems]="list"></app-category-product-list>
 
   <!-- <app-category-list [dropdownItems]="list"></app-category-list> -->
