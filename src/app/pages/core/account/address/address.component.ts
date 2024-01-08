@@ -33,7 +33,6 @@ export class AddressComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.titleSerice.changeTitle('Address');
     this.addressList = this.addService.getAddress();
-    console.log(this.addressList);
     
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {

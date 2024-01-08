@@ -16,7 +16,7 @@
     "GET_OTP": "Get OTP",
     "ENTER_OTP": "Enter OTP",
     "VERIFY": "VERIFY",
-    "CHANGE_PASSWORD":"Change password"
+    "CHANGE_PASSWORD": "Change password"
   },
   "LANGUAGE": {
     "ENGLISH": "EN",
@@ -33,7 +33,12 @@
   },
   "HOME": {
     "BUY_NOW": "Buy Now",
-    "CART": "Cart"
+    "CART": "Cart",
+    "SWEETS": "Sweets",
+    "CRISPIES": "crispies",
+    "CHIPS": "chips",
+    "SHOW_MORE": "Show More",
+    "SHOW_LESS":"Show Less"
   },
   "FORM_FIELD": {
     "EMAIL_ADDRESS": "Email Address",
@@ -72,7 +77,11 @@
   "PRODUCT": {
     "STATUS": "Status",
     "OUT_OF_STOCK": "OutOfStock",
-    "IN_STOCK": "InStock"
+    "IN_STOCK": "InStock",
+    "ELIGIBLE_FREE_DELIVARY":"Eligible for free delivary",
+    "ELIGIBLE_FREE_RETURN":"Eligible for Return and refund",
+    "CASH_ON_DELIVARY":"Cash on delivery available",
+    "INTERNATIONAL_SHIPPING":"international shipping available"
   },
   "ORDERS": {
     "YOUR_ORDERS": "Your Orders",
@@ -103,5 +112,15 @@
     "HELP": "help",
     "ABOUT_US": "About us",
     "CONTACT_US": "Contact us"
+  },
+  "FOOTER": {
+    "BACK_TO_TOP": "Back to Top",
+    "GET_KNOW_US": "Get It Know Us",
+    "SHOP_WITH_US": "Shop With Us",
+    "DWNLD_DRIVE_TODAY": "Download the driveNow app today",
+    "YOUR_ADD": "Your Address",
+    "YOUR_LIST": "Your List",
+    "DWNLOAD_APP_STORE": "download on app store",
+    "DWNLOAD_GGL_PAY": "download  on google play"
   }
 }

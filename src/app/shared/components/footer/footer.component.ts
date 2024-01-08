@@ -25,13 +25,13 @@ export class FooterComponent implements OnInit {
     private countryOrginService: CountryOrginService
   ) {}
   getItKnowUS: IItemList[] = [
-    { id: 0, item: 'About bhakshnam', route: 'about' },
+    { id: 0, item: 'About bhakshanam', route: '/about' },
   ];
   shopWithUs: IItemList[] = [
-    { id: 0, item: 'Your Account', route: '/account' },
-    { id: 1, item: 'Your Orders', route: 'orders' },
-    { id: 2, item: 'Your Address', route: 'address' },
-    { id: 0, item: 'Your List', route: 'list' },
+    { id: 0, item: 'ACCOUNT.YOUR_ACC', route: '/account' },
+    { id: 1, item: 'ORDERS.YOUR_ORDERS', route: '/orders' },
+    { id: 2, item: 'FOOTER.YOUR_ADD', route: '/address' },
+    { id: 0, item: 'FOOTER.YOUR_LIST', route: '/list' },
   ];
 
   languageSubscription!: Subscription;
