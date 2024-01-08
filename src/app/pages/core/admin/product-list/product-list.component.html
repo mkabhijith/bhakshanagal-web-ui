@@ -1,0 +1,44 @@
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>
+<div class="productList-container">
+  <div class="product-header">
+    <div class="text">Product List</div>
+  </div>
+  <div class="main-container">
+    <div class="add-product" routerLink="/admin/addProduct">
+      <!-- + {{ "BUTTON_ACTIONS.ADD_NEW_ADDRESS" | translate }} -->
+      + Add Product
+    </div>
+    <p-scrollPanel
+      [style]="{ width: '100%', height: '70vh' }"
+      styleClass="custombar1"
+    >
+      <div class="products" *ngFor="let item of products">
+        <div class="img-details">
+          <div class="image">
+            <img [src]="item.imageUrl" alt="" />
+          </div>
+          <div class="details">
+            <div class="product-name">{{ item.productName }}</div>
+            <div class="price">price :{{ item.price }}</div>
+            <div class="quantity">Quantity :{{ item.quantity }}</div>
+            <div class="status">status : {{ item.status }}</div>
+          </div>
+        </div>
+        <div class="button-footer">
+          <p-button
+            styleClass="p-button-danger"
+            (onClick)="deleteProduct(item.id)"
+          >
+            {{ "BUTTON_ACTIONS.DELETE" | translate }}
+          </p-button>
+          <p-button
+            styleClass="p-button-warning"
+            (onClick)="onEditProduct(item.id)"
+            >{{ "BUTTON_ACTIONS.EDIT" | translate }}</p-button
+          >
+        </div>
+      </div>
+    </p-scrollPanel>
+  </div>
+</div>

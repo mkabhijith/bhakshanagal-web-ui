@@ -13,15 +13,18 @@
       width: 100%;
     }
   }
-  .title{
+  .title {
     padding-left: 40px;
     font-size: xx-large;
     font-weight: 700;
     color: gray;
-    font-family: cursive
+    font-family: cursive;
   }
 }
-
+.main-container.ar {
+  direction: rtl;
+  padding-right: 10px;
+}
 .product-card {
   border: 1px solid gray;
   border-radius: 25%;

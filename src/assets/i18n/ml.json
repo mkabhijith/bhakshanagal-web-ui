@@ -3,19 +3,19 @@
     "LANGUAGE": "ഭാഷ",
     "LOG_IN": "ലോഗിൻ",
     "LOG_OUT": "പുറത്തുകടക്കുക",
-    "FORGET_PASSWORD":"പാസ്വേഡ് മറന്നോ?",
-    "DNT_HAVE_AN_ACC":"ഒരു അക്കൗണ്ട് ഇല്ലേ?",
-    "ALREADY_HAVE_AN_ACC":"ഇതിനകം തന്നെ അക്കൗണ്ടും ഉണ്ടോ?",
-    "REGISTER":"പട്ടികയുണ്ടാക്കുക",
-    "KEEP_ME_LOGGED_IN":"എന്നെ ലോഗിൻ ചെയ്ത് നിലനിർത്തുക",
-    "I_AGREE_TERMS_CON":"സേവന നിബന്ധനകളും സ്വകാര്യതാ നയവും ഞാൻ അംഗീകരിക്കുന്നു"
+    "FORGET_PASSWORD": "പാസ്വേഡ് മറന്നോ?",
+    "DNT_HAVE_AN_ACC": "ഒരു അക്കൗണ്ട് ഇല്ലേ?",
+    "ALREADY_HAVE_AN_ACC": "ഇതിനകം തന്നെ അക്കൗണ്ടും ഉണ്ടോ?",
+    "REGISTER": "പട്ടികയുണ്ടാക്കുക",
+    "KEEP_ME_LOGGED_IN": "എന്നെ ലോഗിൻ ചെയ്ത് നിലനിർത്തുക",
+    "I_AGREE_TERMS_CON": "സേവന നിബന്ധനകളും സ്വകാര്യതാ നയവും ഞാൻ അംഗീകരിക്കുന്നു"
   },
   "FORGOT": {
     "ENTER_EMAIL": "ഇമെയിൽ നൽകുക",
     "GET_OTP": "OTP നേടുക",
     "ENTER_OTP": "OTP നൽകുക",
     "VERIFY": "പമാണീകരിക്കുക",
-    "CHANGE_PASSWORD":"പാസ്വേഡ് മാറ്റുക"
+    "CHANGE_PASSWORD": "പാസ്വേഡ് മാറ്റുക"
   },
   "LANGUAGE": {
     "HINDI": "ഹിന്ദി",
@@ -32,7 +32,12 @@
   },
   "HOME": {
     "BUY_NOW": "ഇപ്പോൾ വാങ്ങുക",
-    "CART": "കാർട്ട്"
+    "CART": "കാർട്ട്",
+    "SWEETS": "മധുകളുണ്ട്",
+    "CRISPIES": "ശാന്തമാക്കല്",
+    "CHIPS": "ചിപ്പുകൾ",
+    "SHOW_MORE": "കൂടുതൽ കാണിക്കുക",
+    "SHOW_LESS":"കുറച്ച് കാണിക്കുക"
   },
   "FORM_FIELD": {
     "EMAIL_ADDRESS": "ഇമെയിൽ വിലാസം",
@@ -65,42 +70,56 @@
     "DELIVER": "മോചിപ്പിക്കുക",
     "ADD_NEW": "പുതിയത് ചേർക്കുക",
     "CANCEL_ORDER": "ഓർഡർ റദ്ദാക്കാൻ",
-    "SIGN_UP":"സൈൻ അപ്പ് ചെയ്യുക",
+    "SIGN_UP": "സൈൻ അപ്പ് ചെയ്യുക",
     "SUBMIT": "കീഴടങ്ങുക"
   },
   "PRODUCT": {
     "STATUS": "പദവി",
     "OUT_OF_STOCK": "സ്റ്റോക്കില്ല",
-    "IN_STOCK": "സ്റ്റോക്കുണ്ട്"
+    "IN_STOCK": "സ്റ്റോക്കുണ്ട്",
+    "ELIGIBLE_FREE_DELIVARY":"സ al ജന്യ പെലിവറിക്ക് യോഗ്യത",
+    "ELIGIBLE_FREE_RETURN":"മടക്കത്തിനും റീഫണ്ടിനും യോഗ്യത",
+    "CASH_ON_DELIVARY":"ഡെലിവറിയിൽ പണം ലഭ്യമാണ്",
+    "INTERNATIONAL_SHIPPING":"അന്താരാഷ്ട്ര ഷിപ്പിംഗ് ലഭ്യമാണ്"
   },
   "ORDERS": {
     "YOUR_ORDERS": "നിങ്ങളുടെ ഓർഡറുകൾ",
     "ORDER_PLACED": "ഓർഡർ ചെയ്തു",
     "SHIPPING_DETAILS": "അയക്കേണ്ട വിലാസം"
   },
-  "ACCOUNT":{
-    "ACC_NAME":"അക്കൗണ്ട് നാമം",
-    "ACC_SETTING":"അക്കൗണ്ട് ക്രമീകരണങ്ങൾ",
-    "PROFILE_INFORMATION":"വ്യക്തിഗത വിവരങ്ങൾ",
-    "MANAGE_ADDRESS":"വിലാസങ്ങൾ നിയന്ത്രിക്കുക",
-    "MY_HOLDINGS":"എന്റെ കൈവശം",
-    "MY_CART":"എന്റെ കാർട്ട്",
-    "MY_ORDERS":"എന്റെ ഓർഡറുകൾ",
-    "MY_NOTIFICATION":"എന്റെ അറിയിപ്പുകൾ",
-    "MY_REVIEW_RATING":"എന്റെ അവലോകനവും റേറ്റിംഗും",
-    "MY_REVIEWS":"എന്റെ അവലോകനങ്ങൾ",
-    "PERSONAL_INFORMATION":"സ്വകാര്യ വിവരം",
-    "ALL_NOTIFICATION":"എല്ലാ വിജ്ഞാപനവും",
-    "YOUR_ACC":"നിങ്ങളുടെ അക്കൗണ്ട്"
+  "ACCOUNT": {
+    "ACC_NAME": "അക്കൗണ്ട് നാമം",
+    "ACC_SETTING": "അക്കൗണ്ട് ക്രമീകരണങ്ങൾ",
+    "PROFILE_INFORMATION": "വ്യക്തിഗത വിവരങ്ങൾ",
+    "MANAGE_ADDRESS": "വിലാസങ്ങൾ നിയന്ത്രിക്കുക",
+    "MY_HOLDINGS": "എന്റെ കൈവശം",
+    "MY_CART": "എന്റെ കാർട്ട്",
+    "MY_ORDERS": "എന്റെ ഓർഡറുകൾ",
+    "MY_NOTIFICATION": "എന്റെ അറിയിപ്പുകൾ",
+    "MY_REVIEW_RATING": "എന്റെ അവലോകനവും റേറ്റിംഗും",
+    "MY_REVIEWS": "എന്റെ അവലോകനങ്ങൾ",
+    "PERSONAL_INFORMATION": "സ്വകാര്യ വിവരം",
+    "ALL_NOTIFICATION": "എല്ലാ വിജ്ഞാപനവും",
+    "YOUR_ACC": "നിങ്ങളുടെ അക്കൗണ്ട്"
   },
-  "SIDE_BAR":{
-    "ALL_CATEGORIES":"എല്ലാ വിഭാഗങ്ങളും",
-    "CHOOSE_LANGUAGE":"ഭാഷ തിരഞ്ഞെടുക്കുക",
-    "CHOOSE_COUNTRY":"രാജ്യം തിരഞ്ഞെടുക്കുക",
-    "OFFER_ZONE":"ഓഫർ സോൺ",
-    "MY_ACCOUNT":"എന്റെ അക്കൗണ്ട്",
-    "HELP":"സഹായം",
-    "ABOUT_US":"ഞങ്ങളേക്കുറിച്ച്",
-    "CONTACT_US":"ഞങ്ങളെ സമീപിക്കുക"
+  "SIDE_BAR": {
+    "ALL_CATEGORIES": "എല്ലാ വിഭാഗങ്ങളും",
+    "CHOOSE_LANGUAGE": "ഭാഷ തിരഞ്ഞെടുക്കുക",
+    "CHOOSE_COUNTRY": "രാജ്യം തിരഞ്ഞെടുക്കുക",
+    "OFFER_ZONE": "ഓഫർ സോൺ",
+    "MY_ACCOUNT": "എന്റെ അക്കൗണ്ട്",
+    "HELP": "സഹായം",
+    "ABOUT_US": "ഞങ്ങളേക്കുറിച്ച്",
+    "CONTACT_US": "ഞങ്ങളെ സമീപിക്കുക"
+  },
+  "FOOTER": {
+    "BACK_TO_TOP": "മുകളിലേയ്ക്ക്",
+    "GET_KNOW_US": "അത് ഞങ്ങളെ അറിയുക",
+    "SHOP_WITH_US": "ഞങ്ങളോടൊപ്പം ഷോപ്പുചെയ്യുക",
+    "DWNLD_DRIVE_TODAY": "ഇന്ന് ഡ്രിവേരോ അപ്ലിക്കേഷൻ ഡൗൺലോഡുചെയ്യുക",
+    "YOUR_ADD": "നിങ്ങളുടെ വിലാസം",
+    "YOUR_LIST": "നിങ്ങളുടെ പട്ടിക",
+    "DWNLOAD_APP_STORE": "അപ്ലിക്കേഷൻ സ്റ്റോറിൽ ഡൗൺലോഡുചെയ്യുക",
+    "DWNLOAD_GGL_PAY": "Google Play- ൽ ഡൗൺലോഡുചെയ്യുക"
   }
 }

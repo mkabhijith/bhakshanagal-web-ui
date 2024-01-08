@@ -13,6 +13,9 @@ const EXEMPTIONS: Record<string, string[]> = {
   [HTTP_HEADERS.auth]: [
     `login`,
     `signup`,
+    `verification`,
+    `change-password`,
+    `forgotpassword`,
   ],
   [HTTP_HEADERS.language]: [ ],
 };

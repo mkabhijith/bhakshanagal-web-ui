@@ -3,19 +3,19 @@
     "LANGUAGE": "மொழி",
     "LOG_IN": "உள்நுழைய",
     "LOG_OUT": "வெளியேறு",
-    "FORGET_PASSWORD":"பாஸார்ட் மறக்கவா?",
-    "DNT_HAVE_AN_ACC":"கணக்கு இல்லையா?",
-    "ALREADY_HAVE_AN_ACC":"ஏற்கனவே மற்றும் கணக்கு?",
-    "REGISTER":"பதிவு",
-    "KEEP_ME_LOGGED_IN":"என்னை உள்நுழைந்திருங்கள்",
-    "I_AGREE_TERMS_CON":"சேவை விதிமுறைகள் மற்றும் தனியுரிமைக் கொள்கையை நான் ஒப்புக்கொள்கிறேன்"
+    "FORGET_PASSWORD": "பாஸார்ட் மறக்கவா?",
+    "DNT_HAVE_AN_ACC": "கணக்கு இல்லையா?",
+    "ALREADY_HAVE_AN_ACC": "ஏற்கனவே மற்றும் கணக்கு?",
+    "REGISTER": "பதிவு",
+    "KEEP_ME_LOGGED_IN": "என்னை உள்நுழைந்திருங்கள்",
+    "I_AGREE_TERMS_CON": "சேவை விதிமுறைகள் மற்றும் தனியுரிமைக் கொள்கையை நான் ஒப்புக்கொள்கிறேன்"
   },
   "FORGOT": {
     "ENTER_EMAIL": "மின்னஞ்சலை உள்ளிடவும்",
     "GET_OTP": "OTP ஐப் பெறுங்கள்",
     "ENTER_OTP": "OTP ஐ உள்ளிடவும்",
     "VERIFY": "சரிபார்க்கவும்",
-    "CHANGE_PASSWORD":"கடவுச்சொல்லை மாற்று"
+    "CHANGE_PASSWORD": "கடவுச்சொல்லை மாற்று"
   },
   "LANGUAGE": {
     "ARABIC": "AR",
@@ -32,7 +32,12 @@
   },
   "HOME": {
     "BUY_NOW": "இப்போது வாங்க",
-    "CART": "வண்டி"
+    "CART": "வண்டி",
+    "SWEETS": "இனிப்புகள்",
+    "CRISPIES": "மிருதுவான",
+    "CHIPS": "சீவல்கள்",
+    "SHOW_MORE": "மேலும் காட்ட",
+    "SHOW_LESS":"குறைவாகக் காட்டு"
   },
   "FORM_FIELD": {
     "EMAIL_ADDRESS": "மின்னஞ்சல் முகவரி",
@@ -71,7 +76,11 @@
   "PRODUCT": {
     "STATUS": "நிலை",
     "OUT_OF_STOCK": "பங்கு இல்லை",
-    "IN_STOCK": "கையிருப்பில்"
+    "IN_STOCK": "கையிருப்பில்",
+    "ELIGIBLE_FREE_DELIVARY":"இலவச டெலிவரிக்கு தகுதியானவர்",
+    "ELIGIBLE_FREE_RETURN":"திரும்பவும் பணத்தைத் திரும்பப் பெறவும் தகுதியானவர்",
+    "CASH_ON_DELIVARY":"பிரசவத்தில் பணம் கிடைக்கிறது",
+    "INTERNATIONAL_SHIPPING":"சர்வதேச கப்பல் கிடைக்கிறது"
   },
   "ORDERS": {
     "YOUR_ORDERS": "உங்கள் ஆர்டர்கள்",
@@ -91,7 +100,7 @@
     "MY_REVIEWS": "எனது மதிப்புரைகள்",
     "PERSONAL_INFORMATION": "தனிப்பட்ட தகவல்",
     "ALL_NOTIFICATION": "அனைத்து அறிவிப்பும்",
-    "YOUR_ACC":"உங்கள் கணக்கு"
+    "YOUR_ACC": "உங்கள் கணக்கு"
   },
   "SIDE_BAR": {
     "ALL_CATEGORIES": "அனைத்து பிரிவுகளும்",
@@ -102,5 +111,15 @@
     "HELP": "உதவி",
     "ABOUT_US": "எங்களை பற்றி",
     "CONTACT_US": "எங்களை தொடர்பு கொள்ள"
+  },
+  "FOOTER": {
+    "BACK_TO_TOP": "மீண்டும் மேலே",
+    "GET_KNOW_US": "எங்களை அறிந்து கொள்ளுங்கள்",
+    "SHOP_WITH_US": "எங்களுடன் ஷாப்பிங் செய்யுங்கள்",
+    "DWNLD_DRIVE_TODAY": "டிரைவேவ் பயன்பாட்டை இன்று பதிவிறக்கவும்",
+    "YOUR_ADD": "உங்கள் முகவரி",
+    "YOUR_LIST": "உங்கள் பட்டியல்",
+    "DWNLOAD_APP_STORE": "ஆப் ஸ்டோரில் பதிவிறக்கவும்",
+    "DWNLOAD_GGL_PAY": "Google Play இல் பதிவிறக்கவும்"
   }
 }
