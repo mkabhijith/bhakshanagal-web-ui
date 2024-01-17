@@ -120,6 +120,16 @@
     "YOUR_ADD": "عنوانك",
     "YOUR_LIST": "قائمتك",
     "DWNLOAD_APP_STORE": "تنزيل على متجر التطبيقات",
-    "DWNLOAD_GGL_PAY": "تنزيل على Google Play"
+    "DWNLOAD_GGL_PAY": "تنزيل على Google Play",
+    "CONSUMER_POLICY":"سياسة المستهلك",
+    "PRIVACY_POLICY":"الخصوصية والسياسة",
+    "SOCIAL":"اجتماعي",
+    "FACEBOOK":"فيسبوك",
+    "TWITER":"تويتر",
+    "YOU_TUBE":"موقع YouTube",
+    "OUR_SUPPORTS":"دعمنا",
+    "PAYMENTS":"المدفوعات",
+    "SHIPPING":"شحن",
+    "CANCEL_RETURN":"الإلغاء والعودة"
   }
 }

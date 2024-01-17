@@ -4,12 +4,16 @@ import { AdminComponent } from './admin.component';
 import { AddProductComponent } from './product-list/add-product/add-product.component';
 import { StocksListComponent } from './stocks-list/stocks-list.component';
 import { authGurd } from '../auth-gurd.guard';
+import { OffersComponent } from './offers/offers.component';
+import { OrdersComponent } from './orders/orders.component';
+import { PaynentComponent } from './paynent/paynent.component';
+import { AddOffersComponent } from './offers/add-offers/add-offers.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
-    canActivate:[authGurd],
+    // canActivate:[authGurd],
     children: [
       {
         path: '',
@@ -30,6 +34,22 @@ const routes: Routes = [
       {
         path: 'stockList',
         component: StocksListComponent,
+      },
+      {
+        path: 'offersList',
+        component: OffersComponent,
+      },
+      {
+        path: 'orderList',
+        component: OrdersComponent,
+      },
+      {
+        path: 'addOffers',
+        component: AddOffersComponent,
+      },
+      {
+        path: 'paymentList',
+        component: PaynentComponent,
       },
     ],
   },

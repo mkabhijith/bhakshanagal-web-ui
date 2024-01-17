@@ -1,0 +1,17 @@
+.main-container {
+  padding: 15px 0 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .offer-container {
+    .add-product {
+      width: 90%;
+      border: 1px solid #e0e0e0;
+      padding: 10px;
+      color: orange;
+      border-radius: 4px;
+      font-weight: 700;
+      display: flex;
+    }
+  }
+}

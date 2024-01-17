@@ -26,6 +26,7 @@ export class FooterComponent implements OnInit {
   ) {}
   getItKnowUS: IItemList[] = [
     { id: 0, item: 'About bhakshanam', route: '/about' },
+    { id: 1, item: 'SIDE_BAR.CONTACT_US' },
   ];
   shopWithUs: IItemList[] = [
     { id: 0, item: 'ACCOUNT.YOUR_ACC', route: '/account' },
@@ -33,7 +34,21 @@ export class FooterComponent implements OnInit {
     { id: 2, item: 'FOOTER.YOUR_ADD', route: '/address' },
     { id: 0, item: 'FOOTER.YOUR_LIST', route: '/list' },
   ];
-
+  consumerPolicy: IItemList[] = [{ id: 0, item: 'FOOTER.PRIVACY_POLICY' }];
+  socialArray: IItemList[] = [
+    { id: 0, item: 'FOOTER.FACEBOOK' },
+    { id: 1, item: 'FOOTER.TWITER' },
+    { id: 2, item: 'FOOTER.YOU_TUBE' },
+  ];
+  supportsArray: IItemList[] = [
+    { id: 0, item: 'FOOTER.PAYMENTS' },
+    {
+      id: 1,
+      item: 'FOOTER.SHIPPING',
+    },
+    { id: 2, item: 'FOOTER.CANCEL_RETURN' },
+    { id: 3, item: 'FAQ' },
+  ];
   languageSubscription!: Subscription;
   countryOrginSubscription!: Subscription;
   countryArray: ICountry[] = this.countryOrginService.getAllCountry();
@@ -79,8 +94,7 @@ export class FooterComponent implements OnInit {
     this.showCountry = !this.showCountry;
     this.showLanguage = false;
   }
-  backToTop(){
+  backToTop() {
     window.scrollTo(0, 0);
- 
   }
 }
