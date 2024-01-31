@@ -1,328 +1,111 @@
-.cart-container {
-  display: grid;
-  grid-template-columns: 1fr 0.5fr;
+.main-container {
+  width: 100%;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 25px 100px;
-  position: relative;
-
-  .adress {
-    border: 1px solid rosybrown;
-    border-radius: 5px;
+  .left-container {
     background-color: white;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 50px;
-    padding-top: 90px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 480px;
     gap: 10px;
-    position: relative;
-
-    h3 {
-      position: absolute;
-      top: 10px;
-      padding-left: 50px;
-    }
-    .adress-box {
-      box-shadow: 5px 5px 5px 5px rgba(237, 127, 127, 0.1);
-      display: flex;
-      padding: 10px;
-      padding-left: 20px;
-      gap: 20px;
-      .icon {
-        width: 20px;
-
-        .pi::before {
-          font-size: 23px;
-          font-weight: 400;
-          padding-top: 20px;
-        }
-
-        #map {
-          padding-top: 17px;
-        }
-      }
-      .adress-details {
-        max-width: 300px;
-
-        h2 {
-          font-size: 20px;
-        }
-
-        .estimated-time {
-          margin-bottom: 20px;
-        }
-
-        .line {
-          margin-bottom: 20px;
-          width: 200px;
-          height: 21px;
-          color: rosybrown;
-        }
-
-        button {
-          padding: 10px 20px;
-          border-radius: 5px;
-          background-color: rgb(229, 188, 188);
-          border: 1px solid rgb(242, 142, 142);
-          font-size: 15px;
-          font-weight: 500;
-        }
-      }
-    }
-  }
-  .cart-card {
-    border-radius: 5px;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid rosybrown;
-
-    .watchlist {
-      padding: 10px;
-      border: 1px solid rosybrown;
-      border-radius: 5px;
-      max-height: 250px;
-      overflow: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-
-    .cart-snack {
+    .address {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      border: 1px solid rosybrown;
-      padding: 10px;
-      border-radius: 5px;
-      max-height: 400px;
-
-      .image-name {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        .snack-image {
-          width: 80px;
-          height: 80px;
-
-          img {
-            width: 100%;
-            height: 100%;
-            border-radius: 5px;
-          }
+      height: 50px;
+      .right {
+        .change {
+          padding: 3px 5px;
+          border: 1px solid gray;
+          border-radius: 2px;
+          color: blue;
         }
       }
-      .cart-box-right {
+    }
+    .cart-container {
+      display: flex;
+      overflow: scroll;
+      flex-direction: column;
+      gap: 10px;
+      .cart-items {
         display: flex;
-        align-items: center;
+        width: 500px;
         gap: 10px;
-        .quantity-box {
+        height: 460px;
+
+        .image-add {
           display: flex;
-          gap: 20px;
-          border: 1px solid rosybrown;
-          padding: 5px 10px;
-          border-radius: 5px;
+          flex-direction: column;
+          gap: 5px;
           align-items: center;
-          justify-content: center;
-          text-align: center;
-
-          .count {
-            font-size: 20px;
+          img {
+            height: 100px;
+            width: 100px;
           }
-
-          .subtract:hover,
-          .add:hover {
-            cursor: pointer;
-            color: red;
-          }
-
-          button {
-            background-color: transparent;
-            border: none;
-            outline: none;
-          }
-        }
-        .delete-icon {
-          display: flex;
-          align-items: center;
-          color: orange;
-        }
-      }
-    }
-
-    .bill-details {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-
-      .suggestion-box {
-        width: 100%;
-        outline: none;
-        border: none;
-        background-color: rgb(236, 201, 201);
-        border-radius: 5px;
-        height: 50px;
-        padding: 10px;
-      }
-
-      .checkbox {
-        display: flex;
-        gap: 5px;
-        border: 1px solid rosybrown;
-        padding: 10px;
-        align-items: flex-start;
-
-        .details {
-          font-weight: 600;
-        }
-      }
-
-      .bill-amount {
-        display: flex;
-        flex-direction: column;
-        border-bottom: 2px solid lightgray;
-
-        .amount {
-          display: flex;
-          justify-content: space-between;
-
-          h5 {
-            font-weight: 500;
-          }
-        }
-      }
-
-      .delivery-fee {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 2px solid lightgray;
-
-        span {
-          color: green;
-        }
-      }
-
-      .Total-amount {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .adress-buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        button {
-          background-color: rgb(236, 187, 187);
-          border: none;
-          outline: none;
-          width: 100%;
-          padding: 20px;
-          border-radius: 5px;
-          font-size: 14px;
-          display: none;
-
-          @media screen and (max-width: 1100px) {
-            display: block;
-          }
-        }
-      }
-    }
-
-    .empty-cart {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      gap: 20px;
-
-      img {
-        width: 200px;
-        height: 200px;
-      }
-
-      button {
-        padding: 10px 15px;
-        outline: none;
-        background-color: rgb(242, 194, 194);
-        border: 1px solid rosybrown;
-
-        &:hover {
-          transform: scale(1.1);
-          transition: transform 0.3s ease;
-        }
-      }
-    }
-  }
-}
-
-// .cart-container.ar {
-//   direction: rtl;
-//   .adress{
-//     h3{
-//       padding-right: 50px;
-//     }
-//   }
-// }
-
-@media screen and (max-width: 1100px) {
-  .cart-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    .adress {
-      display: none;
-    }
-    .cart-card {
-      width: 100%;
-    }
-  }
-}
-@media screen and (max-width: 700px) {
-  .cart-container {
-    padding: 20px;
-  }
-}
-
-@media screen and (max-width: 630px) {
-  .cart-container {
-    .cart-card {
-      .watchlist {
-        .cart-snack {
-          .snack-image {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 515px) {
-  .cart-container {
-    .cart-card {
-      .watchlist {
-        .cart-snack {
-          border: none;
-          padding: unset;
-          border-bottom: 1px solid lightgray;
-          padding-bottom: 10px;
-          border-radius: unset;
-          b {
-            font-size: 15px;
-          }
-          .quantity-box {
-            gap: 10px;
-            padding: 2px 5px;
-            font-size: 5px;
+          .add {
+            display: flex;
+            gap: 5px;
+            i {
+              border: 1px solid gray;
+              border-radius: 50%;
+              padding: 3px;
+            }
             .count {
-              font-size: 15px;
+              border: 1px solid gray;
+              padding: 2px 5px;
+              align-items: center;
             }
           }
         }
+        .cart-details {
+          display: flex;
+          // gap: 10px;
+          justify-content: space-between;
+          flex-direction: column;
+          .cart--items {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+          }
+          .remove {
+            padding: 3px 5px;
+            border-radius: 4px;
+            background-color: white;
+          }
+        }
       }
+    }
+    .place-order {
+      display: flex;
+      justify-content: end;
+    }
+  }
+  .right-container {
+    background-color: white;
+    width: 350px;
+    padding: 10px 15px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    .heading {
+      color: gray;
+      font-size: medium;
+      font-weight: 700;
+    }
+    .details {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .main-container{
+    flex-direction: column;
+    .left-container{
+
     }
   }
 }

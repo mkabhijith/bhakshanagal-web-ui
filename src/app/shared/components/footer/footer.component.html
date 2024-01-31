@@ -23,6 +23,36 @@
         {{ item.item | translate }}
       </div>
     </div>
+    <div class="shop-with-us">
+      <div class="heading">{{ "FOOTER.CONSUMER_POLICY" | translate }}</div>
+      <div
+        class="text"
+        *ngFor="let item of consumerPolicy"
+        [routerLink]="[item.route]"
+      >
+        {{ item.item | translate }}
+      </div>
+    </div>
+    <div class="shop-with-us">
+      <div class="heading">{{ "FOOTER.SOCIAL" | translate }}</div>
+      <div
+        class="text"
+        *ngFor="let item of socialArray"
+        [routerLink]="[item.route]"
+      >
+        {{ item.item | translate }}
+      </div>
+    </div>
+    <div class="shop-with-us">
+      <div class="heading">{{ "FOOTER.OUR_SUPPORTS" | translate }}</div>
+      <div
+        class="text"
+        *ngFor="let item of supportsArray"
+        [routerLink]="[item.route]"
+      >
+        {{ item.item | translate }}
+      </div>
+    </div>
     <div class="mobile-app">
       <div class="heading">{{ "FOOTER.DWNLD_DRIVE_TODAY" | translate }}</div>
       <div class="links">

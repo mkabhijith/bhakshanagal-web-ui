@@ -120,6 +120,16 @@
     "YOUR_ADD": "तुम्हारा पता",
     "YOUR_LIST": "आपकी सूची",
     "DWNLOAD_APP_STORE": "ऐप स्टोर पर डाउनलोड करें",
-    "DWNLOAD_GGL_PAY": "Google Play पर डाउनलोड करें"
+    "DWNLOAD_GGL_PAY": "Google Play पर डाउनलोड करें",
+    "CONSUMER_POLICY":"उपभोक्ता नीति",
+    "PRIVACY_POLICY":"गोपनीयता और नीति",
+    "SOCIAL":"सामाजिक",
+    "FACEBOOK":"फेसबुक",
+    "TWITER":"ट्विटर",
+    "YOU_TUBE":"यूट्यूब",
+    "OUR_SUPPORTS":"हमारे समर्थन",
+    "PAYMENTS":"भुगतान",
+    "SHIPPING":"शिपिंग",
+    "CANCEL_RETURN":"रद्दीकरण और वापसी"
   }
 }

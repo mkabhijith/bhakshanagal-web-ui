@@ -2,18 +2,17 @@
   <div class="offer-banner" (click)="navigateToOffers()">
     <img class="img" [src]="getPic()" alt="" />
   </div>
-  <div class="title">{{"HOME.SWEETS" | translate}}</div>
+  <div class="title">{{ "HOME.SWEETS" | translate }}</div>
   <app-category-product-list [dropdownItems]="list"></app-category-product-list>
   <!-- <app-category-list [dropdownItems]="list"></app-category-list> -->
 
-  <div class="title">{{"HOME.CRISPIES" | translate}}</div>
+  <div class="title">{{ "HOME.CRISPIES" | translate }}</div>
   <app-category-product-list [dropdownItems]="list"></app-category-product-list>
 
   <!-- <app-category-list [dropdownItems]="list"></app-category-list> -->
 
-  <div class="title">{{"HOME.CHIPS" | translate}}</div>
+  <div class="title">{{ "HOME.CHIPS" | translate }}</div>
   <app-category-product-list [dropdownItems]="list"></app-category-product-list>
 
   <!-- <app-category-list [dropdownItems]="list"></app-category-list> -->
-  <app-footer></app-footer>
 </div>

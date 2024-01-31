@@ -5,6 +5,8 @@ import { CartRoutingModule } from './cart-routing.module';
 import { CartComponent } from './cart.component';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 
+import { ButtonModule } from 'primeng/button';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
   imports: [
     CommonModule,
     CartRoutingModule,
-    ScrollPanelModule
+    ScrollPanelModule,
+    ButtonModule,
+    DividerModule
   ]
 })
 export class CartModule {

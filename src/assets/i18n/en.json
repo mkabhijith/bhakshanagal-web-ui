@@ -121,6 +121,16 @@
     "YOUR_ADD": "Your Address",
     "YOUR_LIST": "Your List",
     "DWNLOAD_APP_STORE": "download on app store",
-    "DWNLOAD_GGL_PAY": "download  on google play"
+    "DWNLOAD_GGL_PAY": "download  on google play",
+    "CONSUMER_POLICY":"CONSUMER POLICY",
+    "PRIVACY_POLICY":"privacy and policy",
+    "SOCIAL":"SOCIAL",
+    "FACEBOOK":"Facebook",
+    "TWITER":"Twitter",
+    "YOU_TUBE":"You Tube",
+    "OUR_SUPPORTS":"Our supports",
+    "PAYMENTS":"Payments",
+    "SHIPPING":"Shipping",
+    "CANCEL_RETURN":"Cancellation & Return"
   }
 }

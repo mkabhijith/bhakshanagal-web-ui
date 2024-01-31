@@ -120,6 +120,16 @@
     "YOUR_ADD": "உங்கள் முகவரி",
     "YOUR_LIST": "உங்கள் பட்டியல்",
     "DWNLOAD_APP_STORE": "ஆப் ஸ்டோரில் பதிவிறக்கவும்",
-    "DWNLOAD_GGL_PAY": "Google Play இல் பதிவிறக்கவும்"
+    "DWNLOAD_GGL_PAY": "Google Play இல் பதிவிறக்கவும்",
+    "CONSUMER_POLICY":"நுகர்வோர் கொள்கை ",
+    "PRIVACY_POLICY":"தனியுரிமை மற்றும் கொள்கை",
+    "SOCIAL":"சமூக",
+    "FACEBOOK":"முகநூல்",
+    "TWITER":"ட்விட்டர்",
+    "YOU_TUBE":"வலைஒளி",
+    "OUR_SUPPORTS":"எங்கள் ஆதரவு",
+    "PAYMENTS":"கொடுப்பனவுகள்",
+    "SHIPPING":"கப்பல்",
+    "CANCEL_RETURN":"ரத்து மற்றும் திரும்ப"
   }
 }
