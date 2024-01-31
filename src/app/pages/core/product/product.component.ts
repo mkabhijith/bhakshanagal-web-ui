@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
 import { ILanguage } from 'src/app/shared/types/language.type';
 import { TitleService } from 'src/app/shared/services/title/title.service';
 
+declare var Razorpay: any;
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -25,6 +26,7 @@ export class ProductComponent implements OnInit, OnDestroy {
   currentLanguage!: ILanguage;
   list!: any[];
   product: any;
+
   ngOnInit() {
     this.list = this.homeService.getList();
     this.route.params.subscribe({
@@ -48,5 +50,37 @@ export class ProductComponent implements OnInit, OnDestroy {
   addToCart(id: number) {
     this.cartService.saveCart(id);
   }
-  buyNow(id:number){}
+  buyNow(id: number) {
+    const RozerPayOptions = {
+      description: 'sample',
+      currency: 'INR',
+      amount: '3000',
+      name: 'sai',
+      Image:'',
+      key: 'rzp_test_ykpIQCXJbWgyQi',
+      prefills: {
+        name: 'sai kumar',
+        email: 'saigmail.com',
+        phone: '98989898',
+      },
+      theme: {
+        color: 'red',
+      },
+      modal: {
+        ondismiss: () => {
+          console.log('dissmissed');
+        },
+      },
+    };
+    const successCallback = (paymentId: any) => {
+      console.log(paymentId);
+    };
+
+    const failureCallback = (e: any) => {
+      console.log(e);
+      
+    };
+
+    Razorpay.open(RozerPayOptions,successCallback,failureCallback)
+  }
 }

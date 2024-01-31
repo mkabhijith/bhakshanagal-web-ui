@@ -34,8 +34,11 @@ export class AdminComponent implements OnInit, OnDestroy {
   languageSubscription!: Subscription;
 
   admintMenu: IAdminMenu[] = [
-    { id: 0, icon: '', title: 'Products', route:'/admin/products' },
-    { id: 0, icon: '', title: 'stocks', route:'/admin/stockList' },
+    { id: 0, icon: '', title: 'Products', route: '/admin/products' },
+    { id: 1, icon: '', title: 'stocks', route: '/admin/stockList' },
+    { id: 2, icon: '', title: 'Offers', route: '/admin/offersList' },
+    { id: 3, icon: '', title: 'Orders', route: '/admin/orderList' },
+    { id: 4, icon: '', title: 'Payments', route: '/admin/paymentList' },
   ];
 
   ngOnInit(): void {
