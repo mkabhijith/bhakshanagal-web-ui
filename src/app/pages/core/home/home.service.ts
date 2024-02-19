@@ -1,13 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IProductList } from './home.type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
   products: any[] = [
     {
-      id: 1,
+      product_id: 1,
       imageUrl: '/assets/images/food/Kuzhalappam.jpg',
       productName: 'Kuzhalappam',
       price: 75,
@@ -21,7 +23,7 @@ export class HomeService {
       freeDelivary: true,
     },
     {
-      id: 2,
+      product_id: 2,
       imageUrl:
         '/assets/images/food/Kottayam Churuttu Recipe _ Thin Flour Pastry Sheets Filled with Sweetened Rice Filling.jpg',
       productName: 'Kottayam churattu',
@@ -31,7 +33,7 @@ export class HomeService {
       status: false,
     },
     {
-      id: 3,
+      product_id: 3,
       imageUrl:
         '/assets/images/food/Benne Murukku _ Butter Murukku Recipe _ Easy Diwali Snacks.jpg',
       productName: 'Murukku',
@@ -134,10 +136,15 @@ export class HomeService {
   getList() {
     return this.products;
   }
+
   removeAddress(id: number) {
     const index = this.products.findIndex((user) => user.id === id);
     if (index !== -1) {
       this.products.splice(index, 1);
     }
+  }
+
+  getProductList() {
+    return this.httpClient.post<IProductList>(`bhakshanangal/productlist`,{})
   }
 }

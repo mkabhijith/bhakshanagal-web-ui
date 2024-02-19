@@ -11,6 +11,7 @@ import { LanguageService } from '../../services/language.service';
 import { Subscription } from 'rxjs';
 import { ILanguage } from '../../types/language.type';
 import { IProducts } from '../../types/product.type';
+import { IProductList, Iproduct } from 'src/app/pages/core/home/home.type';
 
 @Component({
   selector: 'app-category-product-list',
@@ -18,7 +19,7 @@ import { IProducts } from '../../types/product.type';
   styleUrls: ['./category-product-list.component.scss'],
 })
 export class CategoryProductListComponent implements OnInit, OnDestroy {
-  @Input() dropdownItems!: IProducts[];
+  @Input() dropdownItems!:  Iproduct[];
   constructor(
     private cartService: CartService,
     private route: Router,
@@ -29,7 +30,7 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
   currentLanguage!: ILanguage;
   limit!: number;
   intialLimit!: number;
-  itemsToShow: IProducts[] = [];
+  itemsToShow: Iproduct[] = [];
   showMoreText = 'Show More';
   screenWidth!: number;
   isSmallScreen!: boolean;

@@ -32,18 +32,24 @@ export class AddressComponent implements OnInit, OnDestroy {
   addressList!: any[];
   ngOnInit(): void {
     this.titleSerice.changeTitle('Address');
-    this.addressList = this.addService.getAddress();
-    
+    // this.addressList = this.addService.getAddress();
+
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {
         this.currentLanguage = lang;
+      },
+    });
+
+    this.addService.getAddressList().subscribe({
+      next: (res) => {
+        console.log(res);
       },
     });
   }
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
   }
-  deleteAddress(id:number) {
+  deleteAddress(id: number) {
     console.log('clicked');
 
     this.confirmationService.confirm({
@@ -51,7 +57,7 @@ export class AddressComponent implements OnInit, OnDestroy {
       header: 'Confirmation',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.addService.removeAddress(id)
+        this.addService.removeAddress(id);
         this.messageService.add({
           severity: 'info',
           summary: 'Confirmed',

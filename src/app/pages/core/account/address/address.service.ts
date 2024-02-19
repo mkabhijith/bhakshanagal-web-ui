@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IAddressList } from 'src/app/shared/types/address.type';
 
@@ -5,7 +6,7 @@ import { IAddressList } from 'src/app/shared/types/address.type';
   providedIn: 'root',
 })
 export class AddressService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   addressList: IAddressList[] = [
     {
@@ -52,5 +53,11 @@ export class AddressService {
     if (index !== -1) {
       this.addressList.splice(index, 1);
     }
+  }
+  getAddressList() {
+   const payload = {
+      address_id: ['3'],
+    };
+    return this.httpClient.get(`bhakshanangal/addresslist`);
   }
 }
