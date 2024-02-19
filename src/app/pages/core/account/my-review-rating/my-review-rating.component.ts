@@ -31,14 +31,14 @@ export class MyReviewRatingComponent implements OnInit {
     this.titleSerice.changeTitle('My Review');
   }
   reviewList: IreviewList[] = [
-    {
-      id: 0,
-      productName: 'achapam',
-      ratingTitle: 'good',
-      review: 'nice one',
-      rating: 3,
-      date: '12 dec 2023',
-    },
+    // {
+    //   id: 0,
+    //   productName: 'achapam',
+    //   ratingTitle: 'good',
+    //   review: 'nice one',
+    //   rating: 3,
+    //   date: '12 dec 2023',
+    // },
   ];
   confirm1() {
     this.confirmationService.confirm({

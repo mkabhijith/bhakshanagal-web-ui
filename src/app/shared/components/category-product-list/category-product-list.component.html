@@ -1,12 +1,12 @@
 <div class="main-container" id="custom-field-interface">
   <div class="product-list" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
     <p-card
-      header="{{ item.productName }}"
+      header="{{ item.product_name }}"
       subheader="{{ item.quantity }}"
       *ngFor="let item of itemsToShow"
     >
       <ng-template pTemplate="header">
-        <img src="/assets/images/poster/ptoto chips mckp.jpg" alt="" />
+        <img src="/assets/images/Noimage.jpg" alt="" />
         <!-- <img alt="Card" [src]="item.imageUrl" /> -->
       </ng-template>
       <div class="price">
@@ -15,14 +15,14 @@
       <ng-template pTemplate="footer">
         <p-button
           label="{{ 'HOME.BUY_NOW' | translate }}"
-          (onClick)="navigateProduct(item.id)"
+          (onClick)="navigateProduct(item.product_id)"
         ></p-button>
         <p-button
           label="{{ 'HOME.CART' | translate }}"
           icon="pi pi-shopping-cart"
           styleClass="p-button-secondary"
           [style]="{ 'margin-left': '.5em' }"
-          (onClick)="addToCart(item.id)"
+          (onClick)="addToCart(item.product_id)"
         ></p-button>
       </ng-template>
     </p-card>

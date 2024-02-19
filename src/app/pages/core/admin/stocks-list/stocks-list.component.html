@@ -1,0 +1,34 @@
+<div class="main-container">
+  <p-scrollPanel
+    [style]="{ width: '100%', height: '70vh' }"
+    styleClass="custombar1"
+  >
+    <div class="products" *ngFor="let item of products">
+      <div class="img-details">
+        <div class="image">
+          <img [src]="item.imageUrl" alt="" />
+        </div>
+        <div class="details">
+          <div class="product-name">{{ item.productName }}</div>
+          <div class="price">price :{{ item.price }}</div>
+          <div class="quantity">Quantity :{{ item.quantity }}</div>
+          <div class="status">status : {{ item.status }}</div>
+        </div>
+      </div>
+      <div class="update-stock">
+        <div class="text">Update quantity</div>
+        <form [formGroup]="updateStockForm">
+          <p-inputNumber
+            inputId="integeronly"
+            formControlName="stock"
+          ></p-inputNumber>
+        </form>
+        <p-button
+          styleClass="p-button-warning"
+          (onClick)="onUpdateProduct(item.id)"
+          >Update</p-button
+        >
+      </div>
+    </div>
+  </p-scrollPanel>
+</div>

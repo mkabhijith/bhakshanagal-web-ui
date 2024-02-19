@@ -4,6 +4,11 @@ import { HomeService } from './home.service';
 import { CountryOrginService } from 'src/app/shared/services/country-orgin.service';
 import { Router } from '@angular/router';
 import { TitleService } from 'src/app/shared/services/title/title.service';
+import { ILanguage } from 'src/app/shared/types/language.type';
+import { Subscription } from 'rxjs';
+import { LanguageService } from 'src/app/shared/services/language.service';
+import { IProductListArray } from './home.type';
+import { StorageService } from 'src/app/shared/services/storage/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -21,12 +26,18 @@ export class HomeComponent implements OnInit, OnDestroy {
     private homeService: HomeService,
     private currencyService: CountryOrginService,
     private route: Router,
-    private titleSerice: TitleService
+    private titleSerice: TitleService,
+    private languageService: LanguageService,
+    private storageService: StorageService
   ) {}
   list!: any[];
 
+  productList!: IProductListArray[];
+
   currencyValue!: number;
   currency!: string;
+  currentLanguage!: ILanguage;
+  languageSubscription!: Subscription;
   ngOnInit() {
     this.titleSerice.changeTitle('home');
     this.currencyService.switchCountry$.subscribe({
@@ -41,8 +52,27 @@ export class HomeComponent implements OnInit, OnDestroy {
     }, 3000);
 
     this.list = this.homeService.getList();
+
+    this.languageSubscription = this.languageService.switchLanguage$.subscribe({
+      next: (lang) => {
+        this.currentLanguage = lang;
+      },
+    });
+
+    this.homeService.getProductList().subscribe({
+      next: (res) => {
+        this.productList = res.data;
+        console.log('productList', this.productList);
+      },
+    });
+
+
+    console.log(this.storageService.authKey);
+    
   }
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    this.languageSubscription.unsubscribe();
+  }
 
   getPic() {
     if (this.currentAddIndex === this.adLists.length) {

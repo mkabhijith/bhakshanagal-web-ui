@@ -3,19 +3,19 @@
     "LANGUAGE": "भाषा",
     "LOG_IN": "लॉग इन करें",
     "LOG_OUT": "लॉग आउट",
-    "FORGET_PASSWORD":"Passowrd को भूल जाओ?",
-    "DNT_HAVE_AN_ACC":"कोई खाता नहीं है?",
-    "ALREADY_HAVE_AN_ACC":"पहले से ही और खाता है?",
-    "REGISTER":"पंजीकरण करवाना",
-    "KEEP_ME_LOGGED_IN":"मुझे लोग्ड इन रखें",
-    "I_AGREE_TERMS_CON":"मैं सेवा और गोपनीयता नीति की शर्तों से सहमत हूं"
+    "FORGET_PASSWORD": "Passowrd को भूल जाओ?",
+    "DNT_HAVE_AN_ACC": "कोई खाता नहीं है?",
+    "ALREADY_HAVE_AN_ACC": "पहले से ही और खाता है?",
+    "REGISTER": "पंजीकरण करवाना",
+    "KEEP_ME_LOGGED_IN": "मुझे लोग्ड इन रखें",
+    "I_AGREE_TERMS_CON": "मैं सेवा और गोपनीयता नीति की शर्तों से सहमत हूं"
   },
   "FORGOT": {
     "ENTER_EMAIL": "ईमेल दर्ज करें",
     "GET_OTP": "OTP प्राप्त करें",
     "ENTER_OTP": "OTP दर्ज करें",
     "VERIFY": "सत्यापित करें",
-    "CHANGE_PASSWORD":"पासवर्ड बदलें"
+    "CHANGE_PASSWORD": "पासवर्ड बदलें"
   },
   "LANGUAGE": {
     "HINDI": "HI",
@@ -32,7 +32,12 @@
   },
   "HOME": {
     "BUY_NOW": "अभी खरीदें",
-    "CART": "कार्ट"
+    "CART": "कार्ट",
+    "SWEETS": "मिठाइयाँ",
+    "CRISPIES": "कुरकुरा",
+    "CHIPS": "चिप्स",
+    "SHOW_MORE": "और दिखाओ",
+    "SHOW_LESS":"कम दिखाएं"
   },
   "FORM_FIELD": {
     "EMAIL_ADDRESS": "मेल पता",
@@ -48,12 +53,12 @@
     "LANDMARK": "सीमाचिह्न",
     "ALTERNATIVE_PHONE": "वैकल्पिक फ़ोन"
   },
-  "ADDRESS":{
-    "HOME":"घर",
-    "OFFICE":"कार्यालय",
-    "OTHER":"अन्य",
-    "ADD_ADDRESS":"पता जोड़ें",
-    "EDIT_ADDRESS":"पता संपादित करें"
+  "ADDRESS": {
+    "HOME": "घर",
+    "OFFICE": "कार्यालय",
+    "OTHER": "अन्य",
+    "ADD_ADDRESS": "पता जोड़ें",
+    "EDIT_ADDRESS": "पता संपादित करें"
   },
   "BUTTON_ACTIONS": {
     "SAVE": "बचाना",
@@ -65,42 +70,66 @@
     "DELIVER": "बाँटना",
     "ADD_NEW": "नया जोड़ो",
     "CANCEL_ORDER": "आदेश रद्द",
-    "SIGN_UP":"साइन अप करें",
+    "SIGN_UP": "साइन अप करें",
     "SUBMIT": "जमा करना"
   },
   "PRODUCT": {
     "STATUS": "स्थिति",
     "OUT_OF_STOCK": "स्टॉक ख़त्म",
-    "IN_STOCK": "स्टॉक में"
+    "IN_STOCK": "स्टॉक में",
+    "ELIGIBLE_FREE_DELIVARY":"मुफ्त के लिए पात्र",
+    "ELIGIBLE_FREE_RETURN":"वापसी और धनवापसी के लिए पात्र",
+    "CASH_ON_DELIVARY":"डिलीवरी पर कैश",
+    "INTERNATIONAL_SHIPPING":"अंतर्राष्ट्रीय शिपिंग उपलब्ध"
   },
   "ORDERS": {
     "YOUR_ORDERS": "तुम्हारे ऑर्डर",
     "ORDER_PLACED": "आदेश रखा",
     "SHIPPING_DETAILS": "शिपिंग की जानकारियां"
   },
-  "ACCOUNT":{
-    "ACC_NAME":"खाता नाम",
-    "ACC_SETTING":"अकाउंट सेटिंग",
-    "PROFILE_INFORMATION":"प्रोफाइल की जानकारी",
-    "MANAGE_ADDRESS":"पते प्रबंधित करें",
-    "MY_HOLDINGS":"मेरी होल्डिंग्स",
-    "MY_CART":"मेरी गाड़ी",
-    "MY_ORDERS":"मेरे आदेश",
-    "MY_NOTIFICATION":"मेरी सूचनाएँ",
-    "MY_REVIEW_RATING":"मेरी समीक्षा और रेटिंग",
-    "MY_REVIEWS":"मेरी समीक्षा",
-    "PERSONAL_INFORMATION":"व्यक्तिगत जानकारी",
-    "ALL_NOTIFICATION":"सभी अधिसूचना",
-    "YOUR_ACC":"आपका खाता"
+  "ACCOUNT": {
+    "ACC_NAME": "खाता नाम",
+    "ACC_SETTING": "अकाउंट सेटिंग",
+    "PROFILE_INFORMATION": "प्रोफाइल की जानकारी",
+    "MANAGE_ADDRESS": "पते प्रबंधित करें",
+    "MY_HOLDINGS": "मेरी होल्डिंग्स",
+    "MY_CART": "मेरी गाड़ी",
+    "MY_ORDERS": "मेरे आदेश",
+    "MY_NOTIFICATION": "मेरी सूचनाएँ",
+    "MY_REVIEW_RATING": "मेरी समीक्षा और रेटिंग",
+    "MY_REVIEWS": "मेरी समीक्षा",
+    "PERSONAL_INFORMATION": "व्यक्तिगत जानकारी",
+    "ALL_NOTIFICATION": "सभी अधिसूचना",
+    "YOUR_ACC": "आपका खाता"
   },
-  "SIDE_BAR":{
-    "ALL_CATEGORIES":"सब वर्ग",
-    "CHOOSE_LANGUAGE":"भाषा चुनें",
-    "CHOOSE_COUNTRY":"देश चुनें",
-    "OFFER_ZONE":"प्रस्ताव क्षेत्र",
-    "MY_ACCOUNT":"मेरा खाता",
-    "HELP":"मदद",
-    "ABOUT_US":"हमारे बारे में",
-    "CONTACT_US":"संपर्क करें"
+  "SIDE_BAR": {
+    "ALL_CATEGORIES": "सब वर्ग",
+    "CHOOSE_LANGUAGE": "भाषा चुनें",
+    "CHOOSE_COUNTRY": "देश चुनें",
+    "OFFER_ZONE": "प्रस्ताव क्षेत्र",
+    "MY_ACCOUNT": "मेरा खाता",
+    "HELP": "मदद",
+    "ABOUT_US": "हमारे बारे में",
+    "CONTACT_US": "संपर्क करें"
+  },
+  "FOOTER": {
+    "BACK_TO_TOP": "वापस शीर्ष पर",
+    "GET_KNOW_US": "वापस शीर्ष पर",
+    "SHOP_WITH_US": "हमारे साथ खरीदारी करें",
+    "DWNLD_DRIVE_TODAY": "आज Drownow ऐप डाउनलोड करें",
+    "YOUR_ADD": "तुम्हारा पता",
+    "YOUR_LIST": "आपकी सूची",
+    "DWNLOAD_APP_STORE": "ऐप स्टोर पर डाउनलोड करें",
+    "DWNLOAD_GGL_PAY": "Google Play पर डाउनलोड करें",
+    "CONSUMER_POLICY":"उपभोक्ता नीति",
+    "PRIVACY_POLICY":"गोपनीयता और नीति",
+    "SOCIAL":"सामाजिक",
+    "FACEBOOK":"फेसबुक",
+    "TWITER":"ट्विटर",
+    "YOU_TUBE":"यूट्यूब",
+    "OUR_SUPPORTS":"हमारे समर्थन",
+    "PAYMENTS":"भुगतान",
+    "SHIPPING":"शिपिंग",
+    "CANCEL_RETURN":"रद्दीकरण और वापसी"
   }
 }

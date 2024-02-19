@@ -1,12 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { SignInService } from './sign-in.service';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { TitleService } from 'src/app/shared/services/title/title.service';
 import { ISignInPayload } from './sign-in.type';
 import { ILanguage } from 'src/app/shared/types/language.type';
-import { Subscription } from 'rxjs';
+import { SignInService } from './sign-in.service';
 import { LanguageService } from 'src/app/shared/services/language.service';
-import { TitleService } from 'src/app/shared/services/title/title.service';
+import { Subscription } from 'rxjs';
+import { StorageService } from 'src/app/shared/services/storage/storage.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -36,7 +38,8 @@ export class SignInComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute,
     private languageService: LanguageService,
-    private titleSerice: TitleService
+    private titleSerice: TitleService,
+    private storageService: StorageService
   ) {}
 
   ngOnInit(): void {
@@ -46,10 +49,10 @@ export class SignInComponent implements OnInit, OnDestroy {
         this.currentLanguage = lang;
       },
     });
-    this.titleSerice.changeTitle("sign in")
+    this.titleSerice.changeTitle('sign in');
   }
   ngOnDestroy(): void {
-    this.languageSubscription.unsubscribe()
+    this.languageSubscription.unsubscribe();
   }
 
   loginUser() {
@@ -61,7 +64,12 @@ export class SignInComponent implements OnInit, OnDestroy {
           next: (res) => {
             if (res.result) {
               this.loginInProgress = false;
-              this.router.navigateByUrl(this.returnUrl);
+              this.storageService.UserId = res.user_id;
+              if (res.user_role === 'admin') {
+                this.router.navigate(['/admin']);
+              } else {
+                this.router.navigateByUrl(this.returnUrl);
+              }
             } else {
               this.error1 = true;
               this.errorMessage = res.message;

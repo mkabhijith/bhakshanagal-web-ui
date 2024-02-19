@@ -15,7 +15,7 @@
     "GET_OTP": "الحصول على OTP",
     "ENTER_OTP": "أدخل OTP",
     "VERIFY": "يؤكد",
-    "CHANGE_PASSWORD":"تغيير كلمة المرور"
+    "CHANGE_PASSWORD": "تغيير كلمة المرور"
   },
   "LANGUAGE": {
     "ARABIC": "AR",
@@ -32,7 +32,12 @@
   },
   "HOME": {
     "BUY_NOW": "اشتري الآن",
-    "CART": "عربة التسوق"
+    "CART": "عربة التسوق",
+    "SWEETS": "الحلويات",
+    "CRISPIES": "مقرمشات",
+    "CHIPS": "رقائق",
+    "SHOW_MORE": "أظهر المزيد",
+    "SHOW_LESS":"تظهر أقل"
   },
   "FORM_FIELD": {
     "EMAIL_ADDRESS": "عنوان البريد الإلكتروني",
@@ -71,7 +76,11 @@
   "PRODUCT": {
     "STATUS": "حالة",
     "OUT_OF_STOCK": "إنتهى من المخزن",
-    "IN_STOCK": "في الأوراق المالية"
+    "IN_STOCK": "في الأوراق المالية",
+    "ELIGIBLE_FREE_DELIVARY":"مؤهل للحصول على تسليم مجاني",
+    "ELIGIBLE_FREE_RETURN":"مؤهل للعودة واسترداد الأموال",
+    "CASH_ON_DELIVARY":"النقد على التسليم المتاح",
+    "INTERNATIONAL_SHIPPING":"الشحن الدولي المتاح"
   },
   "ORDERS": {
     "YOUR_ORDERS": "طلباتك",
@@ -102,5 +111,25 @@
     "HELP": "يساعد",
     "ABOUT_US": "معلومات عنا",
     "CONTACT_US": "اتصل بنا"
+  },
+  "FOOTER": {
+    "BACK_TO_TOP": "العودة إلى الأعلى",
+    "GET_KNOW_US": "احصل عليها تعرفنا",
+    "SHOP_WITH_US": "تسوق معنا",
+    "DWNLD_DRIVE_TODAY": "قم بتنزيل تطبيق Drivenow اليوم",
+    "YOUR_ADD": "عنوانك",
+    "YOUR_LIST": "قائمتك",
+    "DWNLOAD_APP_STORE": "تنزيل على متجر التطبيقات",
+    "DWNLOAD_GGL_PAY": "تنزيل على Google Play",
+    "CONSUMER_POLICY":"سياسة المستهلك",
+    "PRIVACY_POLICY":"الخصوصية والسياسة",
+    "SOCIAL":"اجتماعي",
+    "FACEBOOK":"فيسبوك",
+    "TWITER":"تويتر",
+    "YOU_TUBE":"موقع YouTube",
+    "OUR_SUPPORTS":"دعمنا",
+    "PAYMENTS":"المدفوعات",
+    "SHIPPING":"شحن",
+    "CANCEL_RETURN":"الإلغاء والعودة"
   }
 }

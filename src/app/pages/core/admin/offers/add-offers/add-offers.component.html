@@ -1,0 +1,11 @@
+<div class="add-offer-container">
+  <div class="main-container">
+    <form [formGroup]="offersForm" (ngSubmit)="onSubmit()">
+      <label for="name" class="name">Offer title</label>
+      <input type="text" pInputText formControlName="offersTitle" />
+      <label for="fileUpload">File Upload</label>
+      <input type="file" (change)="onImageChange($event)" />
+      <p-button type="submit">Submit</p-button>
+    </form>
+  </div>
+</div>

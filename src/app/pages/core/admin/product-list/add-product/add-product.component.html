@@ -1,0 +1,162 @@
+<!-- <app-back-btn (click)="navgateToAccount()">{{
+  "SIDE_BAR.MY_ACCOUNT" | translate
+}}</app-back-btn> -->
+<div class="add-product-container">
+  <div class="caption-container" *ngIf="onEditForm">Edit Product</div>
+  <div class="caption-container" *ngIf="!onEditForm">Add Product</div>
+  <div class="main-container">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="input-box-container">
+        <div class="input-box">
+          <label for="name" class="name">Product Name</label>
+          <input type="text" pInputText formControlName="productName" />
+        </div>
+        <div class="input-box">
+          <label for="quantuty" class="name">Product Quantuty</label>
+          <div>
+            <p-inputNumber
+              inputId="withoutgrouping"
+              [useGrouping]="false"
+              formControlName="productQuantity"
+            >
+            </p-inputNumber>
+            <p-dropdown
+              [options]="QuantityUnits"
+              formControlName="productQuantityUnit"
+              optionLabel="name"
+              placeholder="select unit"
+            ></p-dropdown>
+          </div>
+        </div>
+      </div>
+      <div class="input-box-container">
+        <!-- <div class="input-box"> -->
+        <label for="name" class="name">Product price:</label>
+        <input type="number" formControlName="priceINR" class="price-input" />
+        <span>INR</span>
+        <input type="number" formControlName="priceAED" class="price-input" />
+        <span>AED</span>
+        <input type="number" formControlName="priceGBP" class="price-input" />
+        <span>pound</span>
+        <input type="number" formControlName="priceUSD" class="price-input" />
+        <span>USD</span>
+        <input type="number" formControlName="priceAUD" class="price-input" />
+        <span>AUD</span>
+      </div>
+      <!-- </div> -->
+
+      <div class="input-box-container">
+        <div class="input-area">
+          <label for="name" class="name">Description</label>
+          <textarea
+            rows="5"
+            cols="30"
+            pInputTextarea
+            formControlName="description"
+            [autoResize]="true"
+          ></textarea>
+        </div>
+      </div>
+      <div class="input-box-container">
+        <div class="input-box">
+          <label for="name" class="name">shipping</label>
+          <div class="radio-container">
+            <div class="radio-option">
+              <p-radioButton
+                value="available"
+                name="shipping"
+                formControlName="shipping"
+              ></p-radioButton>
+              <label for="">international</label>
+              <p-radioButton
+                value="not available"
+                name="shipping"
+                formControlName="shipping"
+              ></p-radioButton>
+              <label for="">none</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-box">
+          <label for="name" class="name">freeDelivary</label>
+          <div class="radio-option">
+            <p-radioButton
+              value="available"
+              name="freeDelivary"
+              formControlName="freeDelivary"
+            ></p-radioButton>
+            <label for="">available</label>
+            <p-radioButton
+              value="not available"
+              name="freeDelivary"
+              formControlName="freeDelivary"
+            ></p-radioButton>
+            <label for="">not available</label>
+          </div>
+        </div>
+      </div>
+      <div class="input-box-container">
+        <div class="input-box">
+          <label for="name" class="name">Cash On Delivery</label>
+
+          <div class="radio-option">
+            <p-radioButton
+              value="available"
+              name="delivaryOption"
+              formControlName="delivaryOption"
+            ></p-radioButton>
+            <label for="">available</label>
+            <p-radioButton
+              value="not available"
+              name="delivaryOption"
+              formControlName="delivaryOption"
+            ></p-radioButton>
+            <label for="">not available</label>
+          </div>
+        </div>
+        <div class="input-box">
+          <label for="name" class="name">Refundable</label>
+
+          <div class="radio-option">
+            <p-radioButton
+              value="available"
+              name="reFund"
+              formControlName="reFund"
+            ></p-radioButton>
+            <label for="">available</label>
+            <p-radioButton
+              value="not available"
+              name="reFund"
+              formControlName="reFund"
+            ></p-radioButton>
+            <label for="">not available</label>
+          </div>
+        </div>
+      </div>
+      <!-- <input type="text" 
+      formControlName="image" > -->
+      <div class="input-box-container">
+        <div class="input-box">
+          <label for="fileUpload">File Upload</label>
+          <input type="file" (change)="onImageChange($event)" />
+        </div>
+        <div class="input-box">
+          <label for="Coupon">Coupon</label>
+          <input type="text" pInputText formControlName="coupon" />
+        </div>
+      </div>
+      <div class="input-box-container">
+        <div class="input-box">
+          <label for="">Category</label>
+          <p-dropdown
+            [options]="categorys"
+            formControlName="category"
+            optionLabel="name"
+            placeholder="Choose Category" 
+          ></p-dropdown>
+        </div>
+      </div>
+      <p-button type="submit">Submit</p-button>
+    </form>
+  </div>
+</div>
