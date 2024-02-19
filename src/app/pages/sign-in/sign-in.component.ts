@@ -8,6 +8,7 @@ import { ILanguage } from 'src/app/shared/types/language.type';
 import { SignInService } from './sign-in.service';
 import { LanguageService } from 'src/app/shared/services/language.service';
 import { Subscription } from 'rxjs';
+import { StorageService } from 'src/app/shared/services/storage/storage.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -37,7 +38,8 @@ export class SignInComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute,
     private languageService: LanguageService,
-    private titleSerice: TitleService
+    private titleSerice: TitleService,
+    private storageService: StorageService
   ) {}
 
   ngOnInit(): void {
@@ -62,6 +64,7 @@ export class SignInComponent implements OnInit, OnDestroy {
           next: (res) => {
             if (res.result) {
               this.loginInProgress = false;
+              this.storageService.UserId = res.user_id;
               if (res.user_role === 'admin') {
                 this.router.navigate(['/admin']);
               } else {

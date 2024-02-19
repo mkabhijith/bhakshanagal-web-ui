@@ -6,6 +6,9 @@ import { LanguageService } from 'src/app/shared/services/language.service';
 import { Subscription } from 'rxjs';
 import { ILanguage } from 'src/app/shared/types/language.type';
 import { TitleService } from 'src/app/shared/services/title/title.service';
+import { ProductService } from './product.service';
+import { Iproduct } from '../home/home.type';
+import { IProductView } from './product.type';
 
 declare var Razorpay: any;
 @Component({
@@ -19,19 +22,26 @@ export class ProductComponent implements OnInit, OnDestroy {
     private homeService: HomeService,
     private cartService: CartService,
     private languageService: LanguageService,
-    private titleSerice: TitleService
+    private titleSerice: TitleService,
+    private productService: ProductService
   ) {}
 
   languageSubscription!: Subscription;
   currentLanguage!: ILanguage;
   list!: any[];
-  product: any;
+  product!: IProductView[];
 
   ngOnInit() {
     this.list = this.homeService.getList();
     this.route.params.subscribe({
       next: (params) => {
         const id = params['id'];
+        this.productService.getProduct(id).subscribe({
+          next: (res) => {
+            console.log(res);
+            this.product = res.data;
+          },
+        });
         this.product = this.list.find((item) => item.id == id);
       },
     });
@@ -42,7 +52,7 @@ export class ProductComponent implements OnInit, OnDestroy {
         this.currentLanguage = lang;
       },
     });
-    this.titleSerice.changeTitle(this.product.productName);
+    this.titleSerice.changeTitle(this.product[0].product_name);
   }
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
@@ -54,14 +64,14 @@ export class ProductComponent implements OnInit, OnDestroy {
     const RozerPayOptions = {
       description: 'sample',
       currency: 'INR',
-      amount: '3000',
-      name: 'sai',
-      Image:'',
-      key: 'rzp_test_ykpIQCXJbWgyQi',
+      amount: this.product[0].price*100,
+      name: '',
+      Image: '',
+      key: 'rzp_test_az7fEZxXoBzThm',
       prefills: {
-        name: 'sai kumar',
-        email: 'saigmail.com',
-        phone: '98989898',
+        name: '',
+        email: '',
+        phone: '',
       },
       theme: {
         color: 'red',
@@ -78,9 +88,8 @@ export class ProductComponent implements OnInit, OnDestroy {
 
     const failureCallback = (e: any) => {
       console.log(e);
-      
     };
 
-    Razorpay.open(RozerPayOptions,successCallback,failureCallback)
+    Razorpay.open(RozerPayOptions, successCallback, failureCallback);
   }
 }

@@ -3,7 +3,8 @@
 .main-container {
   width: 100%;
   background-color: #f7f7a0;
-
+  bottom: 0;
+  // position: absolute;
   .back-to-top {
     display: flex;
     align-items: center;

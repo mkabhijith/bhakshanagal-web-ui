@@ -7,7 +7,7 @@ import { orginCountry } from '../../types/contry-orgin.type';
 interface IAuthKeySetter {
   authKey: string;
 }
-const { AUTH_KEY, LANGUAGE_ID, COUNTRY_ID } = STORAGE_KEYS;
+const { AUTH_KEY, LANGUAGE_ID, COUNTRY_ID, USER_ID } = STORAGE_KEYS;
 
 @Injectable({
   providedIn: 'root',
@@ -51,6 +51,18 @@ export class StorageService {
 
   get authKey() {
     return this.cookieService.get(AUTH_KEY);
+  }
+  set UserId(id: any) {
+    localStorage.setItem(USER_ID, id.toString());
+  }
+
+  get getUserId(){
+    const userId = localStorage.getItem(USER_ID)
+    let useId = 0;
+    if(userId){
+      useId = parseInt(userId);
+    }
+    return useId
   }
 
   set countryId(country: orginCountry) {

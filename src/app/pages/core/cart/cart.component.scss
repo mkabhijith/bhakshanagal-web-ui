@@ -29,11 +29,11 @@
       overflow: scroll;
       flex-direction: column;
       gap: 10px;
+      height: 460px;
       .cart-items {
         display: flex;
         width: 500px;
         gap: 10px;
-        height: 460px;
 
         .image-add {
           display: flex;
