@@ -1,4 +1,5 @@
 export const HTTP_HEADERS = {
-    auth: 'authorization',
-    language:'lan'
+    auth: 'api_key',
+    language:'lan',
+    user:'user_id'
 }

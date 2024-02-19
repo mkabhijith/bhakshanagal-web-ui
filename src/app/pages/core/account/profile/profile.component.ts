@@ -29,11 +29,11 @@ export class ProfileComponent implements OnInit, OnDestroy {
   });
   ngOnInit(): void {
     this.titleSerice.changeTitle("Profile")
-    this.profileForm.setValue({
-      name: 'rahul',
-      email: 'yahoo@gmail.com',
-      number: '000522246',
-    });
+    // this.profileForm.setValue({
+    //   name: 'rahul',
+    //   email: 'yahoo@gmail.com',
+    //   number: '000522246',
+    // });
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {
         this.currentLanguage = lang;

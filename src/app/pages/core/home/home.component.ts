@@ -7,6 +7,8 @@ import { TitleService } from 'src/app/shared/services/title/title.service';
 import { ILanguage } from 'src/app/shared/types/language.type';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
+import { IProductListArray } from './home.type';
+import { StorageService } from 'src/app/shared/services/storage/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -25,9 +27,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     private currencyService: CountryOrginService,
     private route: Router,
     private titleSerice: TitleService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private storageService: StorageService
   ) {}
   list!: any[];
+
+  productList!: IProductListArray[];
 
   currencyValue!: number;
   currency!: string;
@@ -53,6 +58,17 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.currentLanguage = lang;
       },
     });
+
+    this.homeService.getProductList().subscribe({
+      next: (res) => {
+        this.productList = res.data;
+        console.log('productList', this.productList);
+      },
+    });
+
+
+    console.log(this.storageService.authKey);
+    
   }
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();

@@ -8,6 +8,9 @@ import { TitleService } from 'src/app/shared/services/title/title.service';
 import { AddressService } from '../account/address/address.service';
 import { IAddressList } from 'src/app/shared/types/address.type';
 
+import jwt_decode from 'jwt-decode'; // Import jwt-decode library
+// import * as jwt_decode_ from 'jwt-decode';
+declare var Razorpay: any;
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -26,6 +29,7 @@ export class CartComponent implements OnInit, OnDestroy {
   cartListSubscription!: Subscription;
   cartList: any[] = [];
   addrerssList: IAddressList[] = [];
+  totalPrice!: number;
   ngOnInit(): void {
     this.titleSerice.changeTitle('Cart');
     this.cartListSubscription = this.cartService.cartList$.subscribe({
@@ -38,7 +42,13 @@ export class CartComponent implements OnInit, OnDestroy {
         this.currentLanguage = lang;
       },
     });
-    this.addrerssList = this.addressService.getAddress()
+    this.addrerssList = this.addressService.getAddress();
+
+    this.cartList.forEach((item) => {
+      item.count = 1;
+      item.totalPrice = item.price;
+    });
+    this.sumCart();
   }
   ngOnDestroy(): void {
     this.cartListSubscription.unsubscribe();
@@ -47,5 +57,86 @@ export class CartComponent implements OnInit, OnDestroy {
 
   onItemRemove(id: number) {
     this.cartService.onCartRemoveItem(id);
+    this.sumCart();
+  }
+  increaseCount(id: number) {
+    this.cartList.forEach((cart) => {
+      if (cart.id === id) {
+        cart.count++;
+        cart.totalPrice = cart.price * cart.count;
+      }
+    });
+    this.sumCart();
+  }
+  decreseCount(id: number) {
+    this.cartList.forEach((cart) => {
+      if (cart.id === id) {
+        if (cart.count > 1) {
+          cart.count--;
+          cart.totalPrice = cart.price * cart.count;
+        }
+      }
+    });
+    this.sumCart();
+  }
+
+  sumCart() {
+    this.totalPrice = this.cartList.reduce(
+      (sum, product) => sum + product.totalPrice,
+      0
+    );
+  }
+
+  buy() {
+    const RozerPayOptions = {
+      description: 'sample',
+      currency: 'INR',
+      amount: this.totalPrice * 100,
+      name: 'sai',
+      Image: '',
+      key: 'rzp_test_az7fEZxXoBzThm',
+      prefills: {
+        name: 'sai krishna',
+        email: 'saigmail.com',
+        phone: '98989898',
+      },
+      theme: {
+        color: 'red',
+      },
+      modal: {
+        ondismiss: () => {
+          console.log('dissmissed');
+        },
+      },
+    };
+    const successCallback = (paymentId: any) => {
+      console.log(paymentId);
+      const payload = {
+        amount: '10',
+        currency: 'INR',
+        receipt: '',
+        notes: {
+          description: 'Best food',
+          name: 'Laddu',
+          ingredients: 'sweet',
+        },
+      }
+      this.cartService.createOrder().subscribe({
+        next: (res) => {
+          console.log('order res', res);
+        },
+      });
+    };
+
+    const failureCallback = (e: any) => {
+      console.log(e,"cancel");
+
+    };
+    this.cartService.createOrder().subscribe({
+      next: (res) => {
+        console.log('order res', res);
+      },
+    });
+    Razorpay.open(RozerPayOptions, successCallback, failureCallback);
   }
 }

@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { StorageService } from 'src/app/shared/services/storage/storage.service';
-
+import * as jwt_decode from 'jwt-decode';
+import { HttpClient } from '@angular/common/http';
+// import jwt_decode from 'jwt-decode';
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  constructor(private storageService: StorageService) {}
+  constructor(
+    private storageService: StorageService,
+    private httpClient: HttpClient
+  ) {}
 
   private _cartCount = new BehaviorSubject<number>(this.getCartLength());
   cartCoun$ = this._cartCount.asObservable();
@@ -129,6 +134,16 @@ export class CartService {
     return this.cartList;
   }
 
+  // decodeJwtToken(token: string): any {
+  //   const jwt_decode: (token: string) => any = jwt_decode;
+  //   try {
+  //     return jwt_decode(token);
+  //   } catch (error) {
+  //     console.error('Error decoding JWT token:', error);
+  //     return null;
+  //   }
+  // }
+
   saveCart(id: number) {
     // if (!this.storageService.authKey) {
     const storedCart = this.getLocalCart();
@@ -177,5 +192,19 @@ export class CartService {
     const cartArray = this.getCartList();
     const cartList = cartArray.filter((cart) => array.includes(cart.id));
     this._cartList.next(cartList);
+  }
+
+  createOrder() {
+    const payload = {
+      amount: '10',
+      currency: 'INR',
+      receipt: '',
+      notes: {
+        description: 'Best food',
+        name: 'Laddu',
+        ingredients: 'sweet',
+      },
+    };
+    return this.httpClient.post(`bhakshanangal/createorder`, payload);
   }
 }
