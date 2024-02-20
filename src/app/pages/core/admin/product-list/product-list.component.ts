@@ -20,7 +20,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
   
   products: any[] = [];
   ngOnInit(): void {
-    this.products = this.homeService.getList();
   }
   ngOnDestroy(): void {}
   deleteProduct(id: number) {
@@ -29,7 +28,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
       header: 'Confirmation',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.homeService.removeAddress(id);
+        
         this.messageService.add({
           severity: 'info',
           summary: 'Confirmed',

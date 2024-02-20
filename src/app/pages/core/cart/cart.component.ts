@@ -29,21 +29,19 @@ export class CartComponent implements OnInit, OnDestroy {
     private cartService: CartService,
     private languageService: LanguageService,
     private titleSerice: TitleService,
-    private addressService: AddressService
+    private addressService: AddressService,
+    private storageService: StorageService
   ) {}
 
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
   cartListSubscription!: Subscription;
   cartList: IproductCart[] = [];
-  // addrerssList: IAddressList[] = [];
   totalPrice!: number;
   ngOnInit(): void {
     this.titleSerice.changeTitle('Cart');
     this.cartListSubscription = this.cartService.cartList$.subscribe({
       next: (res) => {
-        console.log('res', res);
-
         this.cartList = res;
       },
     });
@@ -100,71 +98,75 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   buy() {
-    const payload = {
-      amount: this.totalPrice,
-      currency: 'INR',
-      receipt: '',
-      notes: {
-        description: this.cartList[0].product_name,
-        name: this.cartList[0].product_name,
-        ingredients: 'sweet',
-      },
-    };
-
-    this.cartService.createOrder(payload).subscribe({
-      next: (res) => {
-        console.log('order res', res);
-      },
-    });
-
-    const RozerPayOptions = {
-      description: 'sample',
-      currency: 'INR',
-      amount: this.totalPrice * 100,
-      name: 'sai',
-      Image: '',
-      key: 'rzp_test_az7fEZxXoBzThm',
-      prefills: {
-        name: 'sai krishna',
-        email: 'saigmail.com',
-        phone: '98989898',
-      },
-      theme: {
-        color: 'red',
-      },
-      modal: {
-        ondismiss: () => {
-          console.log('dissmissed');
-        },
-      },
-    };
-    const successCallback = (paymentId: any) => {
-      console.log(paymentId);
+    if (!this.storageService.authKey) {
+      console.log('auth');
+    } else {
       const payload = {
         amount: this.totalPrice,
         currency: 'INR',
         receipt: '',
         notes: {
-          description: 'Best food',
-          name: 'Laddu',
+          description: this.cartList[0].product_name,
+          name: this.cartList[0].product_name,
           ingredients: 'sweet',
         },
       };
+
       this.cartService.createOrder(payload).subscribe({
         next: (res) => {
           console.log('order res', res);
         },
       });
-    };
 
-    const failureCallback = (e: any) => {
-      console.log(e, 'cancel');
-    };
-    // this.cartService.createOrder(payload).subscribe({
-    //   next: (res) => {
-    //     console.log('order res', res);
-    //   },
-    // });
-    Razorpay.open(RozerPayOptions, successCallback, failureCallback);
+      const RozerPayOptions = {
+        description: 'sample',
+        currency: 'INR',
+        amount: this.totalPrice * 100,
+        name: 'sai',
+        Image: '',
+        key: 'rzp_test_az7fEZxXoBzThm',
+        prefills: {
+          name: 'sai krishna',
+          email: 'saigmail.com',
+          phone: '98989898',
+        },
+        theme: {
+          color: 'red',
+        },
+        modal: {
+          ondismiss: () => {
+            console.log('dissmissed');
+          },
+        },
+      };
+      const successCallback = (paymentId: any) => {
+        console.log(paymentId);
+        const payload = {
+          amount: this.totalPrice,
+          currency: 'INR',
+          receipt: '',
+          notes: {
+            description: 'Best food',
+            name: 'Laddu',
+            ingredients: 'sweet',
+          },
+        };
+        this.cartService.createOrder(payload).subscribe({
+          next: (res) => {
+            console.log('order res', res);
+          },
+        });
+      };
+
+      const failureCallback = (e: any) => {
+        console.log(e, 'cancel');
+      };
+      // this.cartService.createOrder(payload).subscribe({
+      //   next: (res) => {
+      //     console.log('order res', res);
+      //   },
+      // });
+      Razorpay.open(RozerPayOptions, successCallback, failureCallback);
+    }
   }
 }

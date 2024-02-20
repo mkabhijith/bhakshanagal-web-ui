@@ -12,7 +12,6 @@ export class StocksListComponent implements OnInit {
   constructor(private homeService: HomeService) {}
   updateStockForm = new FormGroup<any>({});
   ngOnInit(): void {
-    this.products = this.homeService.getList();
   }
   onUpdateProduct(id: number) {}
 }

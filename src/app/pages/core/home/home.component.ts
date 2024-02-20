@@ -52,8 +52,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.currentAddIndex++;
     }, 3000);
 
-    this.list = this.homeService.getList();
-
+    
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {
         this.currentLanguage = lang;

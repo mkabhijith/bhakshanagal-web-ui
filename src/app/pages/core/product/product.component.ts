@@ -32,7 +32,6 @@ export class ProductComponent implements OnInit, OnDestroy {
   product!: IProductView[];
 
   ngOnInit() {
-    this.list = this.homeService.getList();
     this.route.params.subscribe({
       next: (params) => {
         const id = params['id'];
