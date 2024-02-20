@@ -3,7 +3,9 @@
   <div class="offer-banner" (click)="navigateToOffers()">
     <img class="img" [src]="getPic()" alt="" />
   </div>
-  <div class="title">{{ "HOME.SWEETS" | translate }}</div>
+  <!-- <div class="title">{{ "HOME.SWEETS" | translate }}</div> -->
+  
+  <div class="title">crunchy</div>
   <app-category-product-list
     [dropdownItems]="productList[0].crunchy"
   ></app-category-product-list>
