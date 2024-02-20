@@ -1,3 +1,4 @@
+<app-spinner *ngIf="loginInProgress"></app-spinner>
 <div class="main-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
   <div class="offer-banner" (click)="navigateToOffers()">
     <img class="img" [src]="getPic()" alt="" />

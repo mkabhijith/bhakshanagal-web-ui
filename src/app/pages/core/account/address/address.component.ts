@@ -11,6 +11,7 @@ import {
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
 import { TitleService } from 'src/app/shared/services/title/title.service';
+import { IAddress } from './address.type';
 
 @Component({
   selector: 'app-address',
@@ -28,21 +29,21 @@ export class AddressComponent implements OnInit, OnDestroy {
   ) {}
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
-
-  addressList!: any[];
+  loginInProgress: boolean = false;
+  addressList!: IAddress[];
   ngOnInit(): void {
     this.titleSerice.changeTitle('Address');
-    // this.addressList = this.addService.getAddress();
 
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {
         this.currentLanguage = lang;
       },
     });
-
+    this.loginInProgress = true;
     this.addService.getAddressList().subscribe({
       next: (res) => {
-        console.log(res);
+        this.loginInProgress = false;
+        this.addressList = res.list;
       },
     });
   }
@@ -50,18 +51,23 @@ export class AddressComponent implements OnInit, OnDestroy {
     this.languageSubscription.unsubscribe();
   }
   deleteAddress(id: number) {
-    console.log('clicked');
-
     this.confirmationService.confirm({
       message: 'Are you sure that you want to cancel order?',
       header: 'Confirmation',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.addService.removeAddress(id);
-        this.messageService.add({
-          severity: 'info',
-          summary: 'Confirmed',
-          detail: 'You have accepted',
+        this.loginInProgress = true;
+        this.addService.removeAddress(id).subscribe({
+          next: (res) => {
+            this.loginInProgress = false;
+            if (res.result) {
+              this.messageService.add({
+                severity: 'info',
+                summary: 'Confirmed',
+                detail: 'You have accepted',
+              });
+            }
+          },
         });
       },
       reject: (type: any) => {

@@ -6,11 +6,19 @@ import { ILanguage } from 'src/app/shared/types/language.type';
 import { LanguageService } from 'src/app/shared/services/language.service';
 import { TitleService } from 'src/app/shared/services/title/title.service';
 import { AddressService } from '../account/address/address.service';
-import { IAddressList } from 'src/app/shared/types/address.type';
+import { Iproduct } from '../home/home.type';
 
-import jwt_decode from 'jwt-decode'; // Import jwt-decode library
-// import * as jwt_decode_ from 'jwt-decode';
 declare var Razorpay: any;
+
+export interface IproductCart {
+  product_id: number;
+  product_name: string;
+  price: number;
+  quantity: number;
+  image_file: null | string;
+  count: number;
+  totalPrice: number;
+}
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -27,13 +35,15 @@ export class CartComponent implements OnInit, OnDestroy {
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
   cartListSubscription!: Subscription;
-  cartList: any[] = [];
-  addrerssList: IAddressList[] = [];
+  cartList: IproductCart[] = [];
+  // addrerssList: IAddressList[] = [];
   totalPrice!: number;
   ngOnInit(): void {
     this.titleSerice.changeTitle('Cart');
     this.cartListSubscription = this.cartService.cartList$.subscribe({
       next: (res) => {
+        console.log('res', res);
+
         this.cartList = res;
       },
     });
@@ -42,7 +52,7 @@ export class CartComponent implements OnInit, OnDestroy {
         this.currentLanguage = lang;
       },
     });
-    this.addrerssList = this.addressService.getAddress();
+    // this.addrerssList = this.addressService.getAddress();
 
     this.cartList.forEach((item) => {
       item.count = 1;
@@ -61,17 +71,19 @@ export class CartComponent implements OnInit, OnDestroy {
   }
   increaseCount(id: number) {
     this.cartList.forEach((cart) => {
-      if (cart.id === id) {
-        cart.count++;
-        cart.totalPrice = cart.price * cart.count;
+      if (cart.product_id === id) {
+        if (cart.count) {
+          cart.count++;
+          cart.totalPrice = cart.price * cart.count;
+        }
       }
     });
     this.sumCart();
   }
   decreseCount(id: number) {
     this.cartList.forEach((cart) => {
-      if (cart.id === id) {
-        if (cart.count > 1) {
+      if (cart.product_id === id) {
+        if (cart.count && cart.count > 1) {
           cart.count--;
           cart.totalPrice = cart.price * cart.count;
         }
@@ -88,6 +100,23 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   buy() {
+    const payload = {
+      amount: this.totalPrice,
+      currency: 'INR',
+      receipt: '',
+      notes: {
+        description: this.cartList[0].product_name,
+        name: this.cartList[0].product_name,
+        ingredients: 'sweet',
+      },
+    };
+
+    this.cartService.createOrder(payload).subscribe({
+      next: (res) => {
+        console.log('order res', res);
+      },
+    });
+
     const RozerPayOptions = {
       description: 'sample',
       currency: 'INR',
@@ -112,7 +141,7 @@ export class CartComponent implements OnInit, OnDestroy {
     const successCallback = (paymentId: any) => {
       console.log(paymentId);
       const payload = {
-        amount: '10',
+        amount: this.totalPrice,
         currency: 'INR',
         receipt: '',
         notes: {
@@ -120,8 +149,8 @@ export class CartComponent implements OnInit, OnDestroy {
           name: 'Laddu',
           ingredients: 'sweet',
         },
-      }
-      this.cartService.createOrder().subscribe({
+      };
+      this.cartService.createOrder(payload).subscribe({
         next: (res) => {
           console.log('order res', res);
         },
@@ -129,14 +158,13 @@ export class CartComponent implements OnInit, OnDestroy {
     };
 
     const failureCallback = (e: any) => {
-      console.log(e,"cancel");
-
+      console.log(e, 'cancel');
     };
-    this.cartService.createOrder().subscribe({
-      next: (res) => {
-        console.log('order res', res);
-      },
-    });
+    // this.cartService.createOrder(payload).subscribe({
+    //   next: (res) => {
+    //     console.log('order res', res);
+    //   },
+    // });
     Razorpay.open(RozerPayOptions, successCallback, failureCallback);
   }
 }

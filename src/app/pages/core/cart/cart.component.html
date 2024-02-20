@@ -10,21 +10,21 @@
       <div class="cart-items" *ngFor="let item of cartList">
         <div class="image-add">
           <div class="image">
-            <img src="{{ item.imageUrl }}" alt="" />
+            <img src="{{ item.image_file }}" alt="" />
           </div>
           <div class="add">
-            <i class="pi pi-minus" (click)="decreseCount(item.id)"></i>
+            <i class="pi pi-minus" (click)="decreseCount(item.product_id)"></i>
             <div class="count">{{item.count}}</div>
-            <i class="pi pi-plus" (click)="increaseCount(item.id)"></i>
+            <i class="pi pi-plus" (click)="increaseCount(item.product_id)"></i>
           </div>
         </div>
         <div class="cart-details">
           <div class="cart--items">
-            <div class="item-name">{{ item.productName }}</div>
+            <div class="item-name">{{ item.product_name }}</div>
             <div class="price">{{ item.price }}</div>
           </div>
           <div>
-            <button class="remove" (click)="onItemRemove(item.id)">
+            <button class="remove" (click)="onItemRemove(item.product_id)">
               Remove
             </button>
           </div>

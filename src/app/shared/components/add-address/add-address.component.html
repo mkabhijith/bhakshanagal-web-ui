@@ -1,3 +1,4 @@
+<app-spinner *ngIf="loginInProgress"></app-spinner>
 <app-back-btn (click)="navgateToAccount()">{{
   "SIDE_BAR.MY_ACCOUNT" | translate
 }}</app-back-btn>
@@ -16,7 +17,7 @@
       <div class="input-box-container">
         <div class="input-box">
           <label for="" class="name">{{ "FORM_FIELD.NAME" | translate }}</label>
-          <input type="text" pInputText formControlName="name" />
+          <input type="text" pInputText formControlName="full_name" />
         </div>
         <div class="input-box">
           <label for="" class="name">{{
@@ -25,7 +26,7 @@
           <p-inputNumber
             inputId="withoutgrouping"
             [useGrouping]="false"
-            formControlName="phoneNo"
+            formControlName="phone_number"
           >
           </p-inputNumber>
         </div>
@@ -38,7 +39,7 @@
           <p-inputNumber
             inputId="withoutgrouping"
             [useGrouping]="false"
-            formControlName="pinCode"
+            formControlName="pincode"
           >
           </p-inputNumber>
         </div>
@@ -46,7 +47,7 @@
           <label for="" class="name">{{
             "FORM_FIELD.LOCALITY" | translate
           }}</label>
-          <input type="text" pInputText formControlName="locality" />
+          <input type="text" pInputText formControlName="area_name" />
         </div>
       </div>
       <div class="input-box-container">
@@ -58,7 +59,7 @@
             rows="5"
             cols="30"
             pInputTextarea
-            formControlName="address"
+            formControlName="building_name"
             [autoResize]="true"
           ></textarea>
         </div>
@@ -81,7 +82,7 @@
           <label for="" class="name">{{
             "FORM_FIELD.LANDMARK" | translate
           }}</label>
-          <input type="text" pInputText formControlName="landMark" />
+          <input type="text" pInputText formControlName="landmark" />
         </div>
         <div class="input-box">
           <label for="" class="name">{{
@@ -90,37 +91,12 @@
           <p-inputNumber
             inputId="withoutgrouping"
             [useGrouping]="false"
-            formControlName="alternativeNo"
+            formControlName="alt_phone_number"
           >
           </p-inputNumber>
         </div>
       </div>
-      <div class="input-address-container">
-        <div class="address-type">
-          <p-radioButton
-            value="Home"
-            name="addressType"
-            formControlName="addressType"
-          ></p-radioButton>
-          <label for="home">{{ "ADDRESS.HOME" | translate }}</label>
-        </div>
-        <div class="address-type">
-          <p-radioButton
-            value="Office"
-            name="addressType"
-            formControlName="addressType"
-          ></p-radioButton>
-          <label for="home">{{ "ADDRESS.OFFICE" | translate }}</label>
-        </div>
-        <div class="address-type">
-          <p-radioButton
-            value="other"
-            name="addressType"
-            formControlName="addressType"
-          ></p-radioButton>
-          <label for="home">{{ "ADDRESS.OTHER" | translate }}r</label>
-        </div>
-      </div>
+
       <div class="button-footer">
         <button pButton class="p-button-warning" type="submit">
           {{ "BUTTON_ACTIONS.SAVE" | translate }}

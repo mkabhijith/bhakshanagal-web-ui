@@ -1,11 +1,12 @@
+<app-spinner *ngIf="loginInProgress"></app-spinner>
 <p-toast></p-toast>
 <p-confirmDialog></p-confirmDialog>
 <app-back-btn (click)="navgateToAccount()">{{
   "SIDE_BAR.MY_ACCOUNT" | translate
 }}</app-back-btn>
 <div
-  class="address-container"
-  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
+class="address-container"
+[ngClass]="{ ar: currentLanguage.code === 'ar' }"
 >
   <div class="address-header">
     <div class="text">{{ "ACCOUNT.MANAGE_ADDRESS" | translate }}</div>
@@ -21,35 +22,41 @@
       <p-fieldset>
         <ng-template pTemplate="header">
           <div class="flex align-items-center text-primary gap-5">
-            <span class="font-bold text-lg">{{ item.addressType }}</span>
+            <span class="font-bold text-lg">{{ item.address_status }}</span>
             <!-- <i class="pi pi-user-edit"></i> -->
           </div>
         </ng-template>
         <div class="address-body-container">
-          <div class="name">{{ item.name }}</div>
+          <div class="name">{{ item.address_fullname }}</div>
           <div class="details">
-            {{ item.address }}
+            {{ item.address_building_name }}
           </div>
-          <div class="number">{{ item.phoneNo }}</div>
+          <div class="number">{{ item.address_phone_number }}</div>
         </div>
 
         <div class="button-footer">
-          <p-button styleClass="p-button-danger" (onClick)="deleteAddress(item.id)">
+          <p-button
+            styleClass="p-button-danger"
+            (onClick)="deleteAddress(item.address_id)"
+          >
             {{ "BUTTON_ACTIONS.DELETE" | translate }}
           </p-button>
           <p-button
             styleClass="p-button-warning"
-            (onClick)="onEditAddress(item.id)"
+            (onClick)="onEditAddress(item.address_id)"
             >{{ "BUTTON_ACTIONS.EDIT" | translate }}</p-button
           >
         </div>
         <div class="button-footer-mobile">
-          <p-button styleClass="p-button-danger" (onClick)="deleteAddress(item.id)">
+          <p-button
+            styleClass="p-button-danger"
+            (onClick)="deleteAddress(item.address_id)"
+          >
             {{ "BUTTON_ACTIONS.DELETE" | translate }}
           </p-button>
           <p-button
             styleClass="p-button-warning"
-            (onClick)="onEditAddressMobile(item.id)"
+            (onClick)="onEditAddressMobile(item.address_id)"
             >{{ "BUTTON_ACTIONS.EDIT" | translate }}</p-button
           >
         </div>

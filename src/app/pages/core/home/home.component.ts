@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   currency!: string;
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
+  loginInProgress: boolean = false;
   ngOnInit() {
     this.titleSerice.changeTitle('home');
     this.currencyService.switchCountry$.subscribe({
@@ -58,17 +59,13 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.currentLanguage = lang;
       },
     });
-
+    this.loginInProgress = true;
     this.homeService.getProductList().subscribe({
       next: (res) => {
+        this.loginInProgress = false;
         this.productList = res.data;
-        console.log('productList', this.productList);
       },
     });
-
-
-    console.log(this.storageService.authKey);
-    
   }
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();

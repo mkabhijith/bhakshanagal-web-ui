@@ -29,6 +29,8 @@ export class OrdersComponent implements OnInit, OnDestroy {
   products: any[] = [];
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
+  deCodeToken: any;
+
   ngOnInit() {
     this.titleSerice.changeTitle('Orders');
     this.products = this.orderservice.returnOrderList();
