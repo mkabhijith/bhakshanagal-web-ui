@@ -5,7 +5,7 @@
 >
   <div class="account-details" (click)="onDropdown()">
     <div class="user-icon">
-      <i class="pi pi-user"></i>
+      <img src="/assets/images/user-red.svg" alt="" />
     </div>
     <div class="user">{{ "MENU.ACCOUNT" | translate }}</div>
   </div>
@@ -17,7 +17,7 @@
       [routerLink]="[item.route]"
       (click)="onHideDropdown()"
     >
-      <i [class]="item.icon"></i>
+      <img src="{{ item.icon }}" alt="" />
       <div class="name" routerLink="orders">{{ item.name | translate }}</div>
     </div>
 
@@ -26,7 +26,7 @@
       <div class="name">{{ "LOGIN.LOG_OUT" | translate }}</div>
     </div>
     <div class="available-list" (click)="logIn()" *ngIf="!onAuthorise">
-      <i class="pi pi-sign-in"></i>
+      <img src="/assets/images/Icon-logout.svg" alt="" />
       <div class="name">{{ "LOGIN.LOG_IN" | translate }}</div>
     </div>
   </div>

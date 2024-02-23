@@ -1,111 +1,133 @@
+
+
 .main-container {
+  background-color: #ffffff;
   width: 100%;
   display: flex;
-  // align-items: center;
-  justify-content: center;
-  gap: 10px;
-  .left-container {
-    background-color: white;
-    padding: 15px;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  .cart-container {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    height: 480px;
-    gap: 10px;
-    .address {
+    justify-content: center;
+    .heading-container {
       display: flex;
+      width: 73.125rem;
+      height: 4.5rem;
+      // background-color: aqua;
+      align-items: center;
       justify-content: space-between;
-      height: 50px;
-      .right {
-        .change {
-          padding: 3px 5px;
-          border: 1px solid gray;
-          border-radius: 2px;
-          color: blue;
-        }
-      }
-    }
-    .cart-container {
-      display: flex;
-      overflow: scroll;
-      flex-direction: column;
-      gap: 10px;
-      height: 460px;
-      .cart-items {
-        display: flex;
-        width: 500px;
-        gap: 10px;
+      padding: 0.25rem;
+      box-shadow: 0 0.2rem #0000000D;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
 
-        .image-add {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          align-items: center;
-          img {
-            height: 100px;
-            width: 100px;
+    
+      &:hover {
+        background-color: #DB4444;
+      }
+      td{
+        display: flex;
+        align-items: center;
+        width: 7.9rem;
+        .image{
+          .close{
+            position: absolute;
           }
-          .add {
-            display: flex;
-            gap: 5px;
-            i {
-              border: 1px solid gray;
-              border-radius: 50%;
-              padding: 3px;
-            }
-            .count {
-              border: 1px solid gray;
-              padding: 2px 5px;
-              align-items: center;
-            }
+          .product-image{
+            width: 3.125rem;
+            height: 2.438rem;
           }
         }
-        .cart-details {
+        .quantity{
+          border: 1px solid black;
+          width: 4.5rem;
+          height: 2.75rem;
           display: flex;
-          // gap: 10px;
-          justify-content: space-between;
-          flex-direction: column;
-          .cart--items {
+          justify-content: center;
+          align-items: center;
+          gap: 0.25rem;
+          .arrows{
             display: flex;
-            gap: 10px;
             flex-direction: column;
           }
-          .remove {
-            padding: 3px 5px;
-            border-radius: 4px;
-            background-color: white;
-          }
+        }
+        input{
+          width: 4.5rem;
+          height: 2.75rem;
+          text-align: center;
+          outline: none;
         }
       }
+      th{
+        width: 8rem;
+      }
     }
-    .place-order {
+    .table-body {
       display: flex;
-      justify-content: end;
+      flex-direction: column;
+      gap: 0.5rem;
     }
   }
-  .right-container {
-    background-color: white;
-    width: 350px;
-    padding: 10px 15px;
+  .cart-bottom-part {
+    width: 100%;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    .heading {
-      color: gray;
-      font-size: medium;
-      font-weight: 700;
-    }
-    .details {
+    gap: 1rem;
+    .buttons {
       display: flex;
+      // width: 710px;
+      width: 73.125rem;
       justify-content: space-between;
     }
-  }
-}
-
-@media screen and (max-width: 580px) {
-  .main-container{
-    flex-direction: column;
-    .left-container{
-
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 73.125rem;
+      .left-bottom {
+        display: flex;
+        gap: 0.5rem;
+        input {
+          width: 18.75rem;
+          height: 3.5rem;
+          border-radius: 0.25rem;
+          outline: none;
+          border: none;
+          border: 1px solid gray;
+        }
+      }
+      .right-bottom {
+        width: 29.375rem;
+        height: 20.25rem;
+        border: 1px solid black;
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 1rem;
+        gap: 1.5rem;
+        .heading {
+          width: 100%;
+          text-align: left;
+        }
+        .total,
+        .item {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+        }
+        .item {
+          border-bottom: 1px solid gray;
+          padding-bottom: 0.25rem;
+        }
+      }
     }
   }
 }

@@ -3,16 +3,36 @@
   <div class="offer-banner" (click)="navigateToOffers()">
     <img class="img" [src]="getPic()" alt="" />
   </div>
-  <!-- <div class="title">{{ "HOME.SWEETS" | translate }}</div> -->
-  
-  <div class="title">crunchy</div>
+  <app-card-header
+    heading="Flash sales"
+    title="Todays"
+    date="date"
+  ></app-card-header>
+
   <app-category-product-list
     [dropdownItems]="productList[0].crunchy"
+    intialCardCount="4"
+  ></app-category-product-list>
+  <p-divider></p-divider>
+  <app-card-header
+    heading="Browse By Category"
+    title="Categories"
+  ></app-card-header>
+  <app-category></app-category>
+  <app-card-header
+    heading="Our Products"
+    title="Explore Our Products"
+  ></app-card-header>
+  <app-category-product-list
+    [dropdownItems]="productList[0].crunchy"
+    intialCardCount="8"
   ></app-category-product-list>
 
-  <!-- <div class="title">{{ "HOME.CRISPIES" | translate }}</div>
-  <app-category-product-list [dropdownItems]="list"></app-category-product-list>
-
-  <div class="title">{{ "HOME.CHIPS" | translate }}</div>
-  <app-category-product-list [dropdownItems]="list"></app-category-product-list> -->
+  <div class="services-container">
+    <div class="services" *ngFor="let item of serviceList">
+      <img src="{{ item.image }}" alt="" />
+      <div class="heading">{{ item.heading }}</div>
+      <div class="title">{{ item.title }}</div>
+    </div>
+  </div>
 </div>

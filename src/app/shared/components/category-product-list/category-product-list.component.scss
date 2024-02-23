@@ -1,10 +1,7 @@
 .main-container {
   display: flex;
-  //   align-items: center;
   flex-direction: column;
-  //   justify-content: center;
-  //   padding-right: 5px;
-  gap: 5px;
+  gap: 1rem;
   .product-list {
     width: 100%;
     flex-direction: column;
@@ -12,30 +9,92 @@
     align-items: center;
     grid-template-columns: auto auto auto auto;
     display: grid;
-    gap: 25px;
-
-    img {
-      width: 330px;
-      height: 230px;
-    }
-
-    p-card {
-      width: 330px;
-    }
-    ::ng-deep p-card {
-      .p-card-content {
-        padding: 0;
+    gap: 4rem;
+    .card {
+      width: 16.875rem;
+      &:hover {
+        .image {
+          .love {
+            .add-cart {
+              display: flex;
+            }
+          }
+        }
       }
-      .p-card-footer {
-        padding: 0;
-        padding-top: 5px;
-        display: flex;
-        gap: 10px;
+      .image {
+        height: 15.625rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        .love {
+          display: flex;
+          position: absolute;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 16.875rem;
+          height: 15.625rem;
+          .img-top {
+            display: flex;
+            justify-content: space-between;
+            .image-love {
+              width: 2rem;
+              height: 2rem;
+              // background-color: #db4444;
+            }
+            .offer {
+              width: 3.438rem;
+              border-radius: 0.25rem;
+              height: 1.75rem;
+              background-color: #db4444;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: #ffffff;
+              font-size: 12px;
+              font-weight: 400;
+              line-height: 18px;
+              letter-spacing: 0em;
+              text-align: left;
+            }
+          }
+          .add-cart {
+            background-color: #000000;
+            // position: absolute;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            height: 2.563rem;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: left;
+            border-radius: 0 0 4px 4px;
+          }
+        }
       }
-      .p-card-body {
-        padding: 10px 20px;
-        .p-card-title {
-          margin-bottom: 0;
+      .card-bottom {
+        .item-name {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          cursor: default;
+        }
+        .item-price {
+          //styleName: Title/16PX Medium;
+          font-family: Poppins;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #db4444;
+          cursor: default;
         }
       }
     }
@@ -54,29 +113,10 @@
   direction: rtl;
 }
 
-@media screen and (max-width: 1410px) {
-  .main-container {
-    .product-list {
-      img {
-        width: 300px;
-      }
-      p-card {
-        width: 300px;
-      }
-    }
-  }
-}
-
 @media screen and (max-width: 1280px) {
   .main-container {
     .product-list {
       grid-template-columns: auto auto auto auto;
-      img {
-        width: 280px;
-      }
-      p-card {
-        width: 280px;
-      }
     }
   }
 }
@@ -84,12 +124,6 @@
   .main-container {
     .product-list {
       grid-template-columns: auto auto auto;
-      img {
-        width: 300px;
-      }
-      p-card {
-        width: 300px;
-      }
     }
   }
 }
@@ -97,12 +131,6 @@
   .main-container {
     .product-list {
       grid-template-columns: auto auto;
-      img {
-        width: 300px;
-      }
-      p-card {
-        width: 300px;
-      }
     }
   }
 }
@@ -110,12 +138,6 @@
   .main-container {
     .product-list {
       grid-template-columns: auto;
-      img {
-        width: 360px;
-      }
-      p-card {
-        width: 360px;
-      }
     }
   }
 }
@@ -123,12 +145,6 @@
   .main-container {
     .product-list {
       grid-template-columns: auto;
-      img {
-        width: 280px;
-      }
-      p-card {
-        width: 280px;
-      }
     }
   }
 }

@@ -4,7 +4,9 @@
   class="sign-up-container"
   [ngClass]="{ ar: currentLanguage.code === 'ar' }"
 >
-  <div class="left-sign-up"></div>
+  <div class="left-sign-up">
+    <img src="../../../assets/images/dl.beatsnoop 1.svg" alt="" />
+  </div>
   <div class="right-sign-up">
     <div class="error-container" *ngIf="error || error1">
       <i class="pi pi-exclamation-triangle"></i>
@@ -16,42 +18,32 @@
       [formGroup]="registerForm"
       (ngSubmit)="registerUser()"
     >
-      <h1>Register</h1>
+      <h1>Create an account</h1>
+      <span class="title">Enter your details below</span>
       <div class="input-container">
-        <div class="label">
-          <label for="name">{{ "FORM_FIELD.USER_NAME" | translate }}</label>
-        </div>
         <input
           type="text"
           class="input-field"
-          placeholder="UserName"
+          placeholder="Name"
           formControlName="name"
         />
       </div>
       <div class="input-container">
-        <div class="label">
-          <label for="email">{{
-            "FORM_FIELD.EMAIL_ADDRESS" | translate
-          }}</label>
-        </div>
         <input
           type="email"
           id="email"
           class="input-field"
-          placeholder="email@gmail.com"
+          placeholder="Email or Phone Number"
           formControlName="email"
         />
       </div>
       <div class="input-container">
-        <div class="label">
-          <label for="password">{{ "FORM_FIELD.PASSWORD" | translate }}</label>
-        </div>
         <div class="password-container">
           <input
             [type]="showPassword ? 'text' : 'password'"
             id="password"
             class="password"
-            placeholder="*********"
+            placeholder="Password"
             formControlName="password"
           />
           <i
@@ -60,18 +52,13 @@
           ></i>
         </div>
       </div>
-      <div class="checkbox-container">
-        <div class="policy">
-          <input type="checkbox" id="checkbox" />
-          <label for="checkbox">{{
-            "LOGIN.I_AGREE_TERMS_CON" | translate
-          }}</label>
-        </div>
+
+      <app-primary-button type="submit">Create Account</app-primary-button>
+      <div class="secondary-button">
+        <img src="/assets/images/Icon-Google.svg" alt="" />
+        <span class="title"> Sign up with Google </span>
       </div>
-      <app-primary-button type="submit">{{
-        "BUTTON_ACTIONS.SIGN_UP" | translate
-      }}</app-primary-button>
-      <div>
+      <div class="link">
         {{ "LOGIN.ALREADY_HAVE_AN_ACC" | translate
         }}<a routerLink="/signin">{{ "LOGIN.LOG_IN" | translate }}</a>
       </div>

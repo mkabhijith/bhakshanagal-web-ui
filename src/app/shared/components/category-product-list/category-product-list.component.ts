@@ -19,7 +19,8 @@ import { IProductList, Iproduct } from 'src/app/pages/core/home/home.type';
   styleUrls: ['./category-product-list.component.scss'],
 })
 export class CategoryProductListComponent implements OnInit, OnDestroy {
-  @Input() dropdownItems!:  Iproduct[];
+  @Input() dropdownItems!: Iproduct[];
+  @Input() intialCardCount !:any;
   constructor(
     private cartService: CartService,
     private route: Router,
@@ -31,12 +32,12 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
   limit!: number;
   intialLimit!: number;
   itemsToShow: Iproduct[] = [];
-  showMoreText = 'Show More';
+  showMoreText = 'View All Products';
   screenWidth!: number;
   isSmallScreen!: boolean;
   isMediumScreen!: boolean;
   isLargeScreen!: boolean;
-
+  value = 5;
   @HostListener('window:resize', ['$event'])
   ngOnInit(): void {
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
@@ -58,7 +59,7 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
     this.isMediumScreen = this.screenWidth >= 600 && this.screenWidth < 1210;
     this.isLargeScreen = this.screenWidth >= 1210;
     if (this.isLargeScreen) {
-      this.intialLimit = 4;
+      this.intialLimit = this.intialCardCount;
       this.limit = this.intialLimit;
     } else if (this.isMediumScreen) {
       this.intialLimit = 3;
@@ -73,9 +74,9 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
     this.itemsToShow = this.dropdownItems.slice(0, this.limit);
   }
   toggleShowMore(event: Event) {
-    document
-      .querySelector('#custom-field-interface')
-      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // document
+    //   .querySelector('#custom-field-interface')
+    //   ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     event.preventDefault();
     this.limit =
@@ -83,7 +84,7 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
         ? this.intialLimit
         : this.dropdownItems.length;
     this.showMoreText =
-      this.showMoreText === 'Show More' ? 'Show Less' : 'Show More';
+      this.showMoreText === 'View All Products' ? 'Show Less' : 'View All Products';
     this.toggleItems();
   }
 

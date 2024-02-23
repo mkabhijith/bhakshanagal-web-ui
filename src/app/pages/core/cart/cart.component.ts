@@ -7,6 +7,7 @@ import { LanguageService } from 'src/app/shared/services/language.service';
 import { TitleService } from 'src/app/shared/services/title/title.service';
 import { AddressService } from '../account/address/address.service';
 import { Iproduct } from '../home/home.type';
+import { Router } from '@angular/router';
 
 declare var Razorpay: any;
 
@@ -30,19 +31,28 @@ export class CartComponent implements OnInit, OnDestroy {
     private languageService: LanguageService,
     private titleSerice: TitleService,
     private addressService: AddressService,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private router: Router
   ) {}
+
+  headers = ['Product', 'Price', 'Quantity', 'Subtotal'];
 
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
   cartListSubscription!: Subscription;
   cartList: IproductCart[] = [];
   totalPrice!: number;
+  payTotal!: number;
   ngOnInit(): void {
     this.titleSerice.changeTitle('Cart');
     this.cartListSubscription = this.cartService.cartList$.subscribe({
       next: (res) => {
         this.cartList = res;
+        this.cartList.forEach((item) => {
+          item.count = 1;
+          item.totalPrice = item.price * item.count;
+          this.sumCart();
+        });
       },
     });
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
@@ -52,10 +62,6 @@ export class CartComponent implements OnInit, OnDestroy {
     });
     // this.addrerssList = this.addressService.getAddress();
 
-    this.cartList.forEach((item) => {
-      item.count = 1;
-      item.totalPrice = item.price;
-    });
     this.sumCart();
   }
   ngOnDestroy(): void {
@@ -95,6 +101,7 @@ export class CartComponent implements OnInit, OnDestroy {
       (sum, product) => sum + product.totalPrice,
       0
     );
+    this.payTotal = this.totalPrice + 100;
   }
 
   buy() {
@@ -168,5 +175,8 @@ export class CartComponent implements OnInit, OnDestroy {
       // });
       Razorpay.open(RozerPayOptions, successCallback, failureCallback);
     }
+  }
+  returnToShop() {
+    this.router.navigate(['/home']);
   }
 }

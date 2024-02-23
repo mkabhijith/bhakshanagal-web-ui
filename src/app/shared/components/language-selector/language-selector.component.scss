@@ -6,7 +6,8 @@
   margin: 0.5rem 0.5rem;
 
   position: relative;
-
+  color: #ffffff;
+  font-family: Poppins;
   .title {
     padding-right: 1rem;
     font-weight: 300;
@@ -116,7 +117,7 @@
   }
   .countrys-dropdown {
     right: auto;
-    .available-country{
+    .available-country {
       align-items: center;
       gap: 5px;
     }

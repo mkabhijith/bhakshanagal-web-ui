@@ -1,4 +1,4 @@
-<div class="main-container">
+<!-- <div class="main-container">
   <div class="left-container">
     <div class="address">
       <div class="left">Deliver to : </div>
@@ -49,11 +49,84 @@
     <div class="details">
       <!-- <div class="item">Delivary charges</div>
       <div class="value">454</div> -->
-    </div>
+<!-- </div>
     <p-divider></p-divider>
     <div class="details">
       <div class="item">Total Amount</div>
       <div class="value">{{totalPrice}}</div>
     </div>
   </div>
+</div> -->
+
+<div class="main-container">
+  <div class="cart-container">
+    <table>
+      <thead>
+        <tr class="heading-container">
+          <th *ngFor="let header of headers">{{ header }}</th>
+        </tr>
+      </thead>
+      <tbody class="table-body">
+        <tr *ngFor="let item of cartList" class="heading-container">
+          <td>
+            <div class="image">
+              <img
+                src="/assets/images/icon-cancel.svg"
+                class="close"
+                alt=""
+                (click)="onItemRemove(item.product_id)"
+              />
+              <img
+                src="/assets/images/g27cq4-500x500 1.svg"
+                alt=""
+                class="product-image"
+              />
+            </div>
+            {{ item.product_name }}
+          </td>
+          <td>{{ item.price }}</td>
+          <td>
+            <div class="quantity">
+              {{item.count}}
+              <div class="arrows">
+                <i class="pi pi-angle-up" (click)="increaseCount(item.product_id)"></i>
+                <i class="pi pi-angle-down" (click)="decreseCount(item.product_id)"></i>
+              </div>
+            </div>
+          </td>
+          <td>{{ item.totalPrice }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cart-bottom-part">
+    <div class="buttons">
+      <app-secoundary-button (click)="returnToShop()"> Return To Shop </app-secoundary-button>
+      <app-secoundary-button> Update Cart</app-secoundary-button>
+    </div>
+    <div class="bottom">
+      <div class="left-bottom">
+        <input type="text" />
+        <app-primary-button>Apply Coupon</app-primary-button>
+      </div>
+      <div class="right-bottom">
+        <div class="heading">Cart Total</div>
+        <div class="item">
+          <div class="item-left">Subtotal:</div>
+          <div class="item-right">{{totalPrice}}</div>
+        </div>
+        <div class="item">
+          <div class="item-left">Shipping::</div>
+          <div class="item-right">Free</div>
+        </div>
+
+        <div class="total">
+          <div class="item-left">Total:</div>
+          <div class="item-right">{{payTotal}}</div>
+        </div>
+        <app-primary-button>Procees to checkout</app-primary-button>
+      </div>
+    </div>
+  </div>
+  <div></div>
 </div>

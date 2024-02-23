@@ -4,15 +4,14 @@ import { CountryOrginService } from '../../services/country-orgin.service';
 import { ILanguage, SupportedLanguage } from '../../types/language.type';
 import { LanguageService } from '../../services/language.service';
 import { Subscription } from 'rxjs';
-interface City {
-  name: string;
-  code: string;
+
+interface IItemList {
+  heading: string;
+  items: IItems[];
 }
-type IItemList = {
-  id: number;
+interface IItems {
   item: string;
-  route?: string;
-};
+}
 
 @Component({
   selector: 'app-footer',
@@ -24,31 +23,61 @@ export class FooterComponent implements OnInit {
     private languageService: LanguageService,
     private countryOrginService: CountryOrginService
   ) {}
-  getItKnowUS: IItemList[] = [
-    { id: 0, item: 'About bhakshanam', route: '/about' },
-    { id: 1, item: 'SIDE_BAR.CONTACT_US' },
-  ];
-  shopWithUs: IItemList[] = [
-    { id: 0, item: 'ACCOUNT.YOUR_ACC', route: '/account' },
-    { id: 1, item: 'ORDERS.YOUR_ORDERS', route: '/orders' },
-    { id: 2, item: 'FOOTER.YOUR_ADD', route: '/address' },
-    { id: 0, item: 'FOOTER.YOUR_LIST', route: '/list' },
-  ];
-  consumerPolicy: IItemList[] = [{ id: 0, item: 'FOOTER.PRIVACY_POLICY' }];
-  socialArray: IItemList[] = [
-    { id: 0, item: 'FOOTER.FACEBOOK' },
-    { id: 1, item: 'FOOTER.TWITER' },
-    { id: 2, item: 'FOOTER.YOU_TUBE' },
-  ];
-  supportsArray: IItemList[] = [
-    { id: 0, item: 'FOOTER.PAYMENTS' },
+
+  itemsList: IItemList[] = [
     {
-      id: 1,
-      item: 'FOOTER.SHIPPING',
+      heading: 'Support',
+      items: [
+        {
+          item: '111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.',
+        },
+        {
+          item: 'bhaahanga,@gmail.com',
+        },
+        {
+          item: '+88015-88888-9999',
+        },
+      ],
     },
-    { id: 2, item: 'FOOTER.CANCEL_RETURN' },
-    { id: 3, item: 'FAQ' },
+    {
+      heading: 'Account',
+      items: [
+        {
+          item: 'My Account',
+        },
+        {
+          item: 'Login / Register',
+        },
+        {
+          item: 'Cart',
+        },
+        {
+          item: 'Wishlist',
+        },
+        {
+          item: 'Shop',
+        },
+      ],
+    },
+    {
+      heading:"Quick Link",
+      items:[
+        {
+          item:"Privacy Policy"
+        },
+        {
+          item:"Terms Of Use"
+        },
+        {
+          item:"FAQ"
+        },
+        {
+          item:"Contact"
+        },
+      ]
+    }
   ];
+
   languageSubscription!: Subscription;
   countryOrginSubscription!: Subscription;
   countryArray: ICountry[] = this.countryOrginService.getAllCountry();

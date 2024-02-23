@@ -32,6 +32,10 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { CarouselModule } from 'primeng/carousel';
 import { DropdownModule } from 'primeng/dropdown';
+import { RatingModule } from 'primeng/rating';
+import { CardHeaderComponent } from './card-header/card-header.component';
+import { CategoryComponent } from './category/category.component';
+import { SecoundaryButtonComponent } from './buttons/secoundary-button/secoundary-button.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +54,9 @@ import { DropdownModule } from 'primeng/dropdown';
     CategoryListComponent,
     FooterComponent,
     CategoryProductListComponent,
+    CardHeaderComponent,
+    CategoryComponent,
+    SecoundaryButtonComponent,
     
   ],
   imports: [
@@ -70,7 +77,8 @@ import { DropdownModule } from 'primeng/dropdown';
     ScrollPanelModule,
     CarouselModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    RatingModule
   ],
   exports: [
     NavbarComponent,
@@ -83,7 +91,10 @@ import { DropdownModule } from 'primeng/dropdown';
     BackBtnComponent,
     CategoryListComponent,
     FooterComponent,
-    CategoryProductListComponent
+    CategoryProductListComponent,
+    CardHeaderComponent,
+    CategoryComponent,
+    SecoundaryButtonComponent
   ],
 })
 export class SharedComponentModule { }

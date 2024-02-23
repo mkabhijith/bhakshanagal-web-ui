@@ -1,34 +1,28 @@
 <div class="main-container" id="custom-field-interface">
   <div class="product-list" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
-    <p-card
-      header="{{ item.product_name }}"
-      subheader="{{ item.quantity }}"
-      *ngFor="let item of itemsToShow"
-    >
-      <ng-template pTemplate="header">
+    <div class="card" *ngFor="let item of itemsToShow">
+      <div class="image">
+        <div class="love">
+          <div class="img-top">
+            <div class="offer">-40%</div>
+            <div class="image-love">
+              <img src="/assets/images/love.svg" alt="" />
+            </div>
+          </div>
+          <div class="add-cart" (click)="addToCart(item.product_id)">Add To Cart</div>
+        </div>
         <img src="/assets/images/Noimage.jpg" alt="" />
-        <!-- <img alt="Card" [src]="item.imageUrl" /> -->
-      </ng-template>
-      <div class="price">
-        {{ item.price | currency : "INR" }}
       </div>
-      <ng-template pTemplate="footer">
-        <p-button
-          label="{{ 'HOME.BUY_NOW' | translate }}"
-          (onClick)="navigateProduct(item.product_id)"
-        ></p-button>
-        <p-button
-          label="{{ 'HOME.CART' | translate }}"
-          icon="pi pi-shopping-cart"
-          styleClass="p-button-secondary"
-          [style]="{ 'margin-left': '.5em' }"
-          (onClick)="addToCart(item.product_id)"
-        ></p-button>
-      </ng-template>
-    </p-card>
+      <div class="card-bottom">
+        <div class="item-name">{{ item.product_name }}</div>
+        <div class="item-price">{{ item.price | currency : "INR" }}</div>
+        <p-rating [(ngModel)]="value" [cancel]="false"></p-rating>
+      </div>
+    </div>
   </div>
   <div class="show-more" (click)="toggleShowMore($event)">
-    <div class="text">{{ showMoreText }}</div>
-    <i class="pi pi-angle-down"></i>
+    <app-primary-button
+      ><div class="text">{{ showMoreText }}</div>
+    </app-primary-button>
   </div>
 </div>

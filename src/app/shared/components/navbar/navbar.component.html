@@ -1,4 +1,39 @@
-<div class="navbar-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
+<div class="navbar-container">
+  <div class="navbar-top">
+    <app-language-selector></app-language-selector>
+  </div>
+  <div class="navbar-bottom">
+    <div class="bhakshanam-logo" routerLink="home">
+      <img
+        src="../../../../assets/images/Rectangle 19.svg"
+        alt="bhakshanam-logo"
+      />
+    </div>
+    <div class="search-box" [formGroup]="form">
+      <input
+        type="text"
+        class="text"
+        name="search"
+        formControlName="searchTerm"
+      />
+      <img src="/assets/images/Vector.svg" alt="" pBadge [value]="cartCount" />
+    </div>
+    <div class="right-container">
+      <div class="home" routerLinkActive="active" routerLink="/home">Home</div>
+      <app-profile></app-profile>
+      <div class="cart" routerLink="/cart">
+        <div class="cart-count" *ngIf="cartCount !== 0">{{ cartCount }}</div>
+        <img src="/assets/images/cart.svg" alt="" />
+      </div>
+      <div class="watchlist">
+        <div class="cart-count" *ngIf="cartCount !== 0">{{ cartCount }}</div>
+        <img src="/assets/images/love.svg" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="navbar-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
   <div class="navbar-left">
     <div class="bhakshanam-logo" routerLink="home">
       <img
@@ -46,7 +81,8 @@
     <app-language-selector></app-language-selector>
     <app-profile></app-profile>
   </div>
-</div>
+</div> -->
+
 <!-- mobile design start here  -->
 <div
   class="navbar-container-for-mobile"
@@ -72,15 +108,15 @@
         <i
           class="pi pi-shopping-cart"
           pBadge
-          [value]="values"
+          [value]="cartCount"
           style="font-size: 1.5rem"
           severity="success"
-          *ngIf="values !== 0"
+          *ngIf="cartCount !== 0"
         ></i>
         <i
           class="pi pi-shopping-cart"
           style="font-size: 1.5rem"
-          *ngIf="values == 0"
+          *ngIf="cartCount == 0"
         ></i>
       </div>
       <app-language-selector></app-language-selector>

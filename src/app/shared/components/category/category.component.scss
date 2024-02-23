@@ -1,0 +1,23 @@
+.main-container {
+    display: flex;
+    gap: 2.5rem;
+  .category-container {
+    width: 10.625rem;
+    height: 9.063rem;
+    border: 1px solid #0000004d;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #000000;
+    }
+  }
+}

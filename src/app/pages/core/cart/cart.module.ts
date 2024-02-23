@@ -7,6 +7,7 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
+import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DividerModule } from 'primeng/divider';
     CartRoutingModule,
     ScrollPanelModule,
     ButtonModule,
-    DividerModule
+    DividerModule,
+    SharedComponentModule
   ]
 })
 export class CartModule {

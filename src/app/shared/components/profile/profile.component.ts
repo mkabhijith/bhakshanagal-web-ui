@@ -32,16 +32,34 @@ export class ProfileComponent implements OnInit, OnDestroy {
   profileActionArray: IprofileActionArray[] = [
     {
       id: 0,
-      name: 'MENU.ACCOUNT',
-      icon: 'pi pi-user',
+      name: 'Manage My Account',
+      icon: '/assets/images/user.svg',
       route: 'account',
     },
     {
       id: 1,
-      name: 'MENU.ORDERS',
-      icon: 'pi pi-cart-plus',
+      name: 'My Order',
+      icon: '/assets/images/icon-mallbag.png',
       route: 'orders',
     },
+    {
+      id: 2,
+      name: 'Notification',
+      icon: '/assets/images/notification.svg',
+      route: 'orders',
+    },
+    {
+      id: 3,
+      name: 'Whishlist',
+      icon: '/assets/images/Icon-Reviews.svg',
+      route: 'orders',
+    }, {
+      id: 4,
+      name: 'Offer Zone',
+      icon: '/assets/images/icon-mallbag.png',
+      route: 'orders',
+    },
+    
   ];
 
   ngOnInit(): void {

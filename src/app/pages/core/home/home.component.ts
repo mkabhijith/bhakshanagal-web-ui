@@ -10,6 +10,11 @@ import { LanguageService } from 'src/app/shared/services/language.service';
 import { IProductListArray } from './home.type';
 import { StorageService } from 'src/app/shared/services/storage/storage.service';
 
+interface IServiceList {
+  heading: string;
+  title: string;
+  image: string;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -20,6 +25,23 @@ export class HomeComponent implements OnInit, OnDestroy {
   adLists: string[] = [
     '/assets/images/poster/b baner.1.jpg',
     '/assets/images/poster/B B2.jpg',
+  ];
+
+  serviceList: IServiceList[] = [
+    {
+      image: '/assets/images/Services.svg',
+      heading: 'FREE AND FAST DELIVERY',
+      title: 'Free delivery for all orders over $140',
+    },
+    {
+      image: '/assets/images/Services2.svg',
+      heading: '24/7 CUSTOMER SERVICE',
+      title: 'Friendly 24/7 customer support',
+    }, {
+      image: '/assets/images/Services3.svg',
+      heading: 'MONEY BACK GUARANTEE',
+      title: 'We reurn money within 30 days',
+    },
   ];
 
   constructor(
@@ -33,7 +55,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   list!: any[];
 
   productList!: IProductListArray[];
-
   currencyValue!: number;
   currency!: string;
   currentLanguage!: ILanguage;
@@ -52,7 +73,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.currentAddIndex++;
     }, 3000);
 
-    
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {
         this.currentLanguage = lang;
