@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 import { ILanguage } from '../../types/language.type';
 import { IProducts } from '../../types/product.type';
 import { IProductList, Iproduct } from 'src/app/pages/core/home/home.type';
+import { WatchlistService } from 'src/app/pages/core/wishlist/watchlist.service';
 
 @Component({
   selector: 'app-category-product-list',
@@ -24,7 +25,8 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
   constructor(
     private cartService: CartService,
     private route: Router,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private watchListService : WatchlistService
   ) {}
 
   languageSubscription!: Subscription;
@@ -32,7 +34,7 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
   limit!: number;
   intialLimit!: number;
   itemsToShow: Iproduct[] = [];
-  showMoreText = 'View All Products';
+  showMoreText = 'HOME.SHOW_MORE';
   screenWidth!: number;
   isSmallScreen!: boolean;
   isMediumScreen!: boolean;
@@ -84,7 +86,7 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
         ? this.intialLimit
         : this.dropdownItems.length;
     this.showMoreText =
-      this.showMoreText === 'View All Products' ? 'Show Less' : 'View All Products';
+      this.showMoreText === 'HOME.SHOW_MORE' ? 'HOME.SHOW_LESS' : 'View All Products';
     this.toggleItems();
   }
 
@@ -92,6 +94,11 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
     this.cartService.saveCart(id);
   }
   navigateProduct(id: number) {
+    console.log('sjsj');
+    
     this.route.navigate(['/product', id]);
+  }
+  addToWatchList(id: number) {
+    this.watchListService.saveWatchList(id);
   }
 }

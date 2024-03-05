@@ -1,0 +1,95 @@
+<p-dialog header="Greeting" [(visible)]="visible" [style]="{ width: '50vw' }">
+  <div class="dialog-container">
+    <div class="dialog-top">
+      <select name="select" id="">
+        <option value="">Select Your Template</option>
+        <option value="">Select Your</option>
+      </select>
+      <select name="select" id="">
+        <option value="">Select Your Fontstyle</option>
+      </select>
+    </div>
+    <div class="dialog-bottom">
+      <textarea
+        name=""
+        id=""
+        cols="90%"
+        rows="10"
+        placeholder="Enter Your Greeting Here"
+      ></textarea>
+      <div class="button-footer">
+        <button>Proceed</button>
+      </div>
+    </div>
+  </div>
+</p-dialog>
+<div class="main-container">
+  <div class="left-container">
+    <div class="heading">Billing Details</div>
+    <div class="input-container">
+      <label for="">First Name*</label>
+      <input type="text" />
+    </div>
+    <div class="input-container">
+      <label for="">Address</label>
+      <input type="text" />
+    </div>
+    <div class="input-container">
+      <label for="">Landmark *</label>
+      <input type="text" />
+    </div>
+    <div class="input-container">
+      <label for="">Apartment, floor, etc. (optional)</label>
+      <input type="text" />
+    </div>
+    <div class="input-container">
+      <label for="">Town/City*</label>
+      <input type="text" />
+    </div>
+    <div class="input-container">
+      <label for="">Phone Number*</label>
+      <input type="text" />
+    </div>
+    <div class="input-container">
+      <label for="">Email Address*</label>
+      <input type="text" />
+    </div>
+  </div>
+  <div class="right-container">
+    <div class="item-container">
+      <div class="items" *ngFor="let item of orderItems">
+        <div class="image">
+          <img src="../../../../assets/images/dl.beatsnoop 1.svg" alt="" />
+          <div class="product-name">{{item.product_name}}</div>
+        </div>
+        <div class="price">{{item.totalPrice}}</div>
+      </div>
+      <div class="item">
+        <div class="item-left">Subtotal:</div>
+        <div class="item-right">{{subtotal}}</div>
+      </div>
+      <div class="item">
+        <div class="item-left">Shipping::</div>
+        <div class="item-right">Free</div>
+      </div>
+      <div class="total">
+        <div class="item-left">Total:</div>
+        <div class="item-right">{{subtotal}}</div>
+      </div>
+      <div *ngFor="let option of options">
+        <input
+          type="radio"
+          name="options"
+          [(ngModel)]="selectedOption"
+          [value]="option"
+        />{{ option }}
+      </div>
+      <div class="coupon">
+        <input type="text" placeholder="Coupon Code" />
+        <app-primary-button>Apply Coupon</app-primary-button>
+      </div>
+      <app-primary-button (click)="onVisibleGiftCard()">Write your Gift Greeting Here </app-primary-button>
+      <app-primary-button (click)="buy()">Place Order</app-primary-button>
+    </div>
+  </div>
+</div>

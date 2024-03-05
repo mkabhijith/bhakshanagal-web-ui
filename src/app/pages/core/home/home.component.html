@@ -4,8 +4,8 @@
     <img class="img" [src]="getPic()" alt="" />
   </div>
   <app-card-header
-    heading="Flash sales"
-    title="Todays"
+    heading="HOME.FLASH_SALE"
+    title="HOME.TODAYS"
     date="date"
   ></app-card-header>
 
@@ -15,13 +15,13 @@
   ></app-category-product-list>
   <p-divider></p-divider>
   <app-card-header
-    heading="Browse By Category"
-    title="Categories"
+    heading="SIDE_BAR.BROWSER_BY_CAT"
+    title="SIDE_BAR.ALL_CATEGORIES"
   ></app-card-header>
   <app-category></app-category>
   <app-card-header
-    heading="Our Products"
-    title="Explore Our Products"
+    heading="HOME.OUR_PRODUCTS"
+    title="HOME.EXPLORE_PRODUCTS"
   ></app-card-header>
   <app-category-product-list
     [dropdownItems]="productList[0].crunchy"
@@ -31,8 +31,8 @@
   <div class="services-container">
     <div class="services" *ngFor="let item of serviceList">
       <img src="{{ item.image }}" alt="" />
-      <div class="heading">{{ item.heading }}</div>
-      <div class="title">{{ item.title }}</div>
+      <div class="heading">{{ item.heading | translate }}</div>
+      <div class="title">{{ item.title | translate }}</div>
     </div>
   </div>
 </div>

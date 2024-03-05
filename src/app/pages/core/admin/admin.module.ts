@@ -6,7 +6,7 @@ import { AdminComponent } from './admin.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { DividerModule } from 'primeng/divider';
-import { StocksListComponent } from './stocks-list/stocks-list.component';
+import { TableModule } from 'primeng/table';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RadioButtonModule } from 'primeng/radiobutton';
@@ -18,8 +18,19 @@ import { OffersComponent } from './offers/offers.component';
 import { OrdersComponent } from './orders/orders.component';
 import { PaynentComponent } from './paynent/paynent.component';
 import { AddOffersComponent } from './offers/add-offers/add-offers.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UsersComponent } from './users/users.component';
+import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
 @NgModule({
-  declarations: [AdminComponent, StocksListComponent, OffersComponent, OrdersComponent, PaynentComponent, AddOffersComponent],
+  declarations: [
+    AdminComponent,
+    OffersComponent,
+    OrdersComponent,
+    PaynentComponent,
+    AddOffersComponent,
+    DashboardComponent,
+    UsersComponent,
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -31,7 +42,9 @@ import { AddOffersComponent } from './offers/add-offers/add-offers.component';
     InputNumberModule,
     FormsModule,
     ReactiveFormsModule,
-    InputTextModule
+    InputTextModule,
+    TableModule,
+    SharedComponentModule
   ],
 })
 export class AdminModule {}

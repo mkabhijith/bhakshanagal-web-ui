@@ -5,15 +5,19 @@
         <div class="love">
           <div class="img-top">
             <div class="offer">-40%</div>
-            <div class="image-love">
+            <div class="image-love" (click)="addToWatchList(item.product_id)">
               <img src="/assets/images/love.svg" alt="" />
             </div>
           </div>
-          <div class="add-cart" (click)="addToCart(item.product_id)">Add To Cart</div>
+          <div class="add-cart" (click)="addToCart(item.product_id)">
+            {{ "HOME.ADD_CART" | translate }}
+          </div>
         </div>
-        <img src="/assets/images/Noimage.jpg" alt="" />
+        <div (click)="navigateProduct(item.product_id)">
+          <img src="/assets/images/Noimage.jpg" alt="" />
+        </div>
       </div>
-      <div class="card-bottom">
+      <div class="card-bottom" (click)="navigateProduct(item.product_id)">
         <div class="item-name">{{ item.product_name }}</div>
         <div class="item-price">{{ item.price | currency : "INR" }}</div>
         <p-rating [(ngModel)]="value" [cancel]="false"></p-rating>
@@ -22,7 +26,7 @@
   </div>
   <div class="show-more" (click)="toggleShowMore($event)">
     <app-primary-button
-      ><div class="text">{{ showMoreText }}</div>
+      ><div class="text">{{ showMoreText  | translate}}</div>
     </app-primary-button>
   </div>
 </div>

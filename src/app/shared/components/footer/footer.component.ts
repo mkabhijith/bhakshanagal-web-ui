@@ -26,7 +26,7 @@ export class FooterComponent implements OnInit {
 
   itemsList: IItemList[] = [
     {
-      heading: 'Support',
+      heading: 'FOOTER.OUR_SUPPORTS',
       items: [
         {
           item: '111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.',
@@ -40,22 +40,22 @@ export class FooterComponent implements OnInit {
       ],
     },
     {
-      heading: 'Account',
+      heading: 'MENU.ACCOUNT',
       items: [
         {
-          item: 'My Account',
+          item: 'SIDE_BAR.MY_ACCOUNT',
         },
         {
-          item: 'Login / Register',
+          item: 'LOGIN.LOG_IN / LOGIN.REGISTER',
         },
         {
-          item: 'Cart',
+          item: 'HOME.CART',
         },
         {
-          item: 'Wishlist',
+          item: 'WISHLIST.WISHLIST',
         },
         {
-          item: 'Shop',
+          item: 'FOOTER.SHOP_WITH_US',
         },
       ],
     },
@@ -63,7 +63,7 @@ export class FooterComponent implements OnInit {
       heading:"Quick Link",
       items:[
         {
-          item:"Privacy Policy"
+          item:"FOOTER.PRIVACY_POLICY"
         },
         {
           item:"Terms Of Use"
@@ -72,7 +72,7 @@ export class FooterComponent implements OnInit {
           item:"FAQ"
         },
         {
-          item:"Contact"
+          item:"SIDE_BAR.CONTACT_US"
         },
       ]
     }

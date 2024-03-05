@@ -32,32 +32,32 @@ export class ProfileComponent implements OnInit, OnDestroy {
   profileActionArray: IprofileActionArray[] = [
     {
       id: 0,
-      name: 'Manage My Account',
+      name: 'ACCOUNTS.MANAGE_ACC',
       icon: '/assets/images/user.svg',
       route: 'account',
     },
     {
       id: 1,
-      name: 'My Order',
+      name: 'ACCOUNT.MY_ORDERS',
       icon: '/assets/images/icon-mallbag.png',
-      route: 'orders',
+      route: 'account/orders',
     },
     {
       id: 2,
-      name: 'Notification',
+      name: 'ACCOUNT.MY_NOTIFICATION',
       icon: '/assets/images/notification.svg',
-      route: 'orders',
+      route: 'account/notifications',
     },
     {
       id: 3,
-      name: 'Whishlist',
+      name: 'WISHLIST.WISHLIST',
       icon: '/assets/images/Icon-Reviews.svg',
-      route: 'orders',
+      route: 'wishlist',
     }, {
       id: 4,
-      name: 'Offer Zone',
+      name: 'SIDE_BAR.OFFER_ZONE',
       icon: '/assets/images/icon-mallbag.png',
-      route: 'orders',
+      route: '',
     },
     
   ];

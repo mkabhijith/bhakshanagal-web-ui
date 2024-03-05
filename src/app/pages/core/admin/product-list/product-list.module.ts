@@ -17,6 +17,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     DropdownModule,
     FileUploadModule,
     RadioButtonModule,
-    FormsModule
+    FormsModule,
+    SharedComponentModule,
+    TableModule
   ],
   providers: [ConfirmationService, MessageService],
 })

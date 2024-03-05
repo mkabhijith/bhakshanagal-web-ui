@@ -9,6 +9,7 @@
   .footer-container {
     display: flex;
     gap: 2rem;
+
     .bhakshanam-container {
       .bhkshanam {
         font-family: Inter;
@@ -75,6 +76,14 @@
           gap: 2rem;
         }
       }
+    }
+  }
+}
+@media screen and (max-width: 920px) {
+  .main-container {
+    height: fit-content;
+    .footer-container {
+      flex-direction: column;
     }
   }
 }

@@ -11,6 +11,7 @@ import { SidebarService } from '../../services/sidebar/sidebar.service';
 import { Subscription, debounceTime } from 'rxjs';
 import { StorageService } from '../../services/storage/storage.service';
 import { Router } from '@angular/router';
+import { WatchlistService } from 'src/app/pages/core/wishlist/watchlist.service';
 
 type INavBar = {
   id: number;
@@ -31,12 +32,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private sidebarService: SidebarService,
     private cdr: ChangeDetectorRef,
     private storageService: StorageService,
-    private route: Router
+    private route: Router,
+    private watchListService: WatchlistService
   ) {}
 
   languageSubscription!: Subscription;
   localCartSubscription!: Subscription;
   sidebarSubscription!: Subscription;
+  watchListLengthSubscription!: Subscription;
 
   currentLanguage!: ILanguage;
   triggerSliderVisible = 0;
@@ -44,7 +47,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   searchTerm!: string;
   cartCount: any = 0;
   onAuthorise: boolean = false;
-
+  watchListCount: number =0;
   linksForNavbar: INavBar[] = [
     {
       id: 0,
@@ -94,11 +97,18 @@ export class NavbarComponent implements OnInit, OnDestroy {
           this.cdr.detectChanges();
         },
       });
+    this.watchListLengthSubscription =
+      this.watchListService.watchListCount$.subscribe({
+        next: (res) => {
+          this.watchListCount = res;
+        },
+      });
   }
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
     this.localCartSubscription.unsubscribe();
     this.sidebarSubscription.unsubscribe();
+    this.watchListLengthSubscription.unsubscribe();
   }
   get searchTermControl() {
     return this.form.controls['searchTerm'];

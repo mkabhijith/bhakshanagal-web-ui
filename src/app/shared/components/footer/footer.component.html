@@ -6,22 +6,20 @@
       <div class="item">Get 10% off your first order</div>
     </div>
     <div class="items-container" *ngFor="let item of itemsList">
-      <div class="heading">{{ item.heading }}</div>
-      <div class="item" *ngFor="let item of item.items">{{ item.item }}</div>
+      <div class="heading">{{ item.heading | translate }}</div>
+      <div class="item" *ngFor="let item of item.items">
+        {{ item.item | translate }}
+      </div>
     </div>
     <div class="items-container">
       <div class="heading">Download App</div>
       <div class="download">
-        
         <div class="qr-download">
           <div class="qr-code">
             <img src="/assets/images/Qrcode 1.svg" alt="" />
           </div>
           <div class="stores">
-            <img
-              src="/assets/images/google-play-store-logo-.svg"
-              alt=""
-            />
+            <img src="/assets/images/google-play-store-logo-.svg" alt="" />
             <img src="/assets/images/download-appstore.svg" alt="" />
           </div>
         </div>

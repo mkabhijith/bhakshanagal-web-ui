@@ -1,0 +1,24 @@
+<div class="user-container">
+  <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Phn No</th>
+        <th>Email</th>
+        <th>Date Of Acc Create</th>
+        <th>Date Of Last Chng</th>
+        <th>Date Of Acc Del</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.Products }}</td>
+        <td>{{ product.Confirmed }}</td>
+        <td>{{ product.Packed }}</td>
+        <td>{{ product.Shipped }}</td>
+        <td>{{ product.Delivered }}</td>
+        <td>{{ product.Delivered }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

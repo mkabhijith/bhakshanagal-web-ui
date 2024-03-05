@@ -10,7 +10,8 @@
     {{ "ADDRESS.EDIT_ADDRESS" | translate }}
   </div>
   <div class="caption-container" *ngIf="!onEditForm">
-    {{ "ADDRESS.ADD_ADDRESS" | translate }}
+    <!-- {{ "ADDRESS.ADD_ADDRESS" | translate }} -->
+    {{ "BUTTON_ACTIONS.ADD_NEW_ADDRESS" | translate }}
   </div>
   <div class="main-container">
     <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
@@ -98,12 +99,9 @@
       </div>
 
       <div class="button-footer">
-        <button pButton class="p-button-warning" type="submit">
-          {{ "BUTTON_ACTIONS.SAVE" | translate }}
-        </button>
-        <span class="cancel" (click)="clearForm()">{{
-          "BUTTON_ACTIONS.CANCEL" | translate
-        }}</span>
+        <app-primary-button (click)="onSubmit()">{{
+          "BUTTON_ACTIONS.SAVE" | translate
+        }}</app-primary-button>
       </div>
     </form>
   </div>

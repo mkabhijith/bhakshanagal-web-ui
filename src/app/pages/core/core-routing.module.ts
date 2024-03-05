@@ -5,6 +5,8 @@ import { authGurd } from './auth-gurd.guard';
 import { ProfileComponent } from './account/profile/profile.component';
 import { AddressComponent } from './account/address/address.component';
 import { AddAddressComponent } from 'src/app/shared/components/add-address/add-address.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -92,19 +94,22 @@ const routes: Routes = [
         path: 'addAddress/:id',
         component: AddAddressComponent,
       },
-      {
-        path: 'notifications',
-        loadChildren: () =>
-          import(
-            '../core/account/my-notifications/my-notifications.module'
-          ).then((m) => m.MyNotificationsModule),
-      },
+     
       {
         path: 'reviews',
         loadChildren: () =>
           import(
             '../core/account/my-review-rating/my-review-rating.module'
           ).then((m) => m.MyReviewRatingModule),
+      },
+      {
+        path: 'checkout',
+        canActivate: [authGurd],
+        component: CheckOutComponent,
+      },
+      {
+        path: 'wishlist',
+        component: WishlistComponent,
       },
       {
         path: '',

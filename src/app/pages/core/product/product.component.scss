@@ -1,69 +1,103 @@
 .main-container {
-  background-color: #f0f2f5;
+  background-color: #ffffff;
+  // padding: 2rem;.
+  padding-top: 4rem;
   display: flex;
-  padding: 20px;
-  gap: 25px;
-  width: 100%;
   justify-content: center;
-  .image {
-    height: 500px;
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
-  .details {
-    width: 500px;
+  .product-comtainer {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    .shipping,
-    .product-status {
+    .left {
       display: flex;
-      align-items: center;
-      gap: 5px;
+      .images {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        img {
+          width: 10.625rem;
+          height: 8.625rem;
+        }
+      }
+      .image {
+        img {
+          width: 31.25rem;
+          height: 37.5rem;
+        }
+      }
     }
-    .price {
-      font-weight: 700;
-    }
-    .quantity {
-      color: rgb(164, 150, 139);
-    }
-    .key-features {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .footer {
-      display: flex;
-      gap: 30px;
-      margin-top: 40px;
-    }
-  }
-}
-.main-container.ar{
-  direction: rtl;
-}
-
-@media screen and (max-width: 650px) {
-  .main-container {
-    flex-direction: column;
-    .image{
-      height: 350px;
-      width: 350px;
-    
-    }
-    .details{
-      width: auto;
-    }
-  }
-}
-@media screen and (max-width: 380px) {
-  .main-container {
-    .image{
-      width: 300px;
-    
+    .right {
+      .product-details {
+        border-bottom: 1px solid #b2a6a6;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-bottom: 1rem;
+        .description {
+          width: 23.313rem;
+        }
+        .rating-status {
+          // color: #00FF66;
+          display: flex;
+          gap: 0.5rem;
+        }
+      }
+      .buying-details {
+        .buttons {
+          display: flex;
+          height: 8rem;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+          .quantity {
+            display: flex;
+            width: fit-content;
+            height: fit-content;
+            border: 1px solid #b2a6a6;
+            .increase,
+            .decrease {
+              display: flex;
+              height: 2.75rem;
+              width: 2.5rem;
+              align-items: center;
+              justify-content: center;
+              border: 1px solid #b2a6a6;
+              cursor: default;
+            }
+            .increase {
+              background-color: #db4444;
+            }
+            .input {
+              border: none;
+              outline: none;
+              width: 4rem;
+              height: 2.75rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          .watchlist {
+            border: 1px solid #00000080;
+            height: 2.5rem;
+            width: 2.5rem;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            border-radius: 0.25rem;
+          }
+        }
+        .features {
+          .bottom,
+          .top {
+            display: flex;
+            border: 1px solid #b2a6a6;
+            height: 5.625rem;
+            width: 24.938rem;
+            align-items: center;
+            gap: 1rem;
+            padding-left: 1rem;
+          }
+        }
+      }
     }
   }
 }

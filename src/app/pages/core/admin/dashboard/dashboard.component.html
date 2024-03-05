@@ -1,0 +1,133 @@
+<div class="dashboard-container">
+  <div class="quantity-container">
+    <div class="quantity-box">
+      <div class="number">25</div>
+      <div class="text">Qty</div>
+      <div class="text">packed</div>
+    </div>
+    <div class="quantity-box">
+      <div class="number">25</div>
+      <div class="text">Qty</div>
+      <div class="text">packed</div>
+    </div>
+    <div class="quantity-box">
+      <div class="number">25</div>
+      <div class="text">Qty</div>
+      <div class="text">packed</div>
+    </div>
+
+    <div class="quantity">
+      <div class="button">QUANTITY IN HAND</div>
+      <div class="button">QUANTITY TO BE RECEIVED</div>
+    </div>
+  </div>
+  <div class="product-details-container">
+    <div class="product-dettails">
+      <div class="heading">Product details</div>
+      <div class="body">
+        <div class="left">
+          <div class="content">
+            <div class="text">Low Stock Items</div>
+            <div class="count">454</div>
+          </div>
+          <div class="content">
+            <div class="text">All Item Group</div>
+            <div class="count">454</div>
+          </div>
+          <div class="content">
+            <div class="text">All Items</div>
+            <div class="count">454</div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="outer-circle">
+            <div class="inner-circle">100%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top-selling">
+      <div class="heading-container">
+        <div class="left">TOP SELLING ITEMS</div>
+        <div class="right">
+          <select>
+            <option value="">this month</option>
+            <option value="">this week</option>
+          </select>
+        </div>
+      </div>
+      <div class="body">
+        <div class="card">
+          <div class="image">
+            <img src="../../../../../assets/images/category-demo.svg" alt="" />
+          </div>
+          <div class="name">jgdajk</div>
+          <div class="qount">45</div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="../../../../../assets/images/category-demo.svg" alt="" />
+          </div>
+          <div class="name">jgdajk</div>
+          <div class="qount">45</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-details-containers">
+    <div class="product-details">
+      <div class="heading">
+        <div class="left">Product detaissls</div>
+        <div class="right">
+          <select>
+            <option value="">this month</option>
+            <option value="">this week</option>
+          </select>
+        </div>
+      </div>
+      <div class="body">
+        <div class="left">
+          <div class="text">jfj</div>
+          <div class="quantity">4545</div>
+        </div>
+        <div class="right">
+          <div class="text">jfj</div>
+          <div class="quantity">4545</div>
+        </div>
+      </div>
+    </div>
+    <div class="sales-order">
+      <div class="heading">
+        <div class="left">Product detaissls</div>
+        <div class="right">
+          <select>
+            <option value="">this month</option>
+            <option value="">this week</option>
+          </select>
+        </div>
+      </div>
+      <div class="body">
+        <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Products</th>
+              <th>Confirmed</th>
+              <th>Packed</th>
+              <th>Shipped</th>
+              <th>Delivered</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+            <tr>
+              <td>{{ product.Products }}</td>
+              <td>{{ product.Confirmed }}</td>
+              <td>{{ product.Packed }}</td>
+              <td>{{ product.Shipped }}</td>
+              <td>{{ product.Delivered }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</div>

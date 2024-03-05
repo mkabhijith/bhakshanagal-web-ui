@@ -1,0 +1,39 @@
+<div class="main-container">
+  <div class="watchList-container">
+    <div class="heading">
+      <div class="left">{{ "WISHLIST.WISHLIST" | translate }} (2)</div>
+      <app-secoundary-button>{{
+        "WISHLIST.Move_All_To_Bag" | translate
+      }}</app-secoundary-button>
+    </div>
+    <div class="product-list">
+      <div class="card" *ngFor="let item of wishList">
+        <!-- (click)="navigateProduct(item.product_id)" -->
+        <div class="image">
+          <div class="love">
+            <div class="img-top">
+              <div class="offer">-40%</div>
+              <div class="image-love" (click)="onRemoveItem(item.product_id)">
+                <img src="../../../../assets/images/icon-delete.svg" alt="" />
+              </div>
+            </div>
+            <div class="add-cart" (click)="addToCart(item.product_id)">
+              {{ "HOME.ADD_CART" | translate }}
+            </div>
+          </div>
+          <img src="/assets/images/Noimage.jpg" alt="" />
+        </div>
+        <div class="card-bottom">
+          <div class="item-name">{{ item.product_name }}</div>
+          <div class="item-price">{{ item.price | currency : "INR" }}</div>
+          <!-- <p-rating [(ngModel)]="value" [cancel]="false"></p-rating> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-card-header title="WISHLIST.JUST_FOR_U"></app-card-header>
+  <app-category-product-list
+    [dropdownItems]="wishList"
+    intialCardCount="5"
+  ></app-category-product-list>
+</div>

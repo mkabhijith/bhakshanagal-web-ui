@@ -8,6 +8,7 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SharedComponentModule } from 'src/app/shared/components/shared-componen
     ScrollPanelModule,
     ButtonModule,
     DividerModule,
-    SharedComponentModule
+    SharedComponentModule,
+    TranslateModule
   ]
 })
 export class CartModule {

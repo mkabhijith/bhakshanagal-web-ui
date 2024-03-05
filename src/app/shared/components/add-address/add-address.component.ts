@@ -26,7 +26,7 @@ export class AddAddressComponent implements OnInit, OnDestroy {
   addressForm = new FormGroup<IAddressForm>({
     full_name: new FormControl('', Validators.required),
     phone_number: new FormControl(null, Validators.required),
-    alt_phone_number: new FormControl(null, Validators.required),
+    alt_phone_number: new FormControl(null),
     landmark: new FormControl('', Validators.required),
     building_name: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
@@ -104,6 +104,9 @@ export class AddAddressComponent implements OnInit, OnDestroy {
           },
         });
       }
+    }
+    else {
+      alert("form invalid")
     }
   }
   clearForm() {

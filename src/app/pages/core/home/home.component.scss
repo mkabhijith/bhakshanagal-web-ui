@@ -116,5 +116,10 @@
     .offer-banner {
       height: 250px;
     }
+    .services-container{
+      height: fit-content;
+      gap: 2rem;
+      flex-direction: column;
+    }
   }
 }

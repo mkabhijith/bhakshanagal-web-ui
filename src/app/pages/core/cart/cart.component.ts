@@ -35,7 +35,7 @@ export class CartComponent implements OnInit, OnDestroy {
     private router: Router
   ) {}
 
-  headers = ['Product', 'Price', 'Quantity', 'Subtotal'];
+  headers = ['PRODUCT.PRODUCT', 'PRODUCT.PRICE', 'PRODUCT.Quantity', 'PRODUCT.Subtotal'];
 
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
@@ -104,79 +104,14 @@ export class CartComponent implements OnInit, OnDestroy {
     this.payTotal = this.totalPrice + 100;
   }
 
-  buy() {
-    if (!this.storageService.authKey) {
-      console.log('auth');
-    } else {
-      const payload = {
-        amount: this.totalPrice,
-        currency: 'INR',
-        receipt: '',
-        notes: {
-          description: this.cartList[0].product_name,
-          name: this.cartList[0].product_name,
-          ingredients: 'sweet',
-        },
-      };
-
-      this.cartService.createOrder(payload).subscribe({
-        next: (res) => {
-          console.log('order res', res);
-        },
-      });
-
-      const RozerPayOptions = {
-        description: 'sample',
-        currency: 'INR',
-        amount: this.totalPrice * 100,
-        name: 'sai',
-        Image: '',
-        key: 'rzp_test_az7fEZxXoBzThm',
-        prefills: {
-          name: 'sai krishna',
-          email: 'saigmail.com',
-          phone: '98989898',
-        },
-        theme: {
-          color: 'red',
-        },
-        modal: {
-          ondismiss: () => {
-            console.log('dissmissed');
-          },
-        },
-      };
-      const successCallback = (paymentId: any) => {
-        console.log(paymentId);
-        const payload = {
-          amount: this.totalPrice,
-          currency: 'INR',
-          receipt: '',
-          notes: {
-            description: 'Best food',
-            name: 'Laddu',
-            ingredients: 'sweet',
-          },
-        };
-        this.cartService.createOrder(payload).subscribe({
-          next: (res) => {
-            console.log('order res', res);
-          },
-        });
-      };
-
-      const failureCallback = (e: any) => {
-        console.log(e, 'cancel');
-      };
-      // this.cartService.createOrder(payload).subscribe({
-      //   next: (res) => {
-      //     console.log('order res', res);
-      //   },
-      // });
-      Razorpay.open(RozerPayOptions, successCallback, failureCallback);
-    }
-  }
+ 
   returnToShop() {
     this.router.navigate(['/home']);
+  }
+  checkOut(){
+    const myArray = this.cartList;
+    const jsonArray = JSON.stringify(myArray);
+    const encodedArray = encodeURIComponent(jsonArray);
+    this.router.navigate(['/checkout' ], { queryParams: { arrayParam: encodedArray } })
   }
 }

@@ -1,66 +1,27 @@
 <app-spinner *ngIf="loginInProgress"></app-spinner>
-<p-toast></p-toast>
-<p-confirmDialog></p-confirmDialog>
-<app-back-btn (click)="navgateToAccount()">{{
-  "SIDE_BAR.MY_ACCOUNT" | translate
-}}</app-back-btn>
-<div
-class="address-container"
-[ngClass]="{ ar: currentLanguage.code === 'ar' }"
->
-  <div class="address-header">
-    <div class="text">{{ "ACCOUNT.MANAGE_ADDRESS" | translate }}</div>
+<div class="main-container">
+  <div class="add-new">
+    <app-primary-button (click)="navigateToAddAddress()">{{
+      "ADDRESS.ADD_ADDRESS" | translate
+    }}</app-primary-button>
   </div>
-  <div class="main-contaianer">
-    <div class="add-address-mobile" routerLink="/addAddress">
-      + {{ "BUTTON_ACTIONS.ADD_NEW_ADDRESS" | translate }}
+  <div class="add-new-mubile">
+    <app-primary-button (click)="navigateToAddAddress()">{{
+      "ADDRESS.ADD_ADDRESS" | translate
+    }}</app-primary-button>
+  </div>
+  <div class="address-container" *ngFor="let item of addressList">
+    <div class="left">
+      <div class="name">
+        <div class="text">{{ item.address_fullname }}</div>
+        <div class="text">{{ item.address_phone_number }}</div>
+      </div>
+      <div class="address">
+        {{ item.address_building_name }}
+      </div>
     </div>
-    <div class="add-address" routerLink="/account/addAddress">
-      + {{ "BUTTON_ACTIONS.ADD_NEW_ADDRESS" | translate }}
-    </div>
-    <div class="addresses" *ngFor="let item of addressList">
-      <p-fieldset>
-        <ng-template pTemplate="header">
-          <div class="flex align-items-center text-primary gap-5">
-            <span class="font-bold text-lg">{{ item.address_status }}</span>
-            <!-- <i class="pi pi-user-edit"></i> -->
-          </div>
-        </ng-template>
-        <div class="address-body-container">
-          <div class="name">{{ item.address_fullname }}</div>
-          <div class="details">
-            {{ item.address_building_name }}
-          </div>
-          <div class="number">{{ item.address_phone_number }}</div>
-        </div>
-
-        <div class="button-footer">
-          <p-button
-            styleClass="p-button-danger"
-            (onClick)="deleteAddress(item.address_id)"
-          >
-            {{ "BUTTON_ACTIONS.DELETE" | translate }}
-          </p-button>
-          <p-button
-            styleClass="p-button-warning"
-            (onClick)="onEditAddress(item.address_id)"
-            >{{ "BUTTON_ACTIONS.EDIT" | translate }}</p-button
-          >
-        </div>
-        <div class="button-footer-mobile">
-          <p-button
-            styleClass="p-button-danger"
-            (onClick)="deleteAddress(item.address_id)"
-          >
-            {{ "BUTTON_ACTIONS.DELETE" | translate }}
-          </p-button>
-          <p-button
-            styleClass="p-button-warning"
-            (onClick)="onEditAddressMobile(item.address_id)"
-            >{{ "BUTTON_ACTIONS.EDIT" | translate }}</p-button
-          >
-        </div>
-      </p-fieldset>
+    <div class="right">
+      <app-option-drop-down id="{{ item.address_id }}"></app-option-drop-down>
     </div>
   </div>
 </div>

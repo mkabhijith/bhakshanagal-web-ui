@@ -31,6 +31,7 @@ export class AddressComponent implements OnInit, OnDestroy {
   languageSubscription!: Subscription;
   loginInProgress: boolean = false;
   addressList!: IAddress[];
+  demo =[{id:1},{id:0}]
   ngOnInit(): void {
     this.titleSerice.changeTitle('Address');
 
@@ -103,5 +104,11 @@ export class AddressComponent implements OnInit, OnDestroy {
 
   navgateToAccount() {
     this.router.navigate(['account']);
+  }
+  navigateToAddAddress(){
+    
+    
+    this.router.navigate(['/addAddress']);
+    // this.router.navigate(['account/addAddress']);
   }
 }

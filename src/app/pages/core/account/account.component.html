@@ -1,27 +1,17 @@
 <!-- <app-spinner *ngIf="true"></app-spinner> -->
 <div class="main-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
-  <div class="sidebar">
-    <div class="header-container">{{ "ACCOUNT.ACC_NAME" | translate }}</div>
-    <div class="body--container">
-      <div class="items-container" *ngFor="let item of accountMenu">
-        <div class="title--container">
-          <i [class]="item.icon"></i>
-          <span class="title"> {{ item.title | translate }}</span>
-        </div>
-        <p-divider></p-divider>
+  <div class="left-container">
+    <div class="sidebar" *ngFor="let item of accountMenu">
+      <div class="sidebar-heading">
+        {{ item.title  | translate}}
         <div
-          class="items-list"
+          class="sidebar-tabs"
           *ngFor="let item of item.options"
           [routerLink]="[item.route]"
           routerLinkActive="active"
         >
-          <div class="item">{{ item.title | translate }}</div>
+          {{ item.title | translate }}
         </div>
-        <p-divider></p-divider>
-      </div>
-      <div class="footer-container" (click)="logOut()">
-        <i class="pi pi-power-off"></i>
-        <span> {{ "LOGIN.LOG_OUT" | translate }} </span>
       </div>
     </div>
   </div>

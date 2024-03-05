@@ -1,4 +1,4 @@
-<div class="navbar-container">
+<div class="navbar-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
   <div class="navbar-top">
     <app-language-selector></app-language-selector>
   </div>
@@ -19,14 +19,18 @@
       <img src="/assets/images/Vector.svg" alt="" pBadge [value]="cartCount" />
     </div>
     <div class="right-container">
-      <div class="home" routerLinkActive="active" routerLink="/home">Home</div>
+      <div class="home" routerLinkActive="active" routerLink="/home">
+        {{ "MENU.HOME" | translate }}
+      </div>
       <app-profile></app-profile>
       <div class="cart" routerLink="/cart">
         <div class="cart-count" *ngIf="cartCount !== 0">{{ cartCount }}</div>
         <img src="/assets/images/cart.svg" alt="" />
       </div>
-      <div class="watchlist">
-        <div class="cart-count" *ngIf="cartCount !== 0">{{ cartCount }}</div>
+      <div class="watchlist" routerLink="/wishlist">
+        <div class="cart-count" *ngIf="watchListCount !== 0">
+          {{ watchListCount }}
+        </div>
         <img src="/assets/images/love.svg" alt="" />
       </div>
     </div>

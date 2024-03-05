@@ -4,6 +4,13 @@ import { AccountComponent } from './account.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddressComponent } from './address/address.component';
 import { AddAddressComponent } from 'src/app/shared/components/add-address/add-address.component';
+import { OrdersComponent } from '../orders/orders.component';
+import { OrderInfoComponent } from './order-info/order-info.component';
+import { OrderDetailsComponent } from './order-info/order-details/order-details.component';
+import { ReturnsComponent } from './returns/returns.component';
+import { MyCancelationComponent } from './my-cancelation/my-cancelation.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+// import { OrderDetailsComponent } from '../orders/order-details/order-details.component';
 
 const routes: Routes = [
   {
@@ -28,16 +35,35 @@ const routes: Routes = [
         component: AddAddressComponent,
       },
       {
+        path: 'orders',
+        children: [
+          {
+            path: '',
+            component: OrderInfoComponent,
+          },
+          {
+            path: 'orderInfo/:id',
+            component: OrderDetailsComponent,
+          },
+        ],
+      },
+      {
+        path: 'return',
+        component: ReturnsComponent,
+      },
+      {
+        path: 'cancel-list',
+        component: MyCancelationComponent,
+      },
+      {
+        path: 'orderDetails/:id',
+        component: OrderDetailsComponent,
+      },
+      {
         path: 'addAddress/:id',
         component: AddAddressComponent,
       },
-      {
-        path: 'notifications',
-        loadChildren: () =>
-          import('../account/my-notifications/my-notifications.module').then(
-            (m) => m.MyNotificationsModule
-          ),
-      },
+      { path: 'notifications', component: NotificationsComponent },
       {
         path: 'reviews',
         loadChildren: () =>

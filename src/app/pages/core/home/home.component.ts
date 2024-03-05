@@ -30,17 +30,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   serviceList: IServiceList[] = [
     {
       image: '/assets/images/Services.svg',
-      heading: 'FREE AND FAST DELIVERY',
-      title: 'Free delivery for all orders over $140',
+      heading: 'HOME.FAST_DELIVERY',
+      title: 'HOME.FREE_DELIVARY_TITLE',
     },
     {
       image: '/assets/images/Services2.svg',
-      heading: '24/7 CUSTOMER SERVICE',
-      title: 'Friendly 24/7 customer support',
+      heading: 'HOME.CUSTOMER_SERVICE',
+      title: 'HOME.CONSUMER_SERVICE_TITLE',
     }, {
       image: '/assets/images/Services3.svg',
-      heading: 'MONEY BACK GUARANTEE',
-      title: 'We reurn money within 30 days',
+      heading: 'HOME.MONEY_BACK',
+      title: 'HOME.MONEY_BACK_TITLE',
     },
   ];
 

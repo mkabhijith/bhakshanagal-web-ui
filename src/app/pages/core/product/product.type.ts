@@ -17,4 +17,6 @@ export interface IProductView {
   cash_on_delivery: number;
   refundable: number;
   free_delivery: number;
+  count?:number;
+  totalPrice:number;
 }
