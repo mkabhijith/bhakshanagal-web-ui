@@ -1,0 +1,131 @@
+.dialog-container {
+  .dialog-top {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    select {
+      width: fit-content;
+      // height: 2rem;
+      background-color: #4285f4;
+      border-radius: 0.5rem;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+      padding: 0.5rem 0.5rem;
+    }
+  }
+  .dialog-bottom {
+    padding-top: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    textarea {
+      border-radius: 0.5rem;
+      outline: none;
+      border: none;
+      background-color: #e1e5e0;
+      padding: 1rem;
+    }
+    .button-footer {
+      button {
+        background-color: #4285f4;
+        outline: none;
+        border: none;
+        border-radius: 0.5rem;
+        width: 25rem;
+        height: 3.375rem;
+        font-family: Poppins;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+       
+      }
+    }
+  }
+}
+.main-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  .left-container {
+    width: 50%;
+    // height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 4rem;
+    .heading {
+      font-family: Inter;
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 30px;
+      letter-spacing: 0.04em;
+      text-align: left;
+      width: 29.37rem;
+    }
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      input {
+        width: 29.375rem;
+        height: 3.125rem;
+        border: none;
+        outline: none;
+        background-color: #f5f5f5;
+      }
+    }
+  }
+  .right-container {
+    .item-container {
+      width: 26.375rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      .items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .image {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          img {
+            width: 3.375rem;
+            height: 3.375rem;
+          }
+        }
+      }
+      .total,
+      .item {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .item {
+        border-bottom: 1px solid gray;
+        padding-bottom: 0.25rem;
+      }
+      .coupon {
+        display: flex;
+        width: 32.938rem;
+        gap: 1rem;
+        input {
+          width: 18.75rem;
+          height: 3.5rem;
+          border-radius: 0.25rem;
+          outline: none;
+          border: none;
+          border: 1px solid gray;
+        }
+      }
+    }
+  }
+}

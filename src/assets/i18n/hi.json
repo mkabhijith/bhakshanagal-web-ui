@@ -37,7 +37,24 @@
     "CRISPIES": "कुरकुरा",
     "CHIPS": "चिप्स",
     "SHOW_MORE": "और दिखाओ",
-    "SHOW_LESS":"कम दिखाएं"
+    "SHOW_LESS": "कम दिखाएं",
+    "ADD_CART": "कार्ट में जोड़ें",
+    "TODAYS": "आज का",
+    "FLASH_SALE": "फ्लैश बिक्री",
+    "OUR_PRODUCTS": "हमारे उत्पाद",
+    "EXPLORE_PRODUCTS": "हमारे उत्पादों का अन्वेषण करें",
+    "FAST_DELIVERY": "नि: शुल्क और तेजी से वितरण",
+    "FREE_DELIVARY_TITLE": "$ 140 से अधिक सभी आदेशों के लिए मुफ्त वितरण",
+    "CUSTOMER_SERVICE": "24/7 ग्राहक सेवा",
+    "CONSUMER_SERVICE_TITLE": "दोस्ताना 24/7 ग्राहक सहायता",
+    "MONEY_BACK": "पैसे वापस गारंटी",
+    "MONEY_BACK_TITLE": "हम 30 दिनों के भीतर पैसे की पुनरावृत्ति करते हैं"
+  },
+  "CARD_HEADER": {
+    "DAY": "दिन",
+    "HOUR": "घंटे",
+    "MINIT": "मिनट",
+    "SECOND": "सेकंड"
   },
   "FORM_FIELD": {
     "EMAIL_ADDRESS": "मेल पता",
@@ -74,13 +91,17 @@
     "SUBMIT": "जमा करना"
   },
   "PRODUCT": {
+    "PRODUCT": "उत्पाद",
+    "PRICE": "कीमत",
+    "Quantity": "मात्रा",
+    "Subtotal": "उप-योग",
     "STATUS": "स्थिति",
     "OUT_OF_STOCK": "स्टॉक ख़त्म",
     "IN_STOCK": "स्टॉक में",
-    "ELIGIBLE_FREE_DELIVARY":"मुफ्त के लिए पात्र",
-    "ELIGIBLE_FREE_RETURN":"वापसी और धनवापसी के लिए पात्र",
-    "CASH_ON_DELIVARY":"डिलीवरी पर कैश",
-    "INTERNATIONAL_SHIPPING":"अंतर्राष्ट्रीय शिपिंग उपलब्ध"
+    "ELIGIBLE_FREE_DELIVARY": "मुफ्त के लिए पात्र",
+    "ELIGIBLE_FREE_RETURN": "वापसी और धनवापसी के लिए पात्र",
+    "CASH_ON_DELIVARY": "डिलीवरी पर कैश",
+    "INTERNATIONAL_SHIPPING": "अंतर्राष्ट्रीय शिपिंग उपलब्ध"
   },
   "ORDERS": {
     "YOUR_ORDERS": "तुम्हारे ऑर्डर",
@@ -103,14 +124,17 @@
     "YOUR_ACC": "आपका खाता"
   },
   "SIDE_BAR": {
-    "ALL_CATEGORIES": "सब वर्ग",
+    "ALL_CATEGORIES": "श्रेणियाँ",
     "CHOOSE_LANGUAGE": "भाषा चुनें",
     "CHOOSE_COUNTRY": "देश चुनें",
     "OFFER_ZONE": "प्रस्ताव क्षेत्र",
     "MY_ACCOUNT": "मेरा खाता",
     "HELP": "मदद",
     "ABOUT_US": "हमारे बारे में",
-    "CONTACT_US": "संपर्क करें"
+    "CONTACT_US": "संपर्क करें",
+    "BROWSER_BY_CAT": "वर्गानुसार खोजें",
+    "VEG": "शाकाहारी",
+    "NON_VEG": "मांसाहारी"
   },
   "FOOTER": {
     "BACK_TO_TOP": "वापस शीर्ष पर",
@@ -121,15 +145,39 @@
     "YOUR_LIST": "आपकी सूची",
     "DWNLOAD_APP_STORE": "ऐप स्टोर पर डाउनलोड करें",
     "DWNLOAD_GGL_PAY": "Google Play पर डाउनलोड करें",
-    "CONSUMER_POLICY":"उपभोक्ता नीति",
-    "PRIVACY_POLICY":"गोपनीयता और नीति",
-    "SOCIAL":"सामाजिक",
-    "FACEBOOK":"फेसबुक",
-    "TWITER":"ट्विटर",
-    "YOU_TUBE":"यूट्यूब",
-    "OUR_SUPPORTS":"हमारे समर्थन",
-    "PAYMENTS":"भुगतान",
-    "SHIPPING":"शिपिंग",
-    "CANCEL_RETURN":"रद्दीकरण और वापसी"
+    "CONSUMER_POLICY": "उपभोक्ता नीति",
+    "PRIVACY_POLICY": "गोपनीयता और नीति",
+    "SOCIAL": "सामाजिक",
+    "FACEBOOK": "फेसबुक",
+    "TWITER": "ट्विटर",
+    "YOU_TUBE": "यूट्यूब",
+    "OUR_SUPPORTS": "हमारे समर्थन",
+    "PAYMENTS": "भुगतान",
+    "SHIPPING": "शिपिंग",
+    "CANCEL_RETURN": "रद्दीकरण और वापसी"
+  },
+  "CART": {
+    "RETURN_SHOP": "दुकान पर लौटें",
+    "UPDATE_CART": "कार्ट अपडेट करें",
+    "APPLY_COUPON": "कूपन के लिए आवेदन करो",
+    "CART_TOTAL": "कुल गाड़ी",
+    "TOTAL": "कुल",
+    "PROCESS_CHECKOUT": "चेकआउट करने के लिए"
+  },
+  "WISHLIST": {
+    "WISHLIST": "इच्छा-सूची",
+    "Move_All_To_Bag": "सभी को बैग में ले जाएं",
+    "JUST_FOR_U":"सिर्फ तुम्हारे लिए"
+  },
+  "ACCOUNTS":{
+    "MANAGE_ACC":"मेरे खाते का प्रबंधन",
+    "MY_PROFILE":"मेरी प्रोफाइल",
+    "ADD_BOOK":"पता पुस्तिका",
+    "MY_RETURNS":"मेरे रिटर्न",
+    "MY_CANCELATION":"मेरे रद्दीकरण",
+    "EDIT_PROFILE": "अपनी प्रोफ़ाइल को संपादित करें",
+    "FIRST_NAME": "पहला नाम",
+    "LAST_NAME": "उपनाम",
+    "Password Changes": "पासवर्ड परिवर्तन"
   }
 }

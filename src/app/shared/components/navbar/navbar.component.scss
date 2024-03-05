@@ -1,47 +1,42 @@
 @import "src/styles/color";
 
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  height: 66px;
-  background-color: rgb(247, 247, 160);
-  color: #000000;
-  align-items: center;
-  padding: 0 2.8rem;
-  width: 100%;
-  position: fixed;
+  background-color: #ffffff;
+  position: sticky;
   top: 0;
-  z-index: 1000;
-  .navbar-left {
+  // position: absolute;
+  z-index: 1001;
+  .navbar-top {
+    width: 100vw;
+    background-color: #000000;
+    padding-right: 6rem;
+  }
+  .navbar-bottom {
     display: flex;
     align-items: center;
-
+    justify-content: space-around;
     .bhakshanam-logo {
-      width: 100px;
-      height: 80px;
-
+      width: 12.25rem;
+      height: 5.313rem;
       img {
         width: 100%;
         height: 100%;
       }
     }
-  }
-
-  .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 30px;
     .search-box {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-radius: 25px;
-      height: 41px;
-      width: 521px;
+      border-radius: 1rem;
+      height: 4.688rem;
+      width: 43.75rem;
       padding: 18px;
-      background-color: #ffffff;
-      border: 1px solid gray;
-
+      background-color: #ecebeb;
+      // border: 1px solid gray;
+      input {
+        height: 100%;
+        background-color: #ecebeb;
+      }
       .text {
         outline: none;
         border: #f0f2f5;
@@ -51,15 +46,48 @@
         color: #131921;
       }
     }
-
-    .navbar-tabs {
+    .right-container {
       display: flex;
-      gap: 30px;
-
-      .nav-tab {
+      align-items: center;
+      gap: 2rem;
+      .login {
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
         cursor: pointer;
-        &.active {
-          color: $orange-primary;
+      }
+      .cart {
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        .cart-count {
+          background-color: #db4444;
+          width: 1.25rem;
+          height: 1.25rem;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          position: absolute;
+        }
+      }
+      .watchlist{
+        display: flex;
+        justify-content: end;
+        .cart-count {
+          background-color: #db4444;
+          width: 1.25rem;
+          height: 1.25rem;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          position: absolute;
         }
       }
     }

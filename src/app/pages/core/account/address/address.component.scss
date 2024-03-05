@@ -1,88 +1,54 @@
-.address-container {
-  padding: 15px 0 20px 30px;
+.main-container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  .address-header {
+  gap: 2rem;
+  .add-new {
+    display: block;
   }
-  .main-contaianer {
+  .add-new-mubile {
+    display: none;
+  }
+  .address-container {
     display: flex;
-    gap: 25px;
-    flex-direction: column;
-    .add-address-mobile,
-    .add-address {
-      width: 90%;
-      border: 1px solid #e0e0e0;
-      padding: 10px;
-      color: orange;
-      border-radius: 4px;
-      font-weight: 700;
+    justify-content: space-between;
+    border: 1px solid #e07575;
+    // height: 6.25rem;
+    // align-items: center;
+    border-radius: 0.25rem;
+    padding: 1rem 0.5rem;
+    .left {
       display: flex;
-    }
-    .add-address-mobile {
-      display: none;
-    }
-    .addresses {
-      ::ng-deep {
-        p-fieldset {
-          margin: 0;
-          .p-fieldset-legend {
-            padding: 15px;
-          }
-          .p-component {
-            width: 90%;
-            margin: 0;
-          }
-          .p-fieldset-content {
-            padding: 3px;
-          }
-          p {
-            margin: 0;
-          }
-          .button-footer-mobile,
-          .button-footer {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-            .p-button {
-              // width: ;
-              padding: 4px;
-              width: 50px;
-              align-items: center;
-              justify-content: center;
-              height: fit-content;
-            }
-          }
-          .button-footer-mobile {
-            display: none;
-          }
+      gap: 0.5rem;
+      flex-direction: column;
+      .name {
+        display: flex;
+        gap: 2rem;
+        .text {
+          font-size: 1.25rem;
+          font-weight: 500;
+          line-height: 1.75rem;
+          letter-spacing: 0em;
+          text-align: center;
         }
+      }
+      .address {
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1.75rem;
+        letter-spacing: 0em;
+        text-align: left;
       }
     }
   }
-}
-.address-container.ar {
-  direction: rtl;
-  padding: 15px 20px 20px 0;
 }
 
 @media screen and (max-width: 580px) {
-  .address-container {
-    .main-contaianer {
-      .add-address {
-        display: none;
-      }
-      .add-address-mobile {
-        display: flex;
-      }
-      .addresses {
-        .button-footer {
-          display: none;
-        }
-        .button-footer-mobile {
-          display: flex;
-        }
-      }
+  .main-container {
+    .add-new {
+      display: none;
+    }
+    .add-new-mubile {
+      display: block;
     }
   }
 }

@@ -1,53 +1,44 @@
-<app-back-btn (click)="navgateToAccount()">{{
-  "SIDE_BAR.MY_ACCOUNT" | translate
-}}</app-back-btn>
-<div
-  class="profile-container"
-  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
->
-  <div class="profile-header">
-    <div class="text">{{ "ACCOUNT.PERSONAL_INFORMATION" | translate }}</div>
-    <div class="edit" *ngIf="!onEdit" (click)="onEdit = true">
-      {{ "BUTTON_ACTIONS.EDIT" | translate }}
-    </div>
-    <div class="cancel" *ngIf="onEdit" (click)="onEdit = false">
-      {{ "BUTTON_ACTIONS.CANCEL" | translate }}
-    </div>
-  </div>
-  <div class="main-conatainer">
+<div class="main-container">
+  <div class="heading">{{ "ACCOUNTS.EDIT_PROFILE" | translate }}</div>
+  <div class="form">
     <form [formGroup]="profileForm">
-      <div class="label-field">
-        <label for="Name">{{ "FORM_FIELD.NAME" | translate }}</label>
-        <input
-          type="text"
-          pInputText
-          formControlName="name"
-          [readOnly]="!onEdit"
-        />
+      <div class="first-last-name">
+        <div class="input-container">
+          <label for="">{{ "ACCOUNTS.FIRST_NAME" | translate }}*</label>
+          <input type="text" formControlName="name" />
+        </div>
+        <div class="input-container">
+          <label for="">{{ "ACCOUNTS.LAST_NAME" | translate }}*</label>
+          <input type="text" formControlName="name" />
+        </div>
       </div>
-      <div class="label-field">
-        <label for="Email">{{ "FORM_FIELD.EMAIL_ADDRESS" | translate }}</label>
-        <input
-          type="text"
-          pInputText
-          formControlName="email"
-          [readOnly]="!onEdit"
-        />
+      <div class="first-last-name">
+        <div class="input-container">
+          <label for="">{{ "FORGOT.ENTER_EMAIL" | translate }}</label>
+          <input type="text" formControlName="name" />
+        </div>
+        <div class="input-container">
+          <label for="">{{ "FORM_FIELD.ADDRESS" | translate }}</label>
+          <input type="text" formControlName="name" />
+        </div>
       </div>
-      <div class="label-field">
-        <label for="number">{{ "FORM_FIELD.PHONE_NUMBER" | translate }}</label>
-        <p-inputNumber
-          inputId="withoutgrouping"
-          [useGrouping]="false"
-          formControlName="number"
-          [readonly]="!onEdit"
-        >
-        </p-inputNumber>
+      <div class="password">
+        <div class="input-container">
+          <label for="">{{ "ACCOUNTS.Password Changes" | translate }}</label>
+          <input type="text" formControlName="name" />
+        </div>
+        <div class="input-container">
+          <input type="text" formControlName="name" />
+        </div>
+        <div class="input-container">
+          <input type="text" formControlName="name" />
+        </div>
       </div>
       <div class="button-footer">
-        <button pButton class="p-button-warning" *ngIf="onEdit">
-          {{ "BUTTON_ACTIONS.SUBMIT" | translate }}
-        </button>
+        <div>{{ "BUTTON_ACTIONS.CANCEL" | translate }}</div>
+        <app-primary-button>{{
+          "BUTTON_ACTIONS.SAVE" | translate
+        }}</app-primary-button>
       </div>
     </form>
   </div>

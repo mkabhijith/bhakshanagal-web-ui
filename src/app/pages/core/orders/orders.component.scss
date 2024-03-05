@@ -1,192 +1,41 @@
-.orders--container {
-  width: 100%;
+.main-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 25px;
-  gap: 15px;
-  .order-container {
+  gap: 1rem;
+  .order-card {
+    padding: 0 2.063rem;
+    border: 1px solid #e07575;
+    box-shadow: 1px 1px 10px 1px #0000000d;
+    min-height: 6.25rem;
     display: flex;
     align-items: center;
-    width: 70rem;
-    border-radius: 5px;
-    color: gray;
-    h1 {
-      font-size: 28px;
-      font-weight: 400;
-    }
-  }
-  .order-box {
-    width: 70rem;
-    height: 138px;
-    border: 1px solid transparent;
-    background-color: #ffffff;
-    border-radius: 8px;
-    display: flex;
-    box-shadow: 0 4px gray;
-    align-items: center;
+    border-radius: 0.625rem;
     justify-content: space-between;
-    padding: 0 15px;
-    .order-image-details {
+    .left {
       display: flex;
-      gap: 40px;
-      img {
-        width: 120px;
-        height: 100px;
-      }
-      .order-details {
-        width: 350px;
-        gap: 10px;
+      align-items: center;
+      gap: 4rem;
+      .image {
         display: flex;
-        flex-direction: column;
-        .details {
-          width: 150px;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          overflow: hidden;
+        gap: 2rem;
+        align-items: center;
+        img {
+          width: 3.125rem;
+          height: 2.438rem;
         }
       }
     }
-
-    .price {
-      padding-left: 40px;
-    }
-    .order-status-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .right {
       .order-status {
         display: flex;
-        align-items: center;
-        gap: 5px;
-        .status-icon {
-          background-color: red;
+        gap: 1rem;
+        .icon {
+          width: 1.25rem;
+          height: 1.25rem;
           border-radius: 50%;
-          width: 10px;
-          height: 10px;
+          background-color: #e07575;
         }
       }
-      .order-action {
-        display: flex;
-        justify-content: center;
-        ::ng-deep .p-button-raised {
-          padding: 4px;
-          color: red;
-          font-size: 12px;
-        }
-      }
-    }
-  }
-  .order-box-mobile {
-    display: none;
-    width: 30rem;
-    height: 138px;
-    border: 1px solid transparent;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px gray;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
-    .order-image {
-      img {
-        width: 120px;
-        height: 100px;
-      }
-    }
-    .details-and-order-status {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      .order-status {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        .status-icon {
-          background-color: red;
-          border-radius: 50%;
-          width: 10px;
-          height: 10px;
-        }
-      }
-    }
-  }
-}
-.orders--container.ar {
-  direction: rtl;
-  .order-box{
-
-  }
-}
-@media screen and (max-width: 1160px) {
-  .orders--container {
-    .order-container {
-      width: 50rem;
-    }
-    .order-box {
-      width: 50rem;
-    }
-  }
-}
-
-@media screen and (max-width: 820px) {
-  .orders--container {
-    .order-container {
-      width: 40rem;
-    }
-    .order-box {
-      width: 40rem;
-      .order-image-details {
-        .order-details {
-          width: 278px;
-        }
-      }
-      .price {
-        padding-left: 0;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .orders--container {
-    .order-container {
-      width: 30rem;
-    }
-    .order-box {
-      display: none;
-    }
-    .order-box-mobile {
-      display: flex;
-    }
-  }
-}
-@media screen and (max-width: 500px) {
-  .orders--container {
-    .order-container {
-      width: 25rem;
-    }
-    .order-box {
-      display: none;
-    }
-    .order-box-mobile {
-      display: flex;
-      width: 25rem;
-    }
-  }
-}
-@media screen and (max-width: 420px) {
-  .orders--container {
-    .order-container {
-      width: 20rem;
-    }
-    .order-box {
-      display: none;
-    }
-    .order-box-mobile {
-      display: flex;
-      width: 20rem;
     }
   }
 }

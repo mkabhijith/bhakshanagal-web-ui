@@ -27,11 +27,11 @@
   .account-dropdown {
     display: none;
     position: absolute;
-    top: 1.9rem;
+    top: 2.5rem;
     right: 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #ffffff;
+    background-color: #f08585;
     color: black;
     width: max-content;
 
@@ -39,7 +39,9 @@
       display: flex;
       padding: 0.5rem 1rem;
       cursor: pointer;
-
+      align-items: center;
+      // justify-content: center;
+      gap: 4px;
       &:hover {
         background-color: #f0f2f5;
       }

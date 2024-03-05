@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
@@ -32,6 +32,13 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { CarouselModule } from 'primeng/carousel';
 import { DropdownModule } from 'primeng/dropdown';
+import { RatingModule } from 'primeng/rating';
+import { CardHeaderComponent } from './card-header/card-header.component';
+import { CategoryComponent } from './category/category.component';
+import { SecoundaryButtonComponent } from './buttons/secoundary-button/secoundary-button.component';
+import { OrderCardComponent } from './order-card/order-card.component';
+import { OptionDropDownComponent } from './option-drop-down/option-drop-down.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +57,12 @@ import { DropdownModule } from 'primeng/dropdown';
     CategoryListComponent,
     FooterComponent,
     CategoryProductListComponent,
-    
+    CardHeaderComponent,
+    CategoryComponent,
+    SecoundaryButtonComponent,
+    OrderCardComponent,
+    OptionDropDownComponent,
+    ContactUsComponent,
   ],
   imports: [
     CommonModule,
@@ -70,7 +82,8 @@ import { DropdownModule } from 'primeng/dropdown';
     ScrollPanelModule,
     CarouselModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    RatingModule,
   ],
   exports: [
     NavbarComponent,
@@ -83,7 +96,12 @@ import { DropdownModule } from 'primeng/dropdown';
     BackBtnComponent,
     CategoryListComponent,
     FooterComponent,
-    CategoryProductListComponent
+    CategoryProductListComponent,
+    CardHeaderComponent,
+    CategoryComponent,
+    SecoundaryButtonComponent,
+    OrderCardComponent,
+    OptionDropDownComponent
   ],
 })
-export class SharedComponentModule { }
+export class SharedComponentModule {}

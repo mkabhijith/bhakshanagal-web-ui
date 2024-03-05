@@ -1,62 +1,69 @@
-<div
-  class="main-container"
-  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
-  *ngFor="let item of product"
->
-  <div class="image">
-    <img [src]="[item.image_file]" alt="product" />
-  </div>
-  <div class="details">
-    <div class="heading">
-      <h3>{{ item.product_name }}</h3>
-    </div>
-    <div class="price">{{ item.price | currency : "INR" }}</div>
-    <div class="quantity">{{ item.quantity }}</div>
-    <div class="description">
-      {{ item.description }}
-    </div>
-    <div class="product-status">
-      <p>{{ "PRODUCT.STATUS" | translate }} :</p>
-      <p-tag
-        [severity]="item.status"
-        [value]="item.status ? 'InStock' : 'OutOfStock'"
-      ></p-tag>
-    </div>
-    <div class="key-features">
-      <div class="shipping" *ngIf="item.cash_on_delivery">
-        <i class="pi pi-tag" style="color: slateblue"></i>
-        <div>{{ "PRODUCT.ELIGIBLE_FREE_DELIVARY" | translate }}</div>
+<div class="main-container">
+  <div class="product-comtainer" *ngFor="let item of product">
+    <div class="left">
+      <div class="images">
+        <img src="/assets/images/Noimage.jpg" alt="" />
+
+        <img src="/assets/images/Noimage.jpg" alt="" />
+
+        <img src="/assets/images/Noimage.jpg" alt="" />
       </div>
-      <div class="shipping" *ngIf="item.refundable">
-        <i class="pi pi-tag" style="color: slateblue"></i>
-        <div>{{ "PRODUCT.ELIGIBLE_FREE_RETURN" | translate }}</div>
-      </div>
-      <div class="shipping">
-        <i class="pi pi-tag" style="color: slateblue"></i>
-        <div>{{ "PRODUCT.CASH_ON_DELIVARY" | translate }}</div>
-      </div>
-      <div class="shipping">
-        <i class="pi pi-tag" style="color: slateblue"></i>
-        <div>{{ "PRODUCT.INTERNATIONAL_SHIPPING" | translate }}</div>
+      <div class="image">
+        <img src="/assets/images/Noimage.jpg" alt="" />
       </div>
     </div>
-    <div class="footer">
-      <p-button
-        severity="warning"
-        styleClass=""
-        [disabled]="!item.status"
-        (onClick)="buyNow(item.product_id)"
-      >
-        {{ "HOME.BUY_NOW" | translate }}</p-button
-      >
-      <p-button
-        class="p-button-success"
-        severity="secondary"
-        styleClass="p-button-warning"
-        icon="pi pi-shopping-cart"
-        (onClick)="addToCart(item.product_id)"
-        >{{ "HOME.CART" | translate }}</p-button
-      >
+    <div class="right">
+      <div class="product-details">
+        <div class="product-name">
+          {{ item.product_name | captlize }}
+        </div>
+        <div class="rating-status">
+          <p-rating [(ngModel)]="value" [cancel]="false"></p-rating>
+
+          |
+          <div
+            class="status"
+            [ngStyle]="{ color: item.status == 'instock' ? '#00FF66' : 'red' }"
+          >
+            {{ item.status == "instock" ? "In Stock" : "Out of Stock" }}
+          </div>
+        </div>
+        <div class="price">{{ item.price }}</div>
+        <div class="description">
+          {{ item.description }}
+        </div>
+      </div>
+      <div class="buying-details">
+        <div class="buttons">
+          <div class="quantity">
+            <div class="decrease" (click)="decreaseCount()">-</div>
+            <div class="input">{{ item.count }}</div>
+            <div class="increase" (click)="increaseCount()">+</div>
+          </div>
+          <app-primary-button (click)="buyNow()">Buy Now</app-primary-button>
+          <div class="watchlist" >
+            <img src="../../../../assets/images/love.svg" alt="" />
+          </div>
+        </div>
+        <div class="features">
+          <div class="top">
+            <img src="../../../../assets/images/icon-delivery.svg" alt="" />
+            <div class="content">
+              <div class="heading">Free Delivery</div>
+              <div class="title">
+                Enter your postal code for Delivery Availability
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <img src="../../../../assets/images/Icon-return.svg" alt="" />
+            <div class="content">
+              <div class="heading">Return Delivery</div>
+              <div class="title">Free 30 Days Delivery Returns. Details</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

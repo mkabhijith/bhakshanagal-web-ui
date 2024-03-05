@@ -1,0 +1,29 @@
+<div class="main-container">
+  <div class="title-container">
+    <img src="../../../../assets/images/red-icon.svg" alt="" />
+    <div class="title">{{ title | translate}}</div>
+  </div>
+  <div class="heading-container">
+    <div class="heading">{{ heading | translate}}</div>
+    <div class="count-down" *ngIf="date">
+      <div class="item">
+        <div class="top">{{"CARD_HEADER.DAY" | translate}}</div>
+        <div class="bottom">05</div>
+      </div>
+      <span>:</span>
+      <div class="item">
+        <div class="top">{{"CARD_HEADER.HOUR" | translate}}</div>
+        <div class="bottom">05</div>
+      </div>
+      <span>:</span>
+      <div class="item">
+        <div class="top">{{"CARD_HEADER.MINIT" | translate}}</div>
+        <div class="bottom">05</div>
+      </div>
+      <div class="item">
+        <div class="top">{{"CARD_HEADER.SECOND" | translate}}</div>
+        <div class="bottom">05</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,12 @@
   flex-direction: column;
   gap: 20px;
   .caption-container {
-    color: orange;
+    color: #db4444;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
   }
   .main-container {
     display: flex;
@@ -51,7 +56,9 @@
       }
       .button-footer {
         display: flex;
-        gap: 10px;
+        // gap: 10px;
+        width: 100%;
+        justify-content: end;
         .cancel {
           width: 11rem;
           display: flex;
@@ -70,21 +77,21 @@
     }
   }
 }
-.add-address-container.ar{
+.add-address-container.ar {
   direction: rtl;
 }
-@media screen and (max-width: 580px) {
-  .add-address-container {
-    .main-container {
-      form {
-        .input-box-container {
-          display: flex;
-          flex-direction: column;
-          .input-box {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
+// @media screen and (max-width: 580px) {
+//   .add-address-container {
+//     .main-container {
+//       form {
+//         .input-box-container {
+//           display: flex;
+//           flex-direction: column;
+//           .input-box {
+//             width: 100%;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

@@ -6,11 +6,20 @@ import { ILanguage } from 'src/app/shared/types/language.type';
 import { LanguageService } from 'src/app/shared/services/language.service';
 import { TitleService } from 'src/app/shared/services/title/title.service';
 import { AddressService } from '../account/address/address.service';
-import { IAddressList } from 'src/app/shared/types/address.type';
+import { Iproduct } from '../home/home.type';
+import { Router } from '@angular/router';
 
-import jwt_decode from 'jwt-decode'; // Import jwt-decode library
-// import * as jwt_decode_ from 'jwt-decode';
 declare var Razorpay: any;
+
+export interface IproductCart {
+  product_id: number;
+  product_name: string;
+  price: number;
+  quantity: number;
+  image_file: null | string;
+  count: number;
+  totalPrice: number;
+}
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -21,20 +30,29 @@ export class CartComponent implements OnInit, OnDestroy {
     private cartService: CartService,
     private languageService: LanguageService,
     private titleSerice: TitleService,
-    private addressService: AddressService
+    private addressService: AddressService,
+    private storageService: StorageService,
+    private router: Router
   ) {}
+
+  headers = ['PRODUCT.PRODUCT', 'PRODUCT.PRICE', 'PRODUCT.Quantity', 'PRODUCT.Subtotal'];
 
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
   cartListSubscription!: Subscription;
-  cartList: any[] = [];
-  addrerssList: IAddressList[] = [];
+  cartList: IproductCart[] = [];
   totalPrice!: number;
+  payTotal!: number;
   ngOnInit(): void {
     this.titleSerice.changeTitle('Cart');
     this.cartListSubscription = this.cartService.cartList$.subscribe({
       next: (res) => {
         this.cartList = res;
+        this.cartList.forEach((item) => {
+          item.count = 1;
+          item.totalPrice = item.price * item.count;
+          this.sumCart();
+        });
       },
     });
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
@@ -42,12 +60,8 @@ export class CartComponent implements OnInit, OnDestroy {
         this.currentLanguage = lang;
       },
     });
-    this.addrerssList = this.addressService.getAddress();
+    // this.addrerssList = this.addressService.getAddress();
 
-    this.cartList.forEach((item) => {
-      item.count = 1;
-      item.totalPrice = item.price;
-    });
     this.sumCart();
   }
   ngOnDestroy(): void {
@@ -61,17 +75,19 @@ export class CartComponent implements OnInit, OnDestroy {
   }
   increaseCount(id: number) {
     this.cartList.forEach((cart) => {
-      if (cart.id === id) {
-        cart.count++;
-        cart.totalPrice = cart.price * cart.count;
+      if (cart.product_id === id) {
+        if (cart.count) {
+          cart.count++;
+          cart.totalPrice = cart.price * cart.count;
+        }
       }
     });
     this.sumCart();
   }
   decreseCount(id: number) {
     this.cartList.forEach((cart) => {
-      if (cart.id === id) {
-        if (cart.count > 1) {
+      if (cart.product_id === id) {
+        if (cart.count && cart.count > 1) {
           cart.count--;
           cart.totalPrice = cart.price * cart.count;
         }
@@ -85,58 +101,17 @@ export class CartComponent implements OnInit, OnDestroy {
       (sum, product) => sum + product.totalPrice,
       0
     );
+    this.payTotal = this.totalPrice + 100;
   }
 
-  buy() {
-    const RozerPayOptions = {
-      description: 'sample',
-      currency: 'INR',
-      amount: this.totalPrice * 100,
-      name: 'sai',
-      Image: '',
-      key: 'rzp_test_az7fEZxXoBzThm',
-      prefills: {
-        name: 'sai krishna',
-        email: 'saigmail.com',
-        phone: '98989898',
-      },
-      theme: {
-        color: 'red',
-      },
-      modal: {
-        ondismiss: () => {
-          console.log('dissmissed');
-        },
-      },
-    };
-    const successCallback = (paymentId: any) => {
-      console.log(paymentId);
-      const payload = {
-        amount: '10',
-        currency: 'INR',
-        receipt: '',
-        notes: {
-          description: 'Best food',
-          name: 'Laddu',
-          ingredients: 'sweet',
-        },
-      }
-      this.cartService.createOrder().subscribe({
-        next: (res) => {
-          console.log('order res', res);
-        },
-      });
-    };
-
-    const failureCallback = (e: any) => {
-      console.log(e,"cancel");
-
-    };
-    this.cartService.createOrder().subscribe({
-      next: (res) => {
-        console.log('order res', res);
-      },
-    });
-    Razorpay.open(RozerPayOptions, successCallback, failureCallback);
+ 
+  returnToShop() {
+    this.router.navigate(['/home']);
+  }
+  checkOut(){
+    const myArray = this.cartList;
+    const jsonArray = JSON.stringify(myArray);
+    const encodedArray = encodeURIComponent(jsonArray);
+    this.router.navigate(['/checkout' ], { queryParams: { arrayParam: encodedArray } })
   }
 }

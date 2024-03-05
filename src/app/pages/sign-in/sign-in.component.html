@@ -1,6 +1,8 @@
 <app-spinner *ngIf="loginInProgress"></app-spinner>
 <div class="login-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
-  <div class="left-login"></div>
+  <div class="left-login">
+    <img src="../../../assets/images/dl.beatsnoop 1.svg" alt="" />
+  </div>
   <div class="right-login">
     <div class="error-container" *ngIf="error || error1">
       <i class="pi pi-exclamation-triangle"></i>
@@ -10,29 +12,22 @@
       <div class="error2" *ngIf="error1">{{ errorMessage }}</div>
     </div>
     <form class="sub-right" [formGroup]="loginForm" (ngSubmit)="loginUser()">
-      <h1>LOG-IN</h1>
+      <h1>Log in to Bhakshanagal</h1>
+      <span class="title">Enter your details below</span>
       <div class="input-container">
-        <div class="label">
-          <label for="email">{{
-            "FORM_FIELD.EMAIL_ADDRESS" | translate
-          }}</label>
-        </div>
         <input
           type="email"
           class="input-field"
-          placeholder="email@gmail.com"
+          placeholder="Email or Phone Number"
           formControlName="email"
         />
       </div>
       <div class="input-container">
-        <div class="label">
-          <label for="password">{{ "FORM_FIELD.PASSWORD" | translate }}</label>
-        </div>
         <div class="password-container">
           <input
             [type]="showPassword ? 'text' : 'password'"
             class="password"
-            placeholder="*********"
+            placeholder="Password"
             formControlName="password"
           />
           <i
@@ -42,15 +37,14 @@
         </div>
       </div>
       <div class="checkbox-container">
-        <div>
-          <input type="checkbox" id="checkbox" />
-          <label for="checkbox">{{'LOGIN.KEEP_ME_LOGGED_IN'|translate}}</label>
+        <app-primary-button type="submit">{{
+          "LOGIN.LOG_IN" | translate
+        }}</app-primary-button>
+        <div class="forgot" routerLink="/forgot-password">
+          {{ "LOGIN.FORGET_PASSWORD" | translate }}
         </div>
-        <div class="forgot" routerLink="/forgot-password">{{'LOGIN.FORGET_PASSWORD'|translate}}</div>
       </div>
-      <app-primary-button type="submit">{{
-        "LOGIN.LOG_IN" | translate
-      }}</app-primary-button>
+
       <span
         >{{ "LOGIN.DNT_HAVE_AN_ACC" | translate }}
         <a routerLink="/signup">{{ "LOGIN.REGISTER" | translate }}</a>

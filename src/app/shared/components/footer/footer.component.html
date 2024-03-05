@@ -1,114 +1,33 @@
 <div class="main-container">
-  <div class="back-to-top" (click)="backToTop()">
-    <h4 class="back">{{ "FOOTER.BACK_TO_TOP" | translate }}</h4>
-  </div>
   <div class="footer-container">
-    <div class="get-know">
-      <div class="heading">{{ "FOOTER.GET_KNOW_US" | translate }}</div>
-      <div
-        class="text"
-        *ngFor="let item of getItKnowUS"
-        [routerLink]="[item.route]"
-      >
+    <div class="bhakshanam-container">
+      <div class="bhkshanam">Bhashanagal</div>
+      <div class="subscribe">Subscribe</div>
+      <div class="item">Get 10% off your first order</div>
+    </div>
+    <div class="items-container" *ngFor="let item of itemsList">
+      <div class="heading">{{ item.heading | translate }}</div>
+      <div class="item" *ngFor="let item of item.items">
         {{ item.item | translate }}
       </div>
     </div>
-    <div class="shop-with-us">
-      <div class="heading">{{ "FOOTER.SHOP_WITH_US" | translate }}</div>
-      <div
-        class="text"
-        *ngFor="let item of shopWithUs"
-        [routerLink]="[item.route]"
-      >
-        {{ item.item | translate }}
-      </div>
-    </div>
-    <div class="shop-with-us">
-      <div class="heading">{{ "FOOTER.CONSUMER_POLICY" | translate }}</div>
-      <div
-        class="text"
-        *ngFor="let item of consumerPolicy"
-        [routerLink]="[item.route]"
-      >
-        {{ item.item | translate }}
-      </div>
-    </div>
-    <div class="shop-with-us">
-      <div class="heading">{{ "FOOTER.SOCIAL" | translate }}</div>
-      <div
-        class="text"
-        *ngFor="let item of socialArray"
-        [routerLink]="[item.route]"
-      >
-        {{ item.item | translate }}
-      </div>
-    </div>
-    <div class="shop-with-us">
-      <div class="heading">{{ "FOOTER.OUR_SUPPORTS" | translate }}</div>
-      <div
-        class="text"
-        *ngFor="let item of supportsArray"
-        [routerLink]="[item.route]"
-      >
-        {{ item.item | translate }}
-      </div>
-    </div>
-    <div class="mobile-app">
-      <div class="heading">{{ "FOOTER.DWNLD_DRIVE_TODAY" | translate }}</div>
-      <div class="links">
-        <div class="app-store">
-          <i class="pi pi-apple"></i>
-          <div class="text">{{ "FOOTER.DWNLOAD_APP_STORE" | translate }}</div>
+    <div class="items-container">
+      <div class="heading">Download App</div>
+      <div class="download">
+        <div class="qr-download">
+          <div class="qr-code">
+            <img src="/assets/images/Qrcode 1.svg" alt="" />
+          </div>
+          <div class="stores">
+            <img src="/assets/images/google-play-store-logo-.svg" alt="" />
+            <img src="/assets/images/download-appstore.svg" alt="" />
+          </div>
         </div>
-        <div class="play-store">
-          <i class="pi pi-android"></i>
-          <div class="text">{{ "FOOTER.DWNLOAD_GGL_PAY" | translate }}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-    <div class="logo">
-      <img src="/assets/images/logo_6-removebg-preview.png" alt="" />
-    </div>
-    <div
-      class="language-selector-container"
-      (clickElsewhere)="onHideDropdown()"
-    >
-      <!-- [ngClass]="{ ar: currentLanguage.code === 'ar' }" -->
-
-      <div class="language-container" (click)="onDropdown()">
-        <i class="pi pi-globe"></i>
-        <div class="language-selected">
-          {{ currentLanguage.name | translate }}
-        </div>
-      </div>
-
-      <div class="country-container">
-        <div class="icon rk-caret-down"></div>
-        <div class="flag" (click)="onCountryDropdown()">
-          <img [src]="currentCountry.flag" alt="language" />
-          <div>{{ currentCountry.name | translate }}</div>
-        </div>
-      </div>
-      <div class="languages-dropdown" [ngClass]="{ active: showLanguage }">
-        <div
-          class="available-language"
-          *ngFor="let language of currentCountry.languages"
-          (click)="onLanguageChange(language.id)"
-        >
-          <div class="name">{{ language.name | translate }}</div>
-        </div>
-      </div>
-
-      <div class="countrys-dropdown" [ngClass]="{ active: showCountry }">
-        <div
-          class="available-country"
-          *ngFor="let country of countryArray"
-          (click)="onCountryChange(country.id)"
-        >
-          <div class="flag"><img [src]="country.flag" /></div>
-          <div class="name">{{ country.name | translate }}</div>
+        <div class="social-medias">
+          <img src="/assets/images/Icon-Facebook.svg" alt="" />
+          <img src="/assets/images/icon-instagram.svg" alt="" />
+          <img src="/assets/images/Icon-Linkedin.svg" alt="" />
+          <img src="/assets/images/Icon-Twitter.svg" alt="" />
         </div>
       </div>
     </div>

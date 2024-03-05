@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 import { ILanguage } from '../../types/language.type';
 import { IProducts } from '../../types/product.type';
 import { IProductList, Iproduct } from 'src/app/pages/core/home/home.type';
+import { WatchlistService } from 'src/app/pages/core/wishlist/watchlist.service';
 
 @Component({
   selector: 'app-category-product-list',
@@ -19,11 +20,13 @@ import { IProductList, Iproduct } from 'src/app/pages/core/home/home.type';
   styleUrls: ['./category-product-list.component.scss'],
 })
 export class CategoryProductListComponent implements OnInit, OnDestroy {
-  @Input() dropdownItems!:  Iproduct[];
+  @Input() dropdownItems!: Iproduct[];
+  @Input() intialCardCount !:any;
   constructor(
     private cartService: CartService,
     private route: Router,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private watchListService : WatchlistService
   ) {}
 
   languageSubscription!: Subscription;
@@ -31,12 +34,12 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
   limit!: number;
   intialLimit!: number;
   itemsToShow: Iproduct[] = [];
-  showMoreText = 'Show More';
+  showMoreText = 'HOME.SHOW_MORE';
   screenWidth!: number;
   isSmallScreen!: boolean;
   isMediumScreen!: boolean;
   isLargeScreen!: boolean;
-
+  value = 5;
   @HostListener('window:resize', ['$event'])
   ngOnInit(): void {
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
@@ -58,7 +61,7 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
     this.isMediumScreen = this.screenWidth >= 600 && this.screenWidth < 1210;
     this.isLargeScreen = this.screenWidth >= 1210;
     if (this.isLargeScreen) {
-      this.intialLimit = 4;
+      this.intialLimit = this.intialCardCount;
       this.limit = this.intialLimit;
     } else if (this.isMediumScreen) {
       this.intialLimit = 3;
@@ -73,9 +76,9 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
     this.itemsToShow = this.dropdownItems.slice(0, this.limit);
   }
   toggleShowMore(event: Event) {
-    document
-      .querySelector('#custom-field-interface')
-      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // document
+    //   .querySelector('#custom-field-interface')
+    //   ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     event.preventDefault();
     this.limit =
@@ -83,7 +86,7 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
         ? this.intialLimit
         : this.dropdownItems.length;
     this.showMoreText =
-      this.showMoreText === 'Show More' ? 'Show Less' : 'Show More';
+      this.showMoreText === 'HOME.SHOW_MORE' ? 'HOME.SHOW_LESS' : 'View All Products';
     this.toggleItems();
   }
 
@@ -91,6 +94,11 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
     this.cartService.saveCart(id);
   }
   navigateProduct(id: number) {
+    console.log('sjsj');
+    
     this.route.navigate(['/product', id]);
+  }
+  addToWatchList(id: number) {
+    this.watchListService.saveWatchList(id);
   }
 }

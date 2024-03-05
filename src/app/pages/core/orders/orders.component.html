@@ -1,65 +1,16 @@
-<div
-  class="orders--container"
-  [ngClass]="{ ar: currentLanguage.code === 'ar' }"
->
-  <p-toast ></p-toast>
-  <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
-  <div class="order-container">
-    <div class="heading">
-      <h1>{{ "ORDERS.YOUR_ORDERS" | translate }}</h1>
-    </div>
-  </div>
-  <div class="order-box" *ngFor="let item of products">
-    <div class="order-image-details" (click)="orderDetails(item.id)">
+<div class="main-container">
+  <div class="order-card" *ngFor="let item of products" (click)="orderDetails(1)">
+    <div class="left">
       <div class="image">
-        <img [src]="item.imageUrl" alt="" />
+        <img src="../../../../assets/images/g27cq4-500x500 1.svg" alt="" />
+        <div class="name">Cake</div>
       </div>
-      <div class="order-details">
-        <div class="details">
-          {{ item.productName }}
-        </div>
-        <div class="quantity">{{ item.quantity }}</div>
-      </div>
+      <div class="price">$650</div>
     </div>
-    <div class="price">{{ item.price | currency : "INR" }}</div>
-    <div class="order-status-container">
+    <div class="right">
       <div class="order-status">
-        <div class="status-icon"></div>
-        <span>{{ "ORDERS.ORDER_PLACED" | translate }}</span>
-      </div>
-      <div class="order-action">
-        <p-button
-          (onClick)="cancelOrder(item.id)"
-          styleClass="p-button-raised p-button-text p-button-warning"
-          >{{ "BUTTON_ACTIONS.CANCEL_ORDER" | translate }}</p-button
-        >
-      </div>
-    </div>
-  </div>
-
-  <!-- mobile design start here -->
-
-  <div
-    class="order-box-mobile"
-    *ngFor="let item of products"
-    (click)="orderDetails(item.id)"
-  >
-    <div class="order-image">
-      <img [src]="item.imageUrl" alt="" />
-    </div>
-    <div class="details-and-order-status">
-      <div class="order-status">
-        <div class="status-icon"></div>
-        <span>order placed</span>
-      </div>
-      <div class="details">
-        {{ item.productName }}
-      </div>
-      <div class="price">{{ item.price | currency : "INR" }}</div>
-    </div>
-    <div class="order-action">
-      <div class="icon">
-        <i class="pi pi-angle-right"></i>
+        <div class="icon"></div>
+        <div class="text">Delivery expected by Tue Feb 20</div>
       </div>
     </div>
   </div>

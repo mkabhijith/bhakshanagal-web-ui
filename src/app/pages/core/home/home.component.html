@@ -1,15 +1,38 @@
+<app-spinner *ngIf="loginInProgress"></app-spinner>
 <div class="main-container" [ngClass]="{ ar: currentLanguage.code === 'ar' }">
   <div class="offer-banner" (click)="navigateToOffers()">
     <img class="img" [src]="getPic()" alt="" />
   </div>
-  <div class="title">{{ "HOME.SWEETS" | translate }}</div>
+  <app-card-header
+    heading="HOME.FLASH_SALE"
+    title="HOME.TODAYS"
+    date="date"
+  ></app-card-header>
+
   <app-category-product-list
     [dropdownItems]="productList[0].crunchy"
+    intialCardCount="4"
+  ></app-category-product-list>
+  <p-divider></p-divider>
+  <app-card-header
+    heading="SIDE_BAR.BROWSER_BY_CAT"
+    title="SIDE_BAR.ALL_CATEGORIES"
+  ></app-card-header>
+  <app-category></app-category>
+  <app-card-header
+    heading="HOME.OUR_PRODUCTS"
+    title="HOME.EXPLORE_PRODUCTS"
+  ></app-card-header>
+  <app-category-product-list
+    [dropdownItems]="productList[0].crunchy"
+    intialCardCount="8"
   ></app-category-product-list>
 
-  <!-- <div class="title">{{ "HOME.CRISPIES" | translate }}</div>
-  <app-category-product-list [dropdownItems]="list"></app-category-product-list>
-
-  <div class="title">{{ "HOME.CHIPS" | translate }}</div>
-  <app-category-product-list [dropdownItems]="list"></app-category-product-list> -->
+  <div class="services-container">
+    <div class="services" *ngFor="let item of serviceList">
+      <img src="{{ item.image }}" alt="" />
+      <div class="heading">{{ item.heading | translate }}</div>
+      <div class="title">{{ item.title | translate }}</div>
+    </div>
+  </div>
 </div>

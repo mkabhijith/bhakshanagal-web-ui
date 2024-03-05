@@ -12,7 +12,7 @@
     "SIGN_UP": "Sign Up"
   },
   "FORGOT": {
-    "ENTER_EMAIL": "Enter Email",
+    "ENTER_EMAIL": "Email",
     "GET_OTP": "Get OTP",
     "ENTER_OTP": "Enter OTP",
     "VERIFY": "VERIFY",
@@ -37,8 +37,25 @@
     "SWEETS": "Sweets",
     "CRISPIES": "crispies",
     "CHIPS": "chips",
-    "SHOW_MORE": "Show More",
-    "SHOW_LESS":"Show Less"
+    "SHOW_MORE": "View All Products",
+    "SHOW_LESS": "Show Less",
+    "ADD_CART": "Add To Cart",
+    "TODAYS": "Todays",
+    "FLASH_SALE": "Flash sales",
+    "OUR_PRODUCTS": "Our Products",
+    "EXPLORE_PRODUCTS": "Explore Our Products",
+    "FAST_DELIVERY": "FREE AND FAST DELIVERY",
+    "FREE_DELIVARY_TITLE": "Free delivery for all orders over $140",
+    "CUSTOMER_SERVICE": "24/7 CUSTOMER SERVICE",
+    "CONSUMER_SERVICE_TITLE": "Friendly 24/7 customer support",
+    "MONEY_BACK": "MONEY BACK GUARANTEE",
+    "MONEY_BACK_TITLE": "We reurn money within 30 days"
+  },
+  "CARD_HEADER": {
+    "DAY": "Days",
+    "HOUR": "Hours",
+    "MINIT": "Minutes",
+    "SECOND": "Seconds"
   },
   "FORM_FIELD": {
     "EMAIL_ADDRESS": "Email Address",
@@ -58,15 +75,15 @@
     "HOME": "Home",
     "OFFICE": "Office",
     "OTHER": "Other",
-    "ADD_ADDRESS": "Add Address",
+    "ADD_ADDRESS": "Add New Address",
     "EDIT_ADDRESS": "Edit Address"
   },
   "BUTTON_ACTIONS": {
-    "SAVE": "Save",
+    "SAVE": "Save Changes",
     "CANCEL": "Cancel",
     "EDIT": "Edit",
     "DELETE": "Delete",
-    "ADD_NEW_ADDRESS": "Add a new address",
+    "ADD_NEW_ADDRESS": "New address",
     "LOG_OUT": "Log Out",
     "DELIVER": "DELIVER",
     "ADD_NEW": "ADD NEW",
@@ -75,13 +92,17 @@
     "SUBMIT": "Submit"
   },
   "PRODUCT": {
+    "PRODUCT": "Product",
+    "PRICE": "Price",
+    "Quantity": "Quantity",
+    "Subtotal": "Subtotal",
     "STATUS": "Status",
     "OUT_OF_STOCK": "OutOfStock",
     "IN_STOCK": "InStock",
-    "ELIGIBLE_FREE_DELIVARY":"Eligible for free delivary",
-    "ELIGIBLE_FREE_RETURN":"Eligible for Return and refund",
-    "CASH_ON_DELIVARY":"Cash on delivery available",
-    "INTERNATIONAL_SHIPPING":"international shipping available"
+    "ELIGIBLE_FREE_DELIVARY": "Eligible for free delivary",
+    "ELIGIBLE_FREE_RETURN": "Eligible for Return and refund",
+    "CASH_ON_DELIVARY": "Cash on delivery available",
+    "INTERNATIONAL_SHIPPING": "international shipping available"
   },
   "ORDERS": {
     "YOUR_ORDERS": "Your Orders",
@@ -104,33 +125,61 @@
     "YOUR_ACC": "Your Account"
   },
   "SIDE_BAR": {
-    "ALL_CATEGORIES": "All categories",
+    "ALL_CATEGORIES": "Categories",
     "CHOOSE_LANGUAGE": "Choose Language",
     "CHOOSE_COUNTRY": "Choose Country",
     "OFFER_ZONE": "Offer zone",
     "MY_ACCOUNT": "My Account",
     "HELP": "help",
     "ABOUT_US": "About us",
-    "CONTACT_US": "Contact us"
+    "CONTACT_US": "Contact",
+    "BROWSER_BY_CAT": "Browse By Category",
+    "VEG": "Veg",
+    "NON_VEG": "Non Veg"
   },
   "FOOTER": {
     "BACK_TO_TOP": "Back to Top",
     "GET_KNOW_US": "Get It Know Us",
-    "SHOP_WITH_US": "Shop With Us",
+    "SHOP_WITH_US": "Shop",
     "DWNLD_DRIVE_TODAY": "Download the driveNow app today",
     "YOUR_ADD": "Your Address",
     "YOUR_LIST": "Your List",
     "DWNLOAD_APP_STORE": "download on app store",
     "DWNLOAD_GGL_PAY": "download  on google play",
-    "CONSUMER_POLICY":"CONSUMER POLICY",
-    "PRIVACY_POLICY":"privacy and policy",
-    "SOCIAL":"SOCIAL",
-    "FACEBOOK":"Facebook",
-    "TWITER":"Twitter",
-    "YOU_TUBE":"You Tube",
-    "OUR_SUPPORTS":"Our supports",
-    "PAYMENTS":"Payments",
-    "SHIPPING":"Shipping",
-    "CANCEL_RETURN":"Cancellation & Return"
+    "CONSUMER_POLICY": "CONSUMER POLICY",
+    "PRIVACY_POLICY": "privacy and policy",
+    "SOCIAL": "SOCIAL",
+    "FACEBOOK": "Facebook",
+    "TWITER": "Twitter",
+    "YOU_TUBE": "You Tube",
+    "OUR_SUPPORTS": "Support",
+    "PAYMENTS": "Payments",
+    "SHIPPING": "Shipping",
+    "CANCEL_RETURN": "Cancellation & Return"
+  },
+  "CART": {
+    "RETURN_SHOP": "Return To Shop",
+    "UPDATE_CART": "Update Cart",
+    "APPLY_COUPON": "Apply Coupon",
+    "CART_TOTAL": "Cart Total",
+    "TOTAL": "Total",
+    "PROCESS_CHECKOUT": "Procees to checkout"
+  },
+  "WISHLIST": {
+    "WISHLIST": "Wishlist",
+    "Move_All_To_Bag": "Move All To Bag",
+    "ADD_CART": "Add To Cart",
+    "JUST_FOR_U": "Just For You"
+  },
+  "ACCOUNTS": {
+    "MANAGE_ACC": "Manage My Account",
+    "MY_PROFILE": "My Profile",
+    "ADD_BOOK": "Address Book",
+    "MY_RETURNS": "My Returns",
+    "MY_CANCELATION": "My Cancellations",
+    "EDIT_PROFILE": "Edit Your Profile",
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "Password Changes": "Password Changes"
   }
 }

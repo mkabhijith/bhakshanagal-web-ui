@@ -37,7 +37,24 @@
     "CRISPIES": "ശാന്തമാക്കല്",
     "CHIPS": "ചിപ്പുകൾ",
     "SHOW_MORE": "കൂടുതൽ കാണിക്കുക",
-    "SHOW_LESS":"കുറച്ച് കാണിക്കുക"
+    "SHOW_LESS": "കുറച്ച് കാണിക്കുക",
+    "ADD_CART": "കാർട്ടിലേക്ക് ചേർക്കുക",
+    "TODAYS": "ഇന്നങ്ങൾ",
+    "FLASH_SALE": "ഫ്ലാഷ് വിൽപ്പന",
+    "OUR_PRODUCTS":"ഞങ്ങളുടെ ഉല്പന്നങ്ങൾ",
+    "EXPLORE_PRODUCTS":"ഞങ്ങളുടെ ഉൽപ്പന്നങ്ങൾ പര്യവേക്ഷണം ചെയ്യുക",
+    "FAST_DELIVERY":"സ and ജന്യവും വേഗത്തിലുള്ളതുമായ ഡെലിവറി",
+    "FREE_DELIVARY_TITLE":"000 140 ന് മുകളിലുള്ള എല്ലാ ഓർഡറുകൾക്കുമായി സ delicy ജന്യ ഡെലിവറി",
+    "CUSTOMER_SERVICE":"24/7 ഉപഭോക്തൃ സേവനം",
+    "CONSUMER_SERVICE_TITLE":"സ friendly ഹാർദ്ദപരമായ 24/7 ഉപഭോക്തൃ പിന്തുണ",
+    "MONEY_BACK":"പണം തിരികെ ഗ്യാരണ്ടി",
+    "MONEY_BACK_TITLE":"ഞങ്ങൾ 30 ദിവസത്തിനുള്ളിൽ പണം വീണ്ടും ആവർത്തിക്കുന്നു" 
+  },
+  "CARD_HEADER":{
+    "DAY":"ദിവസങ്ങളിൽ",
+    "HOUR":"മണിക്കൂറുകൾ",
+    "MINIT":"മിനിറ്റ്",
+    "SECOND":"സെക്കൻഡ്"
   },
   "FORM_FIELD": {
     "EMAIL_ADDRESS": "ഇമെയിൽ വിലാസം",
@@ -74,13 +91,17 @@
     "SUBMIT": "കീഴടങ്ങുക"
   },
   "PRODUCT": {
+    "PRODUCT": "ഉത്പന്നം",
+    "PRICE":"വില",
+    "Quantity":"അളവ്",
+    "Subtotal":"കണക്റ്റോട്ടാല്",
     "STATUS": "പദവി",
     "OUT_OF_STOCK": "സ്റ്റോക്കില്ല",
     "IN_STOCK": "സ്റ്റോക്കുണ്ട്",
-    "ELIGIBLE_FREE_DELIVARY":"സ al ജന്യ പെലിവറിക്ക് യോഗ്യത",
-    "ELIGIBLE_FREE_RETURN":"മടക്കത്തിനും റീഫണ്ടിനും യോഗ്യത",
-    "CASH_ON_DELIVARY":"ഡെലിവറിയിൽ പണം ലഭ്യമാണ്",
-    "INTERNATIONAL_SHIPPING":"അന്താരാഷ്ട്ര ഷിപ്പിംഗ് ലഭ്യമാണ്"
+    "ELIGIBLE_FREE_DELIVARY": "സ al ജന്യ പെലിവറിക്ക് യോഗ്യത",
+    "ELIGIBLE_FREE_RETURN": "മടക്കത്തിനും റീഫണ്ടിനും യോഗ്യത",
+    "CASH_ON_DELIVARY": "ഡെലിവറിയിൽ പണം ലഭ്യമാണ്",
+    "INTERNATIONAL_SHIPPING": "അന്താരാഷ്ട്ര ഷിപ്പിംഗ് ലഭ്യമാണ്"
   },
   "ORDERS": {
     "YOUR_ORDERS": "നിങ്ങളുടെ ഓർഡറുകൾ",
@@ -103,14 +124,17 @@
     "YOUR_ACC": "നിങ്ങളുടെ അക്കൗണ്ട്"
   },
   "SIDE_BAR": {
-    "ALL_CATEGORIES": "എല്ലാ വിഭാഗങ്ങളും",
+    "ALL_CATEGORIES": "വിഭാഗങ്ങൾ",
     "CHOOSE_LANGUAGE": "ഭാഷ തിരഞ്ഞെടുക്കുക",
     "CHOOSE_COUNTRY": "രാജ്യം തിരഞ്ഞെടുക്കുക",
     "OFFER_ZONE": "ഓഫർ സോൺ",
     "MY_ACCOUNT": "എന്റെ അക്കൗണ്ട്",
     "HELP": "സഹായം",
     "ABOUT_US": "ഞങ്ങളേക്കുറിച്ച്",
-    "CONTACT_US": "ഞങ്ങളെ സമീപിക്കുക"
+    "CONTACT_US": "ഞങ്ങളെ സമീപിക്കുക",
+    "BROWSER_BY_CAT":"വിഭാഗം അനുസരിച്ച് ബ്ര rowse സ് ചെയ്യുക",
+    "VEG":"വെയിച്ചു",
+    "NON_VEG":"വെജ് നോൺ"
   },
   "FOOTER": {
     "BACK_TO_TOP": "മുകളിലേയ്ക്ക്",
@@ -121,15 +145,39 @@
     "YOUR_LIST": "നിങ്ങളുടെ പട്ടിക",
     "DWNLOAD_APP_STORE": "അപ്ലിക്കേഷൻ സ്റ്റോറിൽ ഡൗൺലോഡുചെയ്യുക",
     "DWNLOAD_GGL_PAY": "Google Play- ൽ ഡൗൺലോഡുചെയ്യുക",
-    "CONSUMER_POLICY":"ഉപഭോക്തൃ നയം",
-    "PRIVACY_POLICY":"സ്വകാര്യതയും നയവും",
-    "SOCIAL":"സാമൂഹിക",
-    "FACEBOOK":"ഫേസ്ബുക്ക്",
-    "TWITER":"Twitter",
-    "YOU_TUBE":"You ട്യൂബ്",
-    "OUR_SUPPORTS":"ഞങ്ങളുടെ പിന്തുണ",
-    "PAYMENTS":"പേയ്മെന്റുകൾ",
-    "SHIPPING":"ഷിപ്പിംഗ്",
-    "CANCEL_RETURN":"റദ്ദാക്കലും മടക്കയും"
+    "CONSUMER_POLICY": "ഉപഭോക്തൃ നയം",
+    "PRIVACY_POLICY": "സ്വകാര്യതയും നയവും",
+    "SOCIAL": "സാമൂഹിക",
+    "FACEBOOK": "ഫേസ്ബുക്ക്",
+    "TWITER": "Twitter",
+    "YOU_TUBE": "You ട്യൂബ്",
+    "OUR_SUPPORTS": "ഞങ്ങളുടെ പിന്തുണ",
+    "PAYMENTS": "പേയ്മെന്റുകൾ",
+    "SHIPPING": "ഷിപ്പിംഗ്",
+    "CANCEL_RETURN": "റദ്ദാക്കലും മടക്കയും"
+  },
+  "CART": {
+    "RETURN_SHOP": "കടയിലേക്ക് മടങ്ങുക",
+    "UPDATE_CART": "അപ്ഡേറ്റ് കാർട്ട്",
+    "APPLY_COUPON": "കൂപ്പൺ പ്രയോഗിക്കുക",
+    "CART_TOTAL": "കാർട്ട് ആകെ",
+    "TOTAL": "മൊത്തമായ",
+    "PROCESS_CHECKOUT": "ചെക്ക് out ട്ടിലേക്കുള്ള അനുകൾ"
+  },
+  "WISHLIST": {
+    "WISHLIST": "വിഷ്ലിസ്റ്റ്",
+    "Move_All_To_Bag": "എല്ലാം ബാഗിലേക്ക് നീക്കുക",
+    "JUST_FOR_U":"നിങ്ങൾക്കായി മാത്രം"
+  },
+  "ACCOUNTS":{
+    "MANAGE_ACC":"എന്റെ അക്കൗണ്ട് നിയന്ത്രിക്കുക",
+    "MY_PROFILE":"എന്റെ പ്രൊഫൈൽ",
+    "ADD_BOOK":"മേൽവിലാസ പുസ്തകം",
+    "MY_RETURNS":"എന്റെ മടക്കം",
+    "MY_CANCELATION":"റദ്ദാക്കലുകൾ",
+    "EDIT_PROFILE": "നിങ്ങളുടെ പ്രൊഫൈൽ എഡിറ്റുചെയ്യുക",
+    "FIRST_NAME": "പേരിന്റെ ആദ്യഭാഗം",
+    "LAST_NAME": "പേരിന്റെ അവസാന ഭാഗം",
+    "Password Changes": "പാസ്വേഡ് മാറ്റങ്ങൾ"
   }
 }

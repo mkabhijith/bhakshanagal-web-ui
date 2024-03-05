@@ -37,7 +37,24 @@
     "CRISPIES": "مقرمشات",
     "CHIPS": "رقائق",
     "SHOW_MORE": "أظهر المزيد",
-    "SHOW_LESS":"تظهر أقل"
+    "SHOW_LESS": "تظهر أقل",
+    "ADD_CART": "أضف إلى السلة",
+    "TODAYS": "اليوم",
+    "FLASH_SALE": "مبيعات فلاش",
+    "OUR_PRODUCTS": "منتجاتنا",
+    "EXPLORE_PRODUCTS": "استكشف منتجاتنا",
+    "FAST_DELIVERY": "توصيل مجاني وسريع",
+    "FREE_DELIVARY_TITLE": "توصيل مجاني لجميع الطلبات التي تزيد عن 140 دولارًا",
+    "CUSTOMER_SERVICE": "خدمة العملاء 24/7",
+    "CONSUMER_SERVICE_TITLE": "دعم العملاء على مدار الساعة طوال أيام الأسبوع",
+    "MONEY_BACK": "ضمان استعادة الاموال",
+    "MONEY_BACK_TITLE": "نعيد المال في غضون 30 يومًا"
+  },
+  "CARD_HEADER": {
+    "DAY": "أيام",
+    "HOUR": "ساعات",
+    "MINIT": "دقائق",
+    "SECOND": "ثوان"
   },
   "FORM_FIELD": {
     "EMAIL_ADDRESS": "عنوان البريد الإلكتروني",
@@ -74,13 +91,17 @@
     "SUBMIT": "يُقدِّم"
   },
   "PRODUCT": {
+    "PRODUCT": "منتج",
+    "PRICE": "سعر",
+    "Quantity": "كمية",
+    "Subtotal": "نطاق فرعي",
     "STATUS": "حالة",
     "OUT_OF_STOCK": "إنتهى من المخزن",
     "IN_STOCK": "في الأوراق المالية",
-    "ELIGIBLE_FREE_DELIVARY":"مؤهل للحصول على تسليم مجاني",
-    "ELIGIBLE_FREE_RETURN":"مؤهل للعودة واسترداد الأموال",
-    "CASH_ON_DELIVARY":"النقد على التسليم المتاح",
-    "INTERNATIONAL_SHIPPING":"الشحن الدولي المتاح"
+    "ELIGIBLE_FREE_DELIVARY": "مؤهل للحصول على تسليم مجاني",
+    "ELIGIBLE_FREE_RETURN": "مؤهل للعودة واسترداد الأموال",
+    "CASH_ON_DELIVARY": "النقد على التسليم المتاح",
+    "INTERNATIONAL_SHIPPING": "الشحن الدولي المتاح"
   },
   "ORDERS": {
     "YOUR_ORDERS": "طلباتك",
@@ -103,14 +124,17 @@
     "YOUR_ACC": "الحساب الخاص بك"
   },
   "SIDE_BAR": {
-    "ALL_CATEGORIES": "جميع الفئات",
+    "ALL_CATEGORIES": "فئات",
     "CHOOSE_LANGUAGE": "اختر اللغة",
     "CHOOSE_COUNTRY": "اختر البلد",
     "OFFER_ZONE": "منطقة العرض",
     "MY_ACCOUNT": "حسابي",
     "HELP": "يساعد",
     "ABOUT_US": "معلومات عنا",
-    "CONTACT_US": "اتصل بنا"
+    "CONTACT_US": "اتصل بنا",
+    "BROWSER_BY_CAT": "تصفح حسب الفئة",
+    "VEG": "الخضار",
+    "NON_VEG": "غير الخضار"
   },
   "FOOTER": {
     "BACK_TO_TOP": "العودة إلى الأعلى",
@@ -121,15 +145,39 @@
     "YOUR_LIST": "قائمتك",
     "DWNLOAD_APP_STORE": "تنزيل على متجر التطبيقات",
     "DWNLOAD_GGL_PAY": "تنزيل على Google Play",
-    "CONSUMER_POLICY":"سياسة المستهلك",
-    "PRIVACY_POLICY":"الخصوصية والسياسة",
-    "SOCIAL":"اجتماعي",
-    "FACEBOOK":"فيسبوك",
-    "TWITER":"تويتر",
-    "YOU_TUBE":"موقع YouTube",
-    "OUR_SUPPORTS":"دعمنا",
-    "PAYMENTS":"المدفوعات",
-    "SHIPPING":"شحن",
-    "CANCEL_RETURN":"الإلغاء والعودة"
+    "CONSUMER_POLICY": "سياسة المستهلك",
+    "PRIVACY_POLICY": "الخصوصية والسياسة",
+    "SOCIAL": "اجتماعي",
+    "FACEBOOK": "فيسبوك",
+    "TWITER": "تويتر",
+    "YOU_TUBE": "موقع YouTube",
+    "OUR_SUPPORTS": "دعمنا",
+    "PAYMENTS": "المدفوعات",
+    "SHIPPING": "شحن",
+    "CANCEL_RETURN": "الإلغاء والعودة"
+  },
+  "CART": {
+    "RETURN_SHOP": "العودة الى المتجر",
+    "UPDATE_CART": "تحديث العربة",
+    "APPLY_COUPON": "تطبيق القسيمة",
+    "CART_TOTAL": "مجموع العربة",
+    "TOTAL": "المجموع",
+    "PROCESS_CHECKOUT": "PROCES إلى الخروج"
+  },
+  "WISHLIST": {
+    "WISHLIST": "قائمة الرغبات",
+    "Move_All_To_Bag": "انقل كل شيء إلى الحقيبة",
+    "JUST_FOR_U":"فقط لك"
+  },
+  "ACCOUNTS":{
+    "MANAGE_ACC":"إدارة حسابي",
+    "MY_PROFILE":"ملفي",
+    "ADD_BOOK":"دليل العناوين",
+    "MY_RETURNS":"عوداتي",
+    "MY_CANCELATION":"إلغاءاتي",
+    "EDIT_PROFILE": "عدل ملفك الشخصي",
+    "FIRST_NAME": "الاسم الأول",
+    "LAST_NAME": "اسم العائلة",
+    "Password Changes": "تغييرات كلمة المرور"
   }
 }

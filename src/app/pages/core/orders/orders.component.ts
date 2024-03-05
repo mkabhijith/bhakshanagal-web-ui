@@ -29,6 +29,8 @@ export class OrdersComponent implements OnInit, OnDestroy {
   products: any[] = [];
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
+  deCodeToken: any;
+
   ngOnInit() {
     this.titleSerice.changeTitle('Orders');
     this.products = this.orderservice.returnOrderList();
@@ -41,46 +43,8 @@ export class OrdersComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
   }
-  cancelOrder(id: number) {
-    this.confirmationService.confirm({
-      message: 'Are you sure that you want to cancel order?',
-      header: 'Confirmation',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        const index = this.products.findIndex((item) => {
-          return item.id == id;
-        });
-        if (index !== -1) {
-          this.products.splice(index, 1);
-        }
-        this.messageService.add({
-          severity: 'info',
-          summary: 'Confirmed',
-          detail: 'You have accepted',
-        });
-      },
-      reject: (type: any) => {
-        switch (type) {
-          case ConfirmEventType.REJECT:
-            this.messageService.add({
-              severity: 'error',
-              summary: 'Rejected',
-              detail: 'You have rejected',
-            });
-            break;
-          case ConfirmEventType.CANCEL:
-            this.messageService.add({
-              severity: 'warn',
-              summary: 'Cancelled',
-              detail: 'You have cancelled',
-            });
-            break;
-        }
-      },
-    });
-  }
 
   orderDetails(item: any) {
-    this.route.navigate(['/orderDetails', item]);
+    this.route.navigate(['ordersinfo', item]);
   }
 }

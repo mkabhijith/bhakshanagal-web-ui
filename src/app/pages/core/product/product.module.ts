@@ -6,6 +6,11 @@ import { ProductComponent } from './product.component';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { TranslateModule } from '@ngx-translate/core';
+import { RatingModule } from 'primeng/rating';
+import { FormsModule } from '@angular/forms';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [ProductComponent],
@@ -15,6 +20,11 @@ import { TranslateModule } from '@ngx-translate/core';
     TagModule,
     ButtonModule,
     TranslateModule,
+    RatingModule,
+    FormsModule,
+    InputNumberModule,
+    SharedComponentModule,
+    SharedModule
   ],
 })
 export class ProductModule {}

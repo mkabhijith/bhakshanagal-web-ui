@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { StorageService } from 'src/app/shared/services/storage/storage.service';
-import * as jwt_decode from 'jwt-decode';
+
 import { HttpClient } from '@angular/common/http';
-// import jwt_decode from 'jwt-decode';
+import { IProductViewResponce } from '../product/product.type';
+import { ProductService } from '../product/product.service';
+import { IProductList } from '../home/home.type';
+
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   constructor(
     private storageService: StorageService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private productListService: ProductService
   ) {}
 
   private _cartCount = new BehaviorSubject<number>(this.getCartLength());
@@ -19,130 +23,17 @@ export class CartService {
   private _cartList = new BehaviorSubject<any>([]);
   cartList$ = this._cartList.asObservable();
 
-  cartList: any[] = [
-    {
-      id: 1,
-      imageUrl: '/assets/images/food/Kuzhalappam.jpg',
-      productName: 'Kuzhalappam',
-      price: 75,
-      description:
-        ' Ingredients: Rice flour, granted coconut, blak seasame seeds, cumin seeds, crushed black pepper, asafoetida, salt, water, oil Zero Preservatives/Artificial Colours/ Flavours/ Sugars',
-      quantity: '175g',
-      status: true,
-      shipping: 'international',
-      payment: ' cash On Delivery',
-      Refundable: true,
-      freeDelivary: true,
-    },
-    {
-      id: 2,
-      imageUrl:
-        '/assets/images/food/Kottayam Churuttu Recipe _ Thin Flour Pastry Sheets Filled with Sweetened Rice Filling.jpg',
-      productName: 'Kottayam churattu',
-      price: 45,
-      description: 'Description for Product 2.',
-      quantity: '250g',
-      status: false,
-    },
-    {
-      id: 3,
-      imageUrl:
-        '/assets/images/food/Benne Murukku _ Butter Murukku Recipe _ Easy Diwali Snacks.jpg',
-      productName: 'Murukku',
-      price: 45,
-      description: 'Description for Product 1.',
-      quantity: '250g',
-    },
-    {
-      id: 4,
-      imageUrl: '/assets/images/food/Achappam.jpg',
-      productName: 'Achappam',
-      price: 55,
-      description: 'Description for Product 2.',
-      quantity: '10piese',
-    },
-    {
-      id: 5,
-      imageUrl: '/assets/images/food/Homemade Popcorn.jpg',
-      productName: 'Popcorn',
-      price: 25,
-      description: 'Description for Product 1.',
-      quantity: '50gm',
-    },
-    {
-      id: 6,
-      imageUrl:
-        '/assets/images/food/Benne Murukku _ Butter Murukku Recipe _ Easy Diwali Snacks.jpg',
-      productName: 'Butter Murukku',
-      price: 29.99,
-      description: 'Description for Product 2.',
-      quantity: '10piese',
-    },
-    {
-      id: 7,
-      imageUrl:
-        '/assets/images/food/Free PSD _ Food menu and restaurant social media cover template.jpg',
-      productName: 'Product 1',
-      price: 19.99,
-      description: 'Description for Product 1.',
-    },
-    {
-      id: 8,
-      imageUrl:
-        '/assets/images/food/Free PSD _ Food menu and restaurant social media cover template.jpg',
-      productName: 'Product 2',
-      price: 29.99,
-      description: 'Description for Product 2.',
-    },
-    {
-      id: 9,
-      imageUrl:
-        '/assets/images/food/Free PSD _ Food menu and restaurant social media cover template.jpg',
-      productName: 'Product 1',
-      price: 19.99,
-      description: 'Description for Product 1.',
-    },
-    {
-      id: 10,
-      imageUrl:
-        '/assets/images/food/Free PSD _ Food menu and restaurant social media cover template.jpg',
-      productName: 'Product 2',
-      price: 29.99,
-      description: 'Description for Product 2.',
-    },
-    {
-      id: 11,
-      imageUrl:
-        '/assets/images/food/Free PSD _ Food menu and restaurant social media cover template.jpg',
-      productName: 'Product 1',
-      price: 19.99,
-      description: 'Description for Product 1.',
-    },
-    {
-      id: 12,
-      imageUrl:
-        '/assets/images/food/Free PSD _ Food menu and restaurant social media cover template.jpg',
-      productName: 'Product 2',
-      price: 29.99,
-      description: 'Description for Product 2.',
-    },
-
-    // Add more product objects as needed
-  ];
 
   getCartList() {
-    return this.cartList;
-  }
+    return this.httpClient.post<IProductList>(`bhakshanangal/productlist`, {});
 
-  // decodeJwtToken(token: string): any {
-  //   const jwt_decode: (token: string) => any = jwt_decode;
-  //   try {
-  //     return jwt_decode(token);
-  //   } catch (error) {
-  //     console.error('Error decoding JWT token:', error);
-  //     return null;
-  //   }
-  // }
+    this.productListService.getProduct(2).subscribe({
+      next: (res) => {
+        const cartArray = res.data;
+        return res.data;
+      },
+    });
+  }
 
   saveCart(id: number) {
     // if (!this.storageService.authKey) {
@@ -188,23 +79,25 @@ export class CartService {
   }
 
   getCart() {
-    const array = this.getLocalCart();
-    const cartArray = this.getCartList();
-    const cartList = cartArray.filter((cart) => array.includes(cart.id));
-    this._cartList.next(cartList);
+    // const cartArray = this.getCartList();
+
+    this.getCartList().subscribe({
+      next: (res) => {
+        const array = this.getLocalCart();
+        const cartArray = res.data[0].crunchy;
+
+        const cartList = cartArray.filter((cart) =>
+          array.includes(cart.product_id)
+        );
+        this._cartList.next(cartList);
+      },
+    });
+
+    // const cartList = cartArray.filter((cart) => array.includes(cart.id));
+    // this._cartList.next(cartList);
   }
 
-  createOrder() {
-    const payload = {
-      amount: '10',
-      currency: 'INR',
-      receipt: '',
-      notes: {
-        description: 'Best food',
-        name: 'Laddu',
-        ingredients: 'sweet',
-      },
-    };
+  createOrder(payload: any) {
     return this.httpClient.post(`bhakshanangal/createorder`, payload);
   }
 }

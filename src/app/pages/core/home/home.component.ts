@@ -10,6 +10,11 @@ import { LanguageService } from 'src/app/shared/services/language.service';
 import { IProductListArray } from './home.type';
 import { StorageService } from 'src/app/shared/services/storage/storage.service';
 
+interface IServiceList {
+  heading: string;
+  title: string;
+  image: string;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -20,6 +25,23 @@ export class HomeComponent implements OnInit, OnDestroy {
   adLists: string[] = [
     '/assets/images/poster/b baner.1.jpg',
     '/assets/images/poster/B B2.jpg',
+  ];
+
+  serviceList: IServiceList[] = [
+    {
+      image: '/assets/images/Services.svg',
+      heading: 'HOME.FAST_DELIVERY',
+      title: 'HOME.FREE_DELIVARY_TITLE',
+    },
+    {
+      image: '/assets/images/Services2.svg',
+      heading: 'HOME.CUSTOMER_SERVICE',
+      title: 'HOME.CONSUMER_SERVICE_TITLE',
+    }, {
+      image: '/assets/images/Services3.svg',
+      heading: 'HOME.MONEY_BACK',
+      title: 'HOME.MONEY_BACK_TITLE',
+    },
   ];
 
   constructor(
@@ -33,11 +55,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   list!: any[];
 
   productList!: IProductListArray[];
-
   currencyValue!: number;
   currency!: string;
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
+  loginInProgress: boolean = false;
   ngOnInit() {
     this.titleSerice.changeTitle('home');
     this.currencyService.switchCountry$.subscribe({
@@ -51,24 +73,18 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.currentAddIndex++;
     }, 3000);
 
-    this.list = this.homeService.getList();
-
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {
         this.currentLanguage = lang;
       },
     });
-
+    this.loginInProgress = true;
     this.homeService.getProductList().subscribe({
       next: (res) => {
+        this.loginInProgress = false;
         this.productList = res.data;
-        console.log('productList', this.productList);
       },
     });
-
-
-    console.log(this.storageService.authKey);
-    
   }
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();

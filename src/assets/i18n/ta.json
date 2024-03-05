@@ -37,7 +37,24 @@
     "CRISPIES": "மிருதுவான",
     "CHIPS": "சீவல்கள்",
     "SHOW_MORE": "மேலும் காட்ட",
-    "SHOW_LESS":"குறைவாகக் காட்டு"
+    "SHOW_LESS": "குறைவாகக் காட்டு",
+    "ADD_CART": "பெட்டகத்தில் சேர்",
+    "TODAYS": "இன்றைய",
+    "FLASH_SALE": "ஃபிளாஷ் விற்பனை",
+    "OUR_PRODUCTS": "எங்கள் தயாரிப்புகள்",
+    "EXPLORE_PRODUCTS": "எங்கள் தயாரிப்புகளை ஆராயுங்கள்",
+    "FAST_DELIVERY": "இலவச மற்றும் விரைவான விநியோகம்",
+    "FREE_DELIVARY_TITLE": "அனைத்து ஆர்டர்களுக்கும் இலவச விநியோகம் $ 140 க்கு மேல்",
+    "CUSTOMER_SERVICE": "24/7 வாடிக்கையாளர் சேவை",
+    "CONSUMER_SERVICE_TITLE": "நட்பு 24/7 வாடிக்கையாளர் ஆதரவு",
+    "MONEY_BACK": "பணம் திரும்ப கிடைக்கும் உத்தரவாதம்",
+    "MONEY_BACK_TITLE": "நாங்கள் 30 நாட்களுக்குள் பணத்தை மீண்டும் வருகிறோம்"
+  },
+  "CARD_HEADER": {
+    "DAY": "நாட்களில்",
+    "HOUR": "மணி",
+    "MINIT": "நிமிடங்கள்",
+    "SECOND": "விநாடிகள்"
   },
   "FORM_FIELD": {
     "EMAIL_ADDRESS": "மின்னஞ்சல் முகவரி",
@@ -74,13 +91,17 @@
     "SUBMIT": "சமர்ப்பிக்கவும்"
   },
   "PRODUCT": {
+    "PRODUCT": "தயாரிப்பு",
+    "PRICE": "விலை",
+    "Quantity": "அளவு",
+    "Subtotal": "கூட்டுத்தொகை",
     "STATUS": "நிலை",
     "OUT_OF_STOCK": "பங்கு இல்லை",
     "IN_STOCK": "கையிருப்பில்",
-    "ELIGIBLE_FREE_DELIVARY":"இலவச டெலிவரிக்கு தகுதியானவர்",
-    "ELIGIBLE_FREE_RETURN":"திரும்பவும் பணத்தைத் திரும்பப் பெறவும் தகுதியானவர்",
-    "CASH_ON_DELIVARY":"பிரசவத்தில் பணம் கிடைக்கிறது",
-    "INTERNATIONAL_SHIPPING":"சர்வதேச கப்பல் கிடைக்கிறது"
+    "ELIGIBLE_FREE_DELIVARY": "இலவச டெலிவரிக்கு தகுதியானவர்",
+    "ELIGIBLE_FREE_RETURN": "திரும்பவும் பணத்தைத் திரும்பப் பெறவும் தகுதியானவர்",
+    "CASH_ON_DELIVARY": "பிரசவத்தில் பணம் கிடைக்கிறது",
+    "INTERNATIONAL_SHIPPING": "சர்வதேச கப்பல் கிடைக்கிறது"
   },
   "ORDERS": {
     "YOUR_ORDERS": "உங்கள் ஆர்டர்கள்",
@@ -103,14 +124,17 @@
     "YOUR_ACC": "உங்கள் கணக்கு"
   },
   "SIDE_BAR": {
-    "ALL_CATEGORIES": "அனைத்து பிரிவுகளும்",
+    "ALL_CATEGORIES": "வகைகள்",
     "CHOOSE_LANGUAGE": "மொழியைத் தேர்வுசெய்க",
     "CHOOSE_COUNTRY": "நாட்டைத் தேர்வுசெய்க",
     "OFFER_ZONE": "சலுகை மண்டலம்",
     "MY_ACCOUNT": "என் கணக்கு",
     "HELP": "உதவி",
     "ABOUT_US": "எங்களை பற்றி",
-    "CONTACT_US": "எங்களை தொடர்பு கொள்ள"
+    "CONTACT_US": "எங்களை தொடர்பு கொள்ள",
+    "BROWSER_BY_CAT": "காய்கறி அல்ல",
+    "VEG": "காய்கறி",
+    "NON_VEG": "காய்கறி அல்ல"
   },
   "FOOTER": {
     "BACK_TO_TOP": "மீண்டும் மேலே",
@@ -121,15 +145,39 @@
     "YOUR_LIST": "உங்கள் பட்டியல்",
     "DWNLOAD_APP_STORE": "ஆப் ஸ்டோரில் பதிவிறக்கவும்",
     "DWNLOAD_GGL_PAY": "Google Play இல் பதிவிறக்கவும்",
-    "CONSUMER_POLICY":"நுகர்வோர் கொள்கை ",
-    "PRIVACY_POLICY":"தனியுரிமை மற்றும் கொள்கை",
-    "SOCIAL":"சமூக",
-    "FACEBOOK":"முகநூல்",
-    "TWITER":"ட்விட்டர்",
-    "YOU_TUBE":"வலைஒளி",
-    "OUR_SUPPORTS":"எங்கள் ஆதரவு",
-    "PAYMENTS":"கொடுப்பனவுகள்",
-    "SHIPPING":"கப்பல்",
-    "CANCEL_RETURN":"ரத்து மற்றும் திரும்ப"
+    "CONSUMER_POLICY": "நுகர்வோர் கொள்கை ",
+    "PRIVACY_POLICY": "தனியுரிமை மற்றும் கொள்கை",
+    "SOCIAL": "சமூக",
+    "FACEBOOK": "முகநூல்",
+    "TWITER": "ட்விட்டர்",
+    "YOU_TUBE": "வலைஒளி",
+    "OUR_SUPPORTS": "எங்கள் ஆதரவு",
+    "PAYMENTS": "கொடுப்பனவுகள்",
+    "SHIPPING": "கப்பல்",
+    "CANCEL_RETURN": "ரத்து மற்றும் திரும்ப"
+  },
+  "CART": {
+    "RETURN_SHOP": "கடைக்குத் திரும்பு",
+    "UPDATE_CART": "வண்டியைப் புதுப்பிக்கவும்",
+    "APPLY_COUPON": "கூப்பனைப் பயன்படுத்துங்கள்",
+    "CART_TOTAL": "வண்டி மொத்தம்",
+    "TOTAL": "மொத்தம்",
+    "PROCESS_CHECKOUT": "புதுப்பித்தலுக்கு முன்னேறுகிறது"
+  },
+  "WISHLIST": {
+    "WISHLIST": "விருப்பப்பட்டியல்",
+    "Move_All_To_Bag": "அனைத்தையும் பையில் நகர்த்தவும்",
+    "JUST_FOR_U":"உனக்காக மட்டும்"
+  },
+  "ACCOUNTS":{
+    "MANAGE_ACC":"எனது கணக்கை நிர்வகிக்கவும்",
+    "MY_PROFILE":"என் சுயவிவரம்",
+    "ADD_BOOK":"முகவரி புத்தகம்",
+    "MY_RETURNS":"என் வருமானம்",
+    "MY_CANCELATION":"எனது ரத்து",
+    "EDIT_PROFILE": "உங்கள் சுயவிவரத்தைத் திருத்தவும்",
+    "FIRST_NAME": "முதல் பெயர்",
+    "LAST_NAME": "கடைசி பெயர்",
+    "Password Changes": "கடவுச்சொல் மாற்றங்கள்"
   }
 }

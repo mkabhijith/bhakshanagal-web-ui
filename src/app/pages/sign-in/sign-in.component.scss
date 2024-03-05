@@ -4,13 +4,11 @@
   height: 100vh;
   display: flex;
   overflow: hidden;
+  background-color: #ffffff;
   .left-login {
     width: 50%;
     height: 100%;
-    background-image: url("https://i.pinimg.com/564x/a2/92/b3/a292b3f149e3f3a3e002313e43922dcf.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-
+ 
     @media (max-width: 680px) {
       display: none;
     }
@@ -38,6 +36,23 @@
       width: 100%;
       h1 {
         margin: 0;
+        text-align: start;
+        width: 65%;
+        font-family: Inter;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: 0.04em;
+        text-align: left;
+      }
+      .title {
+        text-align: start;
+        width: 65%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
       }
       .input-container {
         display: flex;
@@ -58,8 +73,8 @@
         .password-container {
           width: 100%;
           height: 50px;
-          border: 1px solid rosybrown;
-          background-color: rgb(243, 221, 221);
+          border: none;
+          border-bottom: 1px solid rosybrown;
           cursor: pointer;
           padding: 0 20px;
           border-radius: 5px;
@@ -69,7 +84,6 @@
           .password {
             width: 100%;
             height: 100%;
-            background-color: rgb(243, 221, 221);
             outline: none;
             border: none;
             cursor: pointer;
@@ -81,8 +95,10 @@
         display: flex;
         width: calc(100% - 35%);
         justify-content: space-between;
+        align-items: center;
         .forgot {
           cursor: pointer;
+          color: #DB4444;
         }
         @media screen and (max-width: 370px) {
           flex-direction: column;

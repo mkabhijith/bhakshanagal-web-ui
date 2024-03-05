@@ -32,7 +32,7 @@ export class AccountComponent implements OnInit, OnDestroy {
     private router: Router,
     private titleSerice: TitleService,
     private languageService: LanguageService,
-    private storageService :StorageService
+    private storageService: StorageService
   ) {}
 
   currentLanguage!: ILanguage;
@@ -41,53 +41,53 @@ export class AccountComponent implements OnInit, OnDestroy {
   accountMenu: IaccountMenu[] = [
     {
       id: 1,
-      title: 'ACCOUNT.ACC_SETTING',
+      title: 'ACCOUNTS.MANAGE_ACC',
       icon: 'pi pi-spin pi-cog',
       options: [
         {
           id: 0,
-          title: 'ACCOUNT.PROFILE_INFORMATION',
+          title: 'ACCOUNTS.MY_PROFILE',
           route: 'profile',
         },
         {
           id: 1,
-          title: 'ACCOUNT.MANAGE_ADDRESS',
+          title: 'ACCOUNTS.ADD_BOOK',
           route: 'address',
         },
       ],
     },
 
     {
-      id: 3,
-      title: 'ACCOUNT.MY_HOLDINGS',
+      id: 2,
+      title: 'ACCOUNT.MY_ORDERS',
       icon: 'pi pi-wallet',
       options: [
         {
           id: 0,
-          title: 'ACCOUNT.MY_CART',
-          route: '/cart',
+          title: 'MENU.ORDERS',
+          route: 'orders',
         },
         {
           id: 1,
-          title: 'ACCOUNT.MY_ORDERS',
-          route: '/orders',
+          title: 'ACCOUNTS.MY_RETURNS',
+          route: 'return',
+        },
+        {
+          id: 2,
+          title: 'ACCOUNTS.MY_CANCELATION',
+          route: 'cancel-list',
         },
         {
           id: 2,
           title: 'ACCOUNT.MY_NOTIFICATION',
           route: 'notifications',
         },
-        {
-          id: 2,
-          title: 'ACCOUNT.MY_REVIEW_RATING',
-          route: 'reviews',
-        },
       ],
     },
   ];
 
   ngOnInit(): void {
-    this.titleSerice.changeTitle('Account')
+    this.titleSerice.changeTitle('Account');
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {
         this.currentLanguage = lang;
@@ -101,8 +101,8 @@ export class AccountComponent implements OnInit, OnDestroy {
   navigation(route: string) {
     this.router.navigate([route]);
   }
-  logOut(){
-    this.storageService.clearData()
-    this.router.navigateByUrl('/home')
+  logOut() {
+    this.storageService.clearData();
+    this.router.navigateByUrl('/home');
   }
 }

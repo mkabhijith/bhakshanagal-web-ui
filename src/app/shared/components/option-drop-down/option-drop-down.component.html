@@ -1,0 +1,24 @@
+<app-spinner></app-spinner>
+<div class="account-container" (clickElsewhere)="onHideDropdown()">
+  <div class="account-details" (click)="onDropdown()">
+    <div class="user-icon">
+      <i class="pi pi-ellipsis-v"></i>
+    </div>
+  </div>
+
+  <div class="account-dropdown" [ngClass]="{ active: show }">
+    <!-- <div
+      class="available-list"
+      (click)="onHideDropdown()"
+      *ngFor="let item of items"
+    >
+      {{ item.name }}
+    </div> -->
+    <div class="available-list" (click)="onEditAddress(id)">
+      {{ "BUTTON_ACTIONS.EDIT" | translate }}
+    </div>
+    <div class="available-list" (click)="onDeleteAddress(id)">
+      {{ "BUTTON_ACTIONS.DELETE" | translate }}
+    </div>
+  </div>
+</div>

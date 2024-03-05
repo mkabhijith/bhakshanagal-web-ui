@@ -1,237 +1,89 @@
-@import "/src/styles/color";
-
 .main-container {
-  width: 100%;
-  background-color: #f7f7a0;
-  bottom: 0;
-  // position: absolute;
-  .back-to-top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-bottom: 1px solid gray;
-    cursor: pointer;
-    .back {
-      margin: 0;
-      color: gray;
-    }
-  }
+  height: 25rem;
+  background-color: black;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // flex-direction: column;
   .footer-container {
     display: flex;
-    justify-content: center;
-    gap: 50px;
-    padding: 10px;
-    border-bottom: 1px solid gray;
-    .get-know,
-    .shop-with-us {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      .heading {
+    gap: 2rem;
+
+    .bhakshanam-container {
+      .bhkshanam {
+        font-family: Inter;
+        font-size: 24px;
         font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        text-align: left;
+        cursor: default;
+      }
+      .subscribe {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+        cursor: default;
+      }
+      .item {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        cursor: default;
       }
     }
-    .mobile-app {
+    .items-container {
       display: flex;
+      gap: 0.5rem;
       flex-direction: column;
-      gap: 20px;
       .heading {
-        width: 190px;
-        font-size: large;
-        font-weight: 600;
-        cursor: pointer;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+        cursor: default;
       }
-      .links {
+      .item {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        cursor: default;
+      }
+      .download {
         display: flex;
-        gap: 10px;
-        .app-store,
-        .play-store {
-          cursor: pointer;
-          border: 1px solid black;
-          // color: #ffffff;
-          padding: 2px 5px;
+        flex-direction: column;
+        gap: 1rem;
+        .qr-download {
           display: flex;
-          align-items: center;
-          width: 88px;
-          gap: 4px;
-          .text {
-            font-size: 10px;
+          gap: 0.75rem;
+          // flex-direction: column;
+          .stores {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
           }
         }
-      }
-    }
-  }
-  .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    padding: 10px;
-    .logo {
-      img {
-        height: 50px;
-      }
-    }
-    .language-container {
-      border: 1px solid gray;
-      padding: 5px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-    }
-    .country-container {
-      border: 1px solid gray;
-      padding: 5px;
-      cursor: pointer;
-      .flag {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        img {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-
-    .language-selector-container {
-      display: flex;
-      justify-content: flex-end;
-      margin: 0.5rem 0.5rem;
-      gap: 25px;
-      position: relative;
-
-      .title {
-        padding-right: 1rem;
-        font-weight: 300;
-      }
-
-      .language-details {
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        cursor: pointer;
-
-        .icon {
-          font-size: 0.75rem;
-        }
-
-        .flag {
-          img {
-            width: 30px;
-            height: 30px;
-          }
-        }
-      }
-
-      .language-selected {
-        font-weight: 300;
-      }
-
-      .languages-dropdown {
-        display: none;
-        position: absolute;
-        bottom: 2.7rem;
-        left: 0px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #ffffff;
-        color: black;
-        width: max-content;
-
-        .available-language {
+        .social-medias {
           display: flex;
-          padding: 0.5rem 1rem;
-          cursor: pointer;
-
-          &:hover {
-            background-color: #f0f2f5;
-          }
-
-          // .flag {
-          //   margin: 0 0.5rem 0 0;
-          // }
-
-          .name {
-            font-size: 0.95rem;
-            font-weight: 500;
-          }
-        }
-
-        &.active {
-          display: block;
-        }
-      }
-
-      .countrys-dropdown {
-        display: none;
-        position: absolute;
-        bottom: 2.7rem;
-        left: 144px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #ffffff;
-        color: black;
-        width: max-content;
-
-        .available-country {
-          display: flex;
-          padding: 0.5rem 1rem;
-          cursor: pointer;
-
-          &:hover {
-            background-color: #f0f2f5;
-          }
-
-          .flag {
-            margin: 0 0.5rem 0 0;
-
-            img {
-              width: 30px;
-              height: 30px;
-            }
-          }
-
-          .name {
-            font-size: 0.95rem;
-            font-weight: 500;
-          }
-        }
-
-        &.active {
-          display: block;
-        }
-      }
-    }
-
-    .language-selector-container.ar {
-      .languages-dropdown {
-        right: auto;
-      }
-      .countrys-dropdown {
-        right: auto;
-        .available-country {
-          align-items: center;
-          gap: 5px;
+          gap: 2rem;
         }
       }
     }
   }
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 920px) {
   .main-container {
+    height: fit-content;
     .footer-container {
       flex-direction: column;
-    }
-    .footer {
-      .language-selector-container {
-        .countrys-dropdown {
-          left: 75px;
-        }
-      }
     }
   }
 }

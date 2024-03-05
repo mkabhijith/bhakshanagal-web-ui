@@ -19,9 +19,14 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { TranslateModule } from '@ngx-translate/core';
+import { OrderInfoComponent } from './order-info/order-info.component';
+import { OrderDetailsComponent } from './order-info/order-details/order-details.component';
+import { ReturnsComponent } from './returns/returns.component';
+import { MyCancelationComponent } from './my-cancelation/my-cancelation.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
-  declarations: [AccountComponent, ProfileComponent,AddressComponent],
+  declarations: [AccountComponent, ProfileComponent,AddressComponent, OrderInfoComponent, OrderDetailsComponent, ReturnsComponent, MyCancelationComponent, NotificationsComponent],
   imports: [
     CommonModule,
     AccountRoutingModule,

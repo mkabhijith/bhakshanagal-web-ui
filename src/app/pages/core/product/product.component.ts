@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HomeService } from '../home/home.service';
 import { CartService } from '../cart/cart.service';
 import { LanguageService } from 'src/app/shared/services/language.service';
@@ -7,7 +7,6 @@ import { Subscription } from 'rxjs';
 import { ILanguage } from 'src/app/shared/types/language.type';
 import { TitleService } from 'src/app/shared/services/title/title.service';
 import { ProductService } from './product.service';
-import { Iproduct } from '../home/home.type';
 import { IProductView } from './product.type';
 
 declare var Razorpay: any;
@@ -23,16 +22,17 @@ export class ProductComponent implements OnInit, OnDestroy {
     private cartService: CartService,
     private languageService: LanguageService,
     private titleSerice: TitleService,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) {}
 
   languageSubscription!: Subscription;
   currentLanguage!: ILanguage;
   list!: any[];
   product!: IProductView[];
-
+  value = 4;
+  totalPrice!: number;
   ngOnInit() {
-    this.list = this.homeService.getList();
     this.route.params.subscribe({
       next: (params) => {
         const id = params['id'];
@@ -40,6 +40,10 @@ export class ProductComponent implements OnInit, OnDestroy {
           next: (res) => {
             console.log(res);
             this.product = res.data;
+            this.product.forEach((item) => {
+              item.count = 1;
+              item.totalPrice = item.price * item.count;
+            });
           },
         });
         this.product = this.list.find((item) => item.id == id);
@@ -57,39 +61,70 @@ export class ProductComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
   }
+
+  increaseCount() {
+    this.product.forEach((item) => {
+      if (item.count) {
+        item.count++;
+        item.totalPrice = item.price * item.count;
+      }
+    });
+  }
+
+  decreaseCount() {
+    this.product.forEach((item) => {
+      if (item.count && item.count > 1) {
+        item.count--;
+        item.totalPrice = item.price * item.count;
+      }
+    });
+  }
   addToCart(id: number) {
     this.cartService.saveCart(id);
   }
-  buyNow(id: number) {
-    const RozerPayOptions = {
-      description: 'sample',
-      currency: 'INR',
-      amount: this.product[0].price*100,
-      name: '',
-      Image: '',
-      key: 'rzp_test_az7fEZxXoBzThm',
-      prefills: {
-        name: '',
-        email: '',
-        phone: '',
-      },
-      theme: {
-        color: 'red',
-      },
-      modal: {
-        ondismiss: () => {
-          console.log('dissmissed');
-        },
-      },
-    };
-    const successCallback = (paymentId: any) => {
-      console.log(paymentId);
-    };
+  sumPrice() {
+    this.totalPrice =
+      this.product.reduce((sum, product) => sum + product.totalPrice, 0) * 100;
+  }
+  // buyNow() {
+  //   this.sumPrice();
 
-    const failureCallback = (e: any) => {
-      console.log(e);
-    };
+  //   const RozerPayOptions = {
+  //     description: 'sample',
+  //     currency: 'INR',
+  //     amount: this.totalPrice,
+  //     name: '',
+  //     Image: '',
+  //     key: 'rzp_test_az7fEZxXoBzThm',
+  //     prefills: {
+  //       name: '',
+  //       email: '',
+  //       phone: '',
+  //     },
+  //     theme: {
+  //       color: 'red',
+  //     },
+  //     modal: {
+  //       ondismiss: () => {
+  //         console.log('dissmissed');
+  //       },
+  //     },
+  //   };
+  //   const successCallback = (paymentId: any) => {
+  //     console.log(paymentId);
+  //   };
 
-    Razorpay.open(RozerPayOptions, successCallback, failureCallback);
+  //   const failureCallback = (e: any) => {
+  //     console.log(e);
+  //   };
+
+  //   Razorpay.open(RozerPayOptions, successCallback, failureCallback);
+  // }
+  buyNow(){
+    
+    const myArray = this.product;
+    const jsonArray = JSON.stringify(myArray);
+    const encodedArray = encodeURIComponent(jsonArray);
+    this.router.navigate(['/checkout' ], { queryParams: { arrayParam: encodedArray } })
   }
 }

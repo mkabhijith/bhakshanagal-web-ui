@@ -20,7 +20,6 @@ export class OffersListComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleSerice.changeTitle('offerList')
-    this.list = this.homeService.getList();
     window.scrollTo(0, 0);
     this.route.params.subscribe({
       next:(params) =>{

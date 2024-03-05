@@ -7,6 +7,8 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
+import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { DividerModule } from 'primeng/divider';
     CartRoutingModule,
     ScrollPanelModule,
     ButtonModule,
-    DividerModule
+    DividerModule,
+    SharedComponentModule,
+    TranslateModule
   ]
 })
 export class CartModule {
