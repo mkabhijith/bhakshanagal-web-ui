@@ -1,3 +1,7 @@
+# Things to install
+node -20.9.0
+npm
+
 # BhakshanagalWeb
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
