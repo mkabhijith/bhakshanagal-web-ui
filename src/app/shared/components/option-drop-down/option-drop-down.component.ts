@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddressService } from 'src/app/pages/core/account/address/address.service';
 
@@ -10,6 +10,12 @@ import { AddressService } from 'src/app/pages/core/account/address/address.servi
 export class OptionDropDownComponent {
   constructor(private router: Router, private addresService: AddressService) {}
   @Input() id!: any;
+  @Input() set triggerClick(value: number) {
+    if (value !== 0) {
+      this.onDropdown();
+    }
+  }
+  @Output() cardEvent = new EventEmitter<boolean>();
   items = [
     {
       id: 0,
@@ -22,6 +28,8 @@ export class OptionDropDownComponent {
   ];
   show = false;
   onDropdown() {
+    console.log('clicked');
+    
     this.show = !this.show;
   }
   onHideDropdown() {
@@ -32,11 +40,19 @@ export class OptionDropDownComponent {
     this.onHideDropdown();
   }
   onDeleteAddress(id: number) {
+    this.cardEvent.emit(true);
     this.addresService.removeAddress(id).subscribe({
+      next: (res) => {
+        this.cardEvent.emit(false);
+      },
+    });
+    this.onHideDropdown();
+  }
+  onSetActiveAddress(id: number) {
+    this.addresService.setAddress(id).subscribe({
       next: (res) => {
         console.log(res);
       },
     });
-    this.onHideDropdown();
   }
 }

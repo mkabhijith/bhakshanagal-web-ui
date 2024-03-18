@@ -1,5 +1,30 @@
 <div class="main-container">
-    <div class="add-product" routerLink="/admin/addOffers">
-      <app-primary-button> + Add Offer </app-primary-button>
-    </div>
+  <div class="add-product" routerLink="/admin/addOffers">
+    <app-primary-button> + Add Offer </app-primary-button>
+  </div>
+  <div class="main-container">
+    <p-table [value]="Offers" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Offer Name</th>
+          <th>Offer Description</th>
+          <th>Status</th>
+          <th>Create date</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-offer>
+        <tr>
+          <td>{{ offer.offer_name }}</td>
+          <td>{{ offer.offer_description }}</td>
+          <td>{{ offer.offer_status }}</td>
+          <td>{{ offer.offer_created_at }}</td>
+          <td>{{ offer.offer_start_date }}</td>
+          <td>{{ offer.offer_end_date }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>

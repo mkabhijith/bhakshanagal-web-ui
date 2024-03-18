@@ -1,3 +1,4 @@
+<app-spinner *ngIf="isLoader"></app-spinner>
 <p-dialog header="Greeting" [(visible)]="visible" [style]="{ width: '50vw' }">
   <div class="dialog-container">
     <div class="dialog-top">
@@ -24,37 +25,37 @@
   </div>
 </p-dialog>
 <div class="main-container">
-  <div class="left-container">
+  <form class="left-container" [formGroup]="addressForm">
     <div class="heading">Billing Details</div>
     <div class="input-container">
       <label for="">First Name*</label>
-      <input type="text" />
+      <input type="text"  formControlName="fist_name" [readOnly]="isRead"/>
     </div>
-    <div class="input-container">
+    <!-- <div class="input-container">
       <label for="">Address</label>
       <input type="text" />
-    </div>
+    </div> -->
     <div class="input-container">
       <label for="">Landmark *</label>
-      <input type="text" />
+      <input type="text" formControlName="landmark" [readOnly]="isRead" />
     </div>
     <div class="input-container">
       <label for="">Apartment, floor, etc. (optional)</label>
-      <input type="text" />
+      <input type="text" formControlName="building_name" [readOnly]="isRead" />
     </div>
     <div class="input-container">
       <label for="">Town/City*</label>
-      <input type="text" />
+      <input type="text" formControlName="city" [readOnly]="isRead"/>
     </div>
     <div class="input-container">
       <label for="">Phone Number*</label>
-      <input type="text" />
+      <input type="text" formControlName="mobile" [readOnly]="isRead"/>
     </div>
     <div class="input-container">
       <label for="">Email Address*</label>
-      <input type="text" />
+      <input type="text" formControlName="email" [readOnly]="isRead"/>
     </div>
-  </div>
+  </form>
   <div class="right-container">
     <div class="item-container">
       <div class="items" *ngFor="let item of orderItems">
@@ -85,8 +86,8 @@
         />{{ option }}
       </div>
       <div class="coupon">
-        <input type="text" placeholder="Coupon Code" />
-        <app-primary-button>Apply Coupon</app-primary-button>
+        <input type="text" placeholder="Coupon Code" [(ngModel)]="coupon" />
+        <app-primary-button (click)="applyCoupon()">Apply Coupon</app-primary-button>
       </div>
       <app-primary-button (click)="onVisibleGiftCard()">Write your Gift Greeting Here </app-primary-button>
       <app-primary-button (click)="buy()">Place Order</app-primary-button>

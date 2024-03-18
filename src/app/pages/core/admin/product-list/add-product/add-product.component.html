@@ -1,6 +1,7 @@
 <!-- <app-back-btn (click)="navgateToAccount()">{{
   "SIDE_BAR.MY_ACCOUNT" | translate
 }}</app-back-btn> -->
+<app-spinner *ngIf="isLoder"></app-spinner>
 <div class="add-product-container">
   <div class="caption-container" *ngIf="onEditForm">Edit Product</div>
   <div class="caption-container" *ngIf="!onEditForm">Add Product</div>
@@ -9,22 +10,24 @@
       <div class="input-box-container">
         <div class="input-box">
           <label for="name" class="name">Product Name</label>
-          <input type="text" pInputText formControlName="productName" />
+          <input type="text" pInputText formControlName="product_name" />
         </div>
         <div class="input-box">
           <label for="quantuty" class="name">Product Quantuty</label>
           <div>
-            <p-inputNumber
-              inputId="withoutgrouping"
-              [useGrouping]="false"
-              formControlName="productQuantity"
-            >
-            </p-inputNumber>
+            <input
+              type="text"
+              pInputText
+              class="quantity"
+              formControlName="quantity"
+            />
+
+            <!-- formControlName="unit" -->
             <p-dropdown
               [options]="QuantityUnits"
-              formControlName="productQuantityUnit"
               optionLabel="name"
               placeholder="select unit"
+              (onChange)="passUnitValue($event.value.id)"
             ></p-dropdown>
           </div>
         </div>
@@ -32,16 +35,16 @@
       <div class="input-box-container">
         <!-- <div class="input-box"> -->
         <label for="name" class="name">Product price:</label>
-        <input type="number" formControlName="priceINR" class="price-input" />
+        <input type="text" formControlName="priceinINR" class="price-input" />
         <span>INR</span>
-        <input type="number" formControlName="priceAED" class="price-input" />
+        <input type="text" formControlName="priceinAED" class="price-input" />
         <span>AED</span>
-        <input type="number" formControlName="priceGBP" class="price-input" />
+        <input type="text" formControlName="priceinEUR" class="price-input" />
         <span>pound</span>
-        <input type="number" formControlName="priceUSD" class="price-input" />
+        <input type="text" formControlName="priceinUSD" class="price-input" />
         <span>USD</span>
-        <input type="number" formControlName="priceAUD" class="price-input" />
-        <span>AUD</span>
+        <!-- <input type="number" formControlName="priceAUD" class="price-input" />
+        <span>AUD</span> -->
       </div>
       <!-- </div> -->
 
@@ -52,7 +55,7 @@
             rows="5"
             cols="30"
             pInputTextarea
-            formControlName="description"
+            formControlName="product_description"
             [autoResize]="true"
           ></textarea>
         </div>
@@ -63,13 +66,13 @@
           <div class="radio-container">
             <div class="radio-option">
               <p-radioButton
-                value="available"
+                value="1"
                 name="shipping"
                 formControlName="shipping"
               ></p-radioButton>
               <label for="">international</label>
               <p-radioButton
-                value="not available"
+                value="0"
                 name="shipping"
                 formControlName="shipping"
               ></p-radioButton>
@@ -81,15 +84,15 @@
           <label for="name" class="name">freeDelivary</label>
           <div class="radio-option">
             <p-radioButton
-              value="available"
+              value="1"
               name="freeDelivary"
-              formControlName="freeDelivary"
+              formControlName="free_delivery"
             ></p-radioButton>
             <label for="">available</label>
             <p-radioButton
-              value="not available"
+              value="0"
               name="freeDelivary"
-              formControlName="freeDelivary"
+              formControlName="free_delivery"
             ></p-radioButton>
             <label for="">not available</label>
           </div>
@@ -101,15 +104,15 @@
 
           <div class="radio-option">
             <p-radioButton
-              value="available"
+              value="1"
               name="delivaryOption"
-              formControlName="delivaryOption"
+              formControlName="cod"
             ></p-radioButton>
             <label for="">available</label>
             <p-radioButton
-              value="not available"
+              value="0"
               name="delivaryOption"
-              formControlName="delivaryOption"
+              formControlName="cod"
             ></p-radioButton>
             <label for="">not available</label>
           </div>
@@ -119,13 +122,13 @@
 
           <div class="radio-option">
             <p-radioButton
-              value="available"
+              value="1"
               name="reFund"
               formControlName="reFund"
             ></p-radioButton>
             <label for="">available</label>
             <p-radioButton
-              value="not available"
+              value="0"
               name="reFund"
               formControlName="reFund"
             ></p-radioButton>
@@ -140,19 +143,20 @@
           <label for="fileUpload">File Upload</label>
           <input type="file" (change)="onImageChange($event)" />
         </div>
-        <div class="input-box">
+        <!-- <div class="input-box">
           <label for="Coupon">Coupon</label>
           <input type="text" pInputText formControlName="coupon" />
-        </div>
+        </div> -->
       </div>
       <div class="input-box-container">
         <div class="input-box">
           <label for="">Category</label>
+          <!-- formControlName="category" -->
           <p-dropdown
             [options]="categorys"
-            formControlName="category"
             optionLabel="name"
-            placeholder="Choose Category" 
+            placeholder="Choose Category"
+            (onChange)="passCategorysValue($event.value.id)"
           ></p-dropdown>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <app-spinner></app-spinner>
-<div class="account-container" (clickElsewhere)="onHideDropdown()">
-  <div class="account-details" (click)="onDropdown()">
+<div class="account-container" (click)="onDropdown()" >
+  <div class="account-details" >
     <div class="user-icon">
       <i class="pi pi-ellipsis-v"></i>
     </div>
@@ -19,6 +19,9 @@
     </div>
     <div class="available-list" (click)="onDeleteAddress(id)">
       {{ "BUTTON_ACTIONS.DELETE" | translate }}
+    </div>
+    <div class="available-list" (click)="onSetActiveAddress(id)">
+      {{ "Active" | translate }}
     </div>
   </div>
 </div>

@@ -46,7 +46,7 @@ export class FooterComponent implements OnInit {
           item: 'SIDE_BAR.MY_ACCOUNT',
         },
         {
-          item: 'LOGIN.LOG_IN / LOGIN.REGISTER',
+          item: 'Log In / Register',
         },
         {
           item: 'HOME.CART',
@@ -60,22 +60,22 @@ export class FooterComponent implements OnInit {
       ],
     },
     {
-      heading:"Quick Link",
-      items:[
+      heading: 'Quick Link',
+      items: [
         {
-          item:"FOOTER.PRIVACY_POLICY"
+          item: 'FOOTER.PRIVACY_POLICY',
         },
         {
-          item:"Terms Of Use"
+          item: 'Terms Of Use',
         },
         {
-          item:"FAQ"
+          item: 'FAQ',
         },
         {
-          item:"SIDE_BAR.CONTACT_US"
+          item: 'SIDE_BAR.CONTACT_US',
         },
-      ]
-    }
+      ],
+    },
   ];
 
   languageSubscription!: Subscription;

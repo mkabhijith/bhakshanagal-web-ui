@@ -8,6 +8,7 @@ import { TitleService } from 'src/app/shared/services/title/title.service';
 import { AddressService } from '../account/address/address.service';
 import { Iproduct } from '../home/home.type';
 import { Router } from '@angular/router';
+import { CheckOutService } from '../check-out/check-out.service';
 
 declare var Razorpay: any;
 
@@ -30,12 +31,16 @@ export class CartComponent implements OnInit, OnDestroy {
     private cartService: CartService,
     private languageService: LanguageService,
     private titleSerice: TitleService,
-    private addressService: AddressService,
-    private storageService: StorageService,
+    private checkOutService: CheckOutService,
     private router: Router
   ) {}
 
-  headers = ['PRODUCT.PRODUCT', 'PRODUCT.PRICE', 'PRODUCT.Quantity', 'PRODUCT.Subtotal'];
+  headers = [
+    'PRODUCT.PRODUCT',
+    'PRODUCT.PRICE',
+    'PRODUCT.Quantity',
+    'PRODUCT.Subtotal',
+  ];
 
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
@@ -43,11 +48,15 @@ export class CartComponent implements OnInit, OnDestroy {
   cartList: IproductCart[] = [];
   totalPrice!: number;
   payTotal!: number;
+  isLoader = false;
+  coupon = '';
   ngOnInit(): void {
     this.titleSerice.changeTitle('Cart');
+    this.isLoader = true;
     this.cartListSubscription = this.cartService.cartList$.subscribe({
       next: (res) => {
         this.cartList = res;
+        this.isLoader = false;
         this.cartList.forEach((item) => {
           item.count = 1;
           item.totalPrice = item.price * item.count;
@@ -67,6 +76,18 @@ export class CartComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.cartListSubscription.unsubscribe();
     this.languageSubscription.unsubscribe();
+  }
+
+  applyCoupon() {
+    this.isLoader = true;
+    this.checkOutService.validateCoupon(this.coupon).subscribe({
+      next: (res) => {
+        if (!res.result) {
+          alert('invalid coupon');
+        }
+        this.isLoader = false;
+      },
+    });
   }
 
   onItemRemove(id: number) {
@@ -101,17 +122,18 @@ export class CartComponent implements OnInit, OnDestroy {
       (sum, product) => sum + product.totalPrice,
       0
     );
-    this.payTotal = this.totalPrice + 100;
+    this.payTotal = this.totalPrice;
   }
 
- 
   returnToShop() {
     this.router.navigate(['/home']);
   }
-  checkOut(){
+  checkOut() {
     const myArray = this.cartList;
     const jsonArray = JSON.stringify(myArray);
     const encodedArray = encodeURIComponent(jsonArray);
-    this.router.navigate(['/checkout' ], { queryParams: { arrayParam: encodedArray } })
+    this.router.navigate(['/checkout'], {
+      queryParams: { arrayParam: encodedArray },
+    });
   }
 }

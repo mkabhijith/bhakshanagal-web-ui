@@ -1,0 +1,26 @@
+<div class="add-offer-container">
+  <div class="main-container">
+    <form [formGroup]="couponForm" (ngSubmit)="onSubmit()">
+      <label for="name" class="name">coupon code</label>
+      <input type="text" pInputText formControlName="coupon_code" />
+      <label for="name" class="name">valid from</label>
+      <!-- <p-calendar formControlName="valid_from"></p-calendar> -->
+      <input type="date" name="" id="" formControlName="valid_from" />
+      <label for="name" class="name">valid To</label>
+      <!-- <p-calendar formControlName="valid_to"></p-calendar> -->
+      <input type="date" name="" id="" formControlName="valid_to">
+      <label for="name" class="name">coupon Status</label>
+      <div class="radio-options">
+        <input type="radio" value="valid" formControlName="coupon_status" />
+        <label for="">valid</label>
+        <input
+          type="radio"
+          value=" not valid"
+          formControlName="coupon_status"
+        />
+        <label for="">Not valid</label>
+      </div>
+      <p-button type="submit">Submit</p-button>
+    </form>
+  </div>
+</div>

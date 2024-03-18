@@ -91,6 +91,7 @@ export class AddAddressComponent implements OnInit, OnDestroy {
             this.loginInProgress = false;
             if (res.result) {
               this.router.navigateByUrl('account/address');
+              this.addressService.setAddress(1);
             }
           },
         });
@@ -104,9 +105,8 @@ export class AddAddressComponent implements OnInit, OnDestroy {
           },
         });
       }
-    }
-    else {
-      alert("form invalid")
+    } else {
+      alert('form invalid');
     }
   }
   clearForm() {

@@ -23,7 +23,6 @@ export class CartService {
   private _cartList = new BehaviorSubject<any>([]);
   cartList$ = this._cartList.asObservable();
 
-
   getCartList() {
     return this.httpClient.post<IProductList>(`bhakshanangal/productlist`, {});
 
@@ -79,22 +78,16 @@ export class CartService {
   }
 
   getCart() {
-    // const cartArray = this.getCartList();
-
-    this.getCartList().subscribe({
-      next: (res) => {
-        const array = this.getLocalCart();
-        const cartArray = res.data[0].crunchy;
-
-        const cartList = cartArray.filter((cart) =>
-          array.includes(cart.product_id)
-        );
-        this._cartList.next(cartList);
-      },
-    });
-
-    // const cartList = cartArray.filter((cart) => array.includes(cart.id));
-    // this._cartList.next(cartList);
+    const payload = {
+      product_id: this.getLocalCart(),
+    };
+    this.httpClient
+      .post<IProductViewResponce>(`bhakshanangal/productview`, payload)
+      .subscribe({
+        next: (res) => {
+          this._cartList.next(res.data);
+        },
+      });
   }
 
   createOrder(payload: any) {

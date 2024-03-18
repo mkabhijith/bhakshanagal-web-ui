@@ -9,6 +9,7 @@ import { PaynentComponent } from './paynent/paynent.component';
 import { AddOffersComponent } from './offers/add-offers/add-offers.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
+import { CouponComponent } from './coupon/coupon.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
       {
         path:'users',
         component:UsersComponent
+      },
+      {
+        path:'coupon',
+        component:CouponComponent
       }
     ],
   },

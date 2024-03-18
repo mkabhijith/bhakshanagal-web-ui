@@ -33,10 +33,14 @@ export class OrdersComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.titleSerice.changeTitle('Orders');
-    this.products = this.orderservice.returnOrderList();
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
       next: (lang) => {
         this.currentLanguage = lang;
+      },
+    });
+    this.orderservice.returnOrderList().subscribe({
+      next: (res) => {
+        this.products = res.data;
       },
     });
   }

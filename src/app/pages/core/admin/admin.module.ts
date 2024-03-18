@@ -21,6 +21,8 @@ import { AddOffersComponent } from './offers/add-offers/add-offers.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
+import { CouponComponent } from './coupon/coupon.component';
+import { CalendarModule } from 'primeng/calendar';
 @NgModule({
   declarations: [
     AdminComponent,
@@ -30,6 +32,7 @@ import { SharedComponentModule } from 'src/app/shared/components/shared-componen
     AddOffersComponent,
     DashboardComponent,
     UsersComponent,
+    CouponComponent,
   ],
   imports: [
     CommonModule,
@@ -44,7 +47,8 @@ import { SharedComponentModule } from 'src/app/shared/components/shared-componen
     ReactiveFormsModule,
     InputTextModule,
     TableModule,
-    SharedComponentModule
+    SharedComponentModule,
+    CalendarModule
   ],
 })
 export class AdminModule {}

@@ -1,33 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OrdersService {
-  constructor() {}
-  orderList: any[] = [
-    {
-      id: 1,
-      imageUrl: '/assets/images/food/Kuzhalappam.jpg',
-      productName: 'Kuzhalappam',
-      price: 75,
-      description:
-        ' Ingredients: Rice flour, granted coconut, blak seasame seeds, cumin seeds, crushed black pepper, asafoetida, salt, water, oil Zero Preservatives/Artificial Colours/ Flavours/ Sugars',
-      quantity: '175g',
-      status: ' order',
-    },
-    {
-      id: 2,
-      imageUrl: '/assets/images/food/Kuzhalappam.jpg',
-      productName: 'Kuzhalappam',
-      price: 75,
-      description:
-        ' Ingredients: Rice flour, granted coconut, blak seasame seeds, cumin seeds, crushed black pepper, asafoetida, salt, water, oil Zero Preservatives/Artificial Colours/ Flavours/ Sugars',
-      quantity: '175g',
-      status: 'Delivery',
-    },
-  ];
+  constructor(private httpClient :HttpClient) {}
+ 
+  
   returnOrderList() {
-    return this.orderList;
+    return this.httpClient.post<any>(`bhakshanangal/orderlist`,{});
   }
 }

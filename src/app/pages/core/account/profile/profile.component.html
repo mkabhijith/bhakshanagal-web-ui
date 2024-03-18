@@ -1,3 +1,4 @@
+<app-spinner *ngIf="isLoader"></app-spinner>
 <div class="main-container">
   <div class="heading">{{ "ACCOUNTS.EDIT_PROFILE" | translate }}</div>
   <div class="form">
@@ -5,38 +6,50 @@
       <div class="first-last-name">
         <div class="input-container">
           <label for="">{{ "ACCOUNTS.FIRST_NAME" | translate }}*</label>
-          <input type="text" formControlName="name" />
+          <input type="text" formControlName="fist_name" />
         </div>
         <div class="input-container">
           <label for="">{{ "ACCOUNTS.LAST_NAME" | translate }}*</label>
-          <input type="text" formControlName="name" />
+          <input type="text" formControlName="last_name" />
         </div>
       </div>
       <div class="first-last-name">
         <div class="input-container">
           <label for="">{{ "FORGOT.ENTER_EMAIL" | translate }}</label>
-          <input type="text" formControlName="name" />
+          <input type="text" formControlName="email" />
         </div>
-        <div class="input-container">
+        <!-- <div class="input-container">
           <label for="">{{ "FORM_FIELD.ADDRESS" | translate }}</label>
           <input type="text" formControlName="name" />
-        </div>
+        </div> -->
       </div>
       <div class="password">
         <div class="input-container">
           <label for="">{{ "ACCOUNTS.Password Changes" | translate }}</label>
-          <input type="text" formControlName="name" />
+          <input
+            type="text"
+            formControlName="current_password"
+            placeholder="Current Password"
+          />
         </div>
         <div class="input-container">
-          <input type="text" formControlName="name" />
+          <input
+            type="text"
+            formControlName="new_password"
+            placeholder="New Password"
+          />
         </div>
         <div class="input-container">
-          <input type="text" formControlName="name" />
+          <input
+            type="text"
+            formControlName="confirm_password"
+            placeholder="Confirm Password"
+          />
         </div>
       </div>
       <div class="button-footer">
         <div>{{ "BUTTON_ACTIONS.CANCEL" | translate }}</div>
-        <app-primary-button>{{
+        <app-primary-button (click)="updateProfile()">{{
           "BUTTON_ACTIONS.SAVE" | translate
         }}</app-primary-button>
       </div>

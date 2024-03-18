@@ -8,28 +8,7 @@ import { Router } from '@angular/router';
 })
 export class OrderCardComponent {
   constructor(private route: Router) {}
-  @Input() cardItems: any[] = [
-    {
-      id: 1,
-      imageUrl: '/assets/images/food/Kuzhalappam.jpg',
-      productName: 'Kuzhalappam',
-      price: 75,
-      description:
-        ' Ingredients: Rice flour, granted coconut, blak seasame seeds, cumin seeds, crushed black pepper, asafoetida, salt, water, oil Zero Preservatives/Artificial Colours/ Flavours/ Sugars',
-      quantity: '175g',
-      status: ' order',
-    },
-    {
-      id: 2,
-      imageUrl: '/assets/images/food/Kuzhalappam.jpg',
-      productName: 'Kuzhalappam',
-      price: 75,
-      description:
-        ' Ingredients: Rice flour, granted coconut, blak seasame seeds, cumin seeds, crushed black pepper, asafoetida, salt, water, oil Zero Preservatives/Artificial Colours/ Flavours/ Sugars',
-      quantity: '175g',
-      status: 'Delivery',
-    },
-  ];
+  @Input() cardItems: any[] = [];
 
   orderDetails(item: any) {
     this.route.navigate(['account/orders/orderInfo', item]);

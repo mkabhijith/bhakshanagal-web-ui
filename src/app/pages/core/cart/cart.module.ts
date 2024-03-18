@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { SharedComponentModule } from 'src/app/shared/components/shared-component.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TranslateModule } from '@ngx-translate/core';
     ButtonModule,
     DividerModule,
     SharedComponentModule,
-    TranslateModule
+    TranslateModule,
+    FormsModule
   ]
 })
 export class CartModule {

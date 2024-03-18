@@ -1,6 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IAddAddressResponce, IAddressListResponce } from './address.type';
+import {
+  IAddAddressResponce,
+  IAddress,
+  IAddressListResponce,
+} from './address.type';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -33,5 +38,12 @@ export class AddressService {
       address_id: id,
     };
     return this.httpClient.post<any>(`bhakshanangal/remove-address`, payload);
+  }
+
+  setAddress(id: number) {
+    const payload = {
+      address_id: id,
+    };
+    return this.httpClient.post<any>('bhakshanangal/setaddress', payload);
   }
 }
