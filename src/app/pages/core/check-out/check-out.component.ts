@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IproductCart } from '../cart/cart.component';
 import { CartService } from '../cart/cart.service';
 import { CheckOutService } from './check-out.service';
@@ -32,7 +32,8 @@ export class CheckOutComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private cartService: CartService,
-    private checkOutService: CheckOutService
+    private checkOutService: CheckOutService,
+    private router: Router
   ) {}
   options: string[] = ['Bank', 'Cash on delivery'];
   selectedOption: string = 'Bank';
@@ -99,7 +100,11 @@ export class CheckOutComponent implements OnInit {
       this.cartService.createOrder(payload).subscribe({
         next: (res) => {
           this.isLoader = false;
-          console.log('order res', res);
+          if (res.result) {
+            this.router.navigate(['/home']);
+          } else {
+            alert('Order not placed Please try again');
+          }
         },
       });
     } else {
@@ -139,7 +144,11 @@ export class CheckOutComponent implements OnInit {
         this.cartService.createOrder(payload).subscribe({
           next: (res) => {
             this.isLoader = false;
-            console.log('order res', res);
+            if (res.result) {
+              this.router.navigate(['/home']);
+            } else {
+              alert('Order not placed Please try again');
+            }
           },
         });
       };

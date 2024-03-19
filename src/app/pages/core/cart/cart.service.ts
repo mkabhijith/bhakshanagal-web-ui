@@ -91,6 +91,6 @@ export class CartService {
   }
 
   createOrder(payload: any) {
-    return this.httpClient.post(`bhakshanangal/createorder`, payload);
+    return this.httpClient.post<any>(`bhakshanangal/createorder`, payload);
   }
 }
