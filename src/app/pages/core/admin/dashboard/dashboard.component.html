@@ -57,27 +57,21 @@
         </div>
       </div>
       <div class="body">
-        <div class="card">
+        <div class="card" *ngFor="let item of topSelling">
           <div class="image">
             <img src="../../../../../assets/images/category-demo.svg" alt="" />
           </div>
-          <div class="name">jgdajk</div>
-          <div class="qount">45</div>
+          <div class="name">{{item.product_name}}</div>
+          <!-- <div class="qount">45</div> -->
         </div>
-        <div class="card">
-          <div class="image">
-            <img src="../../../../../assets/images/category-demo.svg" alt="" />
-          </div>
-          <div class="name">jgdajk</div>
-          <div class="qount">45</div>
-        </div>
+       
       </div>
     </div>
   </div>
   <div class="product-details-containers">
     <div class="product-details">
       <div class="heading">
-        <div class="left">Product detaissls</div>
+        <div class="left">Product details</div>
         <div class="right">
           <select>
             <option value="">this month</option>
@@ -98,7 +92,7 @@
     </div>
     <div class="sales-order">
       <div class="heading">
-        <div class="left">Product detaissls</div>
+        <div class="left">Product details</div>
         <div class="right">
           <select>
             <option value="">this month</option>

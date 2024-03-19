@@ -9,7 +9,9 @@ import { FormGroup } from '@angular/forms';
 export class AddOffersComponent {
 offersForm = new FormGroup({})
 
-onSubmit(){}
+onSubmit(){
+  
+}
 onImageChange(event: any) {
   const file = (event.target as HTMLInputElement).files?.[0];
   // this.productForm.patchValue({

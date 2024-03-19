@@ -39,6 +39,59 @@
         text-align: left;
       }
     }
+    .right {
+      .account-container {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0.5rem 0.5rem;
+
+        position: relative;
+
+        .account-details {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          cursor: pointer;
+        }
+
+        .account-dropdown {
+          display: none;
+          position: absolute;
+          top: 0;
+          right: 14px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #ffffff;
+          color: black;
+          width: max-content;
+
+          .available-list {
+            display: flex;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            //   flex-direction: column;
+            align-items: center;
+            // justify-content: center;
+            gap: 4px;
+            &:hover {
+              background-color: #f0f2f5;
+            }
+          }
+
+          &.active {
+            display: block;
+          }
+        }
+      }
+      .account-container.ar {
+        .account-dropdown {
+          right: auto;
+          .available-list {
+            gap: 5px;
+          }
+        }
+      }
+    }
   }
 }
 

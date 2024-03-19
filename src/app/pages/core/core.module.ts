@@ -7,7 +7,7 @@ import { SharedComponentModule } from 'src/app/shared/components/shared-componen
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { CheckOutComponent } from './check-out/check-out.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
@@ -18,7 +18,8 @@ import { TranslateModule } from '@ngx-translate/core';
     SharedComponentModule,
     FormsModule,
     DialogModule,
-    TranslateModule
+    TranslateModule,
+    ReactiveFormsModule
   ],
   providers: [ConfirmationService, MessageService],
 })

@@ -6,6 +6,7 @@ export interface IProductList {
 
 export interface IProductListArray {
   crunchy: Iproduct[];
+  pickles: Iproduct[]
 }
 
 export interface Iproduct {

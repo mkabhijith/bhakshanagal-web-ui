@@ -43,7 +43,9 @@
             display: flex;
             gap: 10px;
           }
-
+          .quantity {
+            width: 100px;
+          }
           ::ng-deep {
             p-inputNumber {
               width: 50%;

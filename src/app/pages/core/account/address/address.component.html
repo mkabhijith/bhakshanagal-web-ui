@@ -6,7 +6,7 @@
     }}</app-primary-button>
   </div>
   <div class="add-new-mubile">
-    <app-primary-button (click)="navigateToAddAddress()">{{
+    <app-primary-button (click)="navigateToAddAddressMobile()">{{
       "ADDRESS.ADD_ADDRESS" | translate
     }}</app-primary-button>
   </div>
@@ -21,7 +21,44 @@
       </div>
     </div>
     <div class="right">
-      <app-option-drop-down id="{{ item.address_id }}"></app-option-drop-down>
+      <app-option-drop-down
+        id="{{ item.address_id }}"
+        (cardEvent)="onDelete($event)"
+      ></app-option-drop-down>
+      <!-- (click)="onClick()" -->
+      <!-- [triggerClick]="triggerClick" -->
+      <!-- <app-spinner></app-spinner> -->
+      <!-- <div
+        class="account-container"
+        (click)="onDropdown()"
+        (clickElsewhere)="onHideDropdown()"
+      >
+        <div class="account-details">
+          <div class="user-icon">
+            <i class="pi pi-ellipsis-v"></i>
+          </div>
+        </div>
+
+        <div class="account-dropdown" [ngClass]="{ active: show }">
+          <!-- <div
+      class="available-list"
+      (click)="onHideDropdown()"
+      *ngFor="let item of items"
+    >
+      {{ item.name }}
+    </div> -->
+      <!-- <div class="available-list" (click)="onEditAddress(item.address_id)">
+            {{ "BUTTON_ACTIONS.EDIT" | translate }}
+          </div>
+          <div class="available-list" (click)="onDeleteAddress(item.address_id)">
+            {{ "BUTTON_ACTIONS.DELETE" | translate }}
+          </div>
+          <div class="available-list" (click)="onSetActiveAddress(item.address_id)">
+            {{ "Active" | translate }}
+          </div>
+        </div>
+      </div> -->
+      
     </div>
   </div>
 </div>

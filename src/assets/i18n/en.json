@@ -76,7 +76,8 @@
     "OFFICE": "Office",
     "OTHER": "Other",
     "ADD_ADDRESS": "Add New Address",
-    "EDIT_ADDRESS": "Edit Address"
+    "EDIT_ADDRESS": "Edit Address",
+    "ACTIVE":"Active"
   },
   "BUTTON_ACTIONS": {
     "SAVE": "Save Changes",
