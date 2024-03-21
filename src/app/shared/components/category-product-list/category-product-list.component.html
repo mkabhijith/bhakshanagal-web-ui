@@ -13,8 +13,17 @@
             {{ "HOME.ADD_CART" | translate }}
           </div>
         </div>
-        <div (click)="navigateProduct(item.product_id)">
-          <img src="/assets/images/Noimage.jpg" alt="" />
+        <div (click)="navigateProduct(item.product_id)" class="img-container" >
+          <img
+            *ngIf="item.image_file == null"
+            src="/assets/images/Noimage.jpg"
+            alt=""
+          />
+          <img
+            *ngIf="item.image_file"
+            [src]="item.image_file"
+            alt="{{ item.product_name }}"
+          />
         </div>
       </div>
       <div class="card-bottom" (click)="navigateProduct(item.product_id)">
@@ -26,7 +35,7 @@
   </div>
   <div class="show-more" (click)="toggleShowMore($event)">
     <app-primary-button
-      ><div class="text">{{ showMoreText  | translate}}</div>
+      ><div class="text">{{ showMoreText | translate }}</div>
     </app-primary-button>
   </div>
 </div>

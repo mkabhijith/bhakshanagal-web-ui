@@ -21,12 +21,12 @@ import { WatchlistService } from 'src/app/pages/core/wishlist/watchlist.service'
 })
 export class CategoryProductListComponent implements OnInit, OnDestroy {
   @Input() dropdownItems!: Iproduct[];
-  @Input() intialCardCount !:any;
+  @Input() intialCardCount!: any;
   constructor(
     private cartService: CartService,
     private route: Router,
     private languageService: LanguageService,
-    private watchListService : WatchlistService
+    private watchListService: WatchlistService
   ) {}
 
   languageSubscription!: Subscription;
@@ -50,7 +50,8 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
 
     this.screenWidth = window.innerWidth;
     this.setLimit();
-    this.toggleItems();
+   
+    // this.toggleItems();
   }
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
@@ -70,15 +71,30 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
       this.intialLimit = 1;
       this.limit = this.intialLimit;
     }
+    this.toggleItems();
   }
 
   toggleItems() {
-    this.itemsToShow = this.dropdownItems.slice(0, this.limit);
+    const showItem= this.dropdownItems.slice(0, this.limit);
+      this.itemsToShow = showItem.map((item) => {
+        if (item.image_file !== null) {
+          item.image_file =
+            'https://srv442800.hstgr.cloud:3000//' + item.image_file;
+        }
+        return item;
+      });
+      console.log('item after loop',this.itemsToShow);
+    
+    // if (this.dropdownItems.length > 0) {
+    // this.itemsToShow = this.dropdownItems.slice(0, this.limit);
+    // }
+    console.log(this.itemsToShow, this.limit);
   }
   toggleShowMore(event: Event) {
     // document
     //   .querySelector('#custom-field-interface')
     //   ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    console.log('item',this.itemsToShow);
 
     event.preventDefault();
     this.limit =
@@ -86,7 +102,9 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
         ? this.intialLimit
         : this.dropdownItems.length;
     this.showMoreText =
-      this.showMoreText === 'HOME.SHOW_MORE' ? 'HOME.SHOW_LESS' : 'View All Products';
+      this.showMoreText === 'HOME.SHOW_MORE'
+        ? 'HOME.SHOW_LESS'
+        : 'View All Products';
     this.toggleItems();
   }
 
@@ -95,7 +113,7 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
   }
   navigateProduct(id: number) {
     console.log('sjsj');
-    
+
     this.route.navigate(['/product', id]);
   }
   addToWatchList(id: number) {

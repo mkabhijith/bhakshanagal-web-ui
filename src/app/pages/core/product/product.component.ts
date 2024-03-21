@@ -38,12 +38,14 @@ export class ProductComponent implements OnInit, OnDestroy {
         const id = params['id'];
         this.productService.getProduct(id).subscribe({
           next: (res) => {
-            console.log(res);
             this.product = res.data;
             this.product.forEach((item) => {
+              item.image_file =
+              'https://srv442800.hstgr.cloud:3000//' + item.image_file;
               item.count = 1;
               item.totalPrice = item.price * item.count;
             });
+            console.log(this.product);
           },
         });
         this.product = this.list.find((item) => item.id == id);
@@ -120,11 +122,12 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   //   Razorpay.open(RozerPayOptions, successCallback, failureCallback);
   // }
-  buyNow(){
-    
+  buyNow() {
     const myArray = this.product;
     const jsonArray = JSON.stringify(myArray);
     const encodedArray = encodeURIComponent(jsonArray);
-    this.router.navigate(['/checkout' ], { queryParams: { arrayParam: encodedArray } })
+    this.router.navigate(['/checkout'], {
+      queryParams: { arrayParam: encodedArray },
+    });
   }
 }

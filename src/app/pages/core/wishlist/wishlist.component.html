@@ -21,7 +21,16 @@
               {{ "HOME.ADD_CART" | translate }}
             </div>
           </div>
-          <img src="/assets/images/Noimage.jpg" alt="" />
+          <img
+            *ngIf="item.image_file == null"
+            src="/assets/images/Noimage.jpg"
+            alt=""
+          />
+          <img
+            *ngIf="item.image_file"
+            [src]="item.image_file"
+            alt="{{ item.product_name }}"
+          />
         </div>
         <div class="card-bottom">
           <div class="item-name">{{ item.product_name }}</div>

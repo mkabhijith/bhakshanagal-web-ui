@@ -58,6 +58,8 @@ export class CartComponent implements OnInit, OnDestroy {
         this.cartList = res;
         this.isLoader = false;
         this.cartList.forEach((item) => {
+          item.image_file =
+            'https://srv442800.hstgr.cloud:3000//' + item.image_file;
           item.count = 1;
           item.totalPrice = item.price * item.count;
           this.sumCart();
