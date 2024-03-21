@@ -25,7 +25,7 @@ export class OrderInfoComponent implements OnInit {
 
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
-  ordersList = [];
+  ordersList :any[] = [];
   ngOnInit(): void {
     this.titleSerice.changeTitle('Orders');
     this.languageSubscription = this.languageService.switchLanguage$.subscribe({
@@ -35,8 +35,13 @@ export class OrderInfoComponent implements OnInit {
     });
     this.orderService.orderList().subscribe({
       next: (res) => {
-        console.log(res);
-        this.ordersList = res.data;
+        this.ordersList = res.data.map((item) => {
+          if (item.image_file !== null) {
+            item.image_file =
+              'https://srv442800.hstgr.cloud:3000//' + item.image_file;
+          }
+          return item;
+        });
       },
     });
     this.orderservice.returnOrderList().subscribe({

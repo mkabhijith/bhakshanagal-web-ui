@@ -50,7 +50,7 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
 
     this.screenWidth = window.innerWidth;
     this.setLimit();
-   
+
     // this.toggleItems();
   }
   ngOnDestroy(): void {
@@ -75,27 +75,13 @@ export class CategoryProductListComponent implements OnInit, OnDestroy {
   }
 
   toggleItems() {
-    const showItem= this.dropdownItems.slice(0, this.limit);
-      this.itemsToShow = showItem.map((item) => {
-        if (item.image_file !== null) {
-          item.image_file =
-            'https://srv442800.hstgr.cloud:3000//' + item.image_file;
-        }
-        return item;
-      });
-      console.log('item after loop',this.itemsToShow);
-    
-    // if (this.dropdownItems.length > 0) {
-    // this.itemsToShow = this.dropdownItems.slice(0, this.limit);
-    // }
-    console.log(this.itemsToShow, this.limit);
+    this.itemsToShow = this.dropdownItems.slice(0, this.limit);
   }
   toggleShowMore(event: Event) {
     // document
     //   .querySelector('#custom-field-interface')
     //   ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    console.log('item',this.itemsToShow);
-
+   
     event.preventDefault();
     this.limit =
       this.limit === this.dropdownItems.length

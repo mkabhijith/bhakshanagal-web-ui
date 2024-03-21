@@ -23,16 +23,16 @@ export class CartService {
   private _cartList = new BehaviorSubject<any>([]);
   cartList$ = this._cartList.asObservable();
 
-  getCartList() {
-    return this.httpClient.post<IProductList>(`bhakshanangal/productlist`, {});
+  // getCartList() {
+  //   return this.httpClient.post<IProductList>(`bhakshanangal/productlist`, {});
 
-    this.productListService.getProduct(2).subscribe({
-      next: (res) => {
-        const cartArray = res.data;
-        return res.data;
-      },
-    });
-  }
+  //   this.productListService.getProduct(2).subscribe({
+  //     next: (res) => {
+  //       const cartArray = res.data;
+  //       return res.data;
+  //     },
+  //   });
+  // }
 
   saveCart(id: number) {
     // if (!this.storageService.authKey) {

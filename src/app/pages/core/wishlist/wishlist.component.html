@@ -1,7 +1,9 @@
 <div class="main-container">
   <div class="watchList-container">
     <div class="heading">
-      <div class="left">{{ "WISHLIST.WISHLIST" | translate }} (2)</div>
+      <div class="left">
+        {{ "WISHLIST.WISHLIST" | translate }} ({{ watchlistLength }})
+      </div>
       <app-secoundary-button>{{
         "WISHLIST.Move_All_To_Bag" | translate
       }}</app-secoundary-button>

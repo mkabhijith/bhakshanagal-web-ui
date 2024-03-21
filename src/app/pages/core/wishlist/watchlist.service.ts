@@ -1,11 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { IProductViewResponce } from '../product/product.type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WatchlistService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   private _watchListCount = new BehaviorSubject<number>(this.watchListLength());
   watchListCount$ = this._watchListCount.asObservable();
@@ -33,6 +35,7 @@ export class WatchlistService {
     }
     localStorage.setItem('watchList', JSON.stringify(watchList));
     this._watchListCount.next(watchList.length);
+    this.getWatchList()
   }
 
   onWatchListRemoveItem(id: number) {
@@ -49,5 +52,16 @@ export class WatchlistService {
     this._watchListCount.next(watchList.length);
   }
 
-  getWatchList() {}
+  getWatchList() {
+    const payload = {
+      product_id: this.getLocalCart(),
+    };
+    this.httpClient
+      .post<IProductViewResponce>(`bhakshanangal/productview`, payload)
+      .subscribe({
+        next: (res) => {
+          this._watchList.next(res.data);
+        },
+      });
+  }
 }

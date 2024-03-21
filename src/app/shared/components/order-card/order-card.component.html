@@ -1,19 +1,21 @@
 <div class="main-container">
-    
-    <div class="order-card" *ngFor="let item of cardItems"  (click)="orderDetails(1)" >
-      <div class="left">
-        <div class="image">
-          <img src="../../../../assets/images/g27cq4-500x500 1.svg" alt="" />
-          <div class="name">{{item.product_name}}</div>
-        </div>
-        <div class="price">{{item.price}}</div>
+  <div
+    class="order-card"
+    *ngFor="let item of cardItems"
+    (click)="orderDetails(1)"
+  >
+    <div class="left">
+      <div class="image">
+        <img *ngIf="item.image_file !== null" [src]="item.image_file" alt="" />
+        <div class="name">{{ item.product_name }}</div>
       </div>
-      <div class="right">
-        <div class="order-status">
-          <div class="icon"></div>
-          <div class="text">Delivery expected by Tue Feb 20</div>
-        </div>
+      <div class="price">{{ item.price }}</div>
+    </div>
+    <div class="right">
+      <div class="order-status">
+        <div class="icon"></div>
+        <div class="text">Delivery expected by Tue Feb 20</div>
       </div>
     </div>
   </div>
-  
+</div>

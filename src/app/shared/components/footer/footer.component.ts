@@ -11,6 +11,7 @@ interface IItemList {
 }
 interface IItems {
   item: string;
+  route?: string;
 }
 
 @Component({
@@ -44,15 +45,19 @@ export class FooterComponent implements OnInit {
       items: [
         {
           item: 'SIDE_BAR.MY_ACCOUNT',
+          route: 'account'
         },
         {
           item: 'Log In / Register',
+          route:'login'
         },
         {
           item: 'HOME.CART',
+          route:"cart"
         },
         {
           item: 'WISHLIST.WISHLIST',
+          route:'wishlist'
         },
         {
           item: 'FOOTER.SHOP_WITH_US',

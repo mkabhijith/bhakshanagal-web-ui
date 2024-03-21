@@ -40,6 +40,8 @@ export class OrdersComponent implements OnInit, OnDestroy {
     });
     this.orderservice.returnOrderList().subscribe({
       next: (res) => {
+        console.log(res.data);
+
         this.products = res.data;
       },
     });

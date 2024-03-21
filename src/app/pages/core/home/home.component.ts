@@ -87,24 +87,24 @@ export class HomeComponent implements OnInit, OnDestroy {
         if (res) {
           this.loginInProgress = false;
           this.productList = res.data;
-          this.productPickle = res.data[1].pickles;
-          // .map((pickle) => {
-          //   if (pickle.image_file !== null) {
-          //     pickle.image_file =
-          //       'https://srv442800.hstgr.cloud:3000//' + pickle.image_file;
-          //   }
-          //   return pickle;
-          // });
+          this.productPickle = res.data[1].pickles
+          .map((pickle) => {
+            if (pickle.image_file !== null) {
+              pickle.image_file =
+                'https://srv442800.hstgr.cloud:3000//' + pickle.image_file;
+            }
+            return pickle;
+          });
           console.log(this.productPickle);
 
-          this.productCrunchy = res.data[0].crunchy;
-          // .map((item) => {
-          //   if (item.image_file !== null) {
-          //     item.image_file =
-          //       'https://srv442800.hstgr.cloud:3000//' + item.image_file;
-          //   }
-          //   return item;
-          // });
+          this.productCrunchy = res.data[0].crunchy
+          .map((item) => {
+            if (item.image_file !== null) {
+              item.image_file =
+                'https://srv442800.hstgr.cloud:3000//' + item.image_file;
+            }
+            return item;
+          });
           console.log('log res', res);
         }
         catchError((Error) => {
