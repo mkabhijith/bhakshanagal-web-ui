@@ -19,11 +19,14 @@
               display: flex;
             }
           }
+          .img-container {
+            height: 100%;
+          }
         }
       }
       .image {
-        height: 15.625rem;
-
+        height: 14.625rem;
+        .img-container,
         img {
           width: 100%;
           height: 100%;
@@ -35,11 +38,12 @@
           justify-content: space-between;
           width: 16.875rem;
           height: 15.625rem;
+          padding: 0.5rem;
           .img-top {
             display: flex;
             justify-content: space-between;
             .image-love {
-              width: 1.5rem; 
+              width: 1.5rem;
               height: 1.5rem;
               // background-color: #db4444;
             }

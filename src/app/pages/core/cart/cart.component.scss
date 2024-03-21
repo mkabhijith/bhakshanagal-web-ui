@@ -27,7 +27,10 @@
       td {
         display: flex;
         align-items: center;
-        width: 7.9rem;
+        width:9rem;
+        gap: 1rem;
+        text-overflow: ellipsis;
+        text-wrap: nowrap;
         .image {
           .close {
             position: absolute;

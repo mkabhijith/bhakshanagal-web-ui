@@ -5,9 +5,9 @@ import { CountryOrginService } from 'src/app/shared/services/country-orgin.servi
 import { Router } from '@angular/router';
 import { TitleService } from 'src/app/shared/services/title/title.service';
 import { ILanguage } from 'src/app/shared/types/language.type';
-import { Subscription } from 'rxjs';
+import { Subscription, catchError } from 'rxjs';
 import { LanguageService } from 'src/app/shared/services/language.service';
-import { IProductListArray } from './home.type';
+import { IProductListArray, Iproduct } from './home.type';
 import { StorageService } from 'src/app/shared/services/storage/storage.service';
 
 interface IServiceList {
@@ -37,7 +37,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       image: '/assets/images/Services2.svg',
       heading: 'HOME.CUSTOMER_SERVICE',
       title: 'HOME.CONSUMER_SERVICE_TITLE',
-    }, {
+    },
+    {
       image: '/assets/images/Services3.svg',
       heading: 'HOME.MONEY_BACK',
       title: 'HOME.MONEY_BACK_TITLE',
@@ -60,6 +61,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentLanguage!: ILanguage;
   languageSubscription!: Subscription;
   loginInProgress: boolean = false;
+  productPickle!: Iproduct[];
+  productCrunchy!: Iproduct[];
   ngOnInit() {
     this.titleSerice.changeTitle('home');
     this.currencyService.switchCountry$.subscribe({
@@ -81,8 +84,34 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.loginInProgress = true;
     this.homeService.getProductList().subscribe({
       next: (res) => {
-        this.loginInProgress = false;
-        this.productList = res.data;
+        if (res) {
+          this.loginInProgress = false;
+          this.productList = res.data;
+          this.productPickle = res.data[1].pickles;
+          // .map((pickle) => {
+          //   if (pickle.image_file !== null) {
+          //     pickle.image_file =
+          //       'https://srv442800.hstgr.cloud:3000//' + pickle.image_file;
+          //   }
+          //   return pickle;
+          // });
+          console.log(this.productPickle);
+
+          this.productCrunchy = res.data[0].crunchy;
+          // .map((item) => {
+          //   if (item.image_file !== null) {
+          //     item.image_file =
+          //       'https://srv442800.hstgr.cloud:3000//' + item.image_file;
+          //   }
+          //   return item;
+          // });
+          console.log('log res', res);
+        }
+        catchError((Error) => {
+          console.log('request fail error', Error);
+
+          throw Error;
+        });
       },
     });
   }
